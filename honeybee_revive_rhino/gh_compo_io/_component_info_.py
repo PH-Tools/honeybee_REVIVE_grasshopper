@@ -32,6 +32,12 @@ COMPONENT_PARAMS = {
         "Category": CATEGORY,
         "SubCategory": 1,
     },
+    "HB-REVIVE - Set Material REVIVE Properties": {
+        "NickName": "Set Material Properties",
+        "Message": RELEASE_VERSION,
+        "Category": CATEGORY,
+        "SubCategory": 1,
+    },
     "HB-REVIVE - Add CO2 Reduction Measures to Model": {
         "NickName": "Add CO2 Reduction Measures to Model",
         "Message": RELEASE_VERSION,

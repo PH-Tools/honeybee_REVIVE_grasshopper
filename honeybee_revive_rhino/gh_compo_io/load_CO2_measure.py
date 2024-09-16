@@ -24,8 +24,8 @@ except ImportError:
 
 class GHCompo_LoadCO2ReductionMeasure(object):
 
-    def __init__(self, _IGH, _measure_name):
-        # type: (gh_io.IGH, str) -> None
+    def __init__(self, _IGH, _measure_name, *args, **kwargs):
+        # type: (gh_io.IGH, str, list, dict) -> None
         self.IGH = _IGH
         self.measure_name = _measure_name
 

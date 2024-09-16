@@ -11,6 +11,11 @@ except ImportError as e:
     raise ImportError("\nFailed to import honeybee:\n\t{}".format(e))
 
 try:
+    from honeybee_ph_rhino import gh_io
+except ImportError as e:
+    raise ImportError("\nFailed to import honeybee_ph_rhino:\n\t{}".format(e))
+
+try:
     from honeybee_revive.properties.model import ModelReviveProperties
 except ImportError as e:
     raise ImportError("\nFailed to import honeybee_revive:\n\t{}".format(e))
@@ -26,11 +31,6 @@ try:
 except ImportError as e:
     raise ImportError("\nFailed to import honeybee_revive_standards:\n\t{}".format(e))
 
-try:
-    from honeybee_ph_rhino import gh_io
-except ImportError:
-    raise ImportError("\nFailed to import honeybee_ph_rhino")
-
 
 class GHCompo_SetModelProperties(object):
 
@@ -42,8 +42,10 @@ class GHCompo_SetModelProperties(object):
         analysis_duration,
         envelope_labor_cost_fraction,
         _hb_model,
+        *args,
+        **kwargs
     ):
-        # type: (gh_io.IGH, str, str, int, float, Model) -> None
+        # type: (gh_io.IGH, str, str, int, float, Model, list, dict) -> None
         self.IGH = _IGH
         self.country_name = _country_name
         self.cambium_grid_region = _cambium_grid_region

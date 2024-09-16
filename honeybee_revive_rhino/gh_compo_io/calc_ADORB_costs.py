@@ -10,7 +10,7 @@ import sys
 from contextlib import contextmanager
 
 try:
-    from typing import Any, Generator
+    from typing import Generator
 except ImportError:
     pass  # IronPython 2.7
 
@@ -200,7 +200,7 @@ class GHCompo_CalculateADORBCost(object):
     """GHCompo Interface: HB-REVIVE - Calculate ADORB Costs."""
 
     def __init__(self, _DEBUG, _IGH, _save_file_name, _save_dir, _hb_model, _calculate_ADORB, *args, **kwargs):
-        # type: (bool, gh_io.IGH, str | None, str | None, Model, bool, *Any, **Any) -> None
+        # type: (bool, gh_io.IGH, str | None, str | None, Model, bool, list, dict) -> None
         self.DEBUG = _DEBUG
         self.IGH = _IGH
         self._save_filename = _save_file_name

@@ -23,8 +23,8 @@ except ImportError:
 
 class GHCompo_AddCO2ReductionMeasuresToModel(object):
 
-    def __init__(self, _IGH, _measures, _hb_model):
-        # type: (gh_io.IGH, list[CO2ReductionMeasure], Model | None) -> None
+    def __init__(self, _IGH, _measures, _hb_model, *args, **kwargs):
+        # type: (gh_io.IGH, list[CO2ReductionMeasure], Model | None, list, dict) -> None
         self.IGH = _IGH
         self.measures = _measures
         self.hb_model = _hb_model
