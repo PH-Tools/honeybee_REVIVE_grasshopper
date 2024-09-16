@@ -1,3 +1,6 @@
 # -- Import all the interfaces to simplify the API within Grasshopper
 from honeybee_revive_rhino.gh_compo_io.calc_ADORB_costs import GHCompo_CalculateADORBCost
 from honeybee_revive_rhino.gh_compo_io.set_model_properties import GHCompo_SetModelProperties
+from honeybee_revive_rhino.gh_compo_io.add_CO2_measures_to_model import GHCompo_AddCO2ReductionMeasuresToModel
+from honeybee_revive_rhino.gh_compo_io.create_CO2_measure import GHCompo_CreateCO2ReductionMeasure
+from honeybee_revive_rhino.gh_compo_io.load_CO2_measure import GHCompo_LoadCO2ReductionMeasure
