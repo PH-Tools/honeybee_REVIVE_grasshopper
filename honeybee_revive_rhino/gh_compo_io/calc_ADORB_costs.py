@@ -10,7 +10,7 @@ import sys
 from contextlib import contextmanager
 
 try:
-    from typing import Any, Generator, Optional
+    from typing import Any, Generator
 except ImportError:
     pass  # IronPython 2.7
 
@@ -162,8 +162,8 @@ def write_hb_model_to_json_file(_hb_model, _hbjson_output_file_path):
 
 
 @contextmanager
-def model_as_json_file(_hb_model, _hbjson_output_file_path):
-    # type: (Model, str) -> Generator[str, None, None]
+def model_as_json_file(_hb_model, _hbjson_output_file_path, _DEBUG=False):
+    # type: (Model, str, bool) -> Generator[str, None, None]
     """Create a temporary JSON file for a HB Model. Removes the file at the end of use.
 
     ### Usage:
@@ -181,9 +181,15 @@ def model_as_json_file(_hb_model, _hbjson_output_file_path):
         hb_json_file = write_hb_model_to_json_file(_hb_model, _hbjson_output_file_path)
         yield hb_json_file
     finally:
-        if os.path.isfile(hb_json_file):
-            print("Removing temporary JSON file: {}".format(hb_json_file))
-            os.remove(hb_json_file)
+        if _DEBUG:
+            # Don't delete the file if we are debugging
+            return
+
+        if not os.path.isfile(hb_json_file):
+            return
+
+        print("Removing temporary JSON file: {}".format(hb_json_file))
+        os.remove(hb_json_file)
 
 
 # -----------------------------------------------------------------------------
@@ -193,8 +199,9 @@ def model_as_json_file(_hb_model, _hbjson_output_file_path):
 class GHCompo_CalculateADORBCost(object):
     """GHCompo Interface: HB-REVIVE - Calculate ADORB Costs."""
 
-    def __init__(self, _IGH, _save_file_name, _save_dir, _hb_model, _calculate_ADORB, *args, **kwargs):
-        # type: (gh_io.IGH, str | None, str | None, Model, bool, *Any, **Any) -> None
+    def __init__(self, _DEBUG, _IGH, _save_file_name, _save_dir, _hb_model, _calculate_ADORB, *args, **kwargs):
+        # type: (bool, gh_io.IGH, str | None, str | None, Model, bool, *Any, **Any) -> None
+        self.DEBUG = _DEBUG
         self.IGH = _IGH
         self._save_filename = _save_file_name
         self.save_dir = _save_dir or os.path.join(hb_folders.default_simulation_folder, "REVIVE")
@@ -241,7 +248,7 @@ class GHCompo_CalculateADORBCost(object):
         if not os.path.isdir(self.save_dir):
             os.makedirs(self.save_dir)
 
-        with model_as_json_file(self.hb_model, self.hbjson_output_file_path) as hb_json_filepath:
+        with model_as_json_file(self.hb_model, self.hbjson_output_file_path, self.DEBUG) as hb_json_filepath:
             results_csv_file_path, stdout, stderr = run_ADORB_calculator(
                 _hbjson_filepath=hb_json_filepath,
                 _results_file_path=self.csv_output_file_path,

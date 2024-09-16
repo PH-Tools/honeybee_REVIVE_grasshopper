@@ -13,6 +13,13 @@ SUB_CATEGORIES = {
     2: "02 | ADORB",
 }
 COMPONENT_PARAMS = {
+    # -- 01 MODEL
+    "HB-REVIVE - Set Model Properties": {
+        "NickName": "Set Model Properties",
+        "Message": RELEASE_VERSION,
+        "Category": CATEGORY,
+        "SubCategory": 1,
+    },
     # -- 02 ADORB
     "HB-REVIVE - Calculate ADORB Costs": {
         "NickName": "Calculate ADORB Costs",
