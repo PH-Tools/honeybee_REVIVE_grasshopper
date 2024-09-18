@@ -32,7 +32,7 @@ COMPONENT_PARAMS = {
         "Category": CATEGORY,
         "SubCategory": 1,
     },
-    "HB-REVIVE - Set Material REVIVE Properties": {
+    "HB-REVIVE - Set Material or Construction REVIVE Properties": {
         "NickName": "Set Material Properties",
         "Message": RELEASE_VERSION,
         "Category": CATEGORY,
