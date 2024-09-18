@@ -89,9 +89,7 @@ def run_ADORB_calculator(_hbjson_filepath, _results_file_path, *args, **kwargs):
     """
 
     # -- Specify the path to the actual subprocess python-3 script to run
-    py3_script_filepath = os.path.join(
-        hb_folders.python_package_path, "ph_adorb", "from_HBJSON", "calc_hb_model_ADORB_costs.py"
-    )
+    py3_script_filepath = os.path.join(hb_folders.python_package_path, "ph_adorb", "run", "calc_HBJSON_ADORB_costs.py")
 
     # -- check the file paths
     assert os.path.isfile(_hbjson_filepath), "No HBJSON file found at {}.".format(_hbjson_filepath)

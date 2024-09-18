@@ -14,6 +14,20 @@ try:
 except ImportError as e:
     raise ImportError("\nFailed to import honeybee_ph_rhino:\n\t{}".format(e))
 
+try:
+    from ph_units.unit_type import Unit
+except ImportError:
+    raise ImportError("\nFailed to import ph_units")
+
+try:
+    from honeybee_energy_revive.properties.materials.opaque import (
+        EnergyMaterialReviveProperties,
+        EnergyMaterialNoMassReviveProperties,
+        EnergyMaterialVegetationReviveProperties,
+    )
+except ImportError:
+    raise ImportError("\nFailed to import honeybee_energy_revive")
+
 
 class GHCompo_SetMaterialProperties(object):
     kg_CO2_per_m2 = ghio_validators.UnitKG_M2("kg_CO2_per_m2", default=0.0)
@@ -23,7 +37,7 @@ class GHCompo_SetMaterialProperties(object):
     def __init__(
         self, _IGH, _material, _kg_CO2_per_m2, _cost_per_m2, _labor_fraction, _lifetime_years, *args, **kwargs
     ):
-        # type: (gh_io.IGH, EnergyMaterial, str, str, float, int, list, dict) -> None
+        # type: (gh_io.IGH, EnergyMaterial, float, float, float, int, list, dict) -> None
         self.IGH = _IGH
         self.material = _material
         self.kg_CO2_per_m2 = _kg_CO2_per_m2
@@ -36,4 +50,9 @@ class GHCompo_SetMaterialProperties(object):
         if not self.material:
             return None
         new_material = self.material.duplicate()
+        new_mat_prop = getattr(new_material.properties, "revive")  # type: EnergyMaterialReviveProperties
+        new_mat_prop.kg_CO2_per_m2 = Unit(self.kg_CO2_per_m2, "KG/M2")
+        new_mat_prop.cost_per_m2 = Unit(self.cost_per_m2, "COST/M2")
+        new_mat_prop.labor_fraction = self.labor_fraction
+        new_mat_prop.lifetime_years = self.lifetime_years
         return new_material
