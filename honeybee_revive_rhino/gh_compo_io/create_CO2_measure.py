@@ -9,7 +9,10 @@ try:
 except ImportError:
     raise ImportError("\nFailed to import honeybee_ph_rhino")
 
-from honeybee_ph_utils.input_tools import input_to_int
+try:
+    from honeybee_ph_utils.input_tools import input_to_int
+except ImportError:
+    raise ImportError("\nFailed to import honeybee_ph_utils")
 
 try:
     from honeybee_revive.CO2_measures import CO2ReductionMeasure, CO2ReductionMeasureType
