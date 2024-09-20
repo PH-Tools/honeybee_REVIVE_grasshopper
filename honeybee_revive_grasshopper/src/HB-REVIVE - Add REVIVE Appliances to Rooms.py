@@ -20,14 +20,20 @@
 # @license GPL-3.0+ <http://spdx.org/licenses/GPL-3.0+>
 #
 """
-Load a CO2-Reduction-Measure from the Honeybee-REVIVE Standards Library.
+Add one or more Honeybee-REVIVE Appliances to a group of Honeybee-Rooms. 
+NOTE that ALL of the appliances will be added to ALL of the rooms. So you 
+may want to break out the rooms and assign the appliances separately (for instance
+if you are assigning a Cooktop, be sure that this gets assigned only to one room.)
 -
-EM September 18, 2024
+EM September 20, 2024
     Args:
-        _name: (str) The name of the Measure to search the Standards library for.
+        _appliances: (list[Process]) The appliances to add to each of the 
+            Honeybee-Rooms
+
+        _hb_rooms: (list[Room]) The Honeybee-Rooms to have the appliances added.
 
     Returns:
-        measure_: (CO2ReductionMeasure | None) The Measure, if found. None if not found.
+        hb_rooms_: (list[Room]) The Honeybee-Rooms with the Appliances added. 
 """
 
 import scriptcontext as sc
@@ -50,21 +56,20 @@ except ImportError as e:
 # ------------------------------------------------------------------------------
 import honeybee_revive_rhino._component_info_
 reload(honeybee_revive_rhino._component_info_)
-
-ghenv.Component.Name = "HB-REVIVE - Load CO2 Reduction Measure"
+ghenv.Component.Name = "HB-REVIVE - Add REVIVE Appliances to Rooms"
 DEV = honeybee_revive_rhino._component_info_.set_component_params(ghenv, dev=False)
 if DEV:
-    from honeybee_revive_rhino.gh_compo_io import get_CO2_measure_from_standards as gh_compo_io
+    from honeybee_revive_rhino.gh_compo_io import add_appliances_to_rooms as gh_compo_io
     reload(gh_compo_io)
-print honeybee_revive_rhino._component_info_.COMPONENT_PARAMS
+    
 # ------------------------------------------------------------------------------
 # -- GH Interface
 IGH = gh_io.IGH( ghdoc, ghenv, sc, rh, rs, ghc, gh )
 
 # ------------------------------------------------------------------------------
-gh_compo_interface = gh_compo_io.GHCompo_LoadCO2ReductionMeasure(
+gh_compo_interface = gh_compo_io.GHCompo_AddReviveAppliancesToRooms(
         IGH,
-        _name,
+        _appliances,
+        _hb_rooms,
 )
-measure_ = gh_compo_interface.run()
-print(measure_)
+hb_rooms_ = gh_compo_interface.run()

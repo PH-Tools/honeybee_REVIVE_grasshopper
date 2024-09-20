@@ -20,14 +20,15 @@
 # @license GPL-3.0+ <http://spdx.org/licenses/GPL-3.0+>
 #
 """
-Load a CO2-Reduction-Measure from the Honeybee-REVIVE Standards Library.
+Load one or more Hoenybee-REVIVE Appliances from the Standards Library.
 -
-EM September 18, 2024
+EM September 20, 2024
     Args:
-        _name: (str) The name of the Measure to search the Standards library for.
+        _appliance_names: (list[str]) The name or names to search the Honeybee-REVIVE
+            standards library for.
 
     Returns:
-        measure_: (CO2ReductionMeasure | None) The Measure, if found. None if not found.
+        appliances_: (list[Process]) The Honeybee-REVIVE Appliances found.
 """
 
 import scriptcontext as sc
@@ -50,21 +51,21 @@ except ImportError as e:
 # ------------------------------------------------------------------------------
 import honeybee_revive_rhino._component_info_
 reload(honeybee_revive_rhino._component_info_)
-
-ghenv.Component.Name = "HB-REVIVE - Load CO2 Reduction Measure"
+ghenv.Component.Name = "HB-REVIVE - Get REVIVE Appliance from Standards Library"
 DEV = honeybee_revive_rhino._component_info_.set_component_params(ghenv, dev=False)
 if DEV:
-    from honeybee_revive_rhino.gh_compo_io import get_CO2_measure_from_standards as gh_compo_io
+    from honeybee_revive_rhino.gh_compo_io import get_appliance_from_standards as gh_compo_io
     reload(gh_compo_io)
-print honeybee_revive_rhino._component_info_.COMPONENT_PARAMS
+    
 # ------------------------------------------------------------------------------
 # -- GH Interface
 IGH = gh_io.IGH( ghdoc, ghenv, sc, rh, rs, ghc, gh )
 
 # ------------------------------------------------------------------------------
-gh_compo_interface = gh_compo_io.GHCompo_LoadCO2ReductionMeasure(
+gh_compo_interface = gh_compo_io.GHCompo_GetReviveApplianceFromStandardsLibrary(
         IGH,
-        _name,
+        _appliance_names
 )
-measure_ = gh_compo_interface.run()
-print(measure_)
+appliances_ = gh_compo_interface.run()
+for a in appliances_:
+    print(a)

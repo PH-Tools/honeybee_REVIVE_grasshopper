@@ -20,14 +20,22 @@
 # @license GPL-3.0+ <http://spdx.org/licenses/GPL-3.0+>
 #
 """
-Load a CO2-Reduction-Measure from the Honeybee-REVIVE Standards Library.
+Set the Honeybee-REVIVE properties on a Honeybee-REVIVE Appliance.
 -
-EM September 18, 2024
+EM September 19, 2024
     Args:
-        _name: (str) The name of the Measure to search the Standards library for.
+        _cost: (float) The total purchase-cost of the Appliance.
+
+        _labor_fraction: (float) A number between 0 and 1.0 representing the percentage
+            of the appliance cost related to labor, as opposed to material. 
+
+        _lifetime_years: (float) The total number of years the appliance will last
+            before it needs to be completely replaced. 
+
+        _appliance: (Process) The Hoenybee-REVIVE Appliance to set the properties on.
 
     Returns:
-        measure_: (CO2ReductionMeasure | None) The Measure, if found. None if not found.
+        appliance_: (Process) The Honeybee-REVIVE Appliance with the properties set.
 """
 
 import scriptcontext as sc
@@ -50,21 +58,23 @@ except ImportError as e:
 # ------------------------------------------------------------------------------
 import honeybee_revive_rhino._component_info_
 reload(honeybee_revive_rhino._component_info_)
-
-ghenv.Component.Name = "HB-REVIVE - Load CO2 Reduction Measure"
+ghenv.Component.Name = "HB-REVIVE - Set Appliance REVIVE Properties"
 DEV = honeybee_revive_rhino._component_info_.set_component_params(ghenv, dev=False)
 if DEV:
-    from honeybee_revive_rhino.gh_compo_io import get_CO2_measure_from_standards as gh_compo_io
+    from honeybee_revive_rhino.gh_compo_io import set_appliance_properties as gh_compo_io
     reload(gh_compo_io)
-print honeybee_revive_rhino._component_info_.COMPONENT_PARAMS
+    
 # ------------------------------------------------------------------------------
 # -- GH Interface
 IGH = gh_io.IGH( ghdoc, ghenv, sc, rh, rs, ghc, gh )
 
 # ------------------------------------------------------------------------------
-gh_compo_interface = gh_compo_io.GHCompo_LoadCO2ReductionMeasure(
+gh_compo_interface = gh_compo_io.GHCompo_SetApplianceReviveProperties(
         IGH,
-        _name,
+        _cost,
+        _labor_fraction,
+        _lifetime_years,
+        _appliance,
 )
-measure_ = gh_compo_interface.run()
-print(measure_)
+appliance_ = gh_compo_interface.run()
+print appliance_

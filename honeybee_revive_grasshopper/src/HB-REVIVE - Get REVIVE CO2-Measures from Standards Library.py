@@ -22,12 +22,12 @@
 """
 Load a CO2-Reduction-Measure from the Honeybee-REVIVE Standards Library.
 -
-EM September 18, 2024
+EM September 20, 2024
     Args:
-        _name: (str) The name of the Measure to search the Standards library for.
+        _measuere_names: (list[str]) The name or names of the Measures to search the Standards library for.
 
     Returns:
-        measure_: (CO2ReductionMeasure | None) The Measure, if found. None if not found.
+        measures_: (list[CO2ReductionMeasure]) The Measures, if found.
 """
 
 import scriptcontext as sc
@@ -51,12 +51,12 @@ except ImportError as e:
 import honeybee_revive_rhino._component_info_
 reload(honeybee_revive_rhino._component_info_)
 
-ghenv.Component.Name = "HB-REVIVE - Load CO2 Reduction Measure"
+ghenv.Component.Name = "HB-REVIVE - Get REVIVE CO2-Measures from Standards Library"
 DEV = honeybee_revive_rhino._component_info_.set_component_params(ghenv, dev=False)
 if DEV:
     from honeybee_revive_rhino.gh_compo_io import get_CO2_measure_from_standards as gh_compo_io
     reload(gh_compo_io)
-print honeybee_revive_rhino._component_info_.COMPONENT_PARAMS
+
 # ------------------------------------------------------------------------------
 # -- GH Interface
 IGH = gh_io.IGH( ghdoc, ghenv, sc, rh, rs, ghc, gh )
@@ -64,7 +64,8 @@ IGH = gh_io.IGH( ghdoc, ghenv, sc, rh, rs, ghc, gh )
 # ------------------------------------------------------------------------------
 gh_compo_interface = gh_compo_io.GHCompo_LoadCO2ReductionMeasure(
         IGH,
-        _name,
+        _measure_names,
 )
-measure_ = gh_compo_interface.run()
-print(measure_)
+measures_ = gh_compo_interface.run()
+for m in measures_:
+    print(m)
