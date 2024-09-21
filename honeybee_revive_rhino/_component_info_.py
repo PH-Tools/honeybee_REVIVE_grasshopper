@@ -86,6 +86,18 @@ COMPONENT_PARAMS = {
         "Category": CATEGORY,
         "SubCategory": 1,
     },
+    "HB-REVIVE - Create REVIVE HVAC Equipment Properties": {
+        "NickName": "Create REVIVE HVAC Equipment Properties",
+        "Message": RELEASE_VERSION,
+        "Category": CATEGORY,
+        "SubCategory": 1,
+    },
+    "HB-REVIVE - Add REVIVE HVAC Equipment Properties to Rooms": {
+        "NickName": "Add REVIVE HVAC Equipment Properties to Rooms",
+        "Message": RELEASE_VERSION,
+        "Category": CATEGORY,
+        "SubCategory": 1,
+    },
     # -- 02 ADORB
     "HB-REVIVE - Calculate ADORB Costs": {
         "NickName": "Calculate ADORB Costs",

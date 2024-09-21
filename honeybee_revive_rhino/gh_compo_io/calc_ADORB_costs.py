@@ -22,8 +22,8 @@ except ImportError as e:
 
 try:
     from honeybee_ph_rhino import gh_io
-except ImportError:
-    raise ImportError("\nFailed to import honeybee_ph_rhino")
+except ImportError as e:
+    raise ImportError("\nFailed to import honeybee_ph_rhino:\n\t{}".format(e))
 
 
 # -----------------------------------------------------------------------------
