@@ -12,3 +12,5 @@ from honeybee_revive_rhino.gh_compo_io.get_appliance_from_standards import (
     GHCompo_GetReviveApplianceFromStandardsLibrary,
 )
 from honeybee_revive_rhino.gh_compo_io.set_room_lighting_properties import GHCompo_SetRoomLightingProperties
+from honeybee_revive_rhino.gh_compo_io.set_lighting_program_properties import GHCompo_SetLightingProgramProperties
+from honeybee_revive_rhino.gh_compo_io.set_pv_shade_properties import GHCompo_SetPvShadeProperties

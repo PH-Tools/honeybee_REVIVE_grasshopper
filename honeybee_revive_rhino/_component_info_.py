@@ -74,6 +74,18 @@ COMPONENT_PARAMS = {
         "Category": CATEGORY,
         "SubCategory": 1,
     },
+    "HB-REVIVE - Set REVIVE Lighting Program Properties": {
+        "NickName": "Set REVIVE Lighting Program Properties",
+        "Message": RELEASE_VERSION,
+        "Category": CATEGORY,
+        "SubCategory": 1,
+    },
+    "HB-REVIVE - Set PV-Shade REVIVE Properties": {
+        "NickName": "Set PV-Shade REVIVE Properties",
+        "Message": RELEASE_VERSION,
+        "Category": CATEGORY,
+        "SubCategory": 1,
+    },
     # -- 02 ADORB
     "HB-REVIVE - Calculate ADORB Costs": {
         "NickName": "Calculate ADORB Costs",
