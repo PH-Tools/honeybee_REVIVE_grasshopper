@@ -24,7 +24,7 @@ except ImportError as e:
     raise ImportError("\nFailed to import honeybee_ph_rhino:\n\t{}".format(e))
 
 try:
-    from honeybee_energy_revive.properties.generator.pv import PvPropertiesReviveProperties
+    from honeybee_energy_revive.properties.generator.pv import PVPropertiesReviveProperties
 except ImportError as e:
     raise ImportError("\nFailed to import honeybee_revive:\n\t{}".format(e))
 
@@ -52,7 +52,7 @@ class GHCompo_SetPvShadeProperties(object):
             if not shad_pv_prop:
                 raise ValueError("Shade: {} does not have PV applied..".format(new_shade.display_name))
 
-            shade_pv_prop = getattr(shad_pv_prop.properties, "revive")  # type: PvPropertiesReviveProperties
+            shade_pv_prop = getattr(shad_pv_prop.properties, "revive")  # type: PVPropertiesReviveProperties
             shade_pv_prop.cost = self.cost
             shade_pv_prop.labor_fraction = self.labor_fraction
             shade_pv_prop.lifetime_years = self.lifetime_years
