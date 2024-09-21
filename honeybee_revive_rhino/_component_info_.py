@@ -68,6 +68,12 @@ COMPONENT_PARAMS = {
         "Category": CATEGORY,
         "SubCategory": 1,
     },
+    "HB-REVIVE - Set Room REVIVE Lighting Properties": {
+        "NickName": "Set Room REVIVE Lighting Properties",
+        "Message": RELEASE_VERSION,
+        "Category": CATEGORY,
+        "SubCategory": 1,
+    },
     # -- 02 ADORB
     "HB-REVIVE - Calculate ADORB Costs": {
         "NickName": "Calculate ADORB Costs",
