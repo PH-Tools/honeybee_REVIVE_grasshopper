@@ -61,9 +61,7 @@ class GHCompo_SetModelProperties(object):
             return None
 
         emissions_factor_location = os.path.dirname(national_emission_factors.__file__)
-        emissions_factor_json_file = os.path.join(
-            emissions_factor_location, "phius_revive_2024_national_emissions.json"
-        )
+        emissions_factor_json_file = os.path.join(emissions_factor_location, "rv2024_national_emissions.json")
         emissions_factor_dict = load_national_emissions_from_json_file(emissions_factor_json_file)
 
         try:

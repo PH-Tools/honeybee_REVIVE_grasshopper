@@ -20,14 +20,24 @@
 # @license GPL-3.0+ <http://spdx.org/licenses/GPL-3.0+>
 #
 """
-Load a CO2-Reduction-Measure from the Honeybee-REVIVE Standards Library.
+Load a Honeybee-Energy Program from the Phius-REVIVE-2024 Standards Library. This 
+Program can be assigned to one or more Honeybee-Rooms, or you can decompose the 
+program and re-set any of the loads or schedules as needed.
 -
-EM September 18, 2024
+EM September 22, 2024
     Args:
-        _name: (str) The name of the Measure to search the Standards library for.
+        _standards_path_: (str | None) OPTIONAL path to the Phius-REVIVE-2024 Standards Path 
+            that you would like to use. If None is provided, the default standards 
+            directory location will be used.
+
+        _program_name_: (str | None) OPTIONAL name for the Phius-REVIVE-2024 Program
+            to load from the Standards directory. Note that if No name is provided, the 
+            component will attempt to load the default single-family-home program type 
+            of 'rv2024_Residence'.
 
     Returns:
-        measure_: (CO2ReductionMeasure | None) The Measure, if found. None if not found.
+        hb_energy_program_: (ProgramType | None) The Honeybee-Energy Program found in
+            the Phius REVIVE 2024 Standards directory, or None if not found. 
 """
 
 import scriptcontext as sc
@@ -50,21 +60,21 @@ except ImportError as e:
 # ------------------------------------------------------------------------------
 import honeybee_revive_rhino._component_info_
 reload(honeybee_revive_rhino._component_info_)
-
-ghenv.Component.Name = "HB-REVIVE - Load CO2 Reduction Measure"
+ghenv.Component.Name = "HB-REVIVE - Load REVIVE Program from Standards"
 DEV = honeybee_revive_rhino._component_info_.set_component_params(ghenv, dev=False)
 if DEV:
-    from honeybee_revive_rhino.gh_compo_io import load_CO2_measure_from_standards as gh_compo_io
+    from honeybee_revive_rhino.gh_compo_io import load_program_from_standards as gh_compo_io
     reload(gh_compo_io)
-print honeybee_revive_rhino._component_info_.COMPONENT_PARAMS
+    
 # ------------------------------------------------------------------------------
 # -- GH Interface
 IGH = gh_io.IGH( ghdoc, ghenv, sc, rh, rs, ghc, gh )
 
 # ------------------------------------------------------------------------------
-gh_compo_interface = gh_compo_io.GHCompo_LoadCO2ReductionMeasure(
+gh_compo_interface = gh_compo_io.GHCompo_LoadProgramFromStandards(
         IGH,
-        _name,
+        _standards_path_,
+        _program_name_,
 )
-measure_ = gh_compo_interface.run()
-print(measure_)
+hb_energy_program_ = gh_compo_interface.run()
+print hb_energy_program_

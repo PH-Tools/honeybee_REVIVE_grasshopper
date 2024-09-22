@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # -*- Python Version: 2.7 -*-
 
-"""GH-Component Interface: HB-REVIVE - Get REVIVE CO2-Measures from Standards Library."""
+"""GH-Component Interface: HB-REVIVE - Load REVIVE CO2-Measures from Standards Library."""
 
 import os
 
