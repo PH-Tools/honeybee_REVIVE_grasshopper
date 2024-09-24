@@ -58,7 +58,7 @@ class __SupportsPropertiesProtocol__(object):
 
 class GHCompo_SetMaterialProperties(object):
     kg_CO2_per_m2 = ghio_validators.UnitKG_M2("kg_CO2_per_m2", default=0.0)
-    cost_per_m2 = ghio_validators.UnitCost_M2("kg_CO2_per_m2", default=0.0)
+    cost_per_m2 = ghio_validators.UnitCost_M2("cost_per_m2", default=0.0)
     labor_fraction = ghio_validators.FloatPercentage("labor_fraction", default=0.0)
 
     def __init__(
