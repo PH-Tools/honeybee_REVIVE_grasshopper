@@ -70,12 +70,13 @@ def _run_subprocess(commands):
     return stdout, stderr
 
 
-def run_ADORB_calculator(_hbjson_filepath, _results_file_path, *args, **kwargs):
-    # type: (str, str, list, dict) -> tuple[str, bytes, bytes]
+def run_ADORB_calculator(_hbjson_filepath, _sql_path, _results_file_path, *args, **kwargs):
+    # type: (str, str,str, list, dict) -> tuple[str, bytes, bytes]
     """Using Ladybug's Python-3 interpreter: read in aa HBJSON model file and calculate the ADORB costs.
 
     ### Arguments:
         * _hbjson_filepath: File path to the HBJSON model file to calculate ADORB for.
+        * _sql_path: The path to the EnergyPlus SQL file to use for the calculation.
         * _results_file_path: The ADORB Results CSV file path.
         * args: Additional arguments to pass to the subprocess.
         * kwargs: Additional keyword arguments to pass to the subprocess.
@@ -104,6 +105,7 @@ def run_ADORB_calculator(_hbjson_filepath, _results_file_path, *args, **kwargs):
         hb_folders.python_exe_path,  # -- The interpreter to use
         py3_script_filepath,  # --------- The script to run
         _hbjson_filepath,  # ------------ The HBJSON file to read in
+        _sql_path,  # ------------------- The SQL file to use for the calculation
         _results_file_path,  # ---------- The CSV file path to save the results to
     ]
     stdout, stderr = _run_subprocess(commands)
@@ -123,14 +125,15 @@ def _using_python_2():
     return sys.version_info < (3, 0)
 
 
-def write_hb_model_to_json_file(_hb_model, _hbjson_output_file_path):
-    # type: (Model, str) -> str
+def write_hb_model_to_json_file(_hb_model, _sql_path, _hbjson_output_file_path):
+    # type: (Model, str, str) -> str
     """Write out a HB Model to a JSON file.
 
     Adapted from the Grasshopper "Honeybee - HB Dump Objects" Component
 
     ### Arguments:
         * _hb_model: The Honeybee Model to write to a JSON file.
+        * _sql_path: The path to the EnergyPlus SQL file to use for the calculation.
         * _hbjson_output_file_path: The full file path to write the JSON file to.
     ### Returns:
         * str: The full file path to the JSON file written.
@@ -160,8 +163,8 @@ def write_hb_model_to_json_file(_hb_model, _hbjson_output_file_path):
 
 
 @contextmanager
-def model_as_json_file(_hb_model, _hbjson_output_file_path, _DEBUG=False):
-    # type: (Model, str, bool) -> Generator[str, None, None]
+def model_as_json_file(_hb_model, _sql_path, _hbjson_output_file_path, _DEBUG=False):
+    # type: (Model, str, str, bool) -> Generator[str, None, None]
     """Create a temporary JSON file for a HB Model. Removes the file at the end of use.
 
     ### Usage:
@@ -170,13 +173,14 @@ def model_as_json_file(_hb_model, _hbjson_output_file_path, _DEBUG=False):
 
     ### Arguments:
         * _hb_model: The Honeybee Model to write to a JSON file.
+        * _sql_path: The path to the EnergyPlus SQL file to use for the calculation.
         * _hbjson_output_file_path: The full file path to write the JSON file to.
     ### Yields:
         * str: The full file path to the JSON file written.
     """
 
     try:
-        hb_json_file = write_hb_model_to_json_file(_hb_model, _hbjson_output_file_path)
+        hb_json_file = write_hb_model_to_json_file(_hb_model, _sql_path, _hbjson_output_file_path)
         yield hb_json_file
     finally:
         if _DEBUG:
@@ -197,12 +201,15 @@ def model_as_json_file(_hb_model, _hbjson_output_file_path, _DEBUG=False):
 class GHCompo_CalculateADORBCost(object):
     """GHCompo Interface: HB-REVIVE - Calculate ADORB Costs."""
 
-    def __init__(self, _DEBUG, _IGH, _save_file_name, _save_dir, _hb_model, _calculate_ADORB, *args, **kwargs):
-        # type: (bool, gh_io.IGH, str | None, str | None, Model, bool, list, dict) -> None
+    def __init__(
+        self, _DEBUG, _IGH, _save_file_name, _save_dir, _sql_path, _hb_model, _calculate_ADORB, *args, **kwargs
+    ):
+        # type: (bool, gh_io.IGH, str | None, str | None, str | None, Model, bool, list, dict) -> None
         self.DEBUG = _DEBUG
         self.IGH = _IGH
         self._save_filename = _save_file_name
         self.save_dir = _save_dir or os.path.join(hb_folders.default_simulation_folder, "REVIVE")
+        self.sql_path = _sql_path
         self.hb_model = _hb_model
         self.calculate_ADORB = _calculate_ADORB
 
@@ -240,15 +247,18 @@ class GHCompo_CalculateADORBCost(object):
     def run(self):
         # type: () -> tuple[bytes | None, bytes | None, str | None]
         print("Running ADORB cost calculation...")
-        if not self.calculate_ADORB or not self.hb_model:
+        if not self.calculate_ADORB or not self.hb_model or not self.sql_path:
             return (None, None, None)
 
         if not os.path.isdir(self.save_dir):
             os.makedirs(self.save_dir)
 
-        with model_as_json_file(self.hb_model, self.hbjson_output_file_path, self.DEBUG) as hb_json_filepath:
+        with model_as_json_file(
+            self.hb_model, self.sql_path, self.hbjson_output_file_path, self.DEBUG
+        ) as hb_json_filepath:
             results_csv_file_path, stdout, stderr = run_ADORB_calculator(
                 _hbjson_filepath=hb_json_filepath,
+                _sql_path=self.sql_path,
                 _results_file_path=self.csv_output_file_path,
             )
             self.give_user_warnings(stdout)

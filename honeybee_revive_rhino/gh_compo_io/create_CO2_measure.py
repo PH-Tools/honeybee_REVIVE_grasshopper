@@ -15,7 +15,7 @@ except ImportError:
     raise ImportError("\nFailed to import honeybee_ph_utils")
 
 try:
-    from honeybee_revive.CO2_measures import CO2ReductionMeasure, CO2ReductionMeasureType
+    from honeybee_revive.CO2_measures import CO2ReductionMeasure
 except ImportError:
     raise ImportError("\nFailed to import honeybee_revive")
 
@@ -26,7 +26,7 @@ class GHCompo_CreateCO2ReductionMeasure(object):
         # type: (gh_io.IGH, str, str, int, float, float, str, float, list, dict) -> None
         self.IGH = _IGH
         self.name = _name or "unnamed_measure"
-        self.measure_type = CO2ReductionMeasureType(input_to_int(_type) or 1)
+        self.measure_type = "PERFORMANCE"
         self.year = _year or 0
         self.cost = _cost or 0.0
         self.kg_CO2 = _kg_CO2 or 0.0
