@@ -70,23 +70,24 @@ def _run_subprocess(commands):
     return stdout, stderr
 
 
-def run_ADORB_calculator(_hbjson_filepath, _sql_path, _results_file_path, *args, **kwargs):
-    # type: (str, str,str, list, dict) -> tuple[str, bytes, bytes]
+def run_ADORB_calculator(_hbjson_filepath, _sql_path, _results_file_path, _tables_folder_path, *args, **kwargs):
+    # type: (str, str, str, str, list, dict) -> tuple[bytes, bytes, str, str]
     """Using Ladybug's Python-3 interpreter: read in aa HBJSON model file and calculate the ADORB costs.
 
     ### Arguments:
         * _hbjson_filepath: File path to the HBJSON model file to calculate ADORB for.
         * _sql_path: The path to the EnergyPlus SQL file to use for the calculation.
         * _results_file_path: The ADORB Results CSV file path.
+        * _tables_folder_path: The folder path to save the tables to.
         * args: Additional arguments to pass to the subprocess.
         * kwargs: Additional keyword arguments to pass to the subprocess.
 
     ### Returns:
         * tuple
-            - [0] (str): The path to the output results CSV parent folder.
-            - [1] (str): The output results CSV filename.
-            - [2] (bytes): The stdout from the subprocess.
-            - [3] (bytes): The stderr from the subprocess.
+            - [0] (bytes): The stdout from the subprocess.
+            - [1] (bytes): The stderr from the subprocess.
+            - [2] (str): The path to the output results CSV parent folder.
+            - [3] (str): The path to the output folder with the preview tables.
     """
 
     # -- Specify the path to the actual subprocess python-3 script to run
@@ -100,19 +101,20 @@ def run_ADORB_calculator(_hbjson_filepath, _sql_path, _results_file_path, *args,
     # -- Read in the HBJSON, convert to WUFI XML
     print("Using Python-3 interpreter: '{}'".format(hb_folders.python_exe_path))
     print("Running Python-3 script: '{}'".format(py3_script_filepath))
-    print("Using the HBJSON file: '{}'".format(_hbjson_filepath))
+    print("With the HBJSON file: '{}'".format(_hbjson_filepath))
     commands = [
         hb_folders.python_exe_path,  # -- The interpreter to use
         py3_script_filepath,  # --------- The script to run
         _hbjson_filepath,  # ------------ The HBJSON file to read in
         _sql_path,  # ------------------- The SQL file to use for the calculation
         _results_file_path,  # ---------- The CSV file path to save the results to
+        _tables_folder_path,  # ----------- The folder path to save the tables to
     ]
     stdout, stderr = _run_subprocess(commands)
 
     # -------------------------------------------------------------------------
     # -- return the dir and filename of the xml created
-    return _results_file_path, stdout, stderr
+    return stdout, stderr, _results_file_path, _tables_folder_path
 
 
 # -----------------------------------------------------------------------------
@@ -239,29 +241,36 @@ class GHCompo_CalculateADORBCost(object):
         return os.path.join(self.save_dir, "{}.csv".format(self.save_filename))
 
     @property
+    def tables_folder_path(self):
+        return os.path.join(self.save_dir, "{}_tables".format(self.save_filename))
+
+    @property
     def hbjson_output_file_path(self):
         # type: () -> str
         """Return the full output HBJSON file path."""
         return os.path.join(self.save_dir, "{}.hbjson".format(self.save_filename))
 
     def run(self):
-        # type: () -> tuple[bytes | None, bytes | None, str | None]
+        # type: () -> tuple[str | None, str | None]
         print("Running ADORB cost calculation...")
         if not self.calculate_ADORB or not self.hb_model or not self.sql_path:
-            return (None, None, None)
+            return (None, None)
 
         if not os.path.isdir(self.save_dir):
+            print("Creating folder: {}".format(self.save_dir))
             os.makedirs(self.save_dir)
 
         with model_as_json_file(
             self.hb_model, self.sql_path, self.hbjson_output_file_path, self.DEBUG
         ) as hb_json_filepath:
-            results_csv_file_path, stdout, stderr = run_ADORB_calculator(
+            stdout, stderr, results_csv_file_path, tables_folder_path = run_ADORB_calculator(
                 _hbjson_filepath=hb_json_filepath,
                 _sql_path=self.sql_path,
                 _results_file_path=self.csv_output_file_path,
+                _tables_folder_path=self.tables_folder_path,
             )
             self.give_user_warnings(stdout)
             print("ADORB costs output to: {}".format(self.csv_output_file_path))
+            print("ADORB tables output to: {}".format(self.tables_folder_path))
 
-        return stdout, stderr, results_csv_file_path
+        return results_csv_file_path, tables_folder_path
