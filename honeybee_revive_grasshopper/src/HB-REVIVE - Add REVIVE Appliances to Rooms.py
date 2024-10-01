@@ -25,7 +25,7 @@ NOTE that ALL of the appliances will be added to ALL of the rooms. So you
 may want to break out the rooms and assign the appliances separately (for instance
 if you are assigning a Cooktop, be sure that this gets assigned only to one room.)
 -
-EM September 20, 2024
+EM October 1, 2024
     Args:
         _appliances: (list[Process]) The appliances to add to each of the 
             Honeybee-Rooms
@@ -43,9 +43,9 @@ import ghpythonlib.components as ghc
 import Grasshopper as gh
 
 try:
-    from honeybee_ph_rhino import gh_io
+    from ph_gh_component_io import gh_io
 except ImportError as e:
-    raise ImportError('\nFailed to import honeybee_ph_rhino:\n\t{}'.format(e))
+    raise ImportError('\nFailed to import ph_gh_component_io:\n\t{}'.format(e))
 
 try:
     from honeybee_revive_rhino import gh_compo_io
@@ -59,7 +59,7 @@ reload(honeybee_revive_rhino._component_info_)
 ghenv.Component.Name = "HB-REVIVE - Add REVIVE Appliances to Rooms"
 DEV = honeybee_revive_rhino._component_info_.set_component_params(ghenv, dev=False)
 if DEV:
-    from honeybee_revive_rhino.gh_compo_io import add_appliances_to_rooms as gh_compo_io
+    from honeybee_revive_rhino.gh_compo_io.equipment import appliances_add_to_room as gh_compo_io
     reload(gh_compo_io)
     
 # ------------------------------------------------------------------------------

@@ -22,7 +22,7 @@
 """
 Calculate the Phius-REVIVE ADORB costs for the Honeybee-Model.
 -
-EM September 28, 2024
+EM October 1, 2024
     Args:
 
         _name_: (str) An optional variant name to be used for all of the output 
@@ -56,9 +56,9 @@ import ghpythonlib.components as ghc
 import Grasshopper as gh
 
 try:
-    from honeybee_ph_rhino import gh_io
+    from ph_gh_component_io import gh_io
 except ImportError as e:
-    raise ImportError('\nFailed to import honeybee_ph_rhino:\n\t{}'.format(e))
+    raise ImportError('\nFailed to import ph_gh_component_io:\n\t{}'.format(e))
 
 try:
     from honeybee_revive_rhino import gh_compo_io
@@ -72,7 +72,7 @@ reload(honeybee_revive_rhino._component_info_)
 ghenv.Component.Name = "HB-REVIVE - Calculate ADORB Costs"
 DEV = honeybee_revive_rhino._component_info_.set_component_params(ghenv, dev=False)
 if DEV:
-    from honeybee_revive_rhino.gh_compo_io import calc_ADORB_costs as gh_compo_io
+    from honeybee_revive_rhino.gh_compo_io.adorb import calc_ADORB_costs as gh_compo_io
     reload(gh_compo_io)
     
 

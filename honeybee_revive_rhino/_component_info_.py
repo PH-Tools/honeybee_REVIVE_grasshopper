@@ -32,8 +32,8 @@ COMPONENT_PARAMS = {
         "Category": CATEGORY,
         "SubCategory": 1,
     },
-    "HB-REVIVE - Set Material REVIVE Properties": {
-        "NickName": "Set Material REVIVE Properties",
+    "HB-REVIVE - Set REVIVE Material Properties": {
+        "NickName": "Set REVIVE Material Properties",
         "Message": RELEASE_VERSION,
         "Category": CATEGORY,
         "SubCategory": 1,
@@ -44,8 +44,8 @@ COMPONENT_PARAMS = {
         "Category": CATEGORY,
         "SubCategory": 1,
     },
-    "HB-REVIVE - Set Appliance REVIVE Properties": {
-        "NickName": "Set Appliance REVIVE Properties",
+    "HB-REVIVE - Set REVIVE Appliance Properties": {
+        "NickName": "Set REVIVE Appliance Properties",
         "Message": RELEASE_VERSION,
         "Category": CATEGORY,
         "SubCategory": 1,
@@ -68,8 +68,8 @@ COMPONENT_PARAMS = {
         "Category": CATEGORY,
         "SubCategory": 1,
     },
-    "HB-REVIVE - Set Room REVIVE Lighting Properties": {
-        "NickName": "Set Room REVIVE Lighting Properties",
+    "HB-REVIVE - Set REVIVE Room Lighting Properties": {
+        "NickName": "Set REVIVE Room Lighting Properties",
         "Message": RELEASE_VERSION,
         "Category": CATEGORY,
         "SubCategory": 1,
@@ -80,8 +80,8 @@ COMPONENT_PARAMS = {
         "Category": CATEGORY,
         "SubCategory": 1,
     },
-    "HB-REVIVE - Set PV-Shade REVIVE Properties": {
-        "NickName": "Set PV-Shade REVIVE Properties",
+    "HB-REVIVE - Set REVIVE PV-Shade Properties": {
+        "NickName": "Set REVIVE PV-Shade Properties",
         "Message": RELEASE_VERSION,
         "Category": CATEGORY,
         "SubCategory": 1,

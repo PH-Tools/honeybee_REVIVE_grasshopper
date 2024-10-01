@@ -23,7 +23,7 @@
 Create a new Phius-REVIVE CO2 Reduction Measure which can be applied to a
 Honeybee Model. Note that a Honeybee Model can have several measures applied.
 -
-EM September 18, 2024
+EM October 1, 2024
     Args:
         _name: (str) The name to give to the CO2-Reduction-Measure
 
@@ -54,9 +54,9 @@ import ghpythonlib.components as ghc
 import Grasshopper as gh
 
 try:
-    from honeybee_ph_rhino import gh_io
+    from ph_gh_component_io import gh_io
 except ImportError as e:
-    raise ImportError('\nFailed to import honeybee_ph_rhino:\n\t{}'.format(e))
+    raise ImportError('\nFailed to import ph_gh_component_io:\n\t{}'.format(e))
 
 try:
     from honeybee_revive_rhino import gh_compo_io
@@ -70,7 +70,7 @@ reload(honeybee_revive_rhino._component_info_)
 ghenv.Component.Name = "HB-REVIVE - Create CO2 Reduction Measure"
 DEV = honeybee_revive_rhino._component_info_.set_component_params(ghenv, dev=False)
 if DEV:
-    from honeybee_revive_rhino.gh_compo_io import create_CO2_measure as gh_compo_io
+    from honeybee_revive_rhino.gh_compo_io.model import create_CO2_measure as gh_compo_io
     reload(gh_compo_io)
 
 # ------------------------------------------------------------------------------

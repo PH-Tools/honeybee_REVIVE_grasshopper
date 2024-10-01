@@ -1,2 +1,40 @@
+[project]
+name = "honeybee-REVIVE-Grasshopper"
+version = "0.0.1"
+description = "Rhino/Grasshopper components for the honeybee-REVIVE library."
+readme = "README.md"
+requires-python = ">2.7"
+license = { text = "GNU" }
+authors = [{ name = "Ed May", email = "phtools@bldgtyp.com" }]
+maintainers = [{ name = "Ed May", email = "phtools@bldgtyp.com" }]
+classifiers = [
+    "Programming Language :: Python :: 2",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Operating System :: OS Independent",
+]
+keywords = [
+    "Honeybee",
+    "Honeybee-Energy",
+    "Passive House",
+    "Building Retrofit",
+    "Architecture",
+    "Energy Modeling",
+    "PHIUS",
+    "ADORB",
+    "Carbon Emissions",
+    "Embodied Carbon",
+    "Embodied CO2",
+    "Rhino",
+    "Grasshopper",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["black", "isort", "Grasshopper-stubs", "Rhino-stubs"]
+
+[project.urls]
+homepage = "https://www.passivehousetools.com/"
+repository = "https://github.com/PH-Tools/honeybee_REVIVE_grasshopper"
+
 [tool.black]
 line-length = 120

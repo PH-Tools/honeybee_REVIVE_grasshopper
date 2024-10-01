@@ -22,7 +22,7 @@
 """
 Add Phius-REVIVE-HVAC-Equipment-Properties onto Honeybee-Rooms.
 -
-EM September 21, 2024
+EM October 1, 2024
     Args:
         _equipment_properties: (list[]) The new Phius-REVIVE-HVAC-Equiment-Properties
             to add to the Honeybee-Rooms.
@@ -42,9 +42,9 @@ import ghpythonlib.components as ghc
 import Grasshopper as gh
 
 try:
-    from honeybee_ph_rhino import gh_io
+    from ph_gh_component_io import gh_io
 except ImportError as e:
-    raise ImportError('\nFailed to import honeybee_ph_rhino:\n\t{}'.format(e))
+    raise ImportError('\nFailed to import ph_gh_component_io:\n\t{}'.format(e))
 
 try:
     from honeybee_revive_rhino import gh_compo_io
@@ -58,7 +58,7 @@ reload(honeybee_revive_rhino._component_info_)
 ghenv.Component.Name = "HB-REVIVE - Add REVIVE HVAC Equipment Properties to Rooms"
 DEV = honeybee_revive_rhino._component_info_.set_component_params(ghenv, dev=False)
 if DEV:
-    from honeybee_revive_rhino.gh_compo_io import add_hvac_properties_to_rooms as gh_compo_io
+    from honeybee_revive_rhino.gh_compo_io.equipment import hvac_add_properties_to_room as gh_compo_io
     reload(gh_compo_io)
     
 # ------------------------------------------------------------------------------

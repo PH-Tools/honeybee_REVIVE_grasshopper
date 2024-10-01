@@ -22,7 +22,7 @@
 """
 Add one or more Phius-REVIVE CO2-Reduction-Measures to a Honeybee-Model.
 -
-EM September 18, 2024
+EM October 1, 2024
     Args:
         _measures: (list[Measures]) A list of all of the Phius-REVIVE 
             CO2-Reduction-Measures that you would like to add to the Honeybee-Model.
@@ -42,9 +42,9 @@ import ghpythonlib.components as ghc
 import Grasshopper as gh
 
 try:
-    from honeybee_ph_rhino import gh_io
+    from ph_gh_component_io import gh_io
 except ImportError as e:
-    raise ImportError('\nFailed to import honeybee_ph_rhino:\n\t{}'.format(e))
+    raise ImportError('\nFailed to import ph_gh_component_io:\n\t{}'.format(e))
 
 try:
     from honeybee_revive_rhino import gh_compo_io
@@ -58,7 +58,7 @@ reload(honeybee_revive_rhino._component_info_)
 ghenv.Component.Name = "HB-REVIVE - Add CO2 Reduction Measures to Model"
 DEV = honeybee_revive_rhino._component_info_.set_component_params(ghenv, dev=False)
 if DEV:
-    from honeybee_revive_rhino.gh_compo_io import add_CO2_measures_to_model as gh_compo_io
+    from honeybee_revive_rhino.gh_compo_io.model import add_CO2_measures_to_model as gh_compo_io
     reload(gh_compo_io)
     
 # ------------------------------------------------------------------------------
