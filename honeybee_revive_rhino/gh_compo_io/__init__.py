@@ -4,3 +4,4 @@ from honeybee_revive_rhino.gh_compo_io.equipment import *
 from honeybee_revive_rhino.gh_compo_io.standards import *
 from honeybee_revive_rhino.gh_compo_io.model import *
 from honeybee_revive_rhino.gh_compo_io.adorb import *
+from honeybee_revive_rhino.gh_compo_io.resiliency import *

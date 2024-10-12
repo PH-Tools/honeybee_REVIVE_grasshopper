@@ -110,15 +110,34 @@ COMPONENT_PARAMS = {
         "Category": CATEGORY,
         "SubCategory": 1,
     },
+    # -- 05 ADORB
+    "HB-REVIVE - Calculate ADORB Costs": {
+        "NickName": "Calculate ADORB Costs",
+        "Message": RELEASE_VERSION,
+        "Category": CATEGORY,
+        "SubCategory": 2,
+    },
     "HB-REVIVE - Set Simulation Output Variables": {
         "NickName": "Set Simulation Output Variables",
         "Message": RELEASE_VERSION,
         "Category": CATEGORY,
         "SubCategory": 1,
     },
-    # -- 02 ADORB
-    "HB-REVIVE - Calculate ADORB Costs": {
-        "NickName": "Calculate ADORB Costs",
+    # -- 06 RESILIENCY
+    "HB-REVIVE - Create Resiliency EPW": {
+        "NickName": "Create Resiliency EPW",
+        "Message": RELEASE_VERSION,
+        "Category": CATEGORY,
+        "SubCategory": 2,
+    },
+    "HB-REVIVE - Calculate Dew-Point Temp": {
+        "NickName": "Calculate Dew-Point Temp",
+        "Message": RELEASE_VERSION,
+        "Category": CATEGORY,
+        "SubCategory": 2,
+    },
+    "HB-REVIVE - Set Resiliency Program": {
+        "NickName": "Set Resiliency Program",
         "Message": RELEASE_VERSION,
         "Category": CATEGORY,
         "SubCategory": 2,

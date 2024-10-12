@@ -93,7 +93,6 @@ def calc_occupancy(_number_dwellings, _number_bedrooms):
 
 
 class GHCompo_CreateReviveResidentialProgram(object):
-    icfa_m2 = validators.UnitM2("icfa_m2", 0)
     number_bedrooms = validators.IntegerPositiveValueOrZero("number_bedrooms", 0)
     number_dwellings = validators.IntegerPositiveValueOrZero("number_dwellings", 1)
 
@@ -104,8 +103,11 @@ class GHCompo_CreateReviveResidentialProgram(object):
         self.number_bedrooms = _number_bedrooms
         self.base_program = _base_program
 
-        v, u = parse_input(self.value_with_area_unit(_icfa) or 0)
-        self.icfa_m2 = Unit(v, u or self.rh_doc_local_area_unit).as_a("M2").value
+        # -- Figure out the input iCFA in M2
+        _icfa_input_value, _icfa_input_unit = parse_input(self.value_with_area_unit(_icfa) or 0)
+        _icfa_m2 = Unit(_icfa_input_value, (_icfa_input_unit or self.rh_doc_local_area_unit)).as_a("M2").value
+        print("Converting: {} {} iCFA -> {} M2".format(_icfa_input_value, _icfa_input_unit, _icfa_m2))
+        self.icfa_m2 = _icfa_m2
 
     @property
     def rh_doc_unit_type_abbreviation(self):
