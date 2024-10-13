@@ -117,8 +117,8 @@ COMPONENT_PARAMS = {
         "Category": CATEGORY,
         "SubCategory": 2,
     },
-    "HB-REVIVE - Set Simulation Output Variables": {
-        "NickName": "Set Simulation Output Variables",
+    "HB-REVIVE - Set ADORB Simulation Output Variables": {
+        "NickName": "Set ADORB Simulation Output Variables",
         "Message": RELEASE_VERSION,
         "Category": CATEGORY,
         "SubCategory": 1,
@@ -138,6 +138,12 @@ COMPONENT_PARAMS = {
     },
     "HB-REVIVE - Set Resiliency Program": {
         "NickName": "Set Resiliency Program",
+        "Message": RELEASE_VERSION,
+        "Category": CATEGORY,
+        "SubCategory": 2,
+    },
+    "HB-REVIVE - Set Resiliency Simulation Output Variables": {
+        "NickName": "Set Resiliency Simulation Output Variables",
         "Message": RELEASE_VERSION,
         "Category": CATEGORY,
         "SubCategory": 2,
