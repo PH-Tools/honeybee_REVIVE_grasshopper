@@ -20,18 +20,19 @@
 # @license GPL-3.0+ <http://spdx.org/licenses/GPL-3.0+>
 #
 """
-Setup the PH-REVIVE Simualtion Output variables required.
+Generate a series of graphs with the Phius-REVIVE Resiliency data such as 
+air-temp, RH%, and SET Temperatures. 
 -
-EM October 1, 2024
+EM October 14, 2024
     Args:
-        base_sim_output_: An optional Honeybee-Energy simulation output object to 
-            serve as the starting point for the sim_output object returned by 
-            this component. All of the required "REVIVE' output names will simply 
-            be added to this initial starting object.
+        _folder_: (Optional) An optional path to a folder to save the graphs 
+            to. If none is provided, the default Ladbybug Tools folder will be 
+            used as the save folder.
+
+        _sql: The SQL file path from the Honeybee-Energy 'HB Model to OSM' component. 
+
     Returns:
-        sim_output: A SimulationOutput object that can be connected to the
-            "HB Simulation Parameter" component in order to specify which
-            types of outputs should be written from EnergyPlus. 
+        output_: The path to the output files.
 """
 
 import scriptcontext as sc
@@ -54,10 +55,10 @@ except ImportError as e:
 # ------------------------------------------------------------------------------
 import honeybee_revive_rhino._component_info_
 reload(honeybee_revive_rhino._component_info_)
-ghenv.Component.Name = "HB-REVIVE - Set Simulation Output Variables"
+ghenv.Component.Name = "HB-REVIVE - Create Resiliency Output Files"
 DEV = honeybee_revive_rhino._component_info_.set_component_params(ghenv, dev=False)
 if DEV:
-    from honeybee_revive_rhino.gh_compo_io.adorb import set_output_variables as gh_compo_io
+    from honeybee_revive_rhino.gh_compo_io.resiliency import create_output as gh_compo_io
     reload(gh_compo_io)
     
 
@@ -66,8 +67,9 @@ if DEV:
 IGH = gh_io.IGH( ghdoc, ghenv, sc, rh, rs, ghc, gh )
 
 # ------------------------------------------------------------------------------
-gh_compo_interface = gh_compo_io.GHCompo_SetSimulationOutputVariables(
+gh_compo_interface = gh_compo_io.GHCompo_CreateResiliencyOutputFiles(
         IGH,
-        base_sim_output_,
+        _sql,
+        _folder_,
 )
-sim_output_ = gh_compo_interface.run()
+output_ = gh_compo_interface.run()

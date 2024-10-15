@@ -25,7 +25,7 @@ def names_match(_name_1, _name_2):
     return str(_name_1).lower().replace(" ", "_") == str(_name_2).lower().replace(" ", "_")
 
 
-def create_schedules_dict(_standards_dir):
+def load_schedules_from_standards(_standards_dir):
     # type: (str) -> dict[str, ScheduleRuleset]
     """Create a dictionary of all schedules in the standards directory."""
 
@@ -67,4 +67,4 @@ def load_program_and_schedules(_standards_dir, _program_name):
     # type: (str, str) -> ProgramType | None
     """Load a Revive Program and Schedules from the default standards directory."""
 
-    return load_program_from_standards_dir(_standards_dir, _program_name, create_schedules_dict(_standards_dir))
+    return load_program_from_standards_dir(_standards_dir, _program_name, load_schedules_from_standards(_standards_dir))

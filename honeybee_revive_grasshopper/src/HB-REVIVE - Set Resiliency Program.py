@@ -28,10 +28,10 @@ This new program will:
 - Set the Occupancy Schedule to 'Constant' (full occupancy)
 - Turn off all existing Lighting, Process, and Electrical Loads
 - Set electrical 'critical' loads to 33W/dwelling (critical loads = 1 fridge)
-- Turn off all Heating/Cooling equipment
+- Turn off all Heating/Cooling equipment for the 'outage' periods
 - Reset the Ventilation flow rates to 5cfm (8.5 m3/h) / person
 -
-EM October 12, 2024
+EM October 14, 2024
     Args:
         _hb_obj: (list[Room] | Model) The Honeybee-Rooms or a Honeybee-Model.
 
@@ -93,5 +93,8 @@ gh_compo_interface = gh_compo_io.GHCompo_SetResiliencyProgram(
         _total_num_dwelling_units,
         _additional_elec_equip,
         _program_,
+        _winter_run_period,
+        _summer_run_period,
 )
-hb_obj_, program_ = gh_compo_interface.run()
+epw_file_ = _epw_file
+hb_obj_, program_, = gh_compo_interface.run()

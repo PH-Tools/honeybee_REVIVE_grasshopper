@@ -5,7 +5,6 @@
 
 import json
 import os
-import subprocess
 import sys
 from contextlib import contextmanager
 
@@ -25,62 +24,27 @@ try:
 except ImportError as e:
     raise ImportError("\nFailed to import ph_gh_component_io:\n\t{}".format(e))
 
+try:
+    from honeybee_revive_rhino.gh_compo_io.run_subprocess import run_subprocess
+except ImportError as e:
+    raise ImportError("\nFailed to import run_subprocess:\n\t{}".format(e))
+
 
 # -----------------------------------------------------------------------------
 # -- Python-3 ADORB Runner Functions
 
 
-def _run_subprocess(commands):
-    # type: (list[str]) -> tuple[bytes, bytes]
-    """Run a python subprocess.Popen, using the supplied commands
-
-    ### Arguments:
-        * commands: A list of the commands to pass to Popen
-    ### Returns:
-        * tuple:
-            * [0] (bytes): stdout
-            * [1] (bytes): stderr
-    """
-    # -- Create a new PYTHONHOME to avoid the Rhino-8 issues
-    CUSTOM_ENV = os.environ.copy()
-    CUSTOM_ENV["PYTHONHOME"] = ""
-
-    use_shell = True if os.name == "nt" else False
-
-    process = subprocess.Popen(
-        commands,
-        stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE,
-        shell=use_shell,
-        env=CUSTOM_ENV,
-    )
-
-    stdout, stderr = process.communicate()
-
-    if stderr:
-        if "Defaulting to Windows directory." in str(stderr):
-            print("WARNING: {}".format(stderr))
-        else:
-            print(stderr)
-            raise Exception(stderr)
-
-    for _ in str(stdout).split("\\n"):
-        print(_)
-
-    return stdout, stderr
-
-
 def run_ADORB_calculator(_hbjson_filepath, _sql_path, _results_file_path, _tables_folder_path, *args, **kwargs):
     # type: (str, str, str, str, list, dict) -> tuple[bytes, bytes, str, str]
-    """Using Ladybug's Python-3 interpreter: read in aa HBJSON model file and calculate the ADORB costs.
+    """Using Ladybug's Python-3 interpreter: read in a HBJSON model file and calculate the ADORB costs.
 
     ### Arguments:
         * _hbjson_filepath: File path to the HBJSON model file to calculate ADORB for.
         * _sql_path: The path to the EnergyPlus SQL file to use for the calculation.
         * _results_file_path: The ADORB Results CSV file path.
         * _tables_folder_path: The folder path to save the tables to.
-        * args: Additional arguments to pass to the subprocess.
-        * kwargs: Additional keyword arguments to pass to the subprocess.
+        * args: Additional arguments to pass to the subprocess. (ignored)
+        * kwargs: Additional keyword arguments to pass to the subprocess. (ignored)
 
     ### Returns:
         * tuple
@@ -108,9 +72,9 @@ def run_ADORB_calculator(_hbjson_filepath, _sql_path, _results_file_path, _table
         _hbjson_filepath,  # ------------ The HBJSON file to read in
         _sql_path,  # ------------------- The SQL file to use for the calculation
         _results_file_path,  # ---------- The CSV file path to save the results to
-        _tables_folder_path,  # ----------- The folder path to save the tables to
+        _tables_folder_path,  # --------- The folder path to save the tables to
     ]
-    stdout, stderr = _run_subprocess(commands)
+    stdout, stderr = run_subprocess(commands)
 
     # -------------------------------------------------------------------------
     # -- return the dir and filename of the xml created
@@ -206,7 +170,7 @@ class GHCompo_CalculateADORBCost(object):
     def __init__(
         self, _DEBUG, _IGH, _save_file_name, _save_dir, _sql_path, _hb_model, _calculate_ADORB, *args, **kwargs
     ):
-        # type: (bool, gh_io.IGH, str | None, str | None, str | None, Model, bool, list, dict) -> None
+        # type: (bool, gh_io.IGH, str, str, str, Model, bool, list, dict) -> None
         self.DEBUG = _DEBUG
         self.IGH = _IGH
         self._save_filename = _save_file_name
@@ -250,10 +214,18 @@ class GHCompo_CalculateADORBCost(object):
         """Return the full output HBJSON file path."""
         return os.path.join(self.save_dir, "{}.hbjson".format(self.save_filename))
 
+    @property
+    def ready(self):
+        # type: () -> bool
+        """Return True if the component is ready to run."""
+        if not self.calculate_ADORB or not self.hb_model or not self.sql_path:
+            return False
+        return True
+
     def run(self):
         # type: () -> tuple[str | None, str | None]
         print("Running ADORB cost calculation...")
-        if not self.calculate_ADORB or not self.hb_model or not self.sql_path:
+        if not self.ready:
             return (None, None)
 
         if not os.path.isdir(self.save_dir):

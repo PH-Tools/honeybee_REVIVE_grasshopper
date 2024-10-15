@@ -9,6 +9,7 @@ import os
 
 try:
     from ladybug.stat import STAT
+    from ladybug.dt import DateTime
     from ladybug.epw import EPW
     from ladybug.datacollection import HourlyContinuousCollection
     from ladybug.config import folders
@@ -108,11 +109,19 @@ class GHCompo_CreateResiliencyEPWFile(object):
         )
 
     def check_extreme_week(self, extreme_week):
-        # type: (AnalysisPeriod | None) -> None
+        # type: (AnalysisPeriod | None) -> AnalysisPeriod
         if not extreme_week or len(extreme_week) != 168:
             raise ValueError("The extreme week should be 168 hours long. Got: {}".format(len(extreme_week or [])))
         else:
-            print("Using Extreme Week: {}".format(extreme_week))
+            # -- Add a day to the start and end of the period
+            # -- this is needed to ensure we have the right starting conditions (temp, RH, etc...)
+            expanded_extreme_week = AnalysisPeriod.from_start_end_datetime(
+                DateTime.from_hoy(extreme_week._st_time.hoy - 24),
+                DateTime.from_hoy(extreme_week._end_time.hoy + 24),
+                timestep=extreme_week.timestep,
+            )
+            print("Using Extreme Week: {}".format(expanded_extreme_week))
+            return expanded_extreme_week
 
     def run(self):
         # type: () -> tuple[str | None, AnalysisPeriod | None, AnalysisPeriod | None]
@@ -123,8 +132,8 @@ class GHCompo_CreateResiliencyEPWFile(object):
         # -- Load in the STAT and EPW files
         lb_epw = EPW(self.epw_file)
         lb_stat = STAT(self.sat_file)
-        self.check_extreme_week(lb_stat.extreme_cold_week)
-        self.check_extreme_week(lb_stat.extreme_hot_week)
+        winter_period = self.check_extreme_week(lb_stat.extreme_cold_week)
+        summer_period = self.check_extreme_week(lb_stat.extreme_hot_week)
 
         # --------------------------------------------------------------------------------------------------------------
         # -- Pull out the STAT file's Peak Winter and Peak Summer Weeks from the Ladybug EPW file
@@ -164,4 +173,4 @@ class GHCompo_CreateResiliencyEPWFile(object):
         epw_file_ = os.path.join(self.folder, _file_name_)
         new_epw.save(epw_file_)
 
-        return epw_file_, lb_stat.extreme_cold_week, lb_stat.extreme_hot_week
+        return epw_file_, winter_period, summer_period

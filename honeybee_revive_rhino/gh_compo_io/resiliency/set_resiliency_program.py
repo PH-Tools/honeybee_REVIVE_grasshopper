@@ -6,6 +6,12 @@
 import os
 
 try:
+    from ladybug.analysisperiod import AnalysisPeriod
+    from ladybug.dt import Date, DateTime
+except ImportError as e:
+    raise ImportError("\nFailed to import ladybug: {0}".format(e))
+
+try:
     from honeybee.room import Room
     from honeybee.model import Model
 except ImportError as e:
@@ -20,7 +26,10 @@ except ImportError:
 
 try:
     import honeybee_revive_standards
-    from honeybee_revive_rhino.gh_compo_io.standards._load import load_program_and_schedules
+    from honeybee_revive_rhino.gh_compo_io.standards._load import (
+        load_program_and_schedules,
+        load_schedules_from_standards,
+    )
 except ImportError as e:
     raise ImportError("\nFailed to import honeybee_revive_rhino: {0}".format(e))
 
@@ -39,14 +48,18 @@ class GHCompo_SetResiliencyProgram(object):
     num_dwellings = validators.IntegerNonZero("num_dwellings")
     DEFAULT_PROGRAM_NAME = "rv2024_Residence_Resilience"
 
-    def __init__(self, _IGH, _hb_obj, _num_dwellings, _elec_equip, _program, *args, **kwargs):
-        # type: (gh_io.IGH, list[Room | Model], int, list[Process], ProgramType | None, list, dict) -> None
+    def __init__(
+        self, _IGH, _hb_obj, _num_dwellings, _elec_equip, _program, _winter_period, _summer_period, *args, **kwargs
+    ):
+        # type: (gh_io.IGH, list[Room | Model], int, list[Process], ProgramType | None, AnalysisPeriod, AnalysisPeriod, list, dict) -> None
         self.IGH = _IGH
         self.model = None  # type: Model | None
         self.rooms = _hb_obj
         self.num_dwellings = _num_dwellings
         self.elec_equip = _elec_equip
         self.program = _program
+        self.winter_period = _winter_period
+        self.summer_period = _summer_period
 
     @property
     def rooms(self):
@@ -72,7 +85,13 @@ class GHCompo_SetResiliencyProgram(object):
     @property
     def ready(self):
         # type: () -> bool
-        return self.num_dwellings is not None and len(self.rooms) > 0
+        if self.num_dwellings is None:
+            return False
+        if len(self.rooms) == 0:
+            return False
+        if not self.winter_period or not self.summer_period:
+            return False
+        return True
 
     def run(self):
         # type: () -> tuple[list[Room] | Model, ProgramType | None]
@@ -107,18 +126,31 @@ class GHCompo_SetResiliencyProgram(object):
         total_occupancy = 0.0
         for rm in self.rooms:
             rm_area_m2 = convert(rm.floor_area, self.IGH.get_rhino_areas_unit_name(), "M2") or 0.0
-            if not rm_area_m2:
+            if rm_area_m2 is None:
                 self.IGH.warning("Failed to convert room's floor area to M2: {}".format(rm.floor_area))
                 continue
             rm_energy_prop = getattr(rm.properties, "energy")  # type: RoomEnergyProperties
             total_occupancy += rm_energy_prop.people.people_per_area * rm_area_m2
 
-        # 33-W per dwelling as per Phius REVIVE Rules (=1 fridge)
+        # -- Infiltration rate to math the Room's existing infiltration load
+        total_infiltration_m3_s = 0.0
+        total_exposed_area_m2 = 0.0
+        for rm in self.rooms:
+            rm_exposed_area_m2 = convert(rm.exposed_area, self.IGH.get_rhino_areas_unit_name(), "M2") or 0.0
+            if rm_exposed_area_m2 is None:
+                self.IGH.warning("Failed to convert room's exposed-area to M2: {}".format(rm.floor_area))
+                continue
+            rm_energy_prop = getattr(rm.properties, "energy")
+            total_infiltration_m3_s += rm_energy_prop.infiltration.flow_per_exterior_area * rm_exposed_area_m2
+            total_exposed_area_m2 += rm_exposed_area_m2
+        infiltration_per_exposed_area = total_infiltration_m3_s / total_exposed_area_m2
+
+        # -- Set 33-W per dwelling as per Phius REVIVE Rules (=1 fridge)
         total_MEL_wattage = self.num_dwellings * 33.0
         for equip in self.elec_equip:
             total_MEL_wattage += equip.watts
 
-        # 5-CFM per person as per Phius REVIVE Rules
+        # -- Set 5-CFM per person as per Phius REVIVE Rules
         total_vent_cfm = total_occupancy * 5
         total_vent_m3s = convert(total_vent_cfm, "CFM", "M3/S") or 0.0
         vent_m3s_per_person = total_vent_m3s / total_occupancy
@@ -139,6 +171,36 @@ class GHCompo_SetResiliencyProgram(object):
         print("Setting Vent. load to: {:,.1f} CFM [{:.4f} m3s/person]".format(total_vent_cfm, vent_m3s_per_person))
         rv2024_resilience_program.ventilation.flow_per_person = vent_m3s_per_person
 
+        print("Setting Infiltration load to: {:,.6f} m3/s".format(infiltration_per_exposed_area))
+        rv2024_resilience_program.infiltration.flow_per_exterior_area = infiltration_per_exposed_area
+
+        # --------------------------------------------------------------------------------------------------------------
+        # -- Create the Setpoint Schedules based on the Winter and Summer Periods
+        print("Setting the Setpoint Schedules based on the Winter and Summer Periods.")
+        schedules_dict = load_schedules_from_standards(self.standards_dir)
+        heating_off_schedule = schedules_dict["rv2024_HeatingOff"]
+        cooling_off_schedule = schedules_dict["rv2024_CoolingOff"]
+        humid_off_schedule = schedules_dict["rv2024_HumidificationOff"]
+        dehumid_off_schedule = schedules_dict["rv2024_DehumidificationOff"]
+
+        # -- NOTE: Be sure to clip off a day on either end of the analysis period.
+        # -- Heating and Humidification Schedules 'OFF' during outage
+        htg_start = Date.from_doy(DateTime.from_hoy(self.winter_period.st_time.hoy + 24).doy)
+        htg_end = Date.from_doy(DateTime.from_hoy(self.winter_period.end_time.hoy - 24).doy)
+        for heating_rule in heating_off_schedule.to_rules(htg_start, htg_end):
+            rv2024_resilience_program.setpoint.heating_schedule.add_rule(heating_rule)
+        for humid_rule in humid_off_schedule.to_rules(htg_start, htg_end):
+            rv2024_resilience_program.setpoint.humidifying_schedule.add_rule(humid_rule)
+
+        # -- Cooling and Dehumidification Schedules 'OFF' during outage
+        clg_start = DateTime.from_hoy(self.summer_period.st_time.hoy + 24).date
+        clg_end = DateTime.from_hoy(self.summer_period.end_time.hoy - 24).date
+        for cooling_rule in cooling_off_schedule.to_rules(clg_start, clg_end):
+            rv2024_resilience_program.setpoint.cooling_schedule.add_rule(cooling_rule)
+        for dehumid_rule in dehumid_off_schedule.to_rules(clg_start, clg_end):
+            rv2024_resilience_program.setpoint.dehumidifying_schedule.add_rule(dehumid_rule)
+
+        # --------------------------------------------------------------------------------------------------------------
         rv2024_resilience_program.lock()
 
         # --------------------------------------------------------------------------------------------------------------

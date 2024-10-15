@@ -25,7 +25,7 @@ simulations. This modified EPW will has adjustments maded to the outdoor dry-bub
 temperature and the outdoor air dew-point temperature in order to create a more 'stressful'
 climate for the building.
 -
-EM October 12, 2024
+EM October 14, 2024
     Args:
         _epw_file: The original EPW weather file to use as the base.
 
@@ -52,6 +52,12 @@ EM October 12, 2024
 
         epw_file_: The new EPW weather file with values modified to make it more 'stressul' 
             when used during the Phius-REVIVE Resiliency simulations.
+
+        winter_run_period_: The winter-critical-week period which is used for the Phius-REVIVE
+            resiliency assessment.
+        
+        summer_run_period_: The summer-critical-week period which is used for the Phius-REVIVE
+            resiliency assessment.     
 """
 
 import scriptcontext as sc
@@ -97,4 +103,4 @@ gh_compo_interface = gh_compo_io.GHCompo_CreateResiliencyEPWFile(
         _summer_20yr_dew_point_temp,
         _run,
 )
-epw_file_ = gh_compo_interface.run()
+epw_file_, winter_run_period_, summer_run_period_ = gh_compo_interface.run()

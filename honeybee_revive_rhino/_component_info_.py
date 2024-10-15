@@ -148,6 +148,12 @@ COMPONENT_PARAMS = {
         "Category": CATEGORY,
         "SubCategory": 2,
     },
+    "HB-REVIVE - Create Resiliency Output Files": {
+        "NickName": "Create Resiliency Output Files",
+        "Message": RELEASE_VERSION,
+        "Category": CATEGORY,
+        "SubCategory": 2,
+    },
 }
 
 
