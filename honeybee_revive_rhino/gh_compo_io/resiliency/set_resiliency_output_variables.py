@@ -25,6 +25,8 @@ class GHCompo_SetResiliencySimulationOutputVariables(object):
         "Site Outdoor Air Wetbulb Temperature",
         "Site Outdoor Air Humidity Ratio",
         "Site Outdoor Air Relative Humidity",
+        "Zone Heat Index",
+        "Zone Humidity Index",
     ]
 
     def __init__(self, _IGH, _sim_output):

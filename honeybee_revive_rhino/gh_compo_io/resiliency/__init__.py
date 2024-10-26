@@ -3,3 +3,4 @@ from calc_dew_point import GHCompo_CalculateDewPoint
 from set_resiliency_program import GHCompo_SetResiliencyProgram
 from set_resiliency_output_variables import GHCompo_SetResiliencySimulationOutputVariables
 from create_output import GHCompo_CreateResiliencyOutputFiles
+from calc_resiliency_hours import GHCompo_CalcResiliencyHours

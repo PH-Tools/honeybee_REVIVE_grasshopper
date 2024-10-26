@@ -154,6 +154,12 @@ COMPONENT_PARAMS = {
         "Category": CATEGORY,
         "SubCategory": 2,
     },
+    "HB-REVIVE - Calc Resiliency Hours": {
+        "NickName": "Calc Resiliency Hours",
+        "Message": RELEASE_VERSION,
+        "Category": CATEGORY,
+        "SubCategory": 2,
+    },
 }
 
 
