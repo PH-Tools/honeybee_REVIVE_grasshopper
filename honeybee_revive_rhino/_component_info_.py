@@ -148,14 +148,14 @@ COMPONENT_PARAMS = {
         "Category": CATEGORY,
         "SubCategory": 2,
     },
-    "HB-REVIVE - Create Resiliency Output Files": {
-        "NickName": "Create Resiliency Output Files",
+    "HB-REVIVE - Generate Winter Resiliency Outputs": {
+        "NickName": "Generate Winter Resiliency Outputs",
         "Message": RELEASE_VERSION,
         "Category": CATEGORY,
         "SubCategory": 2,
     },
-    "HB-REVIVE - Calc Resiliency Hours": {
-        "NickName": "Calc Resiliency Hours",
+    "HB-REVIVE - Generate Summer Resiliency Outputs": {
+        "NickName": "Generate Summer Resiliency Outputs",
         "Message": RELEASE_VERSION,
         "Category": CATEGORY,
         "SubCategory": 2,

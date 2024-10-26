@@ -22,7 +22,7 @@
 """
 ............
 -
-EM October 25, 2024
+EM October 26, 2024
     Args:
         _folder_: (Optional) An optional path to a folder to save the graphs 
             to. If none is provided, the default Ladbybug Tools folder will be 
@@ -37,18 +37,7 @@ EM October 25, 2024
         winter_SET_hours_below_2C_: [LIMIT=0] The Degree-Hours below 2.2C [26F] for
             each zone during the analysis period.
 
-        summer_caution_hours_: [LIMIT=NONE] The number of hours above 26.7C [80F] 
-            and below 32.2C [90F] for each zone during the analysis period.
-
-        summer_warning_hours_: [LIMIT=NONE] The number of hours above 32.2C [90F] 
-            and below 39.4C [103F] for each zone during the analysis period.
-
-        summer_danger_hours_: [LIMIT=0] The number of hours above 39.4C [103F] 
-            and below 51.7C [120F] for each zone during the analysis period.
-
-        summer_extreme_danger_hours_: [LIMIT=0] The number of hours above
-            51.7C [120F] for each zone during the analysis period.
-
+        output_: The path to the output files.
 """
 
 import scriptcontext as sc
@@ -71,10 +60,10 @@ except ImportError as e:
 # ------------------------------------------------------------------------------
 import honeybee_revive_rhino._component_info_
 reload(honeybee_revive_rhino._component_info_)
-ghenv.Component.Name = "HB-REVIVE - Calc Resiliency Hours"
+ghenv.Component.Name = "HB-REVIVE - Generate Winter Resiliency Outputs"
 DEV = honeybee_revive_rhino._component_info_.set_component_params(ghenv, dev=False)
 if DEV:
-    from honeybee_revive_rhino.gh_compo_io.resiliency import calc_resiliency_hours as gh_compo_io
+    from honeybee_revive_rhino.gh_compo_io.resiliency import generate_winter_output as gh_compo_io
     reload(gh_compo_io)
     
 
@@ -83,7 +72,7 @@ if DEV:
 IGH = gh_io.IGH( ghdoc, ghenv, sc, rh, rs, ghc, gh )
 
 # ------------------------------------------------------------------------------
-gh_compo_interface = gh_compo_io.GHCompo_CalcResiliencyHours(
+gh_compo_interface = gh_compo_io.GHCompo_ResiliencyWinterOutput(
         IGH,
         _sql,
         _folder_,
@@ -91,8 +80,5 @@ gh_compo_interface = gh_compo_io.GHCompo_CalcResiliencyHours(
 (   
     winter_SET_hours_below_12C_,
     winter_SET_hours_below_2C_,
-    summer_caution_hours_,
-    summer_warning_hours_,
-    summer_danger_hours_,
-    summer_extreme_danger_hours_,
+    output_,
 ) = gh_compo_interface.run()

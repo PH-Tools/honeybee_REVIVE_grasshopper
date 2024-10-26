@@ -9,8 +9,8 @@ except ImportError as e:
     raise ImportError("\nFailed to import honeybee:\n\t{}".format(e))
 
 try:
-    from honeybee_energy.properties.room import RoomEnergyProperties
     from honeybee_energy.load.lighting import Lighting
+    from honeybee_energy.properties.room import RoomEnergyProperties
 except ImportError as e:
     raise ImportError("\nFailed to import honeybee_energy:\n\t{}".format(e))
 

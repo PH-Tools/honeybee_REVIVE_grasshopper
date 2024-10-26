@@ -14,3 +14,6 @@ dist/*
 *.egg-*
 *.eggs*
 build/*
+tests/simulation_files/resiliency_summer/*
+tests/simulation_files/resiliency_winter/*
+tests/simulation_files/resiliency_weather/*

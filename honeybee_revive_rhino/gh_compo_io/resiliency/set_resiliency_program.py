@@ -12,20 +12,22 @@ except ImportError as e:
     raise ImportError("\nFailed to import ladybug: {0}".format(e))
 
 try:
-    from honeybee.room import Room
     from honeybee.model import Model
+    from honeybee.room import Room
 except ImportError as e:
     raise ImportError("\nFailed to import honeybee: {0}".format(e))
 
 try:
+    from honeybee_energy.load.process import Process
     from honeybee_energy.programtype import ProgramType
     from honeybee_energy.properties.room import RoomEnergyProperties
-    from honeybee_energy.load.process import Process
+    from honeybee_energy.ventcool.control import VentilationControl
 except ImportError:
     raise ImportError("\nFailed to import honeybee_energy")
 
 try:
     import honeybee_revive_standards
+
     from honeybee_revive_rhino.gh_compo_io.standards._load import (
         load_program_and_schedules,
         load_schedules_from_standards,
@@ -182,6 +184,8 @@ class GHCompo_SetResiliencyProgram(object):
         cooling_off_schedule = schedules_dict["rv2024_CoolingOff"]
         humid_off_schedule = schedules_dict["rv2024_HumidificationOff"]
         dehumid_off_schedule = schedules_dict["rv2024_DehumidificationOff"]
+        window_opening_off_schedule = schedules_dict["rv2024_WindowVentilationOff"]
+        window_opening_on_schedule = schedules_dict["rv2024_WindowVentilationOn"]
 
         # -- NOTE: Be sure to clip off a day on either end of the analysis period.
         # -- Heating and Humidification Schedules 'OFF' during outage
@@ -204,14 +208,40 @@ class GHCompo_SetResiliencyProgram(object):
         rv2024_resilience_program.lock()
 
         # --------------------------------------------------------------------------------------------------------------
-        # -- Set all the Room's Programs
+        # -- Collect all of the unique Room Window Vent-Controls
+        vent_control_objects = {}
+        for room in self.rooms:
+            room_prop_energy = getattr(room.properties, "energy")
+            control_obj = room_prop_energy.window_vent_control
+            vent_control_objects[id(room_prop_energy.window_vent_control)] = control_obj
 
+        # -- Modify the Window Ventilation Control operation schedules for the resiliency periods
+        modified_vent_control_objects = {}
+        for control_id, control_data in vent_control_objects.items():
+            if not control_data:
+                continue
+            new_control_obj = control_data.duplicate()  # type: VentilationControl
+            new_control_schedule = control_data.schedule.duplicate()
+
+            for window_off_rule in window_opening_off_schedule.to_rules(htg_start, htg_end):
+                new_control_schedule.add_rule(window_off_rule)
+            for window_on_rule in window_opening_on_schedule.to_rules(clg_start, clg_end):
+                new_control_schedule.add_rule(window_on_rule)
+
+            new_control_obj.schedule = new_control_schedule
+            modified_vent_control_objects[control_id] = new_control_obj
+
+        # --------------------------------------------------------------------------------------------------------------
+        # -- Set all the Room's Programs
         new_rooms_ = []
         for room in self.rooms:
             new_room = room.duplicate()
             new_rm_energy_prop = getattr(new_room.properties, "energy")  # type: RoomEnergyProperties
             new_rm_energy_prop.program_type = rv2024_resilience_program
             new_rm_energy_prop.reset_loads_to_program()
+            new_rm_energy_prop.window_vent_control = modified_vent_control_objects.get(
+                id(new_rm_energy_prop.window_vent_control), None
+            )
             new_rooms_.append(new_room)
 
         # --------------------------------------------------------------------------------------------------------------

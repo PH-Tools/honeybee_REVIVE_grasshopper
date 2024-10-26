@@ -11,8 +11,7 @@ except ImportError:
     raise ImportError("\nFailed to import honeybee_energy")
 
 try:
-    from honeybee_revive_standards import schedules
-    from honeybee_revive_standards import appliances
+    from honeybee_revive_standards import appliances, schedules
     from honeybee_revive_standards.appliances._load_appliances import load_abridged_appliances_from_json_file
     from honeybee_revive_standards.schedules._load_schedules import load_schedules_from_json_file
 except ImportError:

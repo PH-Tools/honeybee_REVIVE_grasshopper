@@ -11,9 +11,9 @@ except ImportError as e:
     raise ImportError("\nFailed to import honeybee:\n\t{}".format(e))
 
 try:
-    from honeybee_revive.properties.model import ModelReviveProperties
     from honeybee_revive.grid_region import GridRegion
     from honeybee_revive.national_emissions import NationalEmissionsFactors
+    from honeybee_revive.properties.model import ModelReviveProperties
     from honeybee_revive_standards import cambium_factors, national_emission_factors
     from honeybee_revive_standards.cambium_factors._load_grid_region import load_grid_region_from_json_file
     from honeybee_revive_standards.national_emission_factors._load_national_emissions import (

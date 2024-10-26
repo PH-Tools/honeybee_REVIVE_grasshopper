@@ -3,17 +3,17 @@
 
 """GH-Component Interface: HB-REVIVE - Create Resiliency EPW."""
 
-from copy import copy
 import math
 import os
+from copy import copy
 
 try:
-    from ladybug.stat import STAT
+    from ladybug.analysisperiod import AnalysisPeriod
+    from ladybug.config import folders
+    from ladybug.datacollection import HourlyContinuousCollection
     from ladybug.dt import DateTime
     from ladybug.epw import EPW
-    from ladybug.datacollection import HourlyContinuousCollection
-    from ladybug.config import folders
-    from ladybug.analysisperiod import AnalysisPeriod
+    from ladybug.stat import STAT
 except ImportError as e:
     raise ImportError("\nFailed to import ladybug:\n\t{}".format(e))
 

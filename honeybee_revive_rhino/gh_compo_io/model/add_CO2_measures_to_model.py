@@ -10,8 +10,8 @@ except ImportError as e:
     raise ImportError("\nFailed to import honeybee:\n\t{}".format(e))
 
 try:
-    from honeybee_revive.properties.model import ModelReviveProperties
     from honeybee_revive.CO2_measures import CO2ReductionMeasure
+    from honeybee_revive.properties.model import ModelReviveProperties
 except ImportError as e:
     raise ImportError("\nFailed to import honeybee_revive:\n\t{}".format(e))
 

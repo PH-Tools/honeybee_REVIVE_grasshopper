@@ -9,10 +9,10 @@ except ImportError as e:
     raise ImportError("\nFailed to import honeybee:\n\t{}".format(e))
 
 try:
-    from honeybee_energy.load.process import Process
     from honeybee_energy.lib.schedules import schedule_by_identifier
-    from honeybee_energy.schedule.ruleset import ScheduleRuleset
+    from honeybee_energy.load.process import Process
     from honeybee_energy.schedule.fixedinterval import ScheduleFixedInterval
+    from honeybee_energy.schedule.ruleset import ScheduleRuleset
 except ImportError as e:
     raise ImportError("\nFailed to import honeybee_energy:\n\t{}".format(e))
 

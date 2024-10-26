@@ -20,10 +20,9 @@
 # @license GPL-3.0+ <http://spdx.org/licenses/GPL-3.0+>
 #
 """
-Generate a series of graphs with the Phius-REVIVE Resiliency data such as 
-air-temp, RH%, and SET Temperatures. 
+............
 -
-EM October 14, 2024
+EM October 26, 2024
     Args:
         _folder_: (Optional) An optional path to a folder to save the graphs 
             to. If none is provided, the default Ladbybug Tools folder will be 
@@ -32,6 +31,18 @@ EM October 14, 2024
         _sql: The SQL file path from the Honeybee-Energy 'HB Model to OSM' component. 
 
     Returns:
+        summer_caution_hours_: [LIMIT=NONE] The number of hours above 26.7C [80F] 
+            and below 32.2C [90F] for each zone during the analysis period.
+
+        summer_warning_hours_: [LIMIT=NONE] The number of hours above 32.2C [90F] 
+            and below 39.4C [103F] for each zone during the analysis period.
+
+        summer_danger_hours_: [LIMIT=0] The number of hours above 39.4C [103F] 
+            and below 51.7C [120F] for each zone during the analysis period.
+
+        summer_extreme_danger_hours_: [LIMIT=0] The number of hours above
+            51.7C [120F] for each zone during the analysis period.
+        
         output_: The path to the output files.
 """
 
@@ -55,10 +66,10 @@ except ImportError as e:
 # ------------------------------------------------------------------------------
 import honeybee_revive_rhino._component_info_
 reload(honeybee_revive_rhino._component_info_)
-ghenv.Component.Name = "HB-REVIVE - Create Resiliency Output Files"
+ghenv.Component.Name = "HB-REVIVE - Generate Summer Resiliency Outputs"
 DEV = honeybee_revive_rhino._component_info_.set_component_params(ghenv, dev=False)
 if DEV:
-    from honeybee_revive_rhino.gh_compo_io.resiliency import create_output as gh_compo_io
+    from honeybee_revive_rhino.gh_compo_io.resiliency import generate_summer_output as gh_compo_io
     reload(gh_compo_io)
     
 
@@ -67,9 +78,15 @@ if DEV:
 IGH = gh_io.IGH( ghdoc, ghenv, sc, rh, rs, ghc, gh )
 
 # ------------------------------------------------------------------------------
-gh_compo_interface = gh_compo_io.GHCompo_CreateResiliencyOutputFiles(
+gh_compo_interface = gh_compo_io.GHCompo_ResiliencySummerOutput(
         IGH,
         _sql,
         _folder_,
 )
-output_ = gh_compo_interface.run()
+(   
+    summer_caution_hours_,
+    summer_warning_hours_,
+    summer_danger_hours_,
+    summer_extreme_danger_hours_,
+    output_,
+) = gh_compo_interface.run()

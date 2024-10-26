@@ -17,6 +17,7 @@ except ImportError:
 
 try:
     import honeybee_revive_standards
+
     from honeybee_revive_rhino.gh_compo_io.standards._load import load_program_and_schedules
 except ImportError as e:
     raise ImportError("\nFailed to import honeybee_revive_rhino: {0}".format(e))
