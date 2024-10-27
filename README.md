@@ -12,6 +12,7 @@ The repository includes both the UserObjects (.ghuser) and the Python source cod
 
 <details>
 <summary><strong>Installation</strong></summary>
+  
 In order to install Honeybee-REVIVE-Grasshopper, along with the [Honeybee-REVIVE](https://github.com/PH-Tools/honeybee_REVIVE) and [PH-ADORB](https://github.com/PH-Tools/PH_ADORB) libraries onto your system, download and run the [hb_revive_installer.gh]() file from this repository.
 
 ![Screenshot 2024-09-30 at 7 44 25 PM](https://github.com/user-attachments/assets/6d10a965-707b-41e8-b3ef-8e953c4828f8)
@@ -21,6 +22,7 @@ Note that you must have [Honeybee-Core](https://github.com/ladybug-tools/honeybe
 
 <details>
 <summary><strong>More Information</strong></summary>
+
 For more information on the use of these tools, check out the the Passive House Tools website:
 [https://www.PassiveHouseTools.com](https://www.PassiveHouseTools.com)
 
