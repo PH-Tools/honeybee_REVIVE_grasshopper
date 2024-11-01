@@ -26,12 +26,6 @@ COMPONENT_PARAMS = {
         "Category": CATEGORY,
         "SubCategory": 1,
     },
-    "HB-REVIVE - Load REVIVE CO2-Measures from Standards Library": {
-        "NickName": "Load REVIVE CO2-Measures from Standards Library",
-        "Message": RELEASE_VERSION,
-        "Category": CATEGORY,
-        "SubCategory": 1,
-    },
     "HB-REVIVE - Set REVIVE Material Properties": {
         "NickName": "Set REVIVE Material Properties",
         "Message": RELEASE_VERSION,
@@ -58,12 +52,6 @@ COMPONENT_PARAMS = {
     },
     "HB-REVIVE - Create REVIVE Appliance": {
         "NickName": "Create REVIVE Appliance",
-        "Message": RELEASE_VERSION,
-        "Category": CATEGORY,
-        "SubCategory": 1,
-    },
-    "HB-REVIVE - Load REVIVE Appliance from Standards Library": {
-        "NickName": "Load REVIVE Appliance from Standards Library",
         "Message": RELEASE_VERSION,
         "Category": CATEGORY,
         "SubCategory": 1,
@@ -98,6 +86,7 @@ COMPONENT_PARAMS = {
         "Category": CATEGORY,
         "SubCategory": 1,
     },
+    # -- 03 STANDARDS
     "HB-REVIVE - Load REVIVE Program from Standards": {
         "NickName": "Load REVIVE Program from Standards",
         "Message": RELEASE_VERSION,
@@ -106,6 +95,24 @@ COMPONENT_PARAMS = {
     },
     "HB-REVIVE - Create REVIVE Residential Program": {
         "NickName": "Create REVIVE Residential Program",
+        "Message": RELEASE_VERSION,
+        "Category": CATEGORY,
+        "SubCategory": 1,
+    },
+    "HB-REVIVE - Load REVIVE Schedules from Standards": {
+        "NickName": "Load REVIVE Schedules from Standards",
+        "Message": RELEASE_VERSION,
+        "Category": CATEGORY,
+        "SubCategory": 1,
+    },
+    "HB-REVIVE - Load REVIVE Appliance from Standards Library": {
+        "NickName": "Load REVIVE Appliance from Standards Library",
+        "Message": RELEASE_VERSION,
+        "Category": CATEGORY,
+        "SubCategory": 1,
+    },
+    "HB-REVIVE - Load REVIVE CO2-Measures from Standards Library": {
+        "NickName": "Load REVIVE CO2-Measures from Standards Library",
         "Message": RELEASE_VERSION,
         "Category": CATEGORY,
         "SubCategory": 1,

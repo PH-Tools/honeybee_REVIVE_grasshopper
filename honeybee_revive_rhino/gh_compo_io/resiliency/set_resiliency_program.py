@@ -157,8 +157,6 @@ class GHCompo_SetResiliencyProgram(object):
         total_vent_m3s = convert(total_vent_cfm, "CFM", "M3/S") or 0.0
         vent_m3s_per_person = total_vent_m3s / total_occupancy
 
-        # TODO: Add in the _additional_elec_equip....
-
         # --------------------------------------------------------------------------------------------------------------
         # -- Re-Set the Program's Occupancy, MEL, Ventilation
         # TODO: Q - Should we be preserving the room-level occupancy diversity? hmm....
@@ -177,6 +175,9 @@ class GHCompo_SetResiliencyProgram(object):
         rv2024_resilience_program.infiltration.flow_per_exterior_area = infiltration_per_exposed_area
 
         # --------------------------------------------------------------------------------------------------------------
+        # TODO: Re-set the MEL schedule to be the fridge only
+
+        # --------------------------------------------------------------------------------------------------------------
         # -- Create the Setpoint Schedules based on the Winter and Summer Periods
         print("Setting the Setpoint Schedules based on the Winter and Summer Periods.")
         schedules_dict = load_schedules_from_standards(self.standards_dir)
@@ -186,6 +187,7 @@ class GHCompo_SetResiliencyProgram(object):
         dehumid_off_schedule = schedules_dict["rv2024_DehumidificationOff"]
         window_opening_off_schedule = schedules_dict["rv2024_WindowVentilationOff"]
         window_opening_on_schedule = schedules_dict["rv2024_WindowVentilationOn"]
+        fridge_schedule = schedules_dict["rv2024_Refrigerator"]
 
         # -- NOTE: Be sure to clip off a day on either end of the analysis period.
         # -- Heating and Humidification Schedules 'OFF' during outage
@@ -203,6 +205,9 @@ class GHCompo_SetResiliencyProgram(object):
             rv2024_resilience_program.setpoint.cooling_schedule.add_rule(cooling_rule)
         for dehumid_rule in dehumid_off_schedule.to_rules(clg_start, clg_end):
             rv2024_resilience_program.setpoint.dehumidifying_schedule.add_rule(dehumid_rule)
+
+        # -- MEL to use the Fridge schedule
+        rv2024_resilience_program.electric_equipment.schedule = fridge_schedule
 
         # --------------------------------------------------------------------------------------------------------------
         rv2024_resilience_program.lock()

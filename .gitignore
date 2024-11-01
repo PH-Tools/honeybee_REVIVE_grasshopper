@@ -14,6 +14,8 @@ dist/*
 *.egg-*
 *.eggs*
 build/*
-tests/simulation_files/resiliency_summer/*
-tests/simulation_files/resiliency_winter/*
-tests/simulation_files/resiliency_weather/*
+tests/resilience/hbrv_summer_results/*
+tests/resilience/hbrv_winter_results/*
+tests/resilience/hbrv_generated_weather/*
+tests/resilience/phius_gui_summer_results/*
+tests/resilience/phius_gui_winter_results/*

@@ -53,6 +53,10 @@ class GHCompo_CalculateDewPoint(object):
         if not self.ready:
             return (None, None, None, None)
 
+        if self.wet_bulb_temp > self.dry_bulb_temp:
+            print("Wet bulb temp. {} cannot be higher than dry bulb temperature {}.")
+            self.wet_bulb_temp = self.dry_bulb_temp
+
         rh = rel_humid_from_db_wb(self.dry_bulb_temp, self.wet_bulb_temp, self.air_pressure_Pa)  # type: ignore
         print("RH: {:.1f} %".format(rh))
 
