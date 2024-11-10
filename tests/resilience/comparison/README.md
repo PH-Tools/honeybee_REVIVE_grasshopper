@@ -19,5 +19,6 @@ Window solar gain and heat loss show good alignment between simulations. The win
 While Mechanical Ventilation and 'Ventilation' (windows) show alignment across both simulations, the infiltration ventilation shows a non-trivial difference. This difference is owing to the different configuration and calculation modes used by the two simulation tools:
 
 While the Phius GUI tool sets values for the ___, the Honeybee simulation leaves these values at the default.
+![Screenshot 2024-11-10 at 1 40 40 PM](https://github.com/user-attachments/assets/38e3113d-2f42-4b92-8849-0062d8015872)
 
 ![Ventilation](https://github.com/user-attachments/assets/8bce4f48-3aed-43e3-a592-3d6d12c63ab9)
