@@ -22,6 +22,7 @@ try:
     from honeybee_energy.programtype import ProgramType
     from honeybee_energy.properties.room import RoomEnergyProperties
     from honeybee_energy.ventcool.control import VentilationControl
+    from honeybee_energy.hvac.idealair import IdealAirSystem
 except ImportError:
     raise ImportError("\nFailed to import honeybee_energy")
 
@@ -95,6 +96,46 @@ class GHCompo_SetResiliencyProgram(object):
             return False
         return True
 
+    @staticmethod
+    def room_ventilation_sensible_recovery_efficiency(_room):
+        # type: (Room) -> float
+        """Get the sensible sensible heat recovery efficiency of the Room's H/ERV."""
+        room_energy_prop = getattr(_room.properties, "energy")
+        if not room_energy_prop.hvac:
+            return 0.0
+        return getattr(room_energy_prop.hvac, "sensible_heat_recovery", 0)
+
+    @staticmethod
+    def room_ventilation_latent_recovery_efficiency(_room):
+        # type: (Room) -> float
+        """Get the sensible latent heat recovery efficiency of the Room's H/ERV."""
+        room_energy_prop = getattr(_room.properties, "energy")
+        if not room_energy_prop.hvac:
+            return 0.0
+        return getattr(room_energy_prop.hvac, "latent_heat_recovery", 0)
+
+    @staticmethod
+    def room_ventilation_has_heat_recovery(_room):
+        # type: (Room) -> bool
+        """Check if the Room has an H/ERV with sensible heat recovery."""
+
+        room_energy_prop = getattr(_room.properties, "energy")  # type: RoomEnergyProperties
+        if not room_energy_prop.hvac:
+            return False
+
+        hr = getattr(room_energy_prop.hvac, "sensible_heat_recovery", 0)
+        if hr > 0:
+            return True
+
+        return False
+
+    @property
+    def any_room_ventilation_has_heat_recovery(self):
+        # type: () -> bool
+        """Check if ANY of the rooms have an H/ERV with sensible heat recovery."""
+        room_has_erv = [self.room_ventilation_has_heat_recovery(room) for room in self.rooms]
+        return any(room_has_erv)
+
     def run(self):
         # type: () -> tuple[list[Room] | Model, ProgramType | None]
         if not self.ready:
@@ -152,8 +193,12 @@ class GHCompo_SetResiliencyProgram(object):
         for equip in self.elec_equip:
             total_MEL_wattage += equip.watts
 
-        # -- Set 5-CFM per person as per Phius REVIVE Rules
-        total_vent_cfm = total_occupancy * 5
+        # -- Set 5-CFM per person as per Phius REVIVE Rules if
+        # -- there is an ERV, otherwise set the ventilation to 0 cfm
+        if self.any_room_ventilation_has_heat_recovery:
+            total_vent_cfm = total_occupancy * 5
+        else:
+            total_vent_cfm = 0.0
         total_vent_m3s = convert(total_vent_cfm, "CFM", "M3/S") or 0.0
         vent_m3s_per_person = total_vent_m3s / total_occupancy
 
@@ -194,17 +239,21 @@ class GHCompo_SetResiliencyProgram(object):
         htg_start = Date.from_doy(DateTime.from_hoy(self.winter_period.st_time.hoy + 24).doy)
         htg_end = Date.from_doy(DateTime.from_hoy(self.winter_period.end_time.hoy - 24).doy)
         for heating_rule in heating_off_schedule.to_rules(htg_start, htg_end):
-            rv2024_resilience_program.setpoint.heating_schedule.add_rule(heating_rule)
+            if rv2024_resilience_program.setpoint.heating_schedule:
+                rv2024_resilience_program.setpoint.heating_schedule.add_rule(heating_rule)
         for humid_rule in humid_off_schedule.to_rules(htg_start, htg_end):
-            rv2024_resilience_program.setpoint.humidifying_schedule.add_rule(humid_rule)
+            if rv2024_resilience_program.setpoint.humidifying_schedule:
+                rv2024_resilience_program.setpoint.humidifying_schedule.add_rule(humid_rule)
 
         # -- Cooling and Dehumidification Schedules 'OFF' during outage
         clg_start = DateTime.from_hoy(self.summer_period.st_time.hoy + 24).date
         clg_end = DateTime.from_hoy(self.summer_period.end_time.hoy - 24).date
         for cooling_rule in cooling_off_schedule.to_rules(clg_start, clg_end):
-            rv2024_resilience_program.setpoint.cooling_schedule.add_rule(cooling_rule)
+            if rv2024_resilience_program.setpoint.cooling_schedule:
+                rv2024_resilience_program.setpoint.cooling_schedule.add_rule(cooling_rule)
         for dehumid_rule in dehumid_off_schedule.to_rules(clg_start, clg_end):
-            rv2024_resilience_program.setpoint.dehumidifying_schedule.add_rule(dehumid_rule)
+            if rv2024_resilience_program.setpoint.dehumidifying_schedule:
+                rv2024_resilience_program.setpoint.dehumidifying_schedule.add_rule(dehumid_rule)
 
         # -- MEL to use the Fridge schedule
         rv2024_resilience_program.electric_equipment.schedule = fridge_schedule
@@ -247,6 +296,21 @@ class GHCompo_SetResiliencyProgram(object):
             new_rm_energy_prop.window_vent_control = modified_vent_control_objects.get(
                 id(new_rm_energy_prop.window_vent_control), None
             )
+
+            # -- Re-set the HVAC to be an ideal air system so that we can avoid
+            # -- any problems with fans and HVAC equipment overriding the program loads
+            # -- Make sure to preserve any ERV performance values as well though.
+            hvac_id = "{} Ideal Loads Air System".format(new_rm_energy_prop.host.identifier)
+            ideal_air_system = IdealAirSystem(hvac_id)
+            if self.room_ventilation_has_heat_recovery(new_room):
+                ideal_air_system.sensible_heat_recovery = self.room_ventilation_sensible_recovery_efficiency(room)
+                ideal_air_system.latent_heat_recovery = self.room_ventilation_latent_recovery_efficiency(room)
+            new_rm_energy_prop.hvac = ideal_air_system
+
+            # -- Remove any Process Loads on the room to ensure that there is no
+            # -- extra load and waste-heating of the space.-
+            new_rm_energy_prop._process_loads = []
+
             new_rooms_.append(new_room)
 
         # --------------------------------------------------------------------------------------------------------------
