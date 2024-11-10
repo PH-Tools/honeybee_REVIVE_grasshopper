@@ -1,25 +1,30 @@
-## METHODOLOGY:
-
-Below is a comparison of two simulation models: one done using the KMR Example model and the Phius GUI tool, and another using a Honeybee-REVIVE model which was built to match the KMR example as closely as possible using Honeybee Grasshopper methods and components. The model is a single-zone single-family home. The home includes a below-grade basement, as well as two on-grade floor surfaces ("Crawlspace" and "Slab"):
+Below is a comparison of two EnergyPlus simulation models: one done using the [KMR Example model](https://github.com/Phius-ResearchComittee/REVIVE/releases/tag/v24.2.0) and the Phius GUI tool, and another using a [Honeybee-REVIVE model](https://github.com/PH-Tools/honeybee_REVIVE_grasshopper/blob/main/tests/phius_rv2024_model.hbjson) which was built to match the KMR example as closely as possible using Honeybee Grasshopper methods and components. The test model is a single-zone, single-family home. The home includes a below-grade basement, as well as two on-grade floor surfaces ("Crawlspace" and "Slab"):
 
 ![Screenshot 2024-11-10 at 1 54 14 PM](https://github.com/user-attachments/assets/16ee8959-04b4-4815-8975-660c6f56d87b)
 
 
+# METHODOLOGY:
+Using the new Honeybee-REVIVE toolkit, a complete Honeybee model was constructed in Rhino/Grasshopper with attributes which align to the KMR Example file. 
 
-## KNOWN DISCREPANCIES
-
+### KNOWN MODEL DIFFERENCES:
 There are two key discrepancies between the basic Honeybee model and the Phius-GUI model:
-1. Kiva: The Phius GUI utilizes the KIVA ground solver, while the Honeybee model does not. This feature is not currently supported by Honeybee. For the purposes of this evaluation, a temporary 'patch' was applied to the Honeybee model in order to enable KIVA in both simulations. In the long term, Honeybee would need to provide feature support for KIVA in order to allow alignment with the REVIVE protocol.
-1. People: In order to output SET temperatures from EnergyPlus, the 'People' object must have its 'Thermal Comfort Model' set to the 'Pierce' option. This feature is not currently supported in Honeybee. For the purposes of this evaluation, a temporary patch was applied using an EnergyPlus "Measure". This solution is not generalizable to other models however, and full feature support for these Thermal Comfort Models would need to be added to Honeybee in order to allow alignment with the REVIVE protocol.
+1. **Kiva:** The Phius GUI utilizes the KIVA ground solver, while the Honeybee model does not. This feature is not currently supported by Honeybee. For the purposes of this evaluation, a temporary 'patch' was applied to the Honeybee model in order to enable KIVA in both simulations. In the long term, Honeybee would need to provide feature support for KIVA in order to allow alignment with the REVIVE protocol.
+1. **People:** In order to output SET temperatures from EnergyPlus, the 'People' object must have its 'Thermal Comfort Model' set to the 'Pierce' option. This feature is not currently supported in Honeybee. For the purposes of this evaluation, a temporary patch was applied using an EnergyPlus "Measure". This solution is not generalizable to other models however, and full feature support for these Thermal Comfort Models would need to be added to Honeybee in order to allow alignment with the REVIVE protocol.
+1. **Weather:** The simulation methods use a different approach to the weather files. The Phius GUI tool implements a method which utilizes run-time EMS scripts to modify the outdoor dry-bulb and dew-point temperatures. Byu contrast, the Honeybee-REVIVE tool uses a pre-processor method to generate modified EPW weather files. This difference in methodology results in some very minor differences (+/- 0.1°C) in places.
+
+Detailed comparisons are shown below:
 
 
+# WINTER RESULTS:
 
-## RESULTS:
+
+<details>
+<summary><strong>Indoor Environment</strong></summary>
 
 As shown below, the Phius-GUI generated model and the Honeybee-Generated model show very close alignment across the key interior air properties: Dry-Bulb temp, Relative Humidity, and SET Comfort Temperature. The Honeybee model does show a slightly lower air temp, which causes a corresponding drop in the SET temperatures as well. This is likely due to the increased infiltration rate (see below).
 ![Internal Conditions](https://github.com/user-attachments/assets/507726c3-bc38-4d3e-86b3-b224fae2a736)
+</details>
 
-- - - 
 <details>
 <summary><strong>Outdoor Environment</strong></summary>
 
@@ -27,7 +32,6 @@ Both simulations show alignment in the outdoor air environment used. Note that t
 ![Outdoor Conditions](https://github.com/user-attachments/assets/3c128c2d-2ea0-4d4d-bea0-8d47f14b1595)
 </details>
 
-- - - 
 <details>
 <summary><strong>Internal Gains</strong></summary>
 
@@ -36,7 +40,6 @@ Internal Gains for people, lighting, and electrical-equipment are aligned betwee
 </details>
 
 
-- - -
 <details>
 <summary><strong>Window Gain / Loss</strong></summary>
 
@@ -44,7 +47,6 @@ Window solar gain and heat loss show good alignment between simulations. The win
 ![Windows](https://github.com/user-attachments/assets/fbd449b6-0397-42cd-9b07-847d5e6af286)
 </details>
 
-- - - 
 <details>
 <summary><strong>Ventilation Airflow</strong></summary>
 
@@ -55,3 +57,7 @@ While the Phius GUI tool sets values for the 'Temperature Turn Coefficient' and 
 
 ![Ventilation](https://github.com/user-attachments/assets/8bce4f48-3aed-43e3-a592-3d6d12c63ab9)
 </details>
+
+</br>
+
+# SUMMER RESULTS:
