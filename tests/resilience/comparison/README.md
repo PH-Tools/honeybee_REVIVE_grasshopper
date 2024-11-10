@@ -9,10 +9,10 @@ Using the new Honeybee-REVIVE toolkit, a complete Honeybee model was constructed
 ### MODEL FILES:
 All relevant model files can be found at:
 
-- [WINTER | Phius GUI](https://github.com/PH-Tools/honeybee_REVIVE_grasshopper/tree/main/tests/resilience/winter/hbrv)
-- [WINTER | Honeybee-REVIVE](https://github.com/PH-Tools/honeybee_REVIVE_grasshopper/tree/main/tests/resilience/winter/phius_gui)
-- [SUMMER | Phius GUI](https://github.com/PH-Tools/honeybee_REVIVE_grasshopper/tree/main/tests/resilience/summer/hbrv)
-- [SUMMER | Honeybee-REVIVE](https://github.com/PH-Tools/honeybee_REVIVE_grasshopper/tree/main/tests/resilience/summer/phius_gui)
+- [WINTER | Phius GUI](https://github.com/PH-Tools/honeybee_REVIVE_grasshopper/tree/main/tests/resilience/winter/phius_gui)
+- [WINTER | Honeybee-REVIVE](https://github.com/PH-Tools/honeybee_REVIVE_grasshopper/tree/main/tests/resilience/winter/hbrv)
+- [SUMMER | Phius GUI](https://github.com/PH-Tools/honeybee_REVIVE_grasshopper/tree/main/tests/resilience/summer/phius_gui)
+- [SUMMER | Honeybee-REVIVE](https://github.com/PH-Tools/honeybee_REVIVE_grasshopper/tree/main/tests/resilience/summer/hbrv)
 
 
 ### KNOWN MODEL DIFFERENCES:
