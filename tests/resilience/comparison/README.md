@@ -1,14 +1,16 @@
 ## METHODOLOGY:
 
-Below is a comparison of two simulation models: one done using the KMR Example model and the Phius GUI tool, and another using a Honeybee-REVIVE model which was built to match the KMR example as closely as possible using Honeybee Grasshopper methods and components. The model is a single-zone single-family home:
+Below is a comparison of two simulation models: one done using the KMR Example model and the Phius GUI tool, and another using a Honeybee-REVIVE model which was built to match the KMR example as closely as possible using Honeybee Grasshopper methods and components. The model is a single-zone single-family home. The home includes a below-grade basement, as well as two on-grade floor surfaces ("Crawlspace" and "Slab"):
 
 ![Screenshot 2024-11-10 at 1 54 14 PM](https://github.com/user-attachments/assets/16ee8959-04b4-4815-8975-660c6f56d87b)
 
 
 
-### 
-Kiva
-People
+## KNOWN DISCREPANCIES
+
+There are two key discrepancies between the basic Honeybee model and the Phius-GUI model:
+1. Kiva: The Phius GUI utilizes the KIVA ground solver, while the Honeybee model does not. This feature is not currently supported by Honeybee. For the purposes of this evaluation, a temporary 'patch' was applied to the Honeybee model in order to enable KIVA in both simulations. In the long term, Honeybee would need to provide feature support for KIVA in order to allow alignment with the REVIVE protocol.
+1. People: In order to output SET temperatures from EnergyPlus, the 'People' object must have its 'Thermal Comfort Model' set to the 'Pierce' option. This feature is not currently supported in Honeybee. For the purposes of this evaluation, a temporary patch was applied using an EnergyPlus "Measure". This solution is not generalizable to other models however, and full feature support for these Thermal Comfort Models would need to be added to Honeybee in order to allow alignment with the REVIVE protocol.
 
 
 
