@@ -2,6 +2,9 @@
 
 Below is a comparison of two simulation models: one done using the KMR Example model and the Phius GUI tool, and another using a Honeybee-REVIVE model which was built to match the KMR example as closely as possible using Honeybee Grasshopper methods and components. The model is a single-zone single-family home:
 
+![Screenshot 2024-11-10 at 1 54 14 PM](https://github.com/user-attachments/assets/16ee8959-04b4-4815-8975-660c6f56d87b)
+
+
 
 ### 
 Kiva
