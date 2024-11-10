@@ -21,6 +21,13 @@ Note that you must have [Honeybee-Core](https://github.com/ladybug-tools/honeybe
 </details>
 
 <details>
+<summary><strong>Validation and Test Cases</strong></summary>
+For information on test-cases and comparison to Phius reference models, see:
+- [Resiliency](https://github.com/PH-Tools/honeybee_REVIVE_grasshopper/tree/main/tests/resilience/comparison#readme)
+- [ADORB - TBD...]
+</details>
+
+<details>
 <summary><strong>More Information</strong></summary>
 
 For more information on the use of these tools, check out the the Passive House Tools website:
