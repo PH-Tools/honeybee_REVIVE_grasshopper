@@ -79,14 +79,14 @@ While the Phius GUI tool sets values for the 'Temperature Turn Coefficient' and 
 <details>
 <summary><strong>Indoor Environment</strong></summary>
 
-As shown below, the Phius-GUI generated model and the Honeybee-Generated model show very close alignment across the key interior air properties: Dry-Bulb temp, Relative Humidity, and SET Comfort Temperature. The Honeybee model does show a slightly lower air temp, which causes a corresponding drop in the SET temperatures as well. This is likely due to the increased infiltration rate (see below).
+As shown below, the Phius-GUI generated model and the Honeybee-Generated model show very close alignment across the key summer-resiliency interior air properties: Dry-Bulb temp, Relative Humidity, and Heat Index. The Honeybee model does show a slightly higher air temp, which causes a corresponding difference in the Heat Index values as well. This is likely due to the increased infiltration rate (see below) of the Honeybee-REVIVE model relative to the Phius-GUI model.
 ![Summer Interior Conditions](https://github.com/user-attachments/assets/c5b8a6e7-613c-430e-abce-9ce827ba4e0e)
 </details>
 
 <details>
 <summary><strong>Outdoor Environment</strong></summary>
 
-Both simulations show alignment in the outdoor air environment used. Note that there is some small deviation as a result of the different methods used to generate these outdoor air boundary conditions: The Phius GUI uses a runtime EMS script to modify the outdoor air conditions during the EnergyPlus simulation, while the Honeybee-REVIVE tool uses a pre-processor to generate modified EPW files. These methods will inevitable lead to small variations (+/-0.1°C)
+Both simulations show alignment in the outdoor air environment used.
 ![Summer Outdoor Conditions](https://github.com/user-attachments/assets/7416e77e-5cd6-48a9-ba03-60739cb2b90b)
 </details>
 
