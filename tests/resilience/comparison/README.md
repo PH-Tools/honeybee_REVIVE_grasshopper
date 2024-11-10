@@ -4,22 +4,26 @@ Below is a comparison of two EnergyPlus simulation models: one done using the [K
 
 
 # METHODOLOGY:
-Using the new Honeybee-REVIVE toolkit, a complete Honeybee model was constructed in Rhino/Grasshopper with attributes which align to the KMR Example file. The simulations were carried out for both the 'Phius-GUI' generated case(s) and the Honeybee-REVIVE cases for both the winter and summer resiliency assessment periods as defined in the climate STAT files (extreme hot and extreme cold week). Note that the default Phius-GUI generated files were modified to adjust their RunPeriod and limited to these extreme weeks only, rather than simulating the entire year. 
+Using the [Honeybee-REVIVE toolkit](https://github.com/PH-Tools/honeybee_REVIVE_grasshopper/tree/main), a complete Honeybee model was constructed in Rhino/Grasshopper with attributes which align to the Phius KMR Example file. Resiliency 'peak-week' simulations were carried out for both the 'Phius-GUI' generated case(s) and the Honeybee-REVIVE cases for both the winter and summer resiliency assessment periods as defined in the climate STAT files (extreme hot and extreme cold week). Note that the default Phius-GUI generated files were modified to adjust their RunPeriod and limited to these extreme weeks only, rather than simulating the entire year.
 
 ### MODEL FILES:
-All relevant model files can be found at:
-
-- [WINTER | Phius GUI](https://github.com/PH-Tools/honeybee_REVIVE_grasshopper/tree/main/tests/resilience/winter/phius_gui)
-- [WINTER | Honeybee-REVIVE](https://github.com/PH-Tools/honeybee_REVIVE_grasshopper/tree/main/tests/resilience/winter/hbrv)
-- [SUMMER | Phius GUI](https://github.com/PH-Tools/honeybee_REVIVE_grasshopper/tree/main/tests/resilience/summer/phius_gui)
-- [SUMMER | Honeybee-REVIVE](https://github.com/PH-Tools/honeybee_REVIVE_grasshopper/tree/main/tests/resilience/summer/hbrv)
+Relevant model files can be found at:
+- [WINTER | Phius GUI Generated IDF](https://github.com/PH-Tools/honeybee_REVIVE_grasshopper/tree/main/tests/resilience/winter/phius_gui)
+- [SUMMER | Phius GUI Generated IDF](https://github.com/PH-Tools/honeybee_REVIVE_grasshopper/tree/main/tests/resilience/summer/phius_gui)
+- - - 
+- [Rhino/Grasshopper Model](https://github.com/PH-Tools/honeybee_REVIVE_grasshopper/blob/main/tests/phius_rv2024_model.gh)
+- [Rhino/Grasshopper Simulation Run](https://github.com/PH-Tools/honeybee_REVIVE_grasshopper/blob/main/tests/phius_rv2024_simulate_resiliency.gh)
+- [Honeybee-REVIVE HBJSON Model](https://github.com/PH-Tools/honeybee_REVIVE_grasshopper/blob/main/tests/phius_rv2024_model.hbjson)
+- - - 
+- [WINTER | Honeybee-REVIVE Outputs](https://github.com/PH-Tools/honeybee_REVIVE_grasshopper/tree/main/tests/resilience/winter/hbrv)
+- [SUMMER | Honeybee-REVIVE Outputs](https://github.com/PH-Tools/honeybee_REVIVE_grasshopper/tree/main/tests/resilience/summer/hbrv)
 
 
 ### KNOWN MODEL DIFFERENCES:
-There are two key discrepancies between the basic Honeybee model and the Phius-GUI model:
+There are three key discrepancies between the basic Honeybee model and the Phius-GUI model:
 1. **Kiva:** The Phius GUI utilizes the KIVA ground solver, while the Honeybee model does not. This feature is not currently supported by Honeybee. For the purposes of this evaluation, a temporary 'patch' was applied to the Honeybee model in order to enable KIVA in both simulations. In the long term, Honeybee would need to provide feature support for KIVA in order to allow alignment with the REVIVE protocol.
 1. **People:** In order to output SET temperatures from EnergyPlus, the 'People' object must have its 'Thermal Comfort Model' set to the 'Pierce' option. This feature is not currently supported in Honeybee. For the purposes of this evaluation, a temporary patch was applied using an EnergyPlus "Measure". This solution is not generalizable to other models however, and full feature support for these Thermal Comfort Models would need to be added to Honeybee in order to allow alignment with the REVIVE protocol.
-1. **Weather:** The simulation methods use a different approach to the weather files. The Phius GUI tool implements a method which utilizes run-time EMS scripts to modify the outdoor dry-bulb and dew-point temperatures. Byu contrast, the Honeybee-REVIVE tool uses a pre-processor method to generate modified EPW weather files. This difference in methodology results in some very minor differences (+/- 0.1°C) in places.
+1. **Weather:** The simulation methods use a different approach to the weather files. The Phius GUI tool implements [a method](https://github.com/Phius-ResearchComittee/REVIVE/blob/5ddd9cc7f55639071ac35f9b1701c286b68b1ca6/REVIVE2024/weatherMorph.py#L45) which utilizes run-time EMS scripts to modify the outdoor dry-bulb and dew-point temperatures. By contrast, the Honeybee-REVIVE tool uses a [pre-processor method](https://github.com/PH-Tools/honeybee_REVIVE/blob/40c9aa9b0d11c579753599f9ba332e4daa812355/ladybug_revive/resiliency_epw.py#L116) to generate modified EPW weather files. This difference in methodology results in some very minor differences (+/- 0.1°C) in places.
 
 Detailed comparisons are shown below:
 
