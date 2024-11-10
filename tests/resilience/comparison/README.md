@@ -1,6 +1,15 @@
-### METHODOLOGY:
+## METHODOLOGY:
 
-### INTERIOR ENVIRONMENT:
+Below is a comparison of two simulation models: one done using the KMR Example model and the Phius GUI tool, and another using a Honeybee-REVIVE model which was built to match the KMR example as closely as possible using Honeybee Grasshopper methods and components. The model is a single-zone single-family home:
+
+
+### 
+Kiva
+People
+
+
+
+## RESULTS:
 
 As shown below, the Phius-GUI generated model and the Honeybee-Generated model show very close alignment across the key interior air properties: Dry-Bulb temp, Relative Humidity, and SET Comfort Temperature. The Honeybee model does show a slightly lower air temp, which causes a corresponding drop in the SET temperatures as well. This is likely due to the increased infiltration rate (see below).
 ![Internal Conditions](https://github.com/user-attachments/assets/507726c3-bc38-4d3e-86b3-b224fae2a736)
