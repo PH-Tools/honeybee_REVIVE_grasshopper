@@ -1,4 +1,4 @@
-Below is a comparison of two EnergyPlus simulation models: one done using the [KMR Example model](https://github.com/Phius-ResearchComittee/REVIVE/releases/tag/v24.2.0) provided by Phius and the Phius GUI tool, and another using a [Honeybee-REVIVE model](https://github.com/PH-Tools/honeybee_REVIVE_grasshopper/blob/main/tests/phius_rv2024_model.hbjson) which was built to match the KMR example as closely as possible using Honeybee Grasshopper methods and components. The test model is a single-zone, single-family home. The home includes a below-grade basement, as well as two on-grade floor surfaces ("Crawlspace" and "Slab"):
+Below is a comparison of two EnergyPlus simulation sets: one set of simulations using the [KMR Example model](https://github.com/Phius-ResearchComittee/REVIVE/releases/tag/v24.2.0) provided by Phius with the Phius GUI tool, and another using a [Honeybee-REVIVE model](https://github.com/PH-Tools/honeybee_REVIVE_grasshopper/blob/main/tests/phius_rv2024_model.hbjson) which was built to match the KMR example as closely as possible using Honeybee Grasshopper methods and components. The test model is a single-zone, single-family home. The home includes a below-grade basement, as well as two on-grade floor surfaces ("Crawlspace" and "Slab"):
 
 ![Screenshot 2024-11-10 at 1 54 14 PM](https://github.com/user-attachments/assets/16ee8959-04b4-4815-8975-660c6f56d87b)
 
@@ -11,8 +11,8 @@ Relevant model files can be found at:
 - [WINTER | Phius GUI Generated IDF](https://github.com/PH-Tools/honeybee_REVIVE_grasshopper/tree/main/tests/resilience/winter/phius_gui)
 - [SUMMER | Phius GUI Generated IDF](https://github.com/PH-Tools/honeybee_REVIVE_grasshopper/tree/main/tests/resilience/summer/phius_gui)
 - - - 
-- [Rhino/Grasshopper Model](https://github.com/PH-Tools/honeybee_REVIVE_grasshopper/blob/main/tests/phius_rv2024_model.gh)
-- [Rhino/Grasshopper Simulation Run](https://github.com/PH-Tools/honeybee_REVIVE_grasshopper/blob/main/tests/phius_rv2024_simulate_resiliency.gh)
+- [Grasshopper Model Generation Script](https://github.com/PH-Tools/honeybee_REVIVE_grasshopper/blob/main/tests/phius_rv2024_model.gh)
+- [Grasshopper Simulation Run Script](https://github.com/PH-Tools/honeybee_REVIVE_grasshopper/blob/main/tests/phius_rv2024_simulate_resiliency.gh)
 - [Honeybee-REVIVE HBJSON Model](https://github.com/PH-Tools/honeybee_REVIVE_grasshopper/blob/main/tests/phius_rv2024_model.hbjson)
 - - - 
 - [WINTER | Honeybee-REVIVE Outputs](https://github.com/PH-Tools/honeybee_REVIVE_grasshopper/tree/main/tests/resilience/winter/hbrv)
@@ -20,8 +20,8 @@ Relevant model files can be found at:
 
 
 ### KNOWN MODEL DIFFERENCES:
-There are three key discrepancies between the basic Honeybee model and the Phius-GUI model:
-1. **Kiva:** The Phius GUI utilizes the KIVA ground solver, while the Honeybee model does not. This feature is not currently supported by Honeybee. For the purposes of this evaluation, a temporary 'patch' was applied to the Honeybee model in order to enable KIVA in both simulations. In the long term, Honeybee would need to provide feature support for KIVA in order to allow alignment with the REVIVE protocol.
+There are three key discrepancies between the basic Honeybee model and the Phius-GUI model which have been identified during this comparison:
+1. **Kiva:** The Phius GUI utilizes the [KIVA ground solver](https://kiva.readthedocs.io/en/stable/), while the Honeybee model does not. This feature is not currently supported by Honeybee. For the purposes of this evaluation, a temporary 'patch' was applied to the Honeybee model in order to enable KIVA in both simulations. In the long term, Honeybee would need to provide feature support for KIVA in order to allow alignment with the REVIVE protocol. While there does not appear to be significant difference when the model uses well insulated surfaces, for models which have un- or poorly-insulated ground-contact surfaces (typical of many existing homes) there does appear to a large difference in modeled performance when Kiva is used.
 1. **People:** In order to output SET temperatures from EnergyPlus, the 'People' object must have its 'Thermal Comfort Model' set to the 'Pierce' option. This feature is not currently supported in Honeybee. For the purposes of this evaluation, a temporary patch was applied using an EnergyPlus "Measure". This solution is not generalizable to other models however, and full feature support for these Thermal Comfort Models would need to be added to Honeybee in order to allow alignment with the REVIVE protocol.
 1. **Weather:** The simulation methods use a different approach to the weather files. The Phius GUI tool implements [a method](https://github.com/Phius-ResearchComittee/REVIVE/blob/5ddd9cc7f55639071ac35f9b1701c286b68b1ca6/REVIVE2024/weatherMorph.py#L45) which utilizes run-time EMS scripts to modify the outdoor dry-bulb and dew-point temperatures. By contrast, the Honeybee-REVIVE tool uses a [pre-processor method](https://github.com/PH-Tools/honeybee_REVIVE/blob/40c9aa9b0d11c579753599f9ba332e4daa812355/ladybug_revive/resiliency_epw.py#L116) to generate modified EPW weather files. This difference in methodology results in some very minor differences (+/- 0.1°C) in places.
 
