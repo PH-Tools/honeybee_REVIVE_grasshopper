@@ -1,3 +1,5 @@
+# Resiliency Test Comparison
+
 Below is a comparison of two EnergyPlus simulation sets: one set of simulations using the [KMR Example model](https://github.com/Phius-ResearchComittee/REVIVE/releases/tag/v24.2.0) provided by Phius with the Phius GUI tool, and another using a [Honeybee-REVIVE model](https://github.com/PH-Tools/honeybee_REVIVE_grasshopper/blob/main/tests/phius_rv2024_model.hbjson) which was built to match the KMR example as closely as possible using Honeybee Grasshopper methods and components. The test model is a single-zone, single-family home. The home includes a below-grade basement, as well as two on-grade floor surfaces ("Crawlspace" and "Slab"):
 
 ![Screenshot 2024-11-10 at 1 54 14 PM](https://github.com/user-attachments/assets/16ee8959-04b4-4815-8975-660c6f56d87b)
@@ -5,6 +7,8 @@ Below is a comparison of two EnergyPlus simulation sets: one set of simulations 
 
 # METHODOLOGY:
 Using the [Honeybee-REVIVE toolkit](https://github.com/PH-Tools/honeybee_REVIVE_grasshopper/tree/main), a complete Honeybee model was constructed in Rhino/Grasshopper with attributes which align to the Phius KMR Example file. Resiliency 'peak-week' simulations were carried out for both the 'Phius-GUI' generated case(s) and the Honeybee-REVIVE cases for both the winter and summer resiliency assessment periods as defined in the climate STAT files (extreme hot and extreme cold week). Note that the default Phius-GUI generated files were modified to adjust their RunPeriod and limited to these extreme weeks only, rather than simulating the entire year.
+
+All the Honeybee-REVIVE models are generated from a Grasshopper script, and all simulations are executed using the typical Honeybee-Grasshopper IDF solver.
 
 ### MODEL FILES:
 Relevant model files can be found at:
