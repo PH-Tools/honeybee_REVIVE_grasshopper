@@ -5,7 +5,7 @@
 These are called when the component is instantiated within the Grasshopper canvas.
 """
 
-RELEASE_VERSION = "Honeybee-REVIVE v0.0.01"
+RELEASE_VERSION = "Honeybee-REVIVE v0.0.05"
 CATEGORY = "HB-REVIVE"
 SUB_CATEGORIES = {
     0: "00 | Utils",
@@ -126,6 +126,12 @@ COMPONENT_PARAMS = {
     },
     "HB-REVIVE - Set ADORB Simulation Output Variables": {
         "NickName": "Set ADORB Simulation Output Variables",
+        "Message": RELEASE_VERSION,
+        "Category": CATEGORY,
+        "SubCategory": 1,
+    },
+    "HB-REVIVE - Generate ADORB Output Graphs": {
+        "NickName": "Generate ADORB Output Graphs",
         "Message": RELEASE_VERSION,
         "Category": CATEGORY,
         "SubCategory": 1,

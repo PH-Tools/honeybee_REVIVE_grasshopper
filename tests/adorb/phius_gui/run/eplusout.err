@@ -1,0 +1,473 @@
+Program Version,EnergyPlus, Version 23.2.0-7636e6b3e9, YMD=2024.11.11 12:04,
+   ** Warning ** Output:PreprocessorMessage="Conversion 9.5 => 9.6" has the following Warning condition:
+   **   ~~~   ** Compact Schedule object="ExhaustFanSchedule" terminated early.  Check for accuracy.
+   ************* Beginning Zone Sizing Calculations
+   ** Warning ** Foundation:Kiva="SLAB DETAILS", no Interior Horizontal Insulation Material Name defined
+   **   ~~~   ** Interior Horizontal Insulation Depth will not be used.
+   ** Warning ** Foundation:Kiva="SLAB DETAILS", no Exterior Horizontal Insulation Material Name defined
+   **   ~~~   ** Exterior Horizontal Insulation Width will not be used.
+   ** Warning ** Foundation:Kiva="SLAB DETAILS", no Footing Material Name defined
+   **   ~~~   ** Footing Depth will not be used.
+   ** Warning ** Foundation:Kiva="CRAWLSPACE DETAILS", no Interior Horizontal Insulation Material Name defined
+   **   ~~~   ** Interior Horizontal Insulation Depth will not be used.
+   ** Warning ** Foundation:Kiva="CRAWLSPACE DETAILS", no Exterior Horizontal Insulation Material Name defined
+   **   ~~~   ** Exterior Horizontal Insulation Width will not be used.
+   ** Warning ** Foundation:Kiva="CRAWLSPACE DETAILS", no Footing Material Name defined
+   **   ~~~   ** Footing Depth will not be used.
+   ** Warning ** Foundation:Kiva="BASEMENT DETAILS", no Interior Horizontal Insulation Material Name defined
+   **   ~~~   ** Interior Horizontal Insulation Depth will not be used.
+   ** Warning ** Foundation:Kiva="BASEMENT DETAILS", no Exterior Horizontal Insulation Material Name defined
+   **   ~~~   ** Exterior Horizontal Insulation Width will not be used.
+   ** Warning ** Foundation:Kiva="BASEMENT DETAILS", no Footing Material Name defined
+   **   ~~~   ** Footing Depth will not be used.
+   ** Warning ** CalcSurfaceCentroid: 14 Surfaces have the Z coordinate < 0.
+   **   ~~~   ** ...in any calculations, Wind Speed will be 0.0 for these surfaces.
+   **   ~~~   ** ...in any calculations, Outside temperatures will be the outside temperature + 9.750E-003 for these surfaces.
+   **   ~~~   ** ...that is, these surfaces will have conditions as though at ground level.
+   ** Warning ** SurfaceProperty:ExposedFoundationPerimeter: SLAB, 0 set as calculation method, but a value has been set for Exposed Perimeter Fraction. This value will be ignored.
+   ** Warning ** SurfaceProperty:ExposedFoundationPerimeter: CRAWLSPACE, 0 set as calculation method, but a value has been set for Exposed Perimeter Fraction. This value will be ignored.
+   ** Warning ** SurfaceProperty:ExposedFoundationPerimeter: BASEMENT, Total Exposed Perimeter is greater than the perimeter of BASEMENT
+   **   ~~~   ** BASEMENT perimeter = 40.614600000008004, SurfaceProperty:ExposedFoundationPerimeter exposed perimeter = 42.443400000000004
+   **   ~~~   ** Total Exposed Perimeter will be set equal to BASEMENT perimeter
+   ** Warning ** SurfaceProperty:ExposedFoundationPerimeter: BASEMENT, 0 set as calculation method, but a value has been set for Exposed Perimeter Fraction. This value will be ignored.
+   ** Severe  ** For zone: WHOLEHOUSE it is not possible to calculate the volume from the surrounding surfaces so either provide the volume value or define all the surfaces to fully enclose the zone.
+   ** Warning ** Indicated Zone Volume <= 0.0 for Zone=WHOLEHOUSE
+   **   ~~~   ** The calculated Zone Volume was=0.00
+   **   ~~~   ** The simulation will continue with the Zone Volume set to 10.0 m3. 
+   **   ~~~   ** ...use Output:Diagnostics,DisplayExtraWarnings; to show more details on individual zones.
+   ** Warning ** CalculateZoneVolume: 1 zone is not fully enclosed. For more details use:  Output:Diagnostics,DisplayExtrawarnings; 
+   ** Warning ** CheckUsedConstructions: There are 67 nominally unused constructions in input.
+   **   ~~~   ** For explicit details on each unused construction, use Output:Diagnostics,DisplayExtraWarnings;
+   ** Warning ** Foundation:Kiva="SLAB DETAILS", the autocalculated deep ground depth (0.511 m) is shallower than foundation construction elements (3.200E-003 m)
+   **   ~~~   ** The deep ground depth will be set one meter below the lowest element (1.003 m)
+   ** Warning ** Foundation:Kiva="BASEMENT DETAILS", wall surfaces with more than four vertices referencing
+   **   ~~~   ** ...Foundation Outside Boundary Conditions may not be interpreted correctly in the 2D finite difference model.
+   **   ~~~   ** Surface="45825F", has 8 vertices.
+   **   ~~~   ** Consider separating the wall into separate surfaces, each spanning from the floor slab to the top of the foundation wall.
+   ** Warning ** Foundation:Kiva="BASEMENT DETAILS", the autocalculated deep ground depth (0.511 m) is shallower than foundation construction elements (1.915 m)
+   **   ~~~   ** The deep ground depth will be set one meter below the lowest element (2.915 m)
+   ** Warning ** Foundation:Kiva="BASEMENT DETAILS", the autocalculated deep ground depth (0.511 m) is shallower than foundation construction elements (2.200 m)
+   **   ~~~   ** The deep ground depth will be set one meter below the lowest element (3.200 m)
+   ** Warning ** Foundation:Kiva="CRAWLSPACE DETAILS", the autocalculated deep ground depth (0.511 m) is shallower than foundation construction elements (3.048E-004 m)
+   **   ~~~   ** The deep ground depth will be set one meter below the lowest element (1.000 m)
+   ** Severe  ** Problem in interior solar distribution calculation (CHKBKS)
+   **   ~~~   **    Solar Distribution = FullInteriorExterior will not work in Zone=WHOLEHOUSE
+   **   ~~~   **    because one or more of vertices, such as Vertex 3 of back surface=568FE7, is in front of receiving surface=6F6DD2
+   **   ~~~   **    (Dot Product indicator=             46.3353)
+   **   ~~~   **    Check surface geometry; if OK, use Solar Distribution = FullExterior instead. Use Output:Diagnostics, DisplayExtraWarnings; for more details.
+   ** Severe  ** Problem in interior solar distribution calculation (CHKBKS)
+   **   ~~~   **    Solar Distribution = FullInteriorExterior will not work in Zone=WHOLEHOUSE
+   **   ~~~   **    because one or more of vertices, such as Vertex 1 of back surface=45825F, is in front of receiving surface=6F6DD2
+   **   ~~~   **    (Dot Product indicator=             46.3353)
+   **   ~~~   **    Check surface geometry; if OK, use Solar Distribution = FullExterior instead. Use Output:Diagnostics, DisplayExtraWarnings; for more details.
+   ** Severe  ** Problem in interior solar distribution calculation (CHKBKS)
+   **   ~~~   **    Solar Distribution = FullInteriorExterior will not work in Zone=WHOLEHOUSE
+   **   ~~~   **    because one or more of vertices, such as Vertex 1 of back surface=64DDB4, is in front of receiving surface=6F6DD2
+   **   ~~~   **    (Dot Product indicator=             46.3353)
+   **   ~~~   **    Check surface geometry; if OK, use Solar Distribution = FullExterior instead. Use Output:Diagnostics, DisplayExtraWarnings; for more details.
+   ** Severe  ** Problem in interior solar distribution calculation (CHKBKS)
+   **   ~~~   **    Solar Distribution = FullInteriorExterior will not work in Zone=WHOLEHOUSE
+   **   ~~~   **    because one or more of vertices, such as Vertex 1 of back surface=D486AD, is in front of receiving surface=6F6DD2
+   **   ~~~   **    (Dot Product indicator=             46.3353)
+   **   ~~~   **    Check surface geometry; if OK, use Solar Distribution = FullExterior instead. Use Output:Diagnostics, DisplayExtraWarnings; for more details.
+   ** Severe  ** Problem in interior solar distribution calculation (CHKBKS)
+   **   ~~~   **    Solar Distribution = FullInteriorExterior will not work in Zone=WHOLEHOUSE
+   **   ~~~   **    because one or more of vertices, such as Vertex 1 of back surface=92789E, is in front of receiving surface=6F6DD2
+   **   ~~~   **    (Dot Product indicator=             46.3353)
+   **   ~~~   **    Check surface geometry; if OK, use Solar Distribution = FullExterior instead. Use Output:Diagnostics, DisplayExtraWarnings; for more details.
+   ** Severe  ** Problem in interior solar distribution calculation (CHKBKS)
+   **   ~~~   **    Solar Distribution = FullInteriorExterior will not work in Zone=WHOLEHOUSE
+   **   ~~~   **    because one or more of vertices, such as Vertex 3 of back surface=F14839, is in front of receiving surface=6F6DD2
+   **   ~~~   **    (Dot Product indicator=             46.3353)
+   **   ~~~   **    Check surface geometry; if OK, use Solar Distribution = FullExterior instead. Use Output:Diagnostics, DisplayExtraWarnings; for more details.
+   ** Severe  ** Problem in interior solar distribution calculation (CHKBKS)
+   **   ~~~   **    Solar Distribution = FullInteriorExterior will not work in Zone=WHOLEHOUSE
+   **   ~~~   **    because one or more of vertices, such as Vertex 1 of back surface=468B21, is in front of receiving surface=6F6DD2
+   **   ~~~   **    (Dot Product indicator=             46.3353)
+   **   ~~~   **    Check surface geometry; if OK, use Solar Distribution = FullExterior instead. Use Output:Diagnostics, DisplayExtraWarnings; for more details.
+   ** Severe  ** Problem in interior solar distribution calculation (CHKBKS)
+   **   ~~~   **    Solar Distribution = FullInteriorExterior will not work in Zone=WHOLEHOUSE
+   **   ~~~   **    because one or more of vertices, such as Vertex 1 of back surface=BASEMENT, is in front of receiving surface=6F6DD2
+   **   ~~~   **    (Dot Product indicator=             46.3353)
+   **   ~~~   **    Check surface geometry; if OK, use Solar Distribution = FullExterior instead. Use Output:Diagnostics, DisplayExtraWarnings; for more details.
+   ** Severe  ** Problem in interior solar distribution calculation (CHKBKS)
+   **   ~~~   **    Solar Distribution = FullInteriorExterior will not work in Zone=WHOLEHOUSE
+   **   ~~~   **    because one or more of vertices, such as Vertex 3 of back surface=1A951B, is in front of receiving surface=6F6DD2
+   **   ~~~   **    (Dot Product indicator=             46.3353)
+   **   ~~~   **    Check surface geometry; if OK, use Solar Distribution = FullExterior instead. Use Output:Diagnostics, DisplayExtraWarnings; for more details.
+   ** Severe  ** Problem in interior solar distribution calculation (CHKBKS)
+   **   ~~~   **    Solar Distribution = FullInteriorExterior will not work in Zone=WHOLEHOUSE
+   **   ~~~   **    because one or more of vertices, such as Vertex 1 of back surface=E1ADC4, is in front of receiving surface=6F6DD2
+   **   ~~~   **    (Dot Product indicator=             46.3353)
+   **   ~~~   **    Check surface geometry; if OK, use Solar Distribution = FullExterior instead. Use Output:Diagnostics, DisplayExtraWarnings; for more details.
+   ** Severe  ** Problem in interior solar distribution calculation (CHKBKS)
+   **   ~~~   **    Solar Distribution = FullInteriorExterior will not work in Zone=WHOLEHOUSE
+   **   ~~~   **    because one or more of vertices, such as Vertex 1 of back surface=8A81B2, is in front of receiving surface=6F6DD2
+   **   ~~~   **    (Dot Product indicator=             35.0888)
+   **   ~~~   **    Check surface geometry; if OK, use Solar Distribution = FullExterior instead. Use Output:Diagnostics, DisplayExtraWarnings; for more details.
+   ** Severe  ** Problem in interior solar distribution calculation (CHKBKS)
+   **   ~~~   **    Solar Distribution = FullInteriorExterior will not work in Zone=WHOLEHOUSE
+   **   ~~~   **    because one or more of vertices, such as Vertex 1 of back surface=DC8392, is in front of receiving surface=6F6DD2
+   **   ~~~   **    (Dot Product indicator=             19.1905)
+   **   ~~~   **    Check surface geometry; if OK, use Solar Distribution = FullExterior instead. Use Output:Diagnostics, DisplayExtraWarnings; for more details.
+   ** Severe  ** Problem in interior solar distribution calculation (CHKBKS)
+   **   ~~~   **    Solar Distribution = FullInteriorExterior will not work in Zone=WHOLEHOUSE
+   **   ~~~   **    because one or more of vertices, such as Vertex 1 of back surface=4AF19B, is in front of receiving surface=6F6DD2
+   **   ~~~   **    (Dot Product indicator=              0.9701)
+   **   ~~~   **    Check surface geometry; if OK, use Solar Distribution = FullExterior instead. Use Output:Diagnostics, DisplayExtraWarnings; for more details.
+   ** Severe  ** Problem in interior solar distribution calculation (CHKBKS)
+   **   ~~~   **    Solar Distribution = FullInteriorExterior will not work in Zone=WHOLEHOUSE
+   **   ~~~   **    because one or more of vertices, such as Vertex 1 of back surface=52F9CB, is in front of receiving surface=6F6DD2
+   **   ~~~   **    (Dot Product indicator=             36.7074)
+   **   ~~~   **    Check surface geometry; if OK, use Solar Distribution = FullExterior instead. Use Output:Diagnostics, DisplayExtraWarnings; for more details.
+   ** Severe  ** Problem in interior solar distribution calculation (CHKBKS)
+   **   ~~~   **    Solar Distribution = FullInteriorExterior will not work in Zone=WHOLEHOUSE
+   **   ~~~   **    because one or more of vertices, such as Vertex 1 of back surface=507101, is in front of receiving surface=6F6DD2
+   **   ~~~   **    (Dot Product indicator=              7.6656)
+   **   ~~~   **    Check surface geometry; if OK, use Solar Distribution = FullExterior instead. Use Output:Diagnostics, DisplayExtraWarnings; for more details.
+   ** Severe  ** Problem in interior solar distribution calculation (CHKBKS)
+   **   ~~~   **    Solar Distribution = FullInteriorExterior will not work in Zone=WHOLEHOUSE
+   **   ~~~   **    because one or more of vertices, such as Vertex 1 of back surface=DF0118, is in front of receiving surface=6F6DD2
+   **   ~~~   **    (Dot Product indicator=             46.3353)
+   **   ~~~   **    Check surface geometry; if OK, use Solar Distribution = FullExterior instead. Use Output:Diagnostics, DisplayExtraWarnings; for more details.
+   ** Severe  ** Problem in interior solar distribution calculation (CHKBKS)
+   **   ~~~   **    Solar Distribution = FullInteriorExterior will not work in Zone=WHOLEHOUSE
+   **   ~~~   **    because one or more of vertices, such as Vertex 1 of back surface=22F24D, is in front of receiving surface=D486AD
+   **   ~~~   **    (Dot Product indicator=             46.3353)
+   **   ~~~   **    Check surface geometry; if OK, use Solar Distribution = FullExterior instead. Use Output:Diagnostics, DisplayExtraWarnings; for more details.
+   ** Severe  ** Problem in interior solar distribution calculation (CHKBKS)
+   **   ~~~   **    Solar Distribution = FullInteriorExterior will not work in Zone=WHOLEHOUSE
+   **   ~~~   **    because one or more of vertices, such as Vertex 1 of back surface=C90A16, is in front of receiving surface=D486AD
+   **   ~~~   **    (Dot Product indicator=             46.3353)
+   **   ~~~   **    Check surface geometry; if OK, use Solar Distribution = FullExterior instead. Use Output:Diagnostics, DisplayExtraWarnings; for more details.
+   ** Severe  ** Problem in interior solar distribution calculation (CHKBKS)
+   **   ~~~   **    Solar Distribution = FullInteriorExterior will not work in Zone=WHOLEHOUSE
+   **   ~~~   **    because one or more of vertices, such as Vertex 3 of back surface=6F6DD2, is in front of receiving surface=D486AD
+   **   ~~~   **    (Dot Product indicator=             46.3353)
+   **   ~~~   **    Check surface geometry; if OK, use Solar Distribution = FullExterior instead. Use Output:Diagnostics, DisplayExtraWarnings; for more details.
+   ** Severe  ** Problem in interior solar distribution calculation (CHKBKS)
+   **   ~~~   **    Solar Distribution = FullInteriorExterior will not work in Zone=WHOLEHOUSE
+   **   ~~~   **    because one or more of vertices, such as Vertex 1 of back surface=SLAB, is in front of receiving surface=D486AD
+   **   ~~~   **    (Dot Product indicator=             46.3353)
+   **   ~~~   **    Check surface geometry; if OK, use Solar Distribution = FullExterior instead. Use Output:Diagnostics, DisplayExtraWarnings; for more details.
+   ** Severe  ** Problem in interior solar distribution calculation (CHKBKS)
+   **   ~~~   **    Solar Distribution = FullInteriorExterior will not work in Zone=WHOLEHOUSE
+   **   ~~~   **    because one or more of vertices, such as Vertex 3 of back surface=BE97CE, is in front of receiving surface=D486AD
+   **   ~~~   **    (Dot Product indicator=             46.3353)
+   **   ~~~   **    Check surface geometry; if OK, use Solar Distribution = FullExterior instead. Use Output:Diagnostics, DisplayExtraWarnings; for more details.
+   ** Severe  ** Problem in interior solar distribution calculation (CHKBKS)
+   **   ~~~   **    Solar Distribution = FullInteriorExterior will not work in Zone=WHOLEHOUSE
+   **   ~~~   **    because one or more of vertices, such as Vertex 2 of back surface=16A229, is in front of receiving surface=D486AD
+   **   ~~~   **    (Dot Product indicator=              0.7388)
+   **   ~~~   **    Check surface geometry; if OK, use Solar Distribution = FullExterior instead. Use Output:Diagnostics, DisplayExtraWarnings; for more details.
+   ** Severe  ** Problem in interior solar distribution calculation (CHKBKS)
+   **   ~~~   **    Solar Distribution = FullInteriorExterior will not work in Zone=WHOLEHOUSE
+   **   ~~~   **    because one or more of vertices, such as Vertex 1 of back surface=6183FD, is in front of receiving surface=D486AD
+   **   ~~~   **    (Dot Product indicator=             46.3353)
+   **   ~~~   **    Check surface geometry; if OK, use Solar Distribution = FullExterior instead. Use Output:Diagnostics, DisplayExtraWarnings; for more details.
+   ** Severe  ** Problem in interior solar distribution calculation (CHKBKS)
+   **   ~~~   **    Solar Distribution = FullInteriorExterior will not work in Zone=WHOLEHOUSE
+   **   ~~~   **    because one or more of vertices, such as Vertex 1 of back surface=8F337D, is in front of receiving surface=D486AD
+   **   ~~~   **    (Dot Product indicator=             23.5103)
+   **   ~~~   **    Check surface geometry; if OK, use Solar Distribution = FullExterior instead. Use Output:Diagnostics, DisplayExtraWarnings; for more details.
+   ** Severe  ** Problem in interior solar distribution calculation (CHKBKS)
+   **   ~~~   **    Solar Distribution = FullInteriorExterior will not work in Zone=WHOLEHOUSE
+   **   ~~~   **    because one or more of vertices, such as Vertex 1 of back surface=A1BFE5, is in front of receiving surface=D486AD
+   **   ~~~   **    (Dot Product indicator=             46.3353)
+   **   ~~~   **    Check surface geometry; if OK, use Solar Distribution = FullExterior instead. Use Output:Diagnostics, DisplayExtraWarnings; for more details.
+   ** Severe  ** Problem in interior solar distribution calculation (CHKBKS)
+   **   ~~~   **    Solar Distribution = FullInteriorExterior will not work in Zone=WHOLEHOUSE
+   **   ~~~   **    because one or more of vertices, such as Vertex 1 of back surface=6B6F7B, is in front of receiving surface=D486AD
+   **   ~~~   **    (Dot Product indicator=             46.3353)
+   **   ~~~   **    Check surface geometry; if OK, use Solar Distribution = FullExterior instead. Use Output:Diagnostics, DisplayExtraWarnings; for more details.
+   ** Severe  ** Problem in interior solar distribution calculation (CHKBKS)
+   **   ~~~   **    Solar Distribution = FullInteriorExterior will not work in Zone=WHOLEHOUSE
+   **   ~~~   **    because one or more of vertices, such as Vertex 1 of back surface=9BA2B9, is in front of receiving surface=D486AD
+   **   ~~~   **    (Dot Product indicator=              9.3627)
+   **   ~~~   **    Check surface geometry; if OK, use Solar Distribution = FullExterior instead. Use Output:Diagnostics, DisplayExtraWarnings; for more details.
+   ** Severe  ** Problem in interior solar distribution calculation (CHKBKS)
+   **   ~~~   **    Solar Distribution = FullInteriorExterior will not work in Zone=WHOLEHOUSE
+   **   ~~~   **    because one or more of vertices, such as Vertex 1 of back surface=BABDD6, is in front of receiving surface=F14839
+   **   ~~~   **    (Dot Product indicator=              8.8930)
+   **   ~~~   **    Check surface geometry; if OK, use Solar Distribution = FullExterior instead. Use Output:Diagnostics, DisplayExtraWarnings; for more details.
+   ** Severe  ** Problem in interior solar distribution calculation (CHKBKS)
+   **   ~~~   **    Solar Distribution = FullInteriorExterior will not work in Zone=WHOLEHOUSE
+   **   ~~~   **    because one or more of vertices, such as Vertex 1 of back surface=9C0F3A, is in front of receiving surface=F14839
+   **   ~~~   **    (Dot Product indicator=              8.8930)
+   **   ~~~   **    Check surface geometry; if OK, use Solar Distribution = FullExterior instead. Use Output:Diagnostics, DisplayExtraWarnings; for more details.
+   ** Severe  ** Problem in interior solar distribution calculation (CHKBKS)
+   **   ~~~   **    Solar Distribution = FullInteriorExterior will not work in Zone=WHOLEHOUSE
+   **   ~~~   **    because one or more of vertices, such as Vertex 3 of back surface=A8C326, is in front of receiving surface=F14839
+   **   ~~~   **    (Dot Product indicator=              8.8930)
+   **   ~~~   **    Check surface geometry; if OK, use Solar Distribution = FullExterior instead. Use Output:Diagnostics, DisplayExtraWarnings; for more details.
+   ** Severe  ** Problem in interior solar distribution calculation (CHKBKS)
+   **   ~~~   **    Solar Distribution = FullInteriorExterior will not work in Zone=WHOLEHOUSE
+   **   ~~~   **    because one or more of vertices, such as Vertex 2 of back surface=F57591, is in front of receiving surface=F14839
+   **   ~~~   **    (Dot Product indicator=              8.8930)
+   **   ~~~   **    Check surface geometry; if OK, use Solar Distribution = FullExterior instead. Use Output:Diagnostics, DisplayExtraWarnings; for more details.
+   ** Severe  ** Problem in interior solar distribution calculation (CHKBKS)
+   **   ~~~   **    Solar Distribution = FullInteriorExterior will not work in Zone=WHOLEHOUSE
+   **   ~~~   **    because one or more of vertices, such as Vertex 2 of back surface=A20E06, is in front of receiving surface=F14839
+   **   ~~~   **    (Dot Product indicator=              8.8930)
+   **   ~~~   **    Check surface geometry; if OK, use Solar Distribution = FullExterior instead. Use Output:Diagnostics, DisplayExtraWarnings; for more details.
+   ** Severe  ** Problem in interior solar distribution calculation (CHKBKS)
+   **   ~~~   **    Solar Distribution = FullInteriorExterior will not work in Zone=WHOLEHOUSE
+   **   ~~~   **    because one or more of vertices, such as Vertex 1 of back surface=847485, is in front of receiving surface=F14839
+   **   ~~~   **    (Dot Product indicator=              8.8930)
+   **   ~~~   **    Check surface geometry; if OK, use Solar Distribution = FullExterior instead. Use Output:Diagnostics, DisplayExtraWarnings; for more details.
+   ** Severe  ** Problem in interior solar distribution calculation (CHKBKS)
+   **   ~~~   **    Solar Distribution = FullInteriorExterior will not work in Zone=WHOLEHOUSE
+   **   ~~~   **    because one or more of vertices, such as Vertex 1 of back surface=1A39E1, is in front of receiving surface=F14839
+   **   ~~~   **    (Dot Product indicator=              6.9638)
+   **   ~~~   **    Check surface geometry; if OK, use Solar Distribution = FullExterior instead. Use Output:Diagnostics, DisplayExtraWarnings; for more details.
+   ** Severe  ** Problem in interior solar distribution calculation (CHKBKS)
+   **   ~~~   **    Solar Distribution = FullInteriorExterior will not work in Zone=WHOLEHOUSE
+   **   ~~~   **    because one or more of vertices, such as Vertex 1 of back surface=4F420B, is in front of receiving surface=F14839
+   **   ~~~   **    (Dot Product indicator=              1.9292)
+   **   ~~~   **    Check surface geometry; if OK, use Solar Distribution = FullExterior instead. Use Output:Diagnostics, DisplayExtraWarnings; for more details.
+   ** Severe  ** Problem in interior solar distribution calculation (CHKBKS)
+   **   ~~~   **    Solar Distribution = FullInteriorExterior will not work in Zone=WHOLEHOUSE
+   **   ~~~   **    because one or more of vertices, such as Vertex 3 of back surface=568FE7, is in front of receiving surface=BABDD6
+   **   ~~~   **    (Dot Product indicator=              2.8355)
+   **   ~~~   **    Check surface geometry; if OK, use Solar Distribution = FullExterior instead. Use Output:Diagnostics, DisplayExtraWarnings; for more details.
+   ** Severe  ** Problem in interior solar distribution calculation (CHKBKS)
+   **   ~~~   **    Solar Distribution = FullInteriorExterior will not work in Zone=WHOLEHOUSE
+   **   ~~~   **    because one or more of vertices, such as Vertex 1 of back surface=45825F, is in front of receiving surface=BABDD6
+   **   ~~~   **    (Dot Product indicator=              2.8355)
+   **   ~~~   **    Check surface geometry; if OK, use Solar Distribution = FullExterior instead. Use Output:Diagnostics, DisplayExtraWarnings; for more details.
+   ** Severe  ** Problem in interior solar distribution calculation (CHKBKS)
+   **   ~~~   **    Solar Distribution = FullInteriorExterior will not work in Zone=WHOLEHOUSE
+   **   ~~~   **    because one or more of vertices, such as Vertex 1 of back surface=64DDB4, is in front of receiving surface=BABDD6
+   **   ~~~   **    (Dot Product indicator=              0.7260)
+   **   ~~~   **    Check surface geometry; if OK, use Solar Distribution = FullExterior instead. Use Output:Diagnostics, DisplayExtraWarnings; for more details.
+   ** Severe  ** Problem in interior solar distribution calculation (CHKBKS)
+   **   ~~~   **    Solar Distribution = FullInteriorExterior will not work in Zone=WHOLEHOUSE
+   **   ~~~   **    because one or more of vertices, such as Vertex 1 of back surface=D486AD, is in front of receiving surface=BABDD6
+   **   ~~~   **    (Dot Product indicator=              0.7260)
+   **   ~~~   **    Check surface geometry; if OK, use Solar Distribution = FullExterior instead. Use Output:Diagnostics, DisplayExtraWarnings; for more details.
+   ** Severe  ** Problem in interior solar distribution calculation (CHKBKS)
+   **   ~~~   **    Solar Distribution = FullInteriorExterior will not work in Zone=WHOLEHOUSE
+   **   ~~~   **    because one or more of vertices, such as Vertex 1 of back surface=92789E, is in front of receiving surface=BABDD6
+   **   ~~~   **    (Dot Product indicator=              2.8355)
+   **   ~~~   **    Check surface geometry; if OK, use Solar Distribution = FullExterior instead. Use Output:Diagnostics, DisplayExtraWarnings; for more details.
+   ** Severe  ** Problem in interior solar distribution calculation (CHKBKS)
+   **   ~~~   **    Solar Distribution = FullInteriorExterior will not work in Zone=WHOLEHOUSE
+   **   ~~~   **    because one or more of vertices, such as Vertex 3 of back surface=F14839, is in front of receiving surface=BABDD6
+   **   ~~~   **    (Dot Product indicator=              2.8355)
+   **   ~~~   **    Check surface geometry; if OK, use Solar Distribution = FullExterior instead. Use Output:Diagnostics, DisplayExtraWarnings; for more details.
+   ** Severe  ** Problem in interior solar distribution calculation (CHKBKS)
+   **   ~~~   **    Solar Distribution = FullInteriorExterior will not work in Zone=WHOLEHOUSE
+   **   ~~~   **    because one or more of vertices, such as Vertex 1 of back surface=468B21, is in front of receiving surface=BABDD6
+   **   ~~~   **    (Dot Product indicator=              2.5078)
+   **   ~~~   **    Check surface geometry; if OK, use Solar Distribution = FullExterior instead. Use Output:Diagnostics, DisplayExtraWarnings; for more details.
+   ** Severe  ** Problem in interior solar distribution calculation (CHKBKS)
+   **   ~~~   **    Solar Distribution = FullInteriorExterior will not work in Zone=WHOLEHOUSE
+   **   ~~~   **    because one or more of vertices, such as Vertex 1 of back surface=BASEMENT, is in front of receiving surface=BABDD6
+   **   ~~~   **    (Dot Product indicator=              0.7260)
+   **   ~~~   **    Check surface geometry; if OK, use Solar Distribution = FullExterior instead. Use Output:Diagnostics, DisplayExtraWarnings; for more details.
+   ** Severe  ** Problem in interior solar distribution calculation (CHKBKS)
+   **   ~~~   **    Solar Distribution = FullInteriorExterior will not work in Zone=WHOLEHOUSE
+   **   ~~~   **    because one or more of vertices, such as Vertex 3 of back surface=1A951B, is in front of receiving surface=BABDD6
+   **   ~~~   **    (Dot Product indicator=              2.8355)
+   **   ~~~   **    Check surface geometry; if OK, use Solar Distribution = FullExterior instead. Use Output:Diagnostics, DisplayExtraWarnings; for more details.
+   ** Severe  ** Problem in interior solar distribution calculation (CHKBKS)
+   **   ~~~   **    Solar Distribution = FullInteriorExterior will not work in Zone=WHOLEHOUSE
+   **   ~~~   **    because one or more of vertices, such as Vertex 1 of back surface=E1ADC4, is in front of receiving surface=BABDD6
+   **   ~~~   **    (Dot Product indicator=              1.7933)
+   **   ~~~   **    Check surface geometry; if OK, use Solar Distribution = FullExterior instead. Use Output:Diagnostics, DisplayExtraWarnings; for more details.
+   ** Severe  ** Problem in interior solar distribution calculation (CHKBKS)
+   **   ~~~   **    Solar Distribution = FullInteriorExterior will not work in Zone=WHOLEHOUSE
+   **   ~~~   **    because one or more of vertices, such as Vertex 1 of back surface=8A81B2, is in front of receiving surface=BABDD6
+   **   ~~~   **    (Dot Product indicator=              2.1993)
+   **   ~~~   **    Check surface geometry; if OK, use Solar Distribution = FullExterior instead. Use Output:Diagnostics, DisplayExtraWarnings; for more details.
+   ** Severe  ** Problem in interior solar distribution calculation (CHKBKS)
+   **   ~~~   **    Solar Distribution = FullInteriorExterior will not work in Zone=WHOLEHOUSE
+   **   ~~~   **    because one or more of vertices, such as Vertex 1 of back surface=DC8392, is in front of receiving surface=BABDD6
+   **   ~~~   **    (Dot Product indicator=              1.3001)
+   **   ~~~   **    Check surface geometry; if OK, use Solar Distribution = FullExterior instead. Use Output:Diagnostics, DisplayExtraWarnings; for more details.
+   ** Severe  ** Problem in interior solar distribution calculation (CHKBKS)
+   **   ~~~   **    Solar Distribution = FullInteriorExterior will not work in Zone=WHOLEHOUSE
+   **   ~~~   **    because one or more of vertices, such as Vertex 1 of back surface=4AF19B, is in front of receiving surface=BABDD6
+   **   ~~~   **    (Dot Product indicator=              0.2694)
+   **   ~~~   **    Check surface geometry; if OK, use Solar Distribution = FullExterior instead. Use Output:Diagnostics, DisplayExtraWarnings; for more details.
+   ** Severe  ** Problem in interior solar distribution calculation (CHKBKS)
+   **   ~~~   **    Solar Distribution = FullInteriorExterior will not work in Zone=WHOLEHOUSE
+   **   ~~~   **    because one or more of vertices, such as Vertex 1 of back surface=52F9CB, is in front of receiving surface=BABDD6
+   **   ~~~   **    (Dot Product indicator=              0.1815)
+   **   ~~~   **    Check surface geometry; if OK, use Solar Distribution = FullExterior instead. Use Output:Diagnostics, DisplayExtraWarnings; for more details.
+   ** Severe  ** Problem in interior solar distribution calculation (CHKBKS)
+   **   ~~~   **    Solar Distribution = FullInteriorExterior will not work in Zone=WHOLEHOUSE
+   **   ~~~   **    because one or more of vertices, such as Vertex 1 of back surface=DF0118, is in front of receiving surface=BABDD6
+   **   ~~~   **    (Dot Product indicator=              2.4410)
+   **   ~~~   **    Check surface geometry; if OK, use Solar Distribution = FullExterior instead. Use Output:Diagnostics, DisplayExtraWarnings; for more details.
+   ** Severe  ** Problem in interior solar distribution calculation (CHKBKS)
+   **   ~~~   **    Solar Distribution = FullInteriorExterior will not work in Zone=WHOLEHOUSE
+   **   ~~~   **    because one or more of vertices, such as Vertex 1 of back surface=568FE7, is in front of receiving surface=A8C326
+   **   ~~~   **    (Dot Product indicator=              0.3626)
+   **   ~~~   **    Check surface geometry; if OK, use Solar Distribution = FullExterior instead. Use Output:Diagnostics, DisplayExtraWarnings; for more details.
+   ** Severe  ** Problem in interior solar distribution calculation (CHKBKS)
+   **   ~~~   **    Solar Distribution = FullInteriorExterior will not work in Zone=WHOLEHOUSE
+   **   ~~~   **    because one or more of vertices, such as Vertex 3 of back surface=22F24D, is in front of receiving surface=A8C326
+   **   ~~~   **    (Dot Product indicator=              1.7121)
+   **   ~~~   **    Check surface geometry; if OK, use Solar Distribution = FullExterior instead. Use Output:Diagnostics, DisplayExtraWarnings; for more details.
+   ** Severe  ** Problem in interior solar distribution calculation (CHKBKS)
+   **   ~~~   **    Solar Distribution = FullInteriorExterior will not work in Zone=WHOLEHOUSE
+   **   ~~~   **    because one or more of vertices, such as Vertex 3 of back surface=1312C0, is in front of receiving surface=A8C326
+   **   ~~~   **    (Dot Product indicator=              0.3626)
+   **   ~~~   **    Check surface geometry; if OK, use Solar Distribution = FullExterior instead. Use Output:Diagnostics, DisplayExtraWarnings; for more details.
+   ** Severe  ** Problem in interior solar distribution calculation (CHKBKS)
+   **   ~~~   **    Solar Distribution = FullInteriorExterior will not work in Zone=WHOLEHOUSE
+   **   ~~~   **    because one or more of vertices, such as Vertex 1 of back surface=F14839, is in front of receiving surface=A8C326
+   **   ~~~   **    (Dot Product indicator=              1.7121)
+   **   ~~~   **    Check surface geometry; if OK, use Solar Distribution = FullExterior instead. Use Output:Diagnostics, DisplayExtraWarnings; for more details.
+   ** Severe  ** Problem in interior solar distribution calculation (CHKBKS)
+   **   ~~~   **    Solar Distribution = FullInteriorExterior will not work in Zone=WHOLEHOUSE
+   **   ~~~   **    because one or more of vertices, such as Vertex 3 of back surface=BASEMENT, is in front of receiving surface=A8C326
+   **   ~~~   **    (Dot Product indicator=              0.3626)
+   **   ~~~   **    Check surface geometry; if OK, use Solar Distribution = FullExterior instead. Use Output:Diagnostics, DisplayExtraWarnings; for more details.
+   ** Severe  ** Problem in interior solar distribution calculation (CHKBKS)
+   **   ~~~   **    Solar Distribution = FullInteriorExterior will not work in Zone=WHOLEHOUSE
+   **   ~~~   **    because one or more of vertices, such as Vertex 2 of back surface=CRAWLSPACE, is in front of receiving surface=A8C326
+   **   ~~~   **    (Dot Product indicator=              0.3626)
+   **   ~~~   **    Check surface geometry; if OK, use Solar Distribution = FullExterior instead. Use Output:Diagnostics, DisplayExtraWarnings; for more details.
+   ** Severe  ** Problem in interior solar distribution calculation (CHKBKS)
+   **   ~~~   **    Solar Distribution = FullInteriorExterior will not work in Zone=WHOLEHOUSE
+   **   ~~~   **    because one or more of vertices, such as Vertex 1 of back surface=1A951B, is in front of receiving surface=A8C326
+   **   ~~~   **    (Dot Product indicator=              0.6699)
+   **   ~~~   **    Check surface geometry; if OK, use Solar Distribution = FullExterior instead. Use Output:Diagnostics, DisplayExtraWarnings; for more details.
+   ** Severe  ** Problem in interior solar distribution calculation (CHKBKS)
+   **   ~~~   **    Solar Distribution = FullInteriorExterior will not work in Zone=WHOLEHOUSE
+   **   ~~~   **    because one or more of vertices, such as Vertex 3 of back surface=16A229, is in front of receiving surface=A8C326
+   **   ~~~   **    (Dot Product indicator=              0.6699)
+   **   ~~~   **    Check surface geometry; if OK, use Solar Distribution = FullExterior instead. Use Output:Diagnostics, DisplayExtraWarnings; for more details.
+   ** Severe  ** Problem in interior solar distribution calculation (CHKBKS)
+   **   ~~~   **    Solar Distribution = FullInteriorExterior will not work in Zone=WHOLEHOUSE
+   **   ~~~   **    because one or more of vertices, such as Vertex 1 of back surface=7314D3, is in front of receiving surface=A8C326
+   **   ~~~   **    (Dot Product indicator=              0.8658)
+   **   ~~~   **    Check surface geometry; if OK, use Solar Distribution = FullExterior instead. Use Output:Diagnostics, DisplayExtraWarnings; for more details.
+   ** Severe  ** Problem in interior solar distribution calculation (CHKBKS)
+   **   ~~~   **    Solar Distribution = FullInteriorExterior will not work in Zone=WHOLEHOUSE
+   **   ~~~   **    because one or more of vertices, such as Vertex 1 of back surface=5ADD37, is in front of receiving surface=A8C326
+   **   ~~~   **    (Dot Product indicator=              0.5000)
+   **   ~~~   **    Check surface geometry; if OK, use Solar Distribution = FullExterior instead. Use Output:Diagnostics, DisplayExtraWarnings; for more details.
+   ** Severe  ** Problem in interior solar distribution calculation (CHKBKS)
+   **   ~~~   **    Solar Distribution = FullInteriorExterior will not work in Zone=WHOLEHOUSE
+   **   ~~~   **    because one or more of vertices, such as Vertex 3 of back surface=5E21AF, is in front of receiving surface=A8C326
+   **   ~~~   **    (Dot Product indicator=              0.0523)
+   **   ~~~   **    Check surface geometry; if OK, use Solar Distribution = FullExterior instead. Use Output:Diagnostics, DisplayExtraWarnings; for more details.
+   ** Warning ** DetermineShadowingCombinations: There are 1 surfaces which are receiving surfaces and are non-convex.
+   **   ~~~   ** ...Shadowing values may be inaccurate. Check .shd report file for more surface shading details
+   **   ~~~   ** ...Add Output:Diagnostics,DisplayExtraWarnings; to see individual warnings for each surface.
+   ** Severe  ** DetermineShadowingCombinations: There are 1 surfaces which are casting surfaces and are non-convex.
+   **   ~~~   ** ...Shadowing values may be inaccurate. Check .shd report file for more surface shading details
+   **   ~~~   ** ...Add Output:Diagnostics,DisplayExtraWarnings; to see individual severes for each surface.
+   ** Warning ** GeneratorController constructor ElectricLoadCenter:Generators, Availability Schedule for Generator:PVWatts 'PV ARRAY' will be be ignored (runs all the time).
+   ** Warning ** AirLoopHVAC:UnitarySystem = WHOLEHOUSE_GASHEAT_DXAC_FURNACE
+   **   ~~~   ** Method used to determine the cooling supply air flow rate is not specified when cooling coil is present.
+   ** Warning ** AirLoopHVAC:UnitarySystem = WHOLEHOUSE_GASHEAT_DXAC_FURNACE
+   **   ~~~   ** Method used to determine the heating supply air flow rate is not specified when heating coil is present.
+   ** Warning ** ManageSizing: For a plant sizing run, there must be at least 1 Sizing:Plant object input. SimulationControl Plant Sizing option ignored.
+   ** Warning ** For object = Coil:Cooling:DX:SingleSpeed, name = "WHOLEHOUSEFURNACE_DXAC_COIL"
+   **   ~~~   ** Calculated outlet air relative humidity greater than 1. The combination of
+   **   ~~~   ** rated air volume flow rate, total cooling capacity and sensible heat ratio yields coil exiting
+   **   ~~~   ** air conditions above the saturation curve. Possible fixes are to reduce the rated total cooling
+   **   ~~~   ** capacity, increase the rated air volume flow rate, or reduce the rated sensible heat ratio for this coil.
+   **   ~~~   ** If autosizing, it is recommended that all three of these values be autosized.
+   **   ~~~   ** ...Inputs used for calculating cooling coil bypass factor.
+   **   ~~~   ** ...Inlet Air Temperature     = 26.67 C
+   **   ~~~   ** ...Outlet Air Temperature    = 12.00 C
+   **   ~~~   ** ...Inlet Air Humidity Ratio  = 1.118470E-002 kgWater/kgDryAir
+   **   ~~~   ** ...Outlet Air Humidity Ratio = 9.225158E-003 kgWater/kgDryAir
+   **   ~~~   ** ...Total Cooling Capacity used in calculation = 20487.76 W
+   **   ~~~   ** ...Air Mass Flow Rate used in calculation     = 1.024831 kg/s
+   **   ~~~   ** ...Air Volume Flow Rate used in calculation   = 0.885959 m3/s
+   **   ~~~   **  During Warmup, Environment=ROCHESTER INTERNATIONAL ARPT ANN HTG 99.6% CONDNS DB, at Simulation time=01/21 00:00 - 00:15
+   **   ~~~   ** CalcCBF: SHR adjusted to achieve valid outlet air properties and the simulation continues.
+   **   ~~~   ** CalcCBF: initial SHR = 0.75000
+   **   ~~~   ** CalcCBF: adjusted SHR = 0.72358
+   ************* Testing Individual Branch Integrity
+   ************* All Branches passed integrity testing
+   ************* Testing Individual Supply Air Path Integrity
+   ************* All Supply Air Paths passed integrity testing
+   ************* Testing Individual Return Air Path Integrity
+   ************* All Return Air Paths passed integrity testing
+   ** Severe  ** Node Connection Error, Node="WHOLEHOUSE_ERV_SUPPLY", ZoneInlet node did not find an outlet node.
+   **   ~~~   ** Reference Object=ZoneHVAC:EquipmentConnections, Name=WHOLEHOUSE
+   ************* There was 1 node connection error noted.
+   ************* Beginning Simulation
+   ** Warning ** In zone WHOLEHOUSE there is unbalanced air flow. Load due to induced outdoor air is neglected.
+   **   ~~~   **  Environment=ANNUAL, at Simulation time=01/09 06:00 - 06:15
+   **   ~~~   **   Flows [m3/s]: Inlets: 0.133927  Unbalanced exhausts: 0.176402  Returns: 0.000000
+   **   ~~~   **   Infiltration: 3.465186E-002  Zone Ventilation: 0.000000  Mixing (incoming): 0.000000
+   **   ~~~   **   Imbalance (excess outflow): 7.823412E-003  Total system OA flow (for all airloops serving this zone): 0.000000
+   **   ~~~   **   This error will only be reported once per zone.
+   ** Warning ** Temperature out of range [-100. to 200.] (PsyPsatFnTemp)
+   **   ~~~   **  Routine=PsyTwbFnTdbWPb, Environment=ANNUAL, at Simulation time=01/20 07:15 - 07:30
+   **   ~~~   **  Input Temperature=-145.86
+   ************* Simulation Error Summary *************
+   ** Warning ** The following Report Variables were requested but not generated -- check.rdd file
+   **   ~~~   ** Either the IDF did not contain these elements, the variable name is misspelled,
+   **   ~~~   ** or the requested variable is an advanced output which requires Output : Diagnostics, DisplayAdvancedReportVariables;
+   ************* Key=*, VarName=AFN ZONE INFILTRATION SENSIBLE HEAT GAIN ENERGY, Frequency=Hourly
+   ************* Key=*, VarName=AFN ZONE INFILTRATION SENSIBLE HEAT LOSS ENERGY, Frequency=Hourly
+   ************* Key=*, VarName=AFN ZONE VENTILATION SENSIBLE HEAT GAIN ENERGY, Frequency=Hourly
+   ************* Key=*, VarName=AFN ZONE VENTILATION SENSIBLE HEAT LOSS ENERGY, Frequency=Hourly
+   ************* Key=*, VarName=BASEBOARD ELECTRICITY ENERGY, Frequency=Hourly
+   ************* Key=*, VarName=BOILER ELECTRICITY ENERGY, Frequency=Hourly
+   ************* Key=*, VarName=BOILER NATURALGAS ENERGY, Frequency=Hourly
+   ************* Key=*, VarName=CHILLER ELECTRICITY ENERGY, Frequency=Hourly
+   ************* Key=*, VarName=CHILLER HEATER SYSTEM COOLING ELECTRICITY ENERGY, Frequency=Hourly
+   ************* Key=*, VarName=CHILLER HEATER SYSTEM HEATING ELECTRICITY ENERGY, Frequency=Hourly
+   ************* Key=*, VarName=COOLING COIL WATER HEATING ELECTRICITY ENERGY, Frequency=Hourly
+   ************* Key=*, VarName=COOLING TOWER FAN ELECTRICITY ENERGY, Frequency=Hourly
+   ************* Key=*, VarName=DISTRICT COOLING WATER ENERGY, Frequency=Hourly
+   ************* Key=*, VarName=DISTRICT HEATING WATER ENERGY, Frequency=Hourly
+   ************* Key=*, VarName=EVAPORATIVE COOLER ELECTRICITY ENERGY, Frequency=Hourly
+   ************* Key=*, VarName=HEATING COIL TOTAL HEATING ENERGY, Frequency=Hourly
+   ************* Key=*, VarName=HOT_WATER_LOOP_CENTRAL_AIR_SOURCE_HEAT_PUMP ELECTRICITY CONSUMPTION, Frequency=Hourly
+   ************* Key=*, VarName=HUMIDIFIER ELECTRICITY ENERGY, Frequency=Hourly
+   ************* Key=*, VarName=PUMP ELECTRICITY ENERGY, Frequency=Hourly
+   ************* Key=*, VarName=VRF HEAT PUMP COOLING ELECTRICITY ENERGY, Frequency=Hourly
+   ************* Key=*, VarName=VRF HEAT PUMP CRANKCASE HEATER ELECTRICITY ENERGY, Frequency=Hourly
+   ************* Key=*, VarName=VRF HEAT PUMP DEFROST ELECTRICITY ENERGY, Frequency=Hourly
+   ************* Key=*, VarName=VRF HEAT PUMP HEATING ELECTRICITY ENERGY, Frequency=Hourly
+   ************* Key=*, VarName=WATER HEATER ELECTRICITY ENERGY, Frequency=Hourly
+   ************* Key=*, VarName=WATER USE EQUIPMENT HEATING ENERGY, Frequency=Hourly
+   ************* Key=*, VarName=ZONE GAS EQUIPMENT NATURALGAS ENERGY, Frequency=Hourly
+   ************* Key=*, VarName=ZONE IDEAL LOADS SUPPLY AIR TOTAL COOLING ENERGY, Frequency=Hourly
+   ************* Key=*, VarName=ZONE IDEAL LOADS SUPPLY AIR TOTAL HEATING ENERGY, Frequency=Hourly
+   ************* Key=*, VarName=ZONE IDEAL LOADS ZONE TOTAL COOLING ENERGY, Frequency=Hourly
+   ************* Key=*, VarName=ZONE IDEAL LOADS ZONE TOTAL HEATING ENERGY, Frequency=Hourly
+   ************* Key=*, VarName=ZONE VRF AIR TERMINAL COOLING ELECTRICITY ENERGY, Frequency=Hourly
+   ************* Key=*, VarName=ZONE VRF AIR TERMINAL HEATING ELECTRICITY ENERGY, Frequency=Hourly
+   ************* There are 1 unused objects in input.
+   ************* Use Output:Diagnostics,DisplayUnusedObjects; to see them.
+   ************* There are 2 unused schedules in input.
+   ************* There are 2 unused week schedules in input.
+   ************* There are 2 unused day schedules in input.
+   ************* Use Output:Diagnostics,DisplayUnusedSchedules; to see them.
+   *************
+   ************* ===== Recurring Error Summary =====
+   ************* The following recurring error messages occurred.
+   *************
+   *************  ** Warning ** Temperature out of range [-100. to 200.] (PsyPsatFnTemp)
+   *************  **   ~~~   **   This error occurred 2 total times;
+   *************  **   ~~~   **   during Warmup 0 times;
+   *************  **   ~~~   **   during Sizing 0 times.
+   *************  **   ~~~   **   Max=-145.863953 C  Min=-170.820312 C
+   *************
+   *************
+   ************* ===== Final Error Summary =====
+   ************* The following error categories occurred.  Consider correcting or noting.
+   ************* Node Connection Errors
+   ************* ..Node connection errors are often caused by spelling mistakes in a node name field.
+   ************* ..To track down the problem, search the idf file for each node name listed to see if it
+   ************* ..occurs in the expected input fields.
+   ************* Nominally Unused Constructions
+   ************* ..The nominally unused constructions warning is provided to alert you to potential conditions that can cause
+   ************* ..extra time during simulation. Each construction is calculated by the algorithm indicated in the HeatBalanceAlgorithm
+   ************* ..object. You may remove the constructions indicated (when you use the DisplayExtraWarnings option).
+   *************
+   ************* EnergyPlus Warmup Error Summary. During Warmup: 0 Warning; 0 Severe Errors.
+   ************* EnergyPlus Sizing Error Summary. During Sizing: 26 Warning; 62 Severe Errors.
+   ************* EnergyPlus Completed Successfully-- 33 Warning; 64 Severe Errors; Elapsed Time=00hr 00min  5.47sec

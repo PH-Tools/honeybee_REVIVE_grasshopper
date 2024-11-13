@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+"/Applications/OpenStudio-3.7.0/bin/openstudio" -I "/Users/em/ladybug_tools/resources/measures/honeybee_openstudio_gem/lib" run --show-stdout -m -w "/Users/em/Dropbox/bldgtyp-00/00_PH_Tools/honeybee_REVIVE_grasshopper/tests/adorb/hbrv/hb_revive_ADORB_model/openstudio/workflow.osw"

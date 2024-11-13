@@ -1,0 +1,34 @@
+[12:48:58.539611 WARN] [openstudio.EpwFile] Successive data points (1999-Jan-31 to 1995-Feb-01, ending on line 753) are greater than 1 day apart in EPW file '/Users/em/Dropbox/bldgtyp-00/00_PH_Tools/honeybee_REVIVE_grasshopper/tests/_source_weather/USA_NY_New.York-J.F.Kennedy.Intl.AP.744860_TMY3/USA_NY_New.York-J.F.Kennedy.Intl.AP.744860_TMY3.epw'. Data will be treated as typical (TMY)
+[12:49:00.039888 WARN] [openstudio.model.ShadingControl] ShadingMaterial detected in shaded construction, prefer to use the ShadingControl constructor from ShadingMaterial.
+[12:49:00.040223 WARN] [openstudio.model.SubSurface] As of 3.1.0, bool openstudio::model::SubSurface::setShadingControl(const ShadingControl &) is deprecated. Use addShadingControl or addShadingControls instead.
+[12:49:00.040304 WARN] [openstudio.model.ShadingControl] ShadingMaterial detected in shaded construction, prefer to use the ShadingControl constructor from ShadingMaterial.
+[12:49:00.040344 WARN] [openstudio.model.SubSurface] As of 3.1.0, bool openstudio::model::SubSurface::setShadingControl(const ShadingControl &) is deprecated. Use addShadingControl or addShadingControls instead.
+[12:49:00.040405 WARN] [openstudio.model.ShadingControl] ShadingMaterial detected in shaded construction, prefer to use the ShadingControl constructor from ShadingMaterial.
+[12:49:00.040442 WARN] [openstudio.model.SubSurface] As of 3.1.0, bool openstudio::model::SubSurface::setShadingControl(const ShadingControl &) is deprecated. Use addShadingControl or addShadingControls instead.
+[12:49:00.040501 WARN] [openstudio.model.ShadingControl] ShadingMaterial detected in shaded construction, prefer to use the ShadingControl constructor from ShadingMaterial.
+[12:49:00.040539 WARN] [openstudio.model.SubSurface] As of 3.1.0, bool openstudio::model::SubSurface::setShadingControl(const ShadingControl &) is deprecated. Use addShadingControl or addShadingControls instead.
+[12:49:00.040597 WARN] [openstudio.model.ShadingControl] ShadingMaterial detected in shaded construction, prefer to use the ShadingControl constructor from ShadingMaterial.
+[12:49:00.040634 WARN] [openstudio.model.SubSurface] As of 3.1.0, bool openstudio::model::SubSurface::setShadingControl(const ShadingControl &) is deprecated. Use addShadingControl or addShadingControls instead.
+[12:49:00.040698 WARN] [openstudio.model.ShadingControl] ShadingMaterial detected in shaded construction, prefer to use the ShadingControl constructor from ShadingMaterial.
+[12:49:00.040736 WARN] [openstudio.model.SubSurface] As of 3.1.0, bool openstudio::model::SubSurface::setShadingControl(const ShadingControl &) is deprecated. Use addShadingControl or addShadingControls instead.
+[12:49:00.040793 WARN] [openstudio.model.ShadingControl] ShadingMaterial detected in shaded construction, prefer to use the ShadingControl constructor from ShadingMaterial.
+[12:49:00.040829 WARN] [openstudio.model.SubSurface] As of 3.1.0, bool openstudio::model::SubSurface::setShadingControl(const ShadingControl &) is deprecated. Use addShadingControl or addShadingControls instead.
+[12:49:00.040889 WARN] [openstudio.model.ShadingControl] ShadingMaterial detected in shaded construction, prefer to use the ShadingControl constructor from ShadingMaterial.
+[12:49:00.040925 WARN] [openstudio.model.SubSurface] As of 3.1.0, bool openstudio::model::SubSurface::setShadingControl(const ShadingControl &) is deprecated. Use addShadingControl or addShadingControls instead.
+[12:49:00.040984 WARN] [openstudio.model.ShadingControl] ShadingMaterial detected in shaded construction, prefer to use the ShadingControl constructor from ShadingMaterial.
+[12:49:00.041021 WARN] [openstudio.model.SubSurface] As of 3.1.0, bool openstudio::model::SubSurface::setShadingControl(const ShadingControl &) is deprecated. Use addShadingControl or addShadingControls instead.
+[12:49:00.041082 WARN] [openstudio.model.ShadingControl] ShadingMaterial detected in shaded construction, prefer to use the ShadingControl constructor from ShadingMaterial.
+[12:49:00.041116 WARN] [openstudio.model.SubSurface] As of 3.1.0, bool openstudio::model::SubSurface::setShadingControl(const ShadingControl &) is deprecated. Use addShadingControl or addShadingControls instead.
+[12:49:00.041190 WARN] [openstudio.model.ShadingControl] ShadingMaterial detected in shaded construction, prefer to use the ShadingControl constructor from ShadingMaterial.
+[12:49:00.041224 WARN] [openstudio.model.SubSurface] As of 3.1.0, bool openstudio::model::SubSurface::setShadingControl(const ShadingControl &) is deprecated. Use addShadingControl or addShadingControls instead.
+[12:49:00.041286 WARN] [openstudio.model.ShadingControl] ShadingMaterial detected in shaded construction, prefer to use the ShadingControl constructor from ShadingMaterial.
+[12:49:00.041320 WARN] [openstudio.model.SubSurface] As of 3.1.0, bool openstudio::model::SubSurface::setShadingControl(const ShadingControl &) is deprecated. Use addShadingControl or addShadingControls instead.
+[12:49:00.041379 WARN] [openstudio.model.ShadingControl] ShadingMaterial detected in shaded construction, prefer to use the ShadingControl constructor from ShadingMaterial.
+[12:49:00.041413 WARN] [openstudio.model.SubSurface] As of 3.1.0, bool openstudio::model::SubSurface::setShadingControl(const ShadingControl &) is deprecated. Use addShadingControl or addShadingControls instead.
+[12:49:00.041472 WARN] [openstudio.model.ShadingControl] ShadingMaterial detected in shaded construction, prefer to use the ShadingControl constructor from ShadingMaterial.
+[12:49:00.041508 WARN] [openstudio.model.SubSurface] As of 3.1.0, bool openstudio::model::SubSurface::setShadingControl(const ShadingControl &) is deprecated. Use addShadingControl or addShadingControls instead.
+[12:49:00.041567 WARN] [openstudio.model.ShadingControl] ShadingMaterial detected in shaded construction, prefer to use the ShadingControl constructor from ShadingMaterial.
+[12:49:00.041606 WARN] [openstudio.model.SubSurface] As of 3.1.0, bool openstudio::model::SubSurface::setShadingControl(const ShadingControl &) is deprecated. Use addShadingControl or addShadingControls instead.
+[12:49:00.041713 WARN] [openstudio.model.ShadingControl] ShadingMaterial detected in shaded construction, prefer to use the ShadingControl constructor from ShadingMaterial.
+[12:49:00.041763 WARN] [openstudio.model.SubSurface] As of 3.1.0, bool openstudio::model::SubSurface::setShadingControl(const ShadingControl &) is deprecated. Use addShadingControl or addShadingControls instead.
+[12:49:03.050378 WARN] [utilities.idf.WorkspaceObject] Object of type 'Schedule:Constant' and named 'Always On Continuous', points to an object named Fractional 1 from field 1, but that object cannot be located.

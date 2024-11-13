@@ -1,0 +1,14 @@
+{
+  "FromHoneybeeModel" : 
+  {
+    "applicable" : true,
+    "include_datetimes" : false,
+    "model_json" : "/Users/em/Dropbox/bldgtyp-00/00_PH_Tools/honeybee_REVIVE_grasshopper/tests/adorb/hbrv/hb_revive_ADORB_model/openstudio/hb_revive_ADORB_model.hbjson",
+    "schedule_csv_dir" : "/Users/em/Dropbox/bldgtyp-00/00_PH_Tools/honeybee_REVIVE_grasshopper/tests/adorb/hbrv/hb_revive_ADORB_model/openstudio/schedules"
+  },
+  "FromHoneybeeSimulationParameter" : 
+  {
+    "applicable" : true,
+    "simulation_parameter_json" : "/Users/em/Dropbox/bldgtyp-00/00_PH_Tools/honeybee_REVIVE_grasshopper/tests/adorb/hbrv/hb_revive_ADORB_model/openstudio/simulation_parameter.json"
+  }
+}

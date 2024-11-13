@@ -34,14 +34,23 @@ except ImportError as e:
 # -- Python-3 ADORB Runner Functions
 
 
-def run_ADORB_calculator(_hbjson_filepath, _sql_path, _results_file_path, _tables_folder_path, *args, **kwargs):
-    # type: (str, str, str, str, list, dict) -> tuple[bytes, bytes, str, str]
+def run_ADORB_calculator(
+    _hbjson_filepath,
+    _sql_path,
+    _yearly_results_file_path,
+    _cumulative_results_file_path,
+    _tables_folder_path,
+    *args,
+    **kwargs
+):
+    # type: (str, str, str, str, str, list, dict) -> tuple[bytes, bytes, str, str, str]
     """Using Ladybug's Python-3 interpreter: read in a HBJSON model file and calculate the ADORB costs.
 
     ### Arguments:
         * _hbjson_filepath: File path to the HBJSON model file to calculate ADORB for.
         * _sql_path: The path to the EnergyPlus SQL file to use for the calculation.
-        * _results_file_path: The ADORB Results CSV file path.
+        * _yearly_results_file_path: The ADORB Results CSV file path.
+        * _cumulative_results_file_path: The ADORB Results CSV file path.
         * _tables_folder_path: The folder path to save the tables to.
         * args: Additional arguments to pass to the subprocess. (ignored)
         * kwargs: Additional keyword arguments to pass to the subprocess. (ignored)
@@ -50,8 +59,9 @@ def run_ADORB_calculator(_hbjson_filepath, _sql_path, _results_file_path, _table
         * tuple
             - [0] (bytes): The stdout from the subprocess.
             - [1] (bytes): The stderr from the subprocess.
-            - [2] (str): The path to the output results CSV parent folder.
-            - [3] (str): The path to the output folder with the preview tables.
+            - [2] (str): The path to the output Yearly results CSV file.
+            - [3] (str): The path to the output Cumulative results CSV file.
+            - [4] (str): The path to the output folder with the preview tables.
     """
 
     # -- Specify the path to the actual subprocess python-3 script to run
@@ -67,18 +77,19 @@ def run_ADORB_calculator(_hbjson_filepath, _sql_path, _results_file_path, _table
     print("Running Python-3 script: '{}'".format(py3_script_filepath))
     print("With the HBJSON file: '{}'".format(_hbjson_filepath))
     commands = [
-        hb_folders.python_exe_path,  # -- The interpreter to use
-        py3_script_filepath,  # --------- The script to run
-        _hbjson_filepath,  # ------------ The HBJSON file to read in
-        _sql_path,  # ------------------- The SQL file to use for the calculation
-        _results_file_path,  # ---------- The CSV file path to save the results to
-        _tables_folder_path,  # --------- The folder path to save the tables to
+        hb_folders.python_exe_path,  # --- The interpreter to use
+        py3_script_filepath,  # ---------- The script to run
+        _hbjson_filepath,  # ------------- The HBJSON file to read in
+        _sql_path,  # -------------------- The SQL file to use for the calculation
+        _yearly_results_file_path,  # ---- The Yearly CSV file path to save the results to
+        _cumulative_results_file_path,  # - The Cumulative CSV file path to save the results to
+        _tables_folder_path,  # ---------- The folder path to save the tables to
     ]
     stdout, stderr = run_subprocess(commands)
 
     # -------------------------------------------------------------------------
     # -- return the dir and filename of the xml created
-    return stdout, stderr, _results_file_path, _tables_folder_path
+    return stdout, stderr, _yearly_results_file_path, _cumulative_results_file_path, _tables_folder_path
 
 
 # -----------------------------------------------------------------------------
@@ -199,10 +210,16 @@ class GHCompo_CalculateADORBCost(object):
                 return "unnamed"
 
     @property
-    def csv_output_file_path(self):
+    def yearly_csv_file_path(self):
         # type: () -> str
         """Return the full output CSV file path."""
-        return os.path.join(self.save_dir, "{}.csv".format(self.save_filename))
+        return os.path.join(self.save_dir, "{}_yearly.csv".format(self.save_filename))
+
+    @property
+    def cumulative_csv_file_path(self):
+        # type: () -> str
+        """Return the full output CSV file path."""
+        return os.path.join(self.save_dir, "{}_cumulative.csv".format(self.save_filename))
 
     @property
     def tables_folder_path(self):
@@ -223,10 +240,10 @@ class GHCompo_CalculateADORBCost(object):
         return True
 
     def run(self):
-        # type: () -> tuple[str | None, str | None]
+        # type: () -> tuple[str | None, str | None, str | None]
         print("Running ADORB cost calculation...")
         if not self.ready:
-            return (None, None)
+            return (None, None, None)
 
         if not os.path.isdir(self.save_dir):
             print("Creating folder: {}".format(self.save_dir))
@@ -235,14 +252,15 @@ class GHCompo_CalculateADORBCost(object):
         with model_as_json_file(
             self.hb_model, self.sql_path, self.hbjson_output_file_path, self.DEBUG
         ) as hb_json_filepath:
-            stdout, stderr, results_csv_file_path, tables_folder_path = run_ADORB_calculator(
+            stdout, stderr, yearly_csv_file_path, cumulative_csv_file_path, tables_folder_path = run_ADORB_calculator(
                 _hbjson_filepath=hb_json_filepath,
                 _sql_path=self.sql_path,
-                _results_file_path=self.csv_output_file_path,
+                _yearly_results_file_path=self.yearly_csv_file_path,
+                _cumulative_results_file_path=self.cumulative_csv_file_path,
                 _tables_folder_path=self.tables_folder_path,
             )
             self.give_user_warnings(stdout)
-            print("ADORB costs output to: {}".format(self.csv_output_file_path))
+            print("ADORB costs output to: {}".format(self.yearly_csv_file_path))
             print("ADORB tables output to: {}".format(self.tables_folder_path))
 
-        return results_csv_file_path, tables_folder_path
+        return yearly_csv_file_path, cumulative_csv_file_path, tables_folder_path
