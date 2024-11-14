@@ -1,6 +1,6 @@
 [project]
 name = "honeybee-REVIVE-Grasshopper"
-version = "0.0.4"
+version = "0.0.7"
 description = "Rhino/Grasshopper components for the honeybee-REVIVE library."
 readme = "README.md"
 requires-python = ">2.7"
