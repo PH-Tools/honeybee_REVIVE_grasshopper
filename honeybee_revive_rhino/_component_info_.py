@@ -5,7 +5,7 @@
 These are called when the component is instantiated within the Grasshopper canvas.
 """
 
-RELEASE_VERSION = "Honeybee-REVIVE v0.0.05"
+RELEASE_VERSION = "Honeybee-REVIVE v0.0.06"
 CATEGORY = "HB-REVIVE"
 SUB_CATEGORIES = {
     0: "00 | Utils",
