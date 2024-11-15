@@ -260,7 +260,8 @@ class GHCompo_CalculateADORBCost(object):
                 _tables_folder_path=self.tables_folder_path,
             )
             self.give_user_warnings(stdout)
-            print("ADORB costs output to: {}".format(self.yearly_csv_file_path))
+            print("ADORB yearly costs output to: {}".format(self.yearly_csv_file_path))
+            print("ADORB cumulative costs output to: {}".format(self.cumulative_csv_file_path))
             print("ADORB tables output to: {}".format(self.tables_folder_path))
 
         return yearly_csv_file_path, cumulative_csv_file_path, tables_folder_path
