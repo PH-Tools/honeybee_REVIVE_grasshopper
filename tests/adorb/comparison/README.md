@@ -78,7 +78,7 @@ Airflows for Mechanical, Infiltration, and Windows are aligned across both model
 <details>
 <summary><strong>Heating and Cooling Energy:</strong></summary>
 
-As shown, the models show good alignment for heating and cooling energy consumption during both summer and winter. As noted above, the Honeybee-REVIVE model does appear to have slightly higher summertime temperatures, amd slightly lower cooling energy consumption. This may be the result of a sensor or thermostat configuration and may be a place for further refinement and study. However, the difference appears to be minor and does not significantly affect the final ADORB calculation results. 
+As shown, the models show good alignment for heating and cooling energy consumption during both summer and winter. As noted above, the Honeybee-REVIVE model does appear to have slightly higher summertime temperatures, slightly lower cooling energy consumption, and slightly higher heating energy consumption. This may be the result of a sensor or thermostat configuration and may be a place for further refinement and study. However, the difference appears to be minor and does not significantly affect the final ADORB calculation results. 
 
 ![Screenshot](./energy_plus/png/heating_coil_natural_gas_energy.png)
 ![Screenshot](./energy_plus/png/cooling_coil_electricity_energy.png)
@@ -92,33 +92,35 @@ As shown, the models show good alignment for heating and cooling energy consumpt
 Below is a summary of the ADORB cost values calculated for both the Phius-GUI model as well as the Honeybee-REVIVE model. 
 
 
-## Operational Energy Purchase PV-Cost:
-These costs represent the present-value of future net energy purchasing costs. There is good alignment between the modeled cases, with the Phius-GUI simulations showing a slightly higher rate due to its slightly higher simulated energy consumption. 
+## Operational Energy:
+These costs represent the present-value of future net energy costs (purchase and CO2). There is good alignment between the modeled cases, with the Honeybee-REVIVE simulations showing a slightly higher cost due to its higher simulated energy consumption (see the EnergyPlus Simulation Results above for details).
 
+### | Purchase Cost:
 ![Screenshot](./adorb_cost/png/energy_purchase_cost.png)
 
-## Operational Energy CO2 PV-Cost:
-These costs represent the present-value of CO2-emissions costs of all future net energy consumption.
-
+### | CO<sub>2</sub> Emissions Cost:
 ![Screenshot](./adorb_cost/png/energy_CO2_cost.png)
 
 
-## Construction Measure Purchase PV-Cost:
-These costs represent the present-value of all 'construction' related expenses including all relevant materials, equipment, products, and other 'measures' which are taken during the life of the building which affect the carbon-emissions and the out-of-pocket costs. These costs include all first-costs associated with the acquisition (material) and installation (labor) as well as all recurring maintenance and replacement costs.
 
+
+## Construction Measures:
+These costs represent the present-value of all 'construction' related expenses including all relevant materials, equipment, products, and other 'measures' which are taken during the construction and maintenance of the building which affect the carbon-emissions and the out-of-pocket costs. These costs include all first-costs associated with the item's purchase (material) and installation (labor) as well as all regularly recurring maintenance and replacement costs.
+
+### | Purchase Cost:
+While there is alignment between the two simulations, it is notable that the year-0 costs calculated by the Phius-GUI are 2x the Honeybee-REVIVE values. This owing to an error in the Phius-GUI calculation methodology where the building's constructions are added twice at year-0. Once this error is fixed the results will align for all years.
 ![Screenshot](./adorb_cost/png/construction_purchase_cost.png)
 
-
-## Construction Measure CO2 PV-Cost:
-These cost represent the present-value of all 'construction' related embodied CO2 emissions costs. This includes all ongoing maintenance and replacement costs. 
-
+### | CO<sub>2</sub> Emissions Cost:
+Note that the only meaningful difference between the results occurs at year-0. The Phius-GUI simulation results do not include any CO2 for the construction materials or equipment for year-0, while the Honeybee-PH does include those costs. It is unclear if this is a bug in the Phius-GUI or if this omission is intentional. For Honeybee-PH, these costs will be included as they represent a significant carbon-cost for projects.
 ![Screenshot](./adorb_cost/png/construction_CO2_cost.png)
+
 
 
 ## Grid Transition PV-Cost:
 These costs represent the present-value of a recurring 'grid-transition' fee which covers the increased electrical load of the building as it transitions from fossil-fuels to all electric heating and cooling. This would be equivalent to a tax levied on the property directly supporting the national grid transition costs. Note that after 30 years the cost goes to zero as the transition is assumed to be complete at that point.
 
-While there is alignment between the two simulations, it is notable that the year-0 costs calculated by the Phius-GUI are 2x the Honeybee-REVIVE values. This owing to an error in the Phius-GUI calculation methodology where the building's constructions are added twice at year-0. Once this error is fixed the results will align for all years.
+
 
 ![Screenshot](./adorb_cost/png/grid_transition_cost.png)
 
