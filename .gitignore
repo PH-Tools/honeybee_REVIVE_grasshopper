@@ -19,6 +19,6 @@ tests/resilience/winter/hbrv/revive_test_model/
 tests/resilience/summer/hbrv/revive_test_model/
 tests/resilience/winter/phius_gui/run/
 tests/resilience/summer/phius_gui/run/
-tests/adorb/hbrv/hb_revive_ADORB_model/*
+tests/adorb/hbrv/hb_revive_ADORB_model/openstudio/*
 tests/adorb/phius_gui/run/
 tests/adorb/phius_gui_ideal_air/run/
