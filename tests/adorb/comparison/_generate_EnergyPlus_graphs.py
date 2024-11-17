@@ -3,6 +3,9 @@ import pandas as pd
 from pathlib import Path
 import plotly.graph_objects as go
 
+JOULE_TO_KWH = 1 / 3_600_000
+M3S_TO_M3HR = 3_600
+
 
 def get_from_sql(_source_file_path) -> dict:
     """Get the 'Facility Total Building Electricity Demand Rate' [W] from the SQL File."""
@@ -23,7 +26,14 @@ def get_from_sql(_source_file_path) -> dict:
                 'Zone Electric Equipment Electricity Energy',
                 'Zone Infiltration Standard Density Volume Flow Rate',
                 'Zone Ventilation Standard Density Volume Flow Rate',
-                'Zone Mechanical Ventilation Standard Density Volume Flow Rate'
+                'Zone Mechanical Ventilation Standard Density Volume Flow Rate',
+                'Cooling Coil Electricity Energy',
+                'Heating Coil NaturalGas Energy',
+                'Heating Coil Electricity Energy',
+                'Fan Electricity Energy',
+                'Humidifier Electricity Energy',
+                'Pump Electricity Energy',
+                'Water Heater NaturalGas Energy'
             )
         """
         )
@@ -31,24 +41,54 @@ def get_from_sql(_source_file_path) -> dict:
         drybulb_temperatures = [value for value, name in results if name == "Site Outdoor Air Drybulb Temperature"]
         wetbulb_temperatures = [value for value, name in results if name == "Site Outdoor Air Wetbulb Temperature"]
         relative_humidities = [value for value, name in results if name == "Site Outdoor Air Relative Humidity"]
+
+        # --
         zone_mean_air_temperatures = [value for value, name in results if name == "Zone Mean Air Temperature"]
         zone_air_relative_humidities = [value for value, name in results if name == "Zone Air Relative Humidity"]
-        zone_lights_electricity_energy = [value for value, name in results if name == "Zone Lights Electricity Energy"]
+
+        # --
+        zone_lights_electricity_energy = [
+            value * JOULE_TO_KWH for value, name in results if name == "Zone Lights Electricity Energy"
+        ]
         zone_people_total_heating_energy = [
-            value for value, name in results if name == "Zone People Total Heating Energy"
+            value * JOULE_TO_KWH for value, name in results if name == "Zone People Total Heating Energy"
         ]
         zone_electric_equipment_electricity_energy = [
-            value for value, name in results if name == "Zone Electric Equipment Electricity Energy"
+            value * JOULE_TO_KWH for value, name in results if name == "Zone Electric Equipment Electricity Energy"
         ]
+
+        # --
         zone_infiltration_standard_density_volume_flow_rate = [
-            value for value, name in results if name == "Zone Infiltration Standard Density Volume Flow Rate"
+            value * M3S_TO_M3HR
+            for value, name in results
+            if name == "Zone Infiltration Standard Density Volume Flow Rate"
         ]
         zone_ventilation_standard_density_volume_flow_rate = [
-            value for value, name in results if name == "Zone Ventilation Standard Density Volume Flow Rate"
+            value * M3S_TO_M3HR
+            for value, name in results
+            if name == "Zone Ventilation Standard Density Volume Flow Rate"
         ]
         zone_mechanical_ventilation_standard_density_volume_flow_rate = [
-            value for value, name in results if name == "Zone Mechanical Ventilation Standard Density Volume Flow Rate"
+            value * M3S_TO_M3HR
+            for value, name in results
+            if name == "Zone Mechanical Ventilation Standard Density Volume Flow Rate"
         ]
+
+        # --
+        cooling_coil_electricity_energy = [
+            value * JOULE_TO_KWH for value, name in results if name == "Cooling Coil Electricity Energy"
+        ]
+        heating_coil_natural_gas_energy = [
+            value * JOULE_TO_KWH for value, name in results if name == "Heating Coil NaturalGas Energy"
+        ]
+        heating_coil_electricity_energy = [
+            value * JOULE_TO_KWH for value, name in results if name == "Heating Coil Electricity Energy"
+        ]
+        fan_electricity_energy = [value * JOULE_TO_KWH for value, name in results if name == "Fan Electricity Energy"]
+        humidifier_electricity_energy = [
+            value * JOULE_TO_KWH for value, name in results if name == "Humidifier Electricity Energy"
+        ]
+        pump_electricity_energy = [value * JOULE_TO_KWH for value, name in results if name == "Pump Electricity Energy"]
 
         total_purchased_electricity_kwh_ = {
             "drybulb_temperatures": drybulb_temperatures,
@@ -62,6 +102,12 @@ def get_from_sql(_source_file_path) -> dict:
             "zone_infiltration_standard_density_volume_flow_rate": zone_infiltration_standard_density_volume_flow_rate,
             "zone_ventilation_standard_density_volume_flow_rate": zone_ventilation_standard_density_volume_flow_rate,
             "zone_mechanical_ventilation_standard_density_volume_flow_rate": zone_mechanical_ventilation_standard_density_volume_flow_rate,
+            "cooling_coil_electricity_energy": cooling_coil_electricity_energy,
+            "heating_coil_natural_gas_energy": heating_coil_natural_gas_energy,
+            "heating_coil_electricity_energy": heating_coil_electricity_energy,
+            "fan_electricity_energy": fan_electricity_energy,
+            "humidifier_electricity_energy": humidifier_electricity_energy,
+            "pump_electricity_energy": pump_electricity_energy,
         }
     except Exception as e:
         conn.close()
@@ -111,6 +157,7 @@ if __name__ == "__main__":
     phius_data = get_from_sql(phius_gui_SQL)
     hbrv_data = get_from_sql(hbrv_SQL)
 
+    # -- Zone Exterior
     generate_graph(
         phius_data["drybulb_temperatures"],
         hbrv_data["drybulb_temperatures"],
@@ -132,6 +179,8 @@ if __name__ == "__main__":
         "Relative Humidity (%)",
         "site_outdoor_air_relative_humidity",
     )
+
+    # -- Zone Interior
     generate_graph(
         phius_data["zone_mean_air_temperatures"],
         hbrv_data["zone_mean_air_temperatures"],
@@ -146,45 +195,93 @@ if __name__ == "__main__":
         "Relative Humidity (%)",
         "zone_air_relative_humidity",
     )
+
+    # -- Zone Internal Gains
     generate_graph(
         phius_data["zone_lights_electricity_energy"],
         hbrv_data["zone_lights_electricity_energy"],
         "Zone Lights Electricity Energy",
-        "Energy (J)",
+        "Energy (kWH)",
         "zone_lights_electricity_energy",
     )
     generate_graph(
         phius_data["zone_people_total_heating_energy"],
         hbrv_data["zone_people_total_heating_energy"],
         "Zone People Total Heating Energy",
-        "Energy (J)",
+        "Energy (kWH)",
         "zone_people_total_heating_energy",
     )
     generate_graph(
         phius_data["zone_electric_equipment_electricity_energy"],
         hbrv_data["zone_electric_equipment_electricity_energy"],
         "Zone Electric Equipment Electricity Energy",
-        "Energy (J)",
+        "Energy (kWH)",
         "zone_electric_equipment_electricity_energy",
     )
+
+    # -- Ventilation
     generate_graph(
         phius_data["zone_infiltration_standard_density_volume_flow_rate"],
         hbrv_data["zone_infiltration_standard_density_volume_flow_rate"],
         "Zone Infiltration Standard Density Volume Flow Rate",
-        "Volume Flow Rate (m³/s)",
+        "Volume Flow Rate (m³/hr)",
         "zone_infiltration_standard_density_volume_flow_rate",
     )
     generate_graph(
         phius_data["zone_ventilation_standard_density_volume_flow_rate"],
         hbrv_data["zone_ventilation_standard_density_volume_flow_rate"],
         "Zone Ventilation (Windows) Standard Density Volume Flow Rate",
-        "Volume Flow Rate (m³/s)",
+        "Volume Flow Rate (m³/hr)",
         "zone_ventilation_standard_density_volume_flow_rate",
     )
     generate_graph(
         phius_data["zone_mechanical_ventilation_standard_density_volume_flow_rate"],
         hbrv_data["zone_mechanical_ventilation_standard_density_volume_flow_rate"],
         "Zone Mechanical Ventilation Standard Density Volume Flow Rate",
-        "Volume Flow Rate (m³/s)",
+        "Volume Flow Rate (m³/hr)",
         "zone_mechanical_ventilation_standard_density_volume_flow_rate",
+    )
+
+    # --- Zone Heating/Cooling Energy
+    generate_graph(
+        phius_data["cooling_coil_electricity_energy"],
+        hbrv_data["cooling_coil_electricity_energy"],
+        "Cooling Coil Electricity Energy",
+        "Energy (kWH)",
+        "cooling_coil_electricity_energy",
+    )
+    generate_graph(
+        phius_data["heating_coil_natural_gas_energy"],
+        hbrv_data["heating_coil_natural_gas_energy"],
+        "Heating Coil NaturalGas Energy",
+        "Energy (kWH)",
+        "heating_coil_natural_gas_energy",
+    )
+    generate_graph(
+        phius_data["heating_coil_electricity_energy"],
+        hbrv_data["heating_coil_electricity_energy"],
+        "Heating Coil Electricity Energy",
+        "Energy (kWH)",
+        "heating_coil_electricity_energy",
+    )
+    generate_graph(
+        phius_data["fan_electricity_energy"],
+        hbrv_data["fan_electricity_energy"],
+        "Fan Electricity Energy",
+        "Energy (kWH)",
+        "fan_electricity_energy",
+    )
+    generate_graph(
+        phius_data["humidifier_electricity_energy"],
+        hbrv_data["humidifier_electricity_energy"],
+        "Humidifier Electricity Energy",
+        "Energy (kWH)",
+        "humidifier_electricity_energy",
+    )
+    generate_graph(
+        phius_data["pump_electricity_energy"],
+        hbrv_data["pump_electricity_energy"],
+        "Pump Electricity Energy",
+        "Energy (kWH)",
+        "pump_electricity_energy",
     )

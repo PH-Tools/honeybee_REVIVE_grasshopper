@@ -66,6 +66,14 @@ There are four key discrepancies found between the Honeybee-REVIVE model and the
 
 </details>
 
+<details>
+<summary><strong>Heating and Cooling Energy:</strong></summary>
+![Screenshot](./energy_plus/png/heating_coil_natural_gas_energy.png)
+![Screenshot](./energy_plus/png/cooling_coil_electricity_energy.png)
+
+
+</details>
+
 </br></br>
 
 # ADORB COST RESULTS:

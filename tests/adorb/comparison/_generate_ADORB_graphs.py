@@ -36,7 +36,9 @@ def generate_plot(_phius_gui_ADORB: pd.DataFrame, _hbrv_ADORB: pd.DataFrame, _ty
 
 
 if __name__ == "__main__":
-    phius_gui_ADORB = pd.read_csv(Path("tests/adorb/phius_gui/M_10W-20S_StateCollegePA_BASE_NV_ADORBresults.csv"))
+    phius_gui_ADORB = pd.read_csv(
+        Path("tests/adorb/phius_gui/results/M_10W-20S_StateCollegePA_BASE_NV_ADORBresults.csv")
+    )
     hbrv_ADORB = pd.read_csv(Path("tests/adorb/hbrv/hb_revive_ADORB_results/hb_revive_ADORB_model_yearly.csv"))
 
     generate_plot(
