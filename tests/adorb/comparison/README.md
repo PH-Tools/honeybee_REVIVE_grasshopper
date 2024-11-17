@@ -32,57 +32,74 @@ There are three key discrepancies between the Honeybee-REVIVE model and the Phiu
 
 
 
-## EnergyPlus Simulation Results:
+# EnergyPlus Simulation Results:
 
-## Site Outdoor Conditions:
+<details>
+<summary><strong>Site Outdoor Conditions:</strong></summary>
 
 ![Screenshot](./energy_plus/png/site_outdoor_air_drybulb_temperature.png)
 ![Screenshot](./energy_plus/png/site_outdoor_air_relative_humidity.png)
 ![Screenshot](./energy_plus/png/site_outdoor_air_wetbulb_temperature.png)
 
-## Zone Interior Conditions:
+</details>
+
+<details>
+<summary><strong>Zone Indoor Conditions:</strong></summary>
+
 ![Screenshot](./energy_plus/png/zone_mean_air_temperature.png)
 ![Screenshot](./energy_plus/png/zone_air_relative_humidity.png)
 
-## Zone Internal Gains:
+</details>
+
+<details>
+<summary><strong>Zone Internal Gains:</strong></summary>
+
 ![Screenshot](./energy_plus/png/zone_lights_electricity_energy.png)
 ![Screenshot](./energy_plus/png/zone_people_total_heating_energy.png)
 ![Screenshot](./energy_plus/png/zone_electric_equipment_electricity_energy.png)
 
-## Zone Ventilation Airflows:
+</details>
+
+<details>
+<summary><strong>Zone Ventilation Airflows:</strong></summary>
+
 ![Screenshot](./energy_plus/png/zone_mechanical_ventilation_standard_density_volume_flow_rate.png)
 ![Screenshot](./energy_plus/png/zone_infiltration_standard_density_volume_flow_rate.png)
 ![Screenshot](./energy_plus/png/zone_ventilation_standard_density_volume_flow_rate.png)
 
-# RESULTS:
+</details>
+
+</br></br>
+
+# ADORB COST RESULTS:
 
 ## Operational Energy Purchase PV-Cost:
 These costs represent the present-value of future net energy purchasing costs. 
 
-![Screenshot](./png/energy_purchase_cost.png)
+![Screenshot](./adorb_cost/png/energy_purchase_cost.png)
 
 ## Operational Energy CO2 PV-Cost:
 These costs represent the present-value of CO2-emissions costs of all future net energy consumption.
 
-![Screenshot](./png/energy_CO2_cost.png)
+![Screenshot](./adorb_cost/png/energy_CO2_cost.png)
 
 
 ## Construction Measure Purchase PV-Cost:
 These costs represent the present-value of all 'construction' related expenses including all relevant materials, equipment, products, and other 'measures' which are taken during the life of the building which affect the carbon-emissions and the out-of-pocket costs. These costs include all first-costs associated with the acquisition (material) and installation (labor) as well as all recurring maintenance and replacement costs.
 
-![Screenshot](./png/construction_purchase_cost.png)
+![Screenshot](./adorb_cost/png/construction_purchase_cost.png)
 
 
 ## Construction Measure CO2 PV-Cost:
 These cost represent the present-value of all 'construction' related embodied CO2 emissions costs. This includes all ongoing maintenance and replacement costs. 
 
-![Screenshot](./png/construction_CO2_cost.png)
+![Screenshot](./adorb_cost/png/construction_CO2_cost.png)
 
 
 ## Grid Transition PV-Cost:
 These costs represent the present-value of a recurring 'grid-transition' fee which covers the increased electrical load the building represents.
 
-![Screenshot](./png/grid_transition_cost.png)
+![Screenshot](./adorb_cost/png/grid_transition_cost.png)
 
 
 ## Total Cumulative ADORB Cost:
