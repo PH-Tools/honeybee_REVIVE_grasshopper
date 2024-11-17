@@ -30,7 +30,15 @@ keywords = [
 dependencies = []
 
 [project.optional-dependencies]
-dev = ["black", "isort", "Grasshopper-stubs", "Rhino-stubs"]
+dev = [
+    "black",
+    "isort",
+    "Grasshopper-stubs",
+    "Rhino-stubs",
+    "plotly",
+    "kaleido",
+    "pandas",
+]
 
 [project.urls]
 homepage = "https://www.passivehousetools.com/"
