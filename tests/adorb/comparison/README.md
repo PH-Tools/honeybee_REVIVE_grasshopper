@@ -1,11 +1,11 @@
 # ADORB TEST MODEL COMPARISON:
 
-Below is a comparison of two EnergyPlus simulations: one simulation using the [KMR Example model](https://github.com/Phius-ResearchComittee/REVIVE/releases/tag/v24.2.0) provided by Phius, run using their Phius-REVIVE GUI tool, and another using a [Honeybee-REVIVE model](https://github.com/PH-Tools/honeybee_REVIVE_grasshopper/blob/main/tests/phius_rv2024_model.hbjson) which was built to match the KMR example as closely as possible using Honeybee Grasshopper methods and components. The test model is a single-zone, single-family home. The home includes a below-grade basement, as well as two on-grade floor surfaces ("Crawlspace" and "Slab"):
+Below is a comparison of two EnergyPlus simulations: one simulation using the [KMR Example model](https://github.com/Phius-ResearchComittee/REVIVE/releases/tag/v24.2.0) provided by Phius, run using the [Phius-REVIVE GUI tool](https://github.com/Phius-ResearchComittee/REVIVE/releases/tag/v24.2.0), and another using a [Honeybee-REVIVE model](https://github.com/PH-Tools/honeybee_REVIVE_grasshopper/blob/main/tests/phius_rv2024_model.hbjson) which was built to match the KMR example as closely as possible using Honeybee Grasshopper methods and components. The test model is a single-zone, single-family home. The home includes a below-grade basement, as well as two on-grade floor surfaces ("Crawlspace" and "Slab"):
 
 ![Screenshot 2024-11-10 at 1 54 14 PM](https://github.com/user-attachments/assets/16ee8959-04b4-4815-8975-660c6f56d87b)
 
 # METHODOLOGY:
-Using the [Honeybee-REVIVE toolkit](https://github.com/PH-Tools/honeybee_REVIVE_grasshopper/tree/main), a complete Honeybee-REVIVE model was constructed in Rhino/Grasshopper with attributes which align to the Phius KMR Example file as closely as possible (see below for a discussion of the known discrepancies). A full annual simulation was executed for both simulations, and the ADORB costs calculated based on the simulation results. ADORB costs for the Phius-case were calculated using their Phius-GUI tool, while the HB-REVIVE case uses the new [PH-ADORB library](https://github.com/PH-Tools/PH_ADORB).
+Using the [Honeybee-REVIVE toolkit](https://github.com/PH-Tools/honeybee_REVIVE_grasshopper/tree/main), a complete Honeybee-REVIVE model was constructed in Rhino/Grasshopper with attributes which align to the Phius KMR Example file as closely as possible (see below for a discussion of the known discrepancies). A full annual simulation was executed for both simulations, and the ADORB costs calculated based on the simulation results. ADORB costs for the Phius-case were calculated using the [Phius-GUI tool](https://github.com/Phius-ResearchComittee/REVIVE/blob/main/REVIVE2024/adorb.py), while the HB-REVIVE case uses the new [PH-ADORB library](https://github.com/PH-Tools/PH_ADORB).
 
 ### MODEL FILES:
 Relevant model files can be found at:
@@ -14,23 +14,24 @@ Relevant model files can be found at:
 - [Phius GUI Generated IDF](https://github.com/PH-Tools/honeybee_REVIVE_grasshopper/tree/main/tests/adorb/phius_gui)
 - [Phius GUI Generated Results](https://github.com/PH-Tools/honeybee_REVIVE_grasshopper/tree/main/tests/adorb/phius_gui/results)
 - - - 
-- [Grasshopper Model Generation Script](https://github.com/PH-Tools/honeybee_REVIVE_grasshopper/blob/main/tests/phius_rv2024_model.gh)
-- [Grasshopper Simulation Run Script](https://github.com/PH-Tools/honeybee_REVIVE_grasshopper/blob/main/tests/phius_rv2024_simulate_ADORB.gh)
+- [Grasshopper Model Generation Script](https://github.com/PH-Tools/honeybee_REVIVE_grasshopper/blob/main/tests/)
+- [Grasshopper Simulation Run Script](https://github.com/PH-Tools/honeybee_REVIVE_grasshopper/blob/main/tests/)
 - [Honeybee-REVIVE Model Results](https://github.com/PH-Tools/honeybee_REVIVE_grasshopper/blob/main/tests/adorb/hbrv/hb_revive_ADORB_results)
 
 
 ### KNOWN MODEL DIFFERENCES:
-There are four key discrepancies found between the Honeybee-REVIVE model and the Phius-GUI model which have been identified during this comparison:
-1. **Kiva:** The Phius GUI utilizes the [KIVA ground solver](https://kiva.readthedocs.io/en/stable/), while the Honeybee model does not. This feature is not currently supported by Honeybee. For the purposes of this evaluation, a temporary 'patch' was applied to the Honeybee model in order to enable KIVA in both simulations. In the long term, Honeybee would need to provide feature support for KIVA in order to allow alignment with the REVIVE protocol. While there does not appear to be significant difference when the model uses well insulated surfaces, for models which have un- or poorly-insulated ground-contact surfaces (typical of many existing homes) there does appear to a large difference in modeled performance when Kiva is used.
+There are five key discrepancies found between the Honeybee-REVIVE model and the Phius-GUI model which have been identified during this comparison:
+1. **Kiva:** The Phius GUI utilizes the [KIVA ground solver](https://kiva.readthedocs.io/en/stable/), while the Honeybee-REVIVE model does not. This feature is not currently supported by Honeybee. For the purposes of this evaluation, a temporary 'patch' was applied to the Honeybee-REVIVE model in order to enable KIVA in both simulations. In the long term, Honeybee would need to provide feature support for KIVA in order to allow alignment with the REVIVE protocol. While there does not appear to be significant difference when the model uses well insulated surfaces, for models which have un- or poorly-insulated ground-contact surfaces (typical of many existing homes) there does appear to a large difference in modeled performance when Kiva is used.
 1. **Mechanical Equipment:** The Phius-GUI tool uses 'hard-coded' mechanical equipment for a [selection of different types](https://github.com/Phius-ResearchComittee/REVIVE/blob/5ddd9cc7f55639071ac35f9b1701c286b68b1ca6/REVIVE2024/hvac.py#L106) common in smaller residential buildings. By contrast, the Honeybee-REVIVE model is restricted to only the mechanical systems available through [NREL's OpenStudio Standards templates.](https://github.com/NREL/openstudio-standards) While these templates are quite comprehensive, they do not have an option that matches the Phius-GUI system perfectly, and so there is some inevitable discrepancy between the model's mechanical equipment. </br></br>
 *Note: while it does appear possible to configure a detailed system for the Honeybee-REVIVE model using the [IronBug](https://github.com/MingboPeng/Ironbug) plugin, this plugin is not currently available for MacOS or Windows-ARM systems and so was not tested as part of this validation testing. Further testing on a Windows-OS may show better alignment between systems if IronBug is used.*</br></br>
 1. **Envelope Infiltration Parameters:** While both models have the same infiltration flow-rate, the Phius-GUI and Honeybee set different attributes for the `Temperature Term Coefficient` and `Velocity Term Coefficient` values in the EnergyPlus IDF `ZoneInfiltration:DesignFlowRate` object. For purposes of this study, the Honeybee-REVIVE IDF values were patched to match the Phius-GUI settings in order to align the simulation results. 
-1. **Maintenance and Replacement Cost:** There appears to be an error [in the Phius-GUI code](https://github.com/Phius-ResearchComittee/REVIVE/blob/5ddd9cc7f55639071ac35f9b1701c286b68b1ca6/REVIVE2024/simulate.py#L1067) which causes all model construction material costs to be duplicated on year 1, leading to an erroneously high ADORB cost. The error is fixed in the Honeybee-REVIVE implementation, and as a result the maintenance and replacement ADORB cost is 50% lower in the Honeybee-REVIVE case.
 1. **Mechanical Ventilation:** While the Phius-GUI case does include a specified fresh-air-ventilation flow rate, the test-case mechanical system with "Exhaust" ventilation does not include any Mixers in the IDF, and therefor does there is '0' ventilation airflow to the 'Furnace'. In order to match this effect, since the NREL templates cannot be modified to perfectly match this configuration, the ventilation flow-rate in the Honeybee-REVIVE model have been set to '0'. This has the same effect of zeroing out the mechanical ventilation airflow to the heating/cooling coils.
+1. **Maintenance and Replacement ADORB Cost:** There appears to be an error [in the Phius-GUI code](https://github.com/Phius-ResearchComittee/REVIVE/blob/5ddd9cc7f55639071ac35f9b1701c286b68b1ca6/REVIVE2024/simulate.py#L1067) which causes all model construction material costs to be duplicated on year 1, leading to an erroneously high ADORB cost. The error is fixed in the Honeybee-REVIVE implementation, and as a result the maintenance and replacement ADORB cost is 50% lower in the Honeybee-REVIVE case.
 </br></br>
 
 
 # ENERGYPLUS SIMULATION RESULTS:
+Below are detailed results from the EnergyPlus simulations for both the Phius-GUI and Honeybee-REVIVE cases. Overall, the Honeybee-REVIVE model is able to match the Phius-GUI configuration quite closely, although owing to the different methods there are some inevitable discrepancies. All results shown below are generated from the EnergyPlus .sql output files.
 
 <details>
 <summary><strong>Site Outdoor Conditions:</strong></summary>
@@ -93,7 +94,7 @@ Below is a summary of the ADORB cost values calculated for both the Phius-GUI mo
 
 
 ## Operational Energy:
-These costs represent the present-value of future net energy costs (purchase and CO2). There is good alignment between the modeled cases, with the Honeybee-REVIVE simulations showing a slightly higher cost due to its higher simulated energy consumption (see the EnergyPlus Simulation Results above for details).
+These costs represent the present-value of future [net] energy costs (purchase and CO2). There is good alignment between the modeled cases, with the Honeybee-REVIVE simulations showing a slightly higher cost due to its higher simulated energy consumption (see the EnergyPlus Simulation Results above for details).
 
 ### | Purchase Cost:
 ![Screenshot](./adorb_cost/png/energy_purchase_cost.png)
@@ -108,17 +109,17 @@ These costs represent the present-value of future net energy costs (purchase and
 These costs represent the present-value of all 'construction' related expenses including all relevant materials, equipment, products, and other 'measures' which are taken during the construction and maintenance of the building which affect the carbon-emissions and the out-of-pocket costs. These costs include all first-costs associated with the item's purchase (material) and installation (labor) as well as all regularly recurring maintenance and replacement costs.
 
 ### | Purchase Cost:
-While there is alignment between the two simulations, it is notable that the year-0 costs calculated by the Phius-GUI are 2x the Honeybee-REVIVE values. This owing to an error in the Phius-GUI calculation methodology where the building's constructions are added twice at year-0. Once this error is fixed the results will align for all years.
+While there is alignment between the two simulations, it is notable that the year-0 costs calculated by the Phius-GUI are 2x the Honeybee-REVIVE values. This owing to an error in the Phius-GUI calculation methodology where the building's constructions are added twice at year-0. Once this error is fixed the results should align for all years.
 ![Screenshot](./adorb_cost/png/construction_purchase_cost.png)
 
 ### | CO<sub>2</sub> Emissions Cost:
-Note that the only meaningful difference between the results occurs at year-0. The Phius-GUI simulation results do not include any CO2 for the construction materials or equipment for year-0, while the Honeybee-PH does include those costs. It is unclear if this is a bug in the Phius-GUI or if this omission is intentional. For Honeybee-PH, these costs will be included as they represent a significant carbon-cost for projects.
+Note that the only meaningful difference between the results occurs at year-0. The Phius-GUI simulation results do not include any CO2 for the construction materials or equipment for year-0, while the Honeybee-PH does include those costs. It is unclear if this is a bug in the Phius-GUI or if this omission is intentional. For Honeybee-PH, these costs should be included as they represent a significant carbon-cost for projects.
 ![Screenshot](./adorb_cost/png/construction_CO2_cost.png)
 
 
 
 ## Grid Transition PV-Cost:
-These costs represent the present-value of a recurring 'grid-transition' fee which covers the increased electrical load of the building as it transitions from fossil-fuels to all electric heating and cooling. This would be equivalent to a tax levied on the property directly supporting the national grid transition costs. Note that after 30 years the cost goes to zero as the transition is assumed to be complete at that point.
+These costs represent the present-value of a recurring 'grid-transition' fee which covers the increased electrical load of the building as it transitions from fossil-fuels to all electric heating and cooling. This would be equivalent to a consumption-weighted tax levied on the property directly supporting the national grid transition costs. Note that after 30 years the cost goes to zero as the transition is assumed to be complete at that point.
 
 
 
@@ -126,5 +127,6 @@ These costs represent the present-value of a recurring 'grid-transition' fee whi
 
 
 ## Total Cumulative ADORB Cost:
-Looking at the total Cumulative ADORB costs over the analysis period
+Looking at the total Cumulative ADORB costs over the analysis period shows the increasing ADORB PV costs overtime. 
 
+![Screenshot](./adorb_cost/png/cumulative.png)

@@ -42,6 +42,29 @@ def generate_plot(_phius_gui_ADORB: pd.DataFrame, _hbrv_ADORB: pd.DataFrame, _ty
         f.write(fig.to_html(fig, full_html=False, include_plotlyjs="cdn"))
 
 
+def generate_stacked_plot(_data: pd.DataFrame, _title: str, _name: str) -> None:
+    fig = go.Figure()
+    fig.update_layout(
+        title=_title,
+        width=1500,  # Set plot width
+        height=500,  # Set plot height
+    )
+    _data = _data.drop(columns="Unnamed: 0")
+    for column in _data.columns:
+        fig.add_trace(
+            go.Scatter(
+                x=_data.index, y=_data[column], mode="lines", stackgroup="one", name=column  # Creates stacking behavior
+            )
+        )
+
+    # Save the graph as a PNG file
+    fig.write_image(Path(str(__file__)).parent / "adorb_cost" / "png" / f"{_name}.png")
+
+    # Save the graph as an HTML file
+    with open(Path(str(__file__)).parent / "adorb_cost" / "html" / f"{_name}.html", "w") as f:
+        f.write(fig.to_html(fig, full_html=False, include_plotlyjs="cdn"))
+
+
 if __name__ == "__main__":
     phius_gui_ADORB = pd.read_csv(
         Path("tests/adorb/phius_gui/results/M_10W-20S_StateCollegePA_BASE_NV_ADORBresults.csv")
@@ -64,3 +87,9 @@ if __name__ == "__main__":
     generate_plot(
         phius_gui_ADORB, hbrv_ADORB, "grid_transition_cost", "Present-Value ($USD) of Yearly Grid-Transition Cost"
     )
+
+    # --
+    hbrv_cumulative_data = pd.read_csv(
+        Path("tests/adorb/hbrv/hb_revive_ADORB_results/hb_revive_ADORB_model_cumulative.csv")
+    )
+    generate_stacked_plot(hbrv_cumulative_data, "Cumulative ADORB Present-Value (USD)", "cumulative")
