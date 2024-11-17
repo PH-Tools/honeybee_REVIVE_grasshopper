@@ -93,7 +93,7 @@ Below is a summary of the ADORB cost values calculated for both the Phius-GUI mo
 
 
 ## Operational Energy Purchase PV-Cost:
-These costs represent the present-value of future net energy purchasing costs. 
+These costs represent the present-value of future net energy purchasing costs. There is good alignment between the modeled cases, with the Phius-GUI simulations showing a slightly higher rate due to its slightly higher simulated energy consumption. 
 
 ![Screenshot](./adorb_cost/png/energy_purchase_cost.png)
 
@@ -116,7 +116,9 @@ These cost represent the present-value of all 'construction' related embodied CO
 
 
 ## Grid Transition PV-Cost:
-These costs represent the present-value of a recurring 'grid-transition' fee which covers the increased electrical load the building represents.
+These costs represent the present-value of a recurring 'grid-transition' fee which covers the increased electrical load of the building as it transitions from fossil-fuels to all electric heating and cooling. This would be equivalent to a tax levied on the property directly supporting the national grid transition costs. Note that after 30 years the cost goes to zero as the transition is assumed to be complete at that point.
+
+While there is alignment between the two simulations, it is notable that the year-0 costs calculated by the Phius-GUI are 2x the Honeybee-REVIVE values. This owing to an error in the Phius-GUI calculation methodology where the building's constructions are added twice at year-0. Once this error is fixed the results will align for all years.
 
 ![Screenshot](./adorb_cost/png/grid_transition_cost.png)
 

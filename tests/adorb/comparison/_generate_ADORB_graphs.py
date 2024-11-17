@@ -30,6 +30,8 @@ def generate_plot(_phius_gui_ADORB: pd.DataFrame, _hbrv_ADORB: pd.DataFrame, _ty
         xaxis_title="Years from Start",
         yaxis_title="PV-Cost",
         yaxis=dict(range=yaxis_range),
+        width=1500,  # Set plot width
+        height=500,  # Set plot height
     )
 
     # Save the graph as a PNG file
