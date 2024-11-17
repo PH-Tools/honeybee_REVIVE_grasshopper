@@ -8,7 +8,6 @@ M3S_TO_M3HR = 3_600
 
 
 def get_from_sql(_source_file_path) -> dict:
-    """Get the 'Facility Total Building Electricity Demand Rate' [W] from the SQL File."""
     conn = sqlite3.connect(_source_file_path)
     try:
         c = conn.cursor()
@@ -85,11 +84,6 @@ def get_from_sql(_source_file_path) -> dict:
             value * JOULE_TO_KWH for value, name in results if name == "Heating Coil Electricity Energy"
         ]
         fan_electricity_energy = [value * JOULE_TO_KWH for value, name in results if name == "Fan Electricity Energy"]
-        humidifier_electricity_energy = [
-            value * JOULE_TO_KWH for value, name in results if name == "Humidifier Electricity Energy"
-        ]
-        pump_electricity_energy = [value * JOULE_TO_KWH for value, name in results if name == "Pump Electricity Energy"]
-
         total_purchased_electricity_kwh_ = {
             "drybulb_temperatures": drybulb_temperatures,
             "wetbulb_temperatures": wetbulb_temperatures,
@@ -106,8 +100,6 @@ def get_from_sql(_source_file_path) -> dict:
             "heating_coil_natural_gas_energy": heating_coil_natural_gas_energy,
             "heating_coil_electricity_energy": heating_coil_electricity_energy,
             "fan_electricity_energy": fan_electricity_energy,
-            "humidifier_electricity_energy": humidifier_electricity_energy,
-            "pump_electricity_energy": pump_electricity_energy,
         }
     except Exception as e:
         conn.close()
@@ -129,7 +121,7 @@ def generate_graph(_phius_data: dict, _hbrv_data: dict, _title: str, _units: str
 
     fig = go.Figure()
     fig.add_trace(
-        go.Scatter(x=phius_plot_data.index, y=hbrv_plot_data[0], mode="lines", name="Phius-GUI", line=dict(width=0.5))
+        go.Scatter(x=phius_plot_data.index, y=phius_plot_data[0], mode="lines", name="Phius-GUI", line=dict(width=0.5))
     )
     fig.add_trace(
         go.Scatter(
@@ -145,9 +137,8 @@ def generate_graph(_phius_data: dict, _hbrv_data: dict, _title: str, _units: str
         width=2000,  # Set plot width
         height=500,  # Set plot height
     )
-
-    # Save the graph as a PNG file
-    fig.write_image(Path(str(__file__)).parent / "energy_plus" / "png" / f"{_filename}.png")
+    # Save the graph as a PNG file with specified resolution
+    fig.write_image(Path(str(__file__)).parent / "energy_plus" / "png" / f"{_filename}.png", scale=2)
 
 
 if __name__ == "__main__":
@@ -270,18 +261,4 @@ if __name__ == "__main__":
         "Fan Electricity Energy",
         "Energy (kWH)",
         "fan_electricity_energy",
-    )
-    generate_graph(
-        phius_data["humidifier_electricity_energy"],
-        hbrv_data["humidifier_electricity_energy"],
-        "Humidifier Electricity Energy",
-        "Energy (kWH)",
-        "humidifier_electricity_energy",
-    )
-    generate_graph(
-        phius_data["pump_electricity_energy"],
-        hbrv_data["pump_electricity_energy"],
-        "Pump Electricity Energy",
-        "Energy (kWH)",
-        "pump_electricity_energy",
     )

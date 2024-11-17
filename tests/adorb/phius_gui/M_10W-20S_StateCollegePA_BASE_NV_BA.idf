@@ -5,10 +5,10 @@ VERSION,23.2;
 SIMULATIONCONTROL,
   Yes,                     !- Do Zone Sizing Calculation
   Yes,                     !- Do System Sizing Calculation
-  No,                      !- Do Plant Sizing Calculation
-  Yes,                     !- Run Simulation for Sizing Periods
+  Yes,                      !- Do Plant Sizing Calculation
+  No,                     !- Run Simulation for Sizing Periods
   Yes,                     !- Run Simulation for Weather File Run Periods
-  Yes,                     !- Do HVAC Sizing Simulation for Sizing Periods
+  No,                     !- Do HVAC Sizing Simulation for Sizing Periods
   25;                      !- Maximum Number of HVAC Sizing Simulation Passes
 
 BUILDING,
@@ -3173,7 +3173,7 @@ FAN:ZONEEXHAUST,
   MechAvailable,           !- Availability Schedule Name
   0.6,                     !- Fan Total Efficiency
   70,                      !- Pressure Rise {Pa}
-  4.247527e-02,            !- Maximum Flow Rate {m3/s}
+  0.04247527,            !- Maximum Flow Rate {m3/s}
   WholeHouse_ERV_Exhaust,  !- Air Inlet Node Name
   WholeHouse_OA_1,         !- Air Outlet Node Name
   General,                 !- End-Use Subcategory
@@ -3227,18 +3227,37 @@ COIL:HEATING:FUEL,
   WholeHouse_Heating_Coil_Air_Inlet,  !- Air Inlet Node Name
   WholeHouse_MECH_Air_Outlet;  !- Air Outlet Node Name
 
+
+OutdoorAir:Mixer,
+  Wholehouse_fccf26f5 PSZ-AC OA System Outdoor Air Mixer, !- Name
+  Wholehouse_fccf26f5 PSZ-AC Mixed Air Node, !- Mixed Air Node Name
+  Wholehouse_fccf26f5 PSZ-AC Outdoor Air Node, !- Outdoor Air Stream Node Name
+  Wholehouse_fccf26f5 PSZ-AC Relief Air Node, !- Relief Air Stream Node Name
+  Wholehouse_fccf26f5 PSZ-AC Supply Inlet Node; !- Return Air Stream Node Name
+
+SetpointManager:MixedAir,
+  Wholehouse_fccf26f5 PSZ-AC Mixed Air Node OS Default SPM, !- Name
+  Temperature,                            !- Control Variable
+  Wholehouse_fccf26f5 PSZ-AC Supply Outlet Node, !- Reference Setpoint Node Name
+  Wholehouse_fccf26f5 PSZ-AC Unitary AC Heating Coil - Fan Node, !- Fan Inlet Node Name
+  Wholehouse_fccf26f5 PSZ-AC Unitary AC Fan - Supplemental Coil Node, !- Fan Outlet Node Name
+  Wholehouse_fccf26f5 PSZ-AC Mixed Air Node; !- Setpoint Node or NodeList Name
+
 AirLoopHVAC:UnitarySystem,
   WholeHouse_GasHeat_DXAC_Furnace,  !- Name
   Load,                    !- Control Type
   WholeHouse,              !- Controlling Zone or Thermostat Location
   None,                    !- Dehumidification Control Type
   MechAvailable,           !- Availability Schedule Name
-  WholeHouse_MECH_Air_Inlet,  !- Air Inlet Node Name
+  
+  WholeHouse_MECH_Air_Inlet,  !- Air Inlet Node Name #<---- REMOVE....
+  
+  Wholehouse_fccf26f5 PSZ-AC Mixed Air Node,  !- Air Inlet Node Name
   WholeHouse_MECH_Air_Outlet,  !- Air Outlet Node Name
   Fan:OnOff,               !- Supply Fan Object Type
   WholeHouseFurnace_Blower,!- Supply Fan Name
   BlowThrough,             !- Fan Placement
-  ,                        !- Supply Air Fan Operating Mode Schedule Name
+  MechAvailable,                        !- Supply Air Fan Operating Mode Schedule Name
   Coil:Heating:Fuel,       !- Heating Coil Object Type
   WholeHouseFurnace_Heating_Coil,  !- Heating Coil Name
   1,                       !- DX Heating Coil Sizing Ratio
@@ -3249,12 +3268,12 @@ AirLoopHVAC:UnitarySystem,
   SensibleOnlyLoadControl, !- Latent Load Control
   ,                        !- Supplemental Heating Coil Object Type
   ,                        !- Supplemental Heating Coil Name
-  ,                        !- Cooling Supply Air Flow Rate Method
+  SupplyAirFlowRate,                        !- Cooling Supply Air Flow Rate Method
   autosize,                !- Cooling Supply Air Flow Rate {m3/s}
   ,                        !- Cooling Supply Air Flow Rate Per Floor Area {m3/s-m2}
   ,                        !- Cooling Fraction of Autosized Cooling Supply Air Flow Rate
   ,                        !- Cooling Supply Air Flow Rate Per Unit of Capacity {m3/s-W}
-  ,                        !- Heating Supply Air Flow Rate Method
+  SupplyAirFlowRate,                        !- Heating Supply Air Flow Rate Method
   autosize,                !- Heating Supply Air Flow Rate {m3/s}
   ,                        !- Heating Supply Air Flow Rate Per Floor Area {m3/s-m2}
   ,                        !- Heating Fraction of Autosized Heating Supply Air Flow Rate
@@ -3266,7 +3285,7 @@ AirLoopHVAC:UnitarySystem,
   ,                        !- No Load Fraction of Autosized Heating Supply Air Flow Rate
   ,                        !- No Load Supply Air Flow Rate Per Unit of Capacity During Cooling Operation {m3/s-W}
   ,                        !- No Load Supply Air Flow Rate Per Unit of Capacity During Heating Operation {m3/s-W}
-  50,                      !- Maximum Supply Air Temperature {C}
+  80,                      !- Maximum Supply Air Temperature {C}
   21,                      !- Maximum Outdoor Dry-Bulb Temperature for Supplemental Heater Operation {C}
   ,                        !- Outdoor Dry-Bulb Temperature Sensor Node Name
   0,                       !- Ancillary On-Cycle Electric Power {W}
