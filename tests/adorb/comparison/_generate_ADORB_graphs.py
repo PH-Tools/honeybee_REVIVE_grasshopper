@@ -20,11 +20,16 @@ def generate_plot(_phius_gui_ADORB: pd.DataFrame, _hbrv_ADORB: pd.DataFrame, _ty
     fig.add_trace(go.Scatter(x=phius_gui_ADORB.index, y=phius_direct_energy, mode="lines", name="PHIUS-GUI"))
     fig.add_trace(go.Scatter(x=hbrv_ADORB.index, y=hbrv_direct_energy, mode="lines", name="Honeybee-REVIVE"))
 
+    # Determine y-axis lower bound
+    y_min = min(phius_direct_energy[0].min(), hbrv_direct_energy[0].min())
+    yaxis_range = [0, None] if y_min >= 0 else [None, None]
+
     # Update layout
     fig.update_layout(
         title=_title,
         xaxis_title="Years from Start",
         yaxis_title="PV-Cost",
+        yaxis=dict(range=yaxis_range),
     )
 
     # Save the graph as a PNG file

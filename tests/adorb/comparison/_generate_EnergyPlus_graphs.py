@@ -129,11 +129,16 @@ def generate_graph(_phius_data: dict, _hbrv_data: dict, _title: str, _units: str
         )
     )
 
+    # Determine y-axis lower bound
+    y_min = min(phius_plot_data[0].min(), hbrv_plot_data[0].min())
+    yaxis_range = [0, None] if y_min >= 0 else [None, None]
+
     # Update layout
     fig.update_layout(
         title=_title,
         xaxis_title="Time",
         yaxis_title=_units,
+        yaxis=dict(range=yaxis_range),
         width=2000,  # Set plot width
         height=500,  # Set plot height
     )

@@ -9,7 +9,7 @@ Using the [Honeybee-REVIVE toolkit](https://github.com/PH-Tools/honeybee_REVIVE_
 
 ### MODEL FILES:
 Relevant model files can be found at:
-- [EPW File: Rochester, MN]()
+- [EPW File: Rochester, MN](https://github.com/PH-Tools/honeybee_REVIVE_grasshopper/tree/main/tests/_source_weather/USA_MN_Rochester.Intl.AP.726440_TMY3)
 - - -
 - [Phius GUI Generated IDF](https://github.com/PH-Tools/honeybee_REVIVE_grasshopper/tree/main/tests/adorb/phius_gui)
 - [Phius GUI Generated Results](https://github.com/PH-Tools/honeybee_REVIVE_grasshopper/tree/main/tests/adorb/phius_gui/results)
@@ -35,6 +35,8 @@ There are four key discrepancies found between the Honeybee-REVIVE model and the
 <details>
 <summary><strong>Site Outdoor Conditions:</strong></summary>
 
+As shown, the outdoor boundary conditions for both simulations are identical. Both simulation runs use EPW data from [Rochester, MN.](https://github.com/PH-Tools/honeybee_REVIVE_grasshopper/tree/main/tests/_source_weather/USA_MN_Rochester.Intl.AP.726440_TMY3)
+
 ![Screenshot](./energy_plus/png/site_outdoor_air_drybulb_temperature.png)
 ![Screenshot](./energy_plus/png/site_outdoor_air_relative_humidity.png)
 ![Screenshot](./energy_plus/png/site_outdoor_air_wetbulb_temperature.png)
@@ -44,6 +46,8 @@ There are four key discrepancies found between the Honeybee-REVIVE model and the
 <details>
 <summary><strong>Zone Indoor Conditions:</strong></summary>
 
+The simulated interior air conditions of both simulations show good alignment across both summer and winter. As a result of differences in the mechanical system components, the Phius-GUI model does show slightly warmer interior temperatures, and as a result also slightly less humid conditions through the year. It is not clear where this difference derives from, but it is small enough that we do not feel it affects the final results in a significant way. This may be area for further testing and analysis to determine what is causing this difference. 
+
 ![Screenshot](./energy_plus/png/zone_mean_air_temperature.png)
 ![Screenshot](./energy_plus/png/zone_air_relative_humidity.png)
 
@@ -51,6 +55,8 @@ There are four key discrepancies found between the Honeybee-REVIVE model and the
 
 <details>
 <summary><strong>Zone Internal Gains:</strong></summary>
+
+Lighting, Occupancy, and Appliances follow the same pattern in both the Phius-GUI and Honeybee-REVIVE models. One notable difference is that Honeybee-REVIVE models all of the appliances as 'OtherEquipment', rather than "ElectricEquipment" which makes direct comparison challenging.
 
 ![Screenshot](./energy_plus/png/zone_lights_electricity_energy.png)
 ![Screenshot](./energy_plus/png/zone_people_total_heating_energy.png)
@@ -61,6 +67,8 @@ There are four key discrepancies found between the Honeybee-REVIVE model and the
 <details>
 <summary><strong>Zone Ventilation Airflows:</strong></summary>
 
+Airflows for Mechanical, Infiltration, and Windows are aligned across both models. Note that the Phius test case uses a 'Exhaust' only ventilation configuration and therefor the Mechanical Ventilation is zero'd out. 
+
 ![Screenshot](./energy_plus/png/zone_mechanical_ventilation_standard_density_volume_flow_rate.png)
 ![Screenshot](./energy_plus/png/zone_infiltration_standard_density_volume_flow_rate.png)
 ![Screenshot](./energy_plus/png/zone_ventilation_standard_density_volume_flow_rate.png)
@@ -69,6 +77,8 @@ There are four key discrepancies found between the Honeybee-REVIVE model and the
 
 <details>
 <summary><strong>Heating and Cooling Energy:</strong></summary>
+
+As shown, the models show good alignment for heating and cooling energy consumption during both summer and winter. As noted above, the Honeybee-REVIVE model does appear to have slightly higher summertime temperatures, amd slightly lower cooling energy consumption. This may be the result of a sensor or thermostat configuration and may be a place for further refinement and study. However, the difference appears to be minor and does not significantly affect the final ADORB calculation results. 
 
 ![Screenshot](./energy_plus/png/heating_coil_natural_gas_energy.png)
 ![Screenshot](./energy_plus/png/cooling_coil_electricity_energy.png)
