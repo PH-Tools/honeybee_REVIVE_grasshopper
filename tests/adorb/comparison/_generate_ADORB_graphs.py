@@ -1,6 +1,6 @@
-import plotly.graph_objects as go
-import pandas as pd
 from pathlib import Path
+import pandas as pd
+import plotly.graph_objects as go
 
 COLUMN_NAMES = {
     "energy_purchase_cost": {"hbrv": "pv_direct_energy", "phius": "pv_dirEn"},
@@ -28,10 +28,10 @@ def generate_plot(_phius_gui_ADORB: pd.DataFrame, _hbrv_ADORB: pd.DataFrame, _ty
     )
 
     # Save the graph as a PNG file
-    fig.write_image(Path(str(__file__)).parent / "png" / f"{_type}.png")
+    fig.write_image(Path(str(__file__)).parent / "adorb_cost" / "png" / f"{_type}.png")
 
     # Save the graph as an HTML file
-    with open(Path(str(__file__)).parent / "html" / f"{_type}.html", "w") as f:
+    with open(Path(str(__file__)).parent / "adorb_cost" / "html" / f"{_type}.html", "w") as f:
         f.write(fig.to_html(fig, full_html=False, include_plotlyjs="cdn"))
 
 

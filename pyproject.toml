@@ -27,7 +27,7 @@ keywords = [
     "Rhino",
     "Grasshopper",
 ]
-dependencies = []
+dependencies = ["ph-adorb", "honeybee-revive"]
 
 [project.optional-dependencies]
 dev = [
