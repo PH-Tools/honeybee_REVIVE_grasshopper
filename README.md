@@ -25,7 +25,7 @@ Note that you must have [Honeybee-Core](https://github.com/ladybug-tools/honeybe
   
 For information on test-cases and comparison to Phius reference models, see:
 - [Resiliency](https://github.com/PH-Tools/honeybee_REVIVE_grasshopper/tree/main/tests/resilience/comparison#readme)
-- [ADORB - TBD...]
+- [ADORB](https://github.com/PH-Tools/honeybee_REVIVE_grasshopper/blob/main/tests/adorb/comparison#readme)
 </details>
 
 <details>
