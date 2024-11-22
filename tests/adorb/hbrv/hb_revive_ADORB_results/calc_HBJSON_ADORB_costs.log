@@ -1,941 +1,940 @@
-2024-11-17 16:45:03,122 - INFO - Script started
-2024-11-17 16:45:03,137 - INFO - Converting HB-Model from Meters to Meters.
-2024-11-17 16:45:04,540 - INFO - calc_variant_yearly_ADORB_costs()
-2024-11-17 16:45:04,540 - INFO - calc_annual_total_electric_cost()
-2024-11-17 16:45:04,540 - DEBUG - Electric Purchased: 6,671kWh * $0.18/kWh = $1,200
-2024-11-17 16:45:04,540 - DEBUG - Electric Sold: 0kWh * $0.13/kWh = $0
-2024-11-17 16:45:04,540 - DEBUG - Electric Net Cost: $1,200 - $0 + $200 = $1,400
-2024-11-17 16:45:04,592 - INFO - calc_annual_total_gas_cost()
-2024-11-17 16:45:04,592 - DEBUG - Gas Cost: 34,964kWh * $0.05/kWh + $200 = $1,847
-2024-11-17 16:45:04,592 - INFO - calc_annual_total_gas_CO2()
-2024-11-17 16:45:04,592 - DEBUG - Gas CO2: 34,964 kWH -> 1,193 Therms * 12.7 = 15,151 tons CO2
-2024-11-17 16:45:04,592 - INFO - calc_CO2_reduction_measures_yearly_embodied_kgCO2(0 measures)
-2024-11-17 16:45:04,592 - INFO - calc_CO2_reduction_measures_yearly_embodied_CO2_cost()
-2024-11-17 16:45:04,592 - INFO - calc_CO2_reduction_measures_yearly_install_costs()
-2024-11-17 16:45:04,592 - INFO - calc_constructions_yearly_embodied_kgCO2()
-2024-11-17 16:45:04,592 - DEBUG - Construction Exterior Roof: $603 * 0.23 kgCO2/USD = 141 kgCO2
-2024-11-17 16:45:04,592 - DEBUG - Adding Construction Exterior Roof Embodied CO2 [lifetime=24yrs] 141 kgCO2 for year-0
-2024-11-17 16:45:04,592 - DEBUG - Adding Construction Exterior Roof Embodied CO2 [lifetime=24yrs] 141 kgCO2 for year-24
-2024-11-17 16:45:04,592 - DEBUG - Adding Construction Exterior Roof Embodied CO2 [lifetime=24yrs] 141 kgCO2 for year-48
-2024-11-17 16:45:04,592 - DEBUG - Construction Exterior Slab UnIns: $449 * 0.23 kgCO2/USD = 105 kgCO2
-2024-11-17 16:45:04,592 - DEBUG - Adding Construction Exterior Slab UnIns Embodied CO2 [lifetime=0yrs] 105 kgCO2 for year-0
-2024-11-17 16:45:04,592 - DEBUG - Construction Exterior Wall: $1,307 * 0.23 kgCO2/USD = 306 kgCO2
-2024-11-17 16:45:04,592 - DEBUG - Adding Construction Exterior Wall Embodied CO2 [lifetime=0yrs] 306 kgCO2 for year-0
-2024-11-17 16:45:04,592 - DEBUG - Construction Interior Floor: $0 * 0.23 kgCO2/USD = 0 kgCO2
-2024-11-17 16:45:04,592 - DEBUG - Adding Construction Interior Floor Embodied CO2 [lifetime=0yrs] 0 kgCO2 for year-0
-2024-11-17 16:45:04,592 - DEBUG - Construction Interior Wall: $0 * 0.23 kgCO2/USD = 0 kgCO2
-2024-11-17 16:45:04,592 - DEBUG - Adding Construction Interior Wall Embodied CO2 [lifetime=0yrs] 0 kgCO2 for year-0
-2024-11-17 16:45:04,592 - DEBUG - Construction P+B R-13: $557 * 0.23 kgCO2/USD = 130 kgCO2
-2024-11-17 16:45:04,592 - DEBUG - Adding Construction P+B R-13 Embodied CO2 [lifetime=16yrs] 130 kgCO2 for year-0
-2024-11-17 16:45:04,592 - DEBUG - Adding Construction P+B R-13 Embodied CO2 [lifetime=16yrs] 130 kgCO2 for year-16
-2024-11-17 16:45:04,592 - DEBUG - Adding Construction P+B R-13 Embodied CO2 [lifetime=16yrs] 130 kgCO2 for year-32
-2024-11-17 16:45:04,592 - DEBUG - Adding Construction P+B R-13 Embodied CO2 [lifetime=16yrs] 130 kgCO2 for year-48
-2024-11-17 16:45:04,592 - DEBUG - Construction ShadedWindowConstruction_8043716d: $482 * 0.23 kgCO2/USD = 113 kgCO2
-2024-11-17 16:45:04,592 - DEBUG - Adding Construction ShadedWindowConstruction_8043716d Embodied CO2 [lifetime=38yrs] 113 kgCO2 for year-0
-2024-11-17 16:45:04,592 - DEBUG - Adding Construction ShadedWindowConstruction_8043716d Embodied CO2 [lifetime=38yrs] 113 kgCO2 for year-38
-2024-11-17 16:45:04,592 - DEBUG - Construction Thermal_Mass: $0 * 0.23 kgCO2/USD = 0 kgCO2
-2024-11-17 16:45:04,592 - DEBUG - Adding Construction Thermal_Mass Embodied CO2 [lifetime=0yrs] 0 kgCO2 for year-0
-2024-11-17 16:45:04,593 - DEBUG - Construction Uninsulated Stem Wall: $89 * 0.23 kgCO2/USD = 21 kgCO2
-2024-11-17 16:45:04,593 - DEBUG - Adding Construction Uninsulated Stem Wall Embodied CO2 [lifetime=0yrs] 21 kgCO2 for year-0
-2024-11-17 16:45:04,593 - INFO - calc_constructions_yearly_embodied_CO2_cost()
-2024-11-17 16:45:04,593 - DEBUG - Construction Exterior Roof Embodied CO2-Cost [YR-0]: 141 kgCO2 * $0.25/kgCO2 = $35
-2024-11-17 16:45:04,593 - DEBUG - Construction Exterior Roof Embodied CO2-Cost [YR-24]: 141 kgCO2 * $0.25/kgCO2 = $35
-2024-11-17 16:45:04,593 - DEBUG - Construction Exterior Roof Embodied CO2-Cost [YR-48]: 141 kgCO2 * $0.25/kgCO2 = $35
-2024-11-17 16:45:04,593 - DEBUG - Construction Exterior Slab UnIns Embodied CO2-Cost [YR-0]: 105 kgCO2 * $0.25/kgCO2 = $26
-2024-11-17 16:45:04,593 - DEBUG - Construction Exterior Wall Embodied CO2-Cost [YR-0]: 306 kgCO2 * $0.25/kgCO2 = $76
-2024-11-17 16:45:04,593 - DEBUG - Construction Interior Floor Embodied CO2-Cost [YR-0]: 0 kgCO2 * $0.25/kgCO2 = $0
-2024-11-17 16:45:04,593 - DEBUG - Construction Interior Wall Embodied CO2-Cost [YR-0]: 0 kgCO2 * $0.25/kgCO2 = $0
-2024-11-17 16:45:04,593 - DEBUG - Construction P+B R-13 Embodied CO2-Cost [YR-0]: 130 kgCO2 * $0.25/kgCO2 = $33
-2024-11-17 16:45:04,593 - DEBUG - Construction P+B R-13 Embodied CO2-Cost [YR-16]: 130 kgCO2 * $0.25/kgCO2 = $33
-2024-11-17 16:45:04,593 - DEBUG - Construction P+B R-13 Embodied CO2-Cost [YR-32]: 130 kgCO2 * $0.25/kgCO2 = $33
-2024-11-17 16:45:04,593 - DEBUG - Construction P+B R-13 Embodied CO2-Cost [YR-48]: 130 kgCO2 * $0.25/kgCO2 = $33
-2024-11-17 16:45:04,593 - DEBUG - Construction ShadedWindowConstruction_8043716d Embodied CO2-Cost [YR-0]: 113 kgCO2 * $0.25/kgCO2 = $28
-2024-11-17 16:45:04,593 - DEBUG - Construction ShadedWindowConstruction_8043716d Embodied CO2-Cost [YR-38]: 113 kgCO2 * $0.25/kgCO2 = $28
-2024-11-17 16:45:04,593 - DEBUG - Construction Thermal_Mass Embodied CO2-Cost [YR-0]: 0 kgCO2 * $0.25/kgCO2 = $0
-2024-11-17 16:45:04,593 - DEBUG - Construction Uninsulated Stem Wall Embodied CO2-Cost [YR-0]: 21 kgCO2 * $0.25/kgCO2 = $5
-2024-11-17 16:45:04,593 - INFO - calc_constructions_yearly_install_costs()
-2024-11-17 16:45:04,593 - DEBUG - Adding Construction Exterior Roof Install Cost: [lifetime=24yrs] $861 for year-0
-2024-11-17 16:45:04,593 - DEBUG - Adding Construction Exterior Roof Install Cost: [lifetime=24yrs] $861 for year-24
-2024-11-17 16:45:04,593 - DEBUG - Adding Construction Exterior Roof Install Cost: [lifetime=24yrs] $861 for year-48
-2024-11-17 16:45:04,593 - DEBUG - Adding Construction Exterior Slab UnIns Install Cost: [lifetime=0yrs] $642 for year-0
-2024-11-17 16:45:04,593 - DEBUG - Adding Construction Exterior Wall Install Cost: [lifetime=0yrs] $1,867 for year-0
-2024-11-17 16:45:04,593 - DEBUG - Adding Construction Interior Floor Install Cost: [lifetime=0yrs] $0 for year-0
-2024-11-17 16:45:04,593 - DEBUG - Adding Construction Interior Wall Install Cost: [lifetime=0yrs] $0 for year-0
-2024-11-17 16:45:04,593 - DEBUG - Adding Construction P+B R-13 Install Cost: [lifetime=16yrs] $796 for year-0
-2024-11-17 16:45:04,593 - DEBUG - Adding Construction P+B R-13 Install Cost: [lifetime=16yrs] $796 for year-16
-2024-11-17 16:45:04,593 - DEBUG - Adding Construction P+B R-13 Install Cost: [lifetime=16yrs] $796 for year-32
-2024-11-17 16:45:04,593 - DEBUG - Adding Construction P+B R-13 Install Cost: [lifetime=16yrs] $796 for year-48
-2024-11-17 16:45:04,593 - DEBUG - Adding Construction ShadedWindowConstruction_8043716d Install Cost: [lifetime=38yrs] $1,949 for year-0
-2024-11-17 16:45:04,593 - DEBUG - Adding Construction ShadedWindowConstruction_8043716d Install Cost: [lifetime=38yrs] $1,949 for year-38
-2024-11-17 16:45:04,593 - DEBUG - Adding Construction Thermal_Mass Install Cost: [lifetime=0yrs] $0 for year-0
-2024-11-17 16:45:04,593 - DEBUG - Adding Construction Uninsulated Stem Wall Install Cost: [lifetime=0yrs] $89 for year-0
-2024-11-17 16:45:04,593 - INFO - calc_equipment_yearly_embodied_kgCO2_()
-2024-11-17 16:45:04,593 - DEBUG - Equipment Battery: $1,730 * 0.23 kgCO2/USD = 405 kgCO2
-2024-11-17 16:45:04,593 - DEBUG - Adding Equipment Battery Embodied CO2 [lifetime=10yrs] 405 kgCO2 for year-0
-2024-11-17 16:45:04,593 - DEBUG - Adding Equipment Battery Embodied CO2 [lifetime=10yrs] 405 kgCO2 for year-10
-2024-11-17 16:45:04,593 - DEBUG - Adding Equipment Battery Embodied CO2 [lifetime=10yrs] 405 kgCO2 for year-20
-2024-11-17 16:45:04,593 - DEBUG - Adding Equipment Battery Embodied CO2 [lifetime=10yrs] 405 kgCO2 for year-30
-2024-11-17 16:45:04,593 - DEBUG - Adding Equipment Battery Embodied CO2 [lifetime=10yrs] 405 kgCO2 for year-40
-2024-11-17 16:45:04,593 - DEBUG - Adding Equipment Battery Embodied CO2 [lifetime=10yrs] 405 kgCO2 for year-50
-2024-11-17 16:45:04,594 - DEBUG - Equipment DHW_NaturalGas: $200 * 0.23 kgCO2/USD = 47 kgCO2
-2024-11-17 16:45:04,594 - DEBUG - Adding Equipment DHW_NaturalGas Embodied CO2 [lifetime=13yrs] 47 kgCO2 for year-0
-2024-11-17 16:45:04,594 - DEBUG - Adding Equipment DHW_NaturalGas Embodied CO2 [lifetime=13yrs] 47 kgCO2 for year-13
-2024-11-17 16:45:04,594 - DEBUG - Adding Equipment DHW_NaturalGas Embodied CO2 [lifetime=13yrs] 47 kgCO2 for year-26
-2024-11-17 16:45:04,594 - DEBUG - Adding Equipment DHW_NaturalGas Embodied CO2 [lifetime=13yrs] 47 kgCO2 for year-39
-2024-11-17 16:45:04,594 - DEBUG - Equipment GasFurnaceDXAC: $4,500 * 0.23 kgCO2/USD = 1,053 kgCO2
-2024-11-17 16:45:04,594 - DEBUG - Adding Equipment GasFurnaceDXAC Embodied CO2 [lifetime=20yrs] 1,053 kgCO2 for year-0
-2024-11-17 16:45:04,594 - DEBUG - Adding Equipment GasFurnaceDXAC Embodied CO2 [lifetime=20yrs] 1,053 kgCO2 for year-20
-2024-11-17 16:45:04,594 - DEBUG - Adding Equipment GasFurnaceDXAC Embodied CO2 [lifetime=20yrs] 1,053 kgCO2 for year-40
-2024-11-17 16:45:04,594 - DEBUG - Equipment WholeHouse ClothesDryer-Wholehouse: $900 * 0.23 kgCO2/USD = 211 kgCO2
-2024-11-17 16:45:04,594 - DEBUG - Adding Equipment WholeHouse ClothesDryer-Wholehouse Embodied CO2 [lifetime=13yrs] 211 kgCO2 for year-0
-2024-11-17 16:45:04,594 - DEBUG - Adding Equipment WholeHouse ClothesDryer-Wholehouse Embodied CO2 [lifetime=13yrs] 211 kgCO2 for year-13
-2024-11-17 16:45:04,594 - DEBUG - Adding Equipment WholeHouse ClothesDryer-Wholehouse Embodied CO2 [lifetime=13yrs] 211 kgCO2 for year-26
-2024-11-17 16:45:04,594 - DEBUG - Adding Equipment WholeHouse ClothesDryer-Wholehouse Embodied CO2 [lifetime=13yrs] 211 kgCO2 for year-39
-2024-11-17 16:45:04,594 - DEBUG - Equipment WholeHouse ClothesWasher-Wholehouse: $596 * 0.23 kgCO2/USD = 139 kgCO2
-2024-11-17 16:45:04,594 - DEBUG - Adding Equipment WholeHouse ClothesWasher-Wholehouse Embodied CO2 [lifetime=14yrs] 139 kgCO2 for year-0
-2024-11-17 16:45:04,594 - DEBUG - Adding Equipment WholeHouse ClothesWasher-Wholehouse Embodied CO2 [lifetime=14yrs] 139 kgCO2 for year-14
-2024-11-17 16:45:04,594 - DEBUG - Adding Equipment WholeHouse ClothesWasher-Wholehouse Embodied CO2 [lifetime=14yrs] 139 kgCO2 for year-28
-2024-11-17 16:45:04,594 - DEBUG - Adding Equipment WholeHouse ClothesWasher-Wholehouse Embodied CO2 [lifetime=14yrs] 139 kgCO2 for year-42
-2024-11-17 16:45:04,594 - DEBUG - Equipment WholeHouse Dishwasher-Wholehouse: $863 * 0.23 kgCO2/USD = 202 kgCO2
-2024-11-17 16:45:04,594 - DEBUG - Adding Equipment WholeHouse Dishwasher-Wholehouse Embodied CO2 [lifetime=11yrs] 202 kgCO2 for year-0
-2024-11-17 16:45:04,594 - DEBUG - Adding Equipment WholeHouse Dishwasher-Wholehouse Embodied CO2 [lifetime=11yrs] 202 kgCO2 for year-11
-2024-11-17 16:45:04,594 - DEBUG - Adding Equipment WholeHouse Dishwasher-Wholehouse Embodied CO2 [lifetime=11yrs] 202 kgCO2 for year-22
-2024-11-17 16:45:04,594 - DEBUG - Adding Equipment WholeHouse Dishwasher-Wholehouse Embodied CO2 [lifetime=11yrs] 202 kgCO2 for year-33
-2024-11-17 16:45:04,594 - DEBUG - Adding Equipment WholeHouse Dishwasher-Wholehouse Embodied CO2 [lifetime=11yrs] 202 kgCO2 for year-44
-2024-11-17 16:45:04,594 - DEBUG - Equipment WholeHouse Fridge-Wholehouse: $519 * 0.23 kgCO2/USD = 122 kgCO2
-2024-11-17 16:45:04,594 - DEBUG - Adding Equipment WholeHouse Fridge-Wholehouse Embodied CO2 [lifetime=17yrs] 122 kgCO2 for year-0
-2024-11-17 16:45:04,594 - DEBUG - Adding Equipment WholeHouse Fridge-Wholehouse Embodied CO2 [lifetime=17yrs] 122 kgCO2 for year-17
-2024-11-17 16:45:04,594 - DEBUG - Adding Equipment WholeHouse Fridge-Wholehouse Embodied CO2 [lifetime=17yrs] 122 kgCO2 for year-34
-2024-11-17 16:45:04,594 - DEBUG - Equipment WholeHouse PhiusMELs-Wholehouse: $0 * 0.23 kgCO2/USD = 0 kgCO2
-2024-11-17 16:45:04,594 - DEBUG - Adding Equipment WholeHouse PhiusMELs-Wholehouse Embodied CO2 [lifetime=0yrs] 0 kgCO2 for year-0
-2024-11-17 16:45:04,594 - DEBUG - Equipment WholeHouse Range-Wholehouse: $893 * 0.23 kgCO2/USD = 209 kgCO2
-2024-11-17 16:45:04,594 - DEBUG - Adding Equipment WholeHouse Range-Wholehouse Embodied CO2 [lifetime=13yrs] 209 kgCO2 for year-0
-2024-11-17 16:45:04,594 - DEBUG - Adding Equipment WholeHouse Range-Wholehouse Embodied CO2 [lifetime=13yrs] 209 kgCO2 for year-13
-2024-11-17 16:45:04,594 - DEBUG - Adding Equipment WholeHouse Range-Wholehouse Embodied CO2 [lifetime=13yrs] 209 kgCO2 for year-26
-2024-11-17 16:45:04,594 - DEBUG - Adding Equipment WholeHouse Range-Wholehouse Embodied CO2 [lifetime=13yrs] 209 kgCO2 for year-39
-2024-11-17 16:45:04,594 - DEBUG - Equipment rv2024_Residence_Lighting: $0 * 0.23 kgCO2/USD = 0 kgCO2
-2024-11-17 16:45:04,594 - DEBUG - Adding Equipment rv2024_Residence_Lighting Embodied CO2 [lifetime=25yrs] 0 kgCO2 for year-0
-2024-11-17 16:45:04,594 - DEBUG - Adding Equipment rv2024_Residence_Lighting Embodied CO2 [lifetime=25yrs] 0 kgCO2 for year-25
-2024-11-17 16:45:04,594 - DEBUG - Adding Equipment rv2024_Residence_Lighting Embodied CO2 [lifetime=25yrs] 0 kgCO2 for year-50
-2024-11-17 16:45:04,594 - INFO - calc_equipment_yearly_embodied_CO2_cost()
-2024-11-17 16:45:04,594 - DEBUG - Equipment Battery Embodied CO2-Cost [YR-0]: 405 kgCO2 * $0.25/kgCO2 = $101
-2024-11-17 16:45:04,594 - DEBUG - Equipment Battery Embodied CO2-Cost [YR-10]: 405 kgCO2 * $0.25/kgCO2 = $101
-2024-11-17 16:45:04,594 - DEBUG - Equipment Battery Embodied CO2-Cost [YR-20]: 405 kgCO2 * $0.25/kgCO2 = $101
-2024-11-17 16:45:04,594 - DEBUG - Equipment Battery Embodied CO2-Cost [YR-30]: 405 kgCO2 * $0.25/kgCO2 = $101
-2024-11-17 16:45:04,594 - DEBUG - Equipment Battery Embodied CO2-Cost [YR-40]: 405 kgCO2 * $0.25/kgCO2 = $101
-2024-11-17 16:45:04,595 - DEBUG - Equipment Battery Embodied CO2-Cost [YR-50]: 405 kgCO2 * $0.25/kgCO2 = $101
-2024-11-17 16:45:04,595 - DEBUG - Equipment DHW_NaturalGas Embodied CO2-Cost [YR-0]: 47 kgCO2 * $0.25/kgCO2 = $12
-2024-11-17 16:45:04,595 - DEBUG - Equipment DHW_NaturalGas Embodied CO2-Cost [YR-13]: 47 kgCO2 * $0.25/kgCO2 = $12
-2024-11-17 16:45:04,595 - DEBUG - Equipment DHW_NaturalGas Embodied CO2-Cost [YR-26]: 47 kgCO2 * $0.25/kgCO2 = $12
-2024-11-17 16:45:04,595 - DEBUG - Equipment DHW_NaturalGas Embodied CO2-Cost [YR-39]: 47 kgCO2 * $0.25/kgCO2 = $12
-2024-11-17 16:45:04,595 - DEBUG - Equipment GasFurnaceDXAC Embodied CO2-Cost [YR-0]: 1,053 kgCO2 * $0.25/kgCO2 = $263
-2024-11-17 16:45:04,595 - DEBUG - Equipment GasFurnaceDXAC Embodied CO2-Cost [YR-20]: 1,053 kgCO2 * $0.25/kgCO2 = $263
-2024-11-17 16:45:04,595 - DEBUG - Equipment GasFurnaceDXAC Embodied CO2-Cost [YR-40]: 1,053 kgCO2 * $0.25/kgCO2 = $263
-2024-11-17 16:45:04,595 - DEBUG - Equipment WholeHouse ClothesDryer-Wholehouse Embodied CO2-Cost [YR-0]: 211 kgCO2 * $0.25/kgCO2 = $53
-2024-11-17 16:45:04,595 - DEBUG - Equipment WholeHouse ClothesDryer-Wholehouse Embodied CO2-Cost [YR-13]: 211 kgCO2 * $0.25/kgCO2 = $53
-2024-11-17 16:45:04,595 - DEBUG - Equipment WholeHouse ClothesDryer-Wholehouse Embodied CO2-Cost [YR-26]: 211 kgCO2 * $0.25/kgCO2 = $53
-2024-11-17 16:45:04,595 - DEBUG - Equipment WholeHouse ClothesDryer-Wholehouse Embodied CO2-Cost [YR-39]: 211 kgCO2 * $0.25/kgCO2 = $53
-2024-11-17 16:45:04,595 - DEBUG - Equipment WholeHouse ClothesWasher-Wholehouse Embodied CO2-Cost [YR-0]: 139 kgCO2 * $0.25/kgCO2 = $35
-2024-11-17 16:45:04,595 - DEBUG - Equipment WholeHouse ClothesWasher-Wholehouse Embodied CO2-Cost [YR-14]: 139 kgCO2 * $0.25/kgCO2 = $35
-2024-11-17 16:45:04,595 - DEBUG - Equipment WholeHouse ClothesWasher-Wholehouse Embodied CO2-Cost [YR-28]: 139 kgCO2 * $0.25/kgCO2 = $35
-2024-11-17 16:45:04,595 - DEBUG - Equipment WholeHouse ClothesWasher-Wholehouse Embodied CO2-Cost [YR-42]: 139 kgCO2 * $0.25/kgCO2 = $35
-2024-11-17 16:45:04,595 - DEBUG - Equipment WholeHouse Dishwasher-Wholehouse Embodied CO2-Cost [YR-0]: 202 kgCO2 * $0.25/kgCO2 = $50
-2024-11-17 16:45:04,595 - DEBUG - Equipment WholeHouse Dishwasher-Wholehouse Embodied CO2-Cost [YR-11]: 202 kgCO2 * $0.25/kgCO2 = $50
-2024-11-17 16:45:04,595 - DEBUG - Equipment WholeHouse Dishwasher-Wholehouse Embodied CO2-Cost [YR-22]: 202 kgCO2 * $0.25/kgCO2 = $50
-2024-11-17 16:45:04,595 - DEBUG - Equipment WholeHouse Dishwasher-Wholehouse Embodied CO2-Cost [YR-33]: 202 kgCO2 * $0.25/kgCO2 = $50
-2024-11-17 16:45:04,595 - DEBUG - Equipment WholeHouse Dishwasher-Wholehouse Embodied CO2-Cost [YR-44]: 202 kgCO2 * $0.25/kgCO2 = $50
-2024-11-17 16:45:04,595 - DEBUG - Equipment WholeHouse Fridge-Wholehouse Embodied CO2-Cost [YR-0]: 122 kgCO2 * $0.25/kgCO2 = $30
-2024-11-17 16:45:04,595 - DEBUG - Equipment WholeHouse Fridge-Wholehouse Embodied CO2-Cost [YR-17]: 122 kgCO2 * $0.25/kgCO2 = $30
-2024-11-17 16:45:04,595 - DEBUG - Equipment WholeHouse Fridge-Wholehouse Embodied CO2-Cost [YR-34]: 122 kgCO2 * $0.25/kgCO2 = $30
-2024-11-17 16:45:04,595 - DEBUG - Equipment WholeHouse PhiusMELs-Wholehouse Embodied CO2-Cost [YR-0]: 0 kgCO2 * $0.25/kgCO2 = $0
-2024-11-17 16:45:04,595 - DEBUG - Equipment WholeHouse Range-Wholehouse Embodied CO2-Cost [YR-0]: 209 kgCO2 * $0.25/kgCO2 = $52
-2024-11-17 16:45:04,595 - DEBUG - Equipment WholeHouse Range-Wholehouse Embodied CO2-Cost [YR-13]: 209 kgCO2 * $0.25/kgCO2 = $52
-2024-11-17 16:45:04,595 - DEBUG - Equipment WholeHouse Range-Wholehouse Embodied CO2-Cost [YR-26]: 209 kgCO2 * $0.25/kgCO2 = $52
-2024-11-17 16:45:04,595 - DEBUG - Equipment WholeHouse Range-Wholehouse Embodied CO2-Cost [YR-39]: 209 kgCO2 * $0.25/kgCO2 = $52
-2024-11-17 16:45:04,595 - DEBUG - Equipment rv2024_Residence_Lighting Embodied CO2-Cost [YR-0]: 0 kgCO2 * $0.25/kgCO2 = $0
-2024-11-17 16:45:04,595 - DEBUG - Equipment rv2024_Residence_Lighting Embodied CO2-Cost [YR-25]: 0 kgCO2 * $0.25/kgCO2 = $0
-2024-11-17 16:45:04,595 - DEBUG - Equipment rv2024_Residence_Lighting Embodied CO2-Cost [YR-50]: 0 kgCO2 * $0.25/kgCO2 = $0
-2024-11-17 16:45:04,595 - INFO - calc_equipment_yearly_install_costs()
-2024-11-17 16:45:04,595 - DEBUG - Adding Equipment Battery Install Cost: [lifetime=10yrs] $3,459 for year-0
-2024-11-17 16:45:04,595 - DEBUG - Adding Equipment Battery Install Cost: [lifetime=10yrs] $3,459 for year-10
-2024-11-17 16:45:04,595 - DEBUG - Adding Equipment Battery Install Cost: [lifetime=10yrs] $3,459 for year-20
-2024-11-17 16:45:04,595 - DEBUG - Adding Equipment Battery Install Cost: [lifetime=10yrs] $3,459 for year-30
-2024-11-17 16:45:04,595 - DEBUG - Adding Equipment Battery Install Cost: [lifetime=10yrs] $3,459 for year-40
-2024-11-17 16:45:04,595 - DEBUG - Adding Equipment Battery Install Cost: [lifetime=10yrs] $3,459 for year-50
-2024-11-17 16:45:04,596 - DEBUG - Adding Equipment DHW_NaturalGas Install Cost: [lifetime=13yrs] $1,000 for year-0
-2024-11-17 16:45:04,596 - DEBUG - Adding Equipment DHW_NaturalGas Install Cost: [lifetime=13yrs] $1,000 for year-13
-2024-11-17 16:45:04,596 - DEBUG - Adding Equipment DHW_NaturalGas Install Cost: [lifetime=13yrs] $1,000 for year-26
-2024-11-17 16:45:04,596 - DEBUG - Adding Equipment DHW_NaturalGas Install Cost: [lifetime=13yrs] $1,000 for year-39
-2024-11-17 16:45:04,596 - DEBUG - Adding Equipment GasFurnaceDXAC Install Cost: [lifetime=20yrs] $7,500 for year-0
-2024-11-17 16:45:04,596 - DEBUG - Adding Equipment GasFurnaceDXAC Install Cost: [lifetime=20yrs] $7,500 for year-20
-2024-11-17 16:45:04,596 - DEBUG - Adding Equipment GasFurnaceDXAC Install Cost: [lifetime=20yrs] $7,500 for year-40
-2024-11-17 16:45:04,596 - DEBUG - Adding Equipment WholeHouse ClothesDryer-Wholehouse Install Cost: [lifetime=13yrs] $1,000 for year-0
-2024-11-17 16:45:04,596 - DEBUG - Adding Equipment WholeHouse ClothesDryer-Wholehouse Install Cost: [lifetime=13yrs] $1,000 for year-13
-2024-11-17 16:45:04,596 - DEBUG - Adding Equipment WholeHouse ClothesDryer-Wholehouse Install Cost: [lifetime=13yrs] $1,000 for year-26
-2024-11-17 16:45:04,596 - DEBUG - Adding Equipment WholeHouse ClothesDryer-Wholehouse Install Cost: [lifetime=13yrs] $1,000 for year-39
-2024-11-17 16:45:04,596 - DEBUG - Adding Equipment WholeHouse ClothesWasher-Wholehouse Install Cost: [lifetime=14yrs] $662 for year-0
-2024-11-17 16:45:04,596 - DEBUG - Adding Equipment WholeHouse ClothesWasher-Wholehouse Install Cost: [lifetime=14yrs] $662 for year-14
-2024-11-17 16:45:04,596 - DEBUG - Adding Equipment WholeHouse ClothesWasher-Wholehouse Install Cost: [lifetime=14yrs] $662 for year-28
-2024-11-17 16:45:04,596 - DEBUG - Adding Equipment WholeHouse ClothesWasher-Wholehouse Install Cost: [lifetime=14yrs] $662 for year-42
-2024-11-17 16:45:04,596 - DEBUG - Adding Equipment WholeHouse Dishwasher-Wholehouse Install Cost: [lifetime=11yrs] $959 for year-0
-2024-11-17 16:45:04,596 - DEBUG - Adding Equipment WholeHouse Dishwasher-Wholehouse Install Cost: [lifetime=11yrs] $959 for year-11
-2024-11-17 16:45:04,596 - DEBUG - Adding Equipment WholeHouse Dishwasher-Wholehouse Install Cost: [lifetime=11yrs] $959 for year-22
-2024-11-17 16:45:04,596 - DEBUG - Adding Equipment WholeHouse Dishwasher-Wholehouse Install Cost: [lifetime=11yrs] $959 for year-33
-2024-11-17 16:45:04,596 - DEBUG - Adding Equipment WholeHouse Dishwasher-Wholehouse Install Cost: [lifetime=11yrs] $959 for year-44
-2024-11-17 16:45:04,596 - DEBUG - Adding Equipment WholeHouse Fridge-Wholehouse Install Cost: [lifetime=17yrs] $611 for year-0
-2024-11-17 16:45:04,596 - DEBUG - Adding Equipment WholeHouse Fridge-Wholehouse Install Cost: [lifetime=17yrs] $611 for year-17
-2024-11-17 16:45:04,596 - DEBUG - Adding Equipment WholeHouse Fridge-Wholehouse Install Cost: [lifetime=17yrs] $611 for year-34
-2024-11-17 16:45:04,596 - DEBUG - Adding Equipment WholeHouse PhiusMELs-Wholehouse Install Cost: [lifetime=0yrs] $0 for year-0
-2024-11-17 16:45:04,596 - DEBUG - Adding Equipment WholeHouse Range-Wholehouse Install Cost: [lifetime=13yrs] $992 for year-0
-2024-11-17 16:45:04,596 - DEBUG - Adding Equipment WholeHouse Range-Wholehouse Install Cost: [lifetime=13yrs] $992 for year-13
-2024-11-17 16:45:04,596 - DEBUG - Adding Equipment WholeHouse Range-Wholehouse Install Cost: [lifetime=13yrs] $992 for year-26
-2024-11-17 16:45:04,596 - DEBUG - Adding Equipment WholeHouse Range-Wholehouse Install Cost: [lifetime=13yrs] $992 for year-39
-2024-11-17 16:45:04,596 - DEBUG - Adding Equipment rv2024_Residence_Lighting Install Cost: [lifetime=25yrs] $0 for year-0
-2024-11-17 16:45:04,596 - DEBUG - Adding Equipment rv2024_Residence_Lighting Install Cost: [lifetime=25yrs] $0 for year-25
-2024-11-17 16:45:04,596 - DEBUG - Adding Equipment rv2024_Residence_Lighting Install Cost: [lifetime=25yrs] $0 for year-50
-2024-11-17 16:45:05,857 - INFO - Calculating ADORB Costs
-2024-11-17 16:45:05,858 - DEBUG - ['YR-0 : $35\n', 'YR-0 : $26\n', 'YR-0 : $76\n', 'YR-0 : $0\n', 'YR-0 : $0\n', 'YR-0 : $33\n', 'YR-0 : $28\n', 'YR-0 : $0\n', 'YR-0 : $5\n', 'YR-0 : $101\n', 'YR-0 : $12\n', 'YR-0 : $263\n', 'YR-0 : $53\n', 'YR-0 : $35\n', 'YR-0 : $50\n', 'YR-0 : $30\n', 'YR-0 : $0\n', 'YR-0 : $52\n', 'YR-0 : $0\n', 'YR-10 : $101\n', 'YR-11 : $50\n', 'YR-13 : $12\n', 'YR-13 : $53\n', 'YR-13 : $52\n', 'YR-14 : $35\n', 'YR-16 : $33\n', 'YR-17 : $30\n', 'YR-20 : $101\n', 'YR-20 : $263\n', 'YR-22 : $50\n', 'YR-24 : $35\n', 'YR-25 : $0\n', 'YR-26 : $12\n', 'YR-26 : $53\n', 'YR-26 : $52\n', 'YR-28 : $35\n', 'YR-30 : $101\n', 'YR-32 : $33\n', 'YR-33 : $50\n', 'YR-34 : $30\n', 'YR-38 : $28\n', 'YR-39 : $12\n', 'YR-39 : $53\n', 'YR-39 : $52\n', 'YR-40 : $101\n', 'YR-40 : $263\n', 'YR-42 : $35\n', 'YR-44 : $50\n', 'YR-48 : $35\n', 'YR-48 : $33\n', 'YR-50 : $101\n', 'YR-50 : $0\n']
-2024-11-17 16:45:05,858 - INFO - Calculating year 0 costs:
-2024-11-17 16:45:05,858 - INFO - energy_purchase_cost_PV(year=1, factor=1.020)
-2024-11-17 16:45:05,858 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
-2024-11-17 16:45:05,858 - DEBUG - Energy PV Cost: $3,247 / 1.020 = PV$3,183
-2024-11-17 16:45:05,858 - INFO - energy_CO2_cost_PV(year=1, factor=1.075)
-2024-11-17 16:45:05,858 - DEBUG - Energy CO2 Emissions: 2,792[Elec.] + 15,151[Gas] = 17,944
-2024-11-17 16:45:05,858 - DEBUG - Energy CO2 Actual Cost: 17,944 * $0.25/unit = $4,486
-2024-11-17 16:45:05,858 - DEBUG - Energy CO2 PV Cost [1]: $4,486 / 1.075 = PV$4,173
-2024-11-17 16:45:05,858 - INFO - measure_purchase_cost_PV(year=1, factor=1.020)
-2024-11-17 16:45:05,858 - DEBUG - Measure Actual Costs: ['$861', '$642', '$1,867', '$0', '$0', '$796', '$1,949', '$0', '$89', '$3,459', '$1,000', '$7,500', '$1,000', '$662', '$959', '$611', '$0', '$992', '$0'] = 22,387
-2024-11-17 16:45:05,858 - DEBUG - Measure PV Cost: $22,387 / 1.020 = PV$21,948
-2024-11-17 16:45:05,858 - INFO - measure_CO2_cost_PV(year=1, factor=1.000)
-2024-11-17 16:45:05,858 - DEBUG - Measure CO2 Actual Cost: ['$35', '$26', '$76', '$0', '$0', '$33', '$28', '$0', '$5', '$101', '$12', '$263', '$53', '$35', '$50', '$30', '$0', '$52', '$0'] = 801
-2024-11-17 16:45:05,858 - DEBUG - Measure CO2 PV Cost: $801 / 1.000 = PV$601
-2024-11-17 16:45:05,858 - INFO - grid_transition_PV_cost(year=1, factor=1.020)
-2024-11-17 16:45:05,858 - DEBUG - Transition Cost [1]:  0.09375 * 3,048 W = $286
-2024-11-17 16:45:05,858 - DEBUG - Transition PV Cost [1]: $286 / 1.020 = PV$280
-2024-11-17 16:45:05,858 - INFO - Calculating year 1 costs:
-2024-11-17 16:45:05,858 - INFO - energy_purchase_cost_PV(year=2, factor=1.040)
-2024-11-17 16:45:05,858 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
-2024-11-17 16:45:05,858 - DEBUG - Energy PV Cost: $3,247 / 1.040 = PV$3,120
-2024-11-17 16:45:05,858 - INFO - energy_CO2_cost_PV(year=2, factor=1.156)
-2024-11-17 16:45:05,858 - DEBUG - Energy CO2 Emissions: 2,792[Elec.] + 15,151[Gas] = 17,944
-2024-11-17 16:45:05,858 - DEBUG - Energy CO2 Actual Cost: 17,944 * $0.25/unit = $4,486
-2024-11-17 16:45:05,858 - DEBUG - Energy CO2 PV Cost [2]: $4,486 / 1.156 = PV$3,882
-2024-11-17 16:45:05,858 - INFO - measure_purchase_cost_PV(year=2, factor=1.040)
-2024-11-17 16:45:05,858 - INFO - measure_CO2_cost_PV(year=2, factor=1.000)
-2024-11-17 16:45:05,859 - INFO - grid_transition_PV_cost(year=2, factor=1.040)
-2024-11-17 16:45:05,859 - DEBUG - Transition Cost [2]:  0.09375 * 3,048 W = $286
-2024-11-17 16:45:05,859 - DEBUG - Transition PV Cost [2]: $286 / 1.040 = PV$275
-2024-11-17 16:45:05,859 - INFO - Calculating year 2 costs:
-2024-11-17 16:45:05,859 - INFO - energy_purchase_cost_PV(year=3, factor=1.061)
-2024-11-17 16:45:05,859 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
-2024-11-17 16:45:05,859 - DEBUG - Energy PV Cost: $3,247 / 1.061 = PV$3,059
-2024-11-17 16:45:05,859 - INFO - energy_CO2_cost_PV(year=3, factor=1.242)
-2024-11-17 16:45:05,859 - DEBUG - Energy CO2 Emissions: 2,463[Elec.] + 15,151[Gas] = 17,615
-2024-11-17 16:45:05,859 - DEBUG - Energy CO2 Actual Cost: 17,615 * $0.25/unit = $4,404
-2024-11-17 16:45:05,859 - DEBUG - Energy CO2 PV Cost [3]: $4,404 / 1.242 = PV$3,545
-2024-11-17 16:45:05,859 - INFO - measure_purchase_cost_PV(year=3, factor=1.061)
-2024-11-17 16:45:05,859 - INFO - measure_CO2_cost_PV(year=3, factor=1.000)
-2024-11-17 16:45:05,859 - INFO - grid_transition_PV_cost(year=3, factor=1.061)
-2024-11-17 16:45:05,859 - DEBUG - Transition Cost [3]:  0.09375 * 3,048 W = $286
-2024-11-17 16:45:05,859 - DEBUG - Transition PV Cost [3]: $286 / 1.061 = PV$269
-2024-11-17 16:45:05,859 - INFO - Calculating year 3 costs:
-2024-11-17 16:45:05,859 - INFO - energy_purchase_cost_PV(year=4, factor=1.082)
-2024-11-17 16:45:05,859 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
-2024-11-17 16:45:05,859 - DEBUG - Energy PV Cost: $3,247 / 1.082 = PV$2,999
-2024-11-17 16:45:05,859 - INFO - energy_CO2_cost_PV(year=4, factor=1.335)
-2024-11-17 16:45:05,859 - DEBUG - Energy CO2 Emissions: 2,463[Elec.] + 15,151[Gas] = 17,615
-2024-11-17 16:45:05,859 - DEBUG - Energy CO2 Actual Cost: 17,615 * $0.25/unit = $4,404
-2024-11-17 16:45:05,859 - DEBUG - Energy CO2 PV Cost [4]: $4,404 / 1.335 = PV$3,297
-2024-11-17 16:45:05,859 - INFO - measure_purchase_cost_PV(year=4, factor=1.082)
-2024-11-17 16:45:05,859 - INFO - measure_CO2_cost_PV(year=4, factor=1.000)
-2024-11-17 16:45:05,859 - INFO - grid_transition_PV_cost(year=4, factor=1.082)
-2024-11-17 16:45:05,859 - DEBUG - Transition Cost [4]:  0.09375 * 3,048 W = $286
-2024-11-17 16:45:05,859 - DEBUG - Transition PV Cost [4]: $286 / 1.082 = PV$264
-2024-11-17 16:45:05,859 - INFO - Calculating year 4 costs:
-2024-11-17 16:45:05,859 - INFO - energy_purchase_cost_PV(year=5, factor=1.104)
-2024-11-17 16:45:05,859 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
-2024-11-17 16:45:05,859 - DEBUG - Energy PV Cost: $3,247 / 1.104 = PV$2,941
-2024-11-17 16:45:05,859 - INFO - energy_CO2_cost_PV(year=5, factor=1.436)
-2024-11-17 16:45:05,859 - DEBUG - Energy CO2 Emissions: 2,040[Elec.] + 15,151[Gas] = 17,191
-2024-11-17 16:45:05,859 - DEBUG - Energy CO2 Actual Cost: 17,191 * $0.25/unit = $4,298
-2024-11-17 16:45:05,859 - DEBUG - Energy CO2 PV Cost [5]: $4,298 / 1.436 = PV$2,994
-2024-11-17 16:45:05,860 - INFO - measure_purchase_cost_PV(year=5, factor=1.104)
-2024-11-17 16:45:05,860 - INFO - measure_CO2_cost_PV(year=5, factor=1.000)
-2024-11-17 16:45:05,860 - INFO - grid_transition_PV_cost(year=5, factor=1.104)
-2024-11-17 16:45:05,860 - DEBUG - Transition Cost [5]:  0.09375 * 3,048 W = $286
-2024-11-17 16:45:05,860 - DEBUG - Transition PV Cost [5]: $286 / 1.104 = PV$259
-2024-11-17 16:45:05,860 - INFO - Calculating year 5 costs:
-2024-11-17 16:45:05,860 - INFO - energy_purchase_cost_PV(year=6, factor=1.126)
-2024-11-17 16:45:05,860 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
-2024-11-17 16:45:05,860 - DEBUG - Energy PV Cost: $3,247 / 1.126 = PV$2,883
-2024-11-17 16:45:05,860 - INFO - energy_CO2_cost_PV(year=6, factor=1.543)
-2024-11-17 16:45:05,860 - DEBUG - Energy CO2 Emissions: 2,040[Elec.] + 15,151[Gas] = 17,191
-2024-11-17 16:45:05,860 - DEBUG - Energy CO2 Actual Cost: 17,191 * $0.25/unit = $4,298
-2024-11-17 16:45:05,860 - DEBUG - Energy CO2 PV Cost [6]: $4,298 / 1.543 = PV$2,785
-2024-11-17 16:45:05,860 - INFO - measure_purchase_cost_PV(year=6, factor=1.126)
-2024-11-17 16:45:05,860 - INFO - measure_CO2_cost_PV(year=6, factor=1.000)
-2024-11-17 16:45:05,860 - INFO - grid_transition_PV_cost(year=6, factor=1.126)
-2024-11-17 16:45:05,860 - DEBUG - Transition Cost [6]:  0.09375 * 3,048 W = $286
-2024-11-17 16:45:05,860 - DEBUG - Transition PV Cost [6]: $286 / 1.126 = PV$254
-2024-11-17 16:45:05,860 - INFO - Calculating year 6 costs:
-2024-11-17 16:45:05,860 - INFO - energy_purchase_cost_PV(year=7, factor=1.149)
-2024-11-17 16:45:05,860 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
-2024-11-17 16:45:05,860 - DEBUG - Energy PV Cost: $3,247 / 1.149 = PV$2,826
-2024-11-17 16:45:05,860 - INFO - energy_CO2_cost_PV(year=7, factor=1.659)
-2024-11-17 16:45:05,860 - DEBUG - Energy CO2 Emissions: 2,106[Elec.] + 15,151[Gas] = 17,258
-2024-11-17 16:45:05,860 - DEBUG - Energy CO2 Actual Cost: 17,258 * $0.25/unit = $4,314
-2024-11-17 16:45:05,860 - DEBUG - Energy CO2 PV Cost [7]: $4,314 / 1.659 = PV$2,601
-2024-11-17 16:45:05,860 - INFO - measure_purchase_cost_PV(year=7, factor=1.149)
-2024-11-17 16:45:05,860 - INFO - measure_CO2_cost_PV(year=7, factor=1.000)
-2024-11-17 16:45:05,860 - INFO - grid_transition_PV_cost(year=7, factor=1.149)
-2024-11-17 16:45:05,860 - DEBUG - Transition Cost [7]:  0.09375 * 3,048 W = $286
-2024-11-17 16:45:05,860 - DEBUG - Transition PV Cost [7]: $286 / 1.149 = PV$249
-2024-11-17 16:45:05,860 - INFO - Calculating year 7 costs:
-2024-11-17 16:45:05,860 - INFO - energy_purchase_cost_PV(year=8, factor=1.172)
-2024-11-17 16:45:05,860 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
-2024-11-17 16:45:05,860 - DEBUG - Energy PV Cost: $3,247 / 1.172 = PV$2,771
-2024-11-17 16:45:05,860 - INFO - energy_CO2_cost_PV(year=8, factor=1.783)
-2024-11-17 16:45:05,860 - DEBUG - Energy CO2 Emissions: 2,106[Elec.] + 15,151[Gas] = 17,258
-2024-11-17 16:45:05,860 - DEBUG - Energy CO2 Actual Cost: 17,258 * $0.25/unit = $4,314
-2024-11-17 16:45:05,861 - DEBUG - Energy CO2 PV Cost [8]: $4,314 / 1.783 = PV$2,419
-2024-11-17 16:45:05,861 - INFO - measure_purchase_cost_PV(year=8, factor=1.172)
-2024-11-17 16:45:05,861 - INFO - measure_CO2_cost_PV(year=8, factor=1.000)
-2024-11-17 16:45:05,861 - INFO - grid_transition_PV_cost(year=8, factor=1.172)
-2024-11-17 16:45:05,861 - DEBUG - Transition Cost [8]:  0.09375 * 3,048 W = $286
-2024-11-17 16:45:05,861 - DEBUG - Transition PV Cost [8]: $286 / 1.172 = PV$244
-2024-11-17 16:45:05,861 - INFO - Calculating year 8 costs:
-2024-11-17 16:45:05,861 - INFO - energy_purchase_cost_PV(year=9, factor=1.195)
-2024-11-17 16:45:05,861 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
-2024-11-17 16:45:05,861 - DEBUG - Energy PV Cost: $3,247 / 1.195 = PV$2,717
-2024-11-17 16:45:05,861 - INFO - energy_CO2_cost_PV(year=9, factor=1.917)
-2024-11-17 16:45:05,861 - DEBUG - Energy CO2 Emissions: 2,268[Elec.] + 15,151[Gas] = 17,420
-2024-11-17 16:45:05,861 - DEBUG - Energy CO2 Actual Cost: 17,420 * $0.25/unit = $4,355
-2024-11-17 16:45:05,861 - DEBUG - Energy CO2 PV Cost [9]: $4,355 / 1.917 = PV$2,271
-2024-11-17 16:45:05,861 - INFO - measure_purchase_cost_PV(year=9, factor=1.195)
-2024-11-17 16:45:05,861 - INFO - measure_CO2_cost_PV(year=9, factor=1.000)
-2024-11-17 16:45:05,861 - INFO - grid_transition_PV_cost(year=9, factor=1.195)
-2024-11-17 16:45:05,861 - DEBUG - Transition Cost [9]:  0.09375 * 3,048 W = $286
-2024-11-17 16:45:05,861 - DEBUG - Transition PV Cost [9]: $286 / 1.195 = PV$239
-2024-11-17 16:45:05,861 - INFO - Calculating year 9 costs:
-2024-11-17 16:45:05,861 - INFO - energy_purchase_cost_PV(year=10, factor=1.219)
-2024-11-17 16:45:05,861 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
-2024-11-17 16:45:05,861 - DEBUG - Energy PV Cost: $3,247 / 1.219 = PV$2,663
-2024-11-17 16:45:05,861 - INFO - energy_CO2_cost_PV(year=10, factor=2.061)
-2024-11-17 16:45:05,861 - DEBUG - Energy CO2 Emissions: 2,268[Elec.] + 15,151[Gas] = 17,420
-2024-11-17 16:45:05,861 - DEBUG - Energy CO2 Actual Cost: 17,420 * $0.25/unit = $4,355
-2024-11-17 16:45:05,861 - DEBUG - Energy CO2 PV Cost [10]: $4,355 / 2.061 = PV$2,113
-2024-11-17 16:45:05,861 - INFO - measure_purchase_cost_PV(year=10, factor=1.219)
-2024-11-17 16:45:05,861 - INFO - measure_CO2_cost_PV(year=10, factor=1.000)
-2024-11-17 16:45:05,861 - INFO - grid_transition_PV_cost(year=10, factor=1.219)
-2024-11-17 16:45:05,861 - DEBUG - Transition Cost [10]:  0.09375 * 3,048 W = $286
-2024-11-17 16:45:05,861 - DEBUG - Transition PV Cost [10]: $286 / 1.219 = PV$234
-2024-11-17 16:45:05,861 - INFO - Calculating year 10 costs:
-2024-11-17 16:45:05,861 - INFO - energy_purchase_cost_PV(year=11, factor=1.243)
-2024-11-17 16:45:05,861 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
-2024-11-17 16:45:05,861 - DEBUG - Energy PV Cost: $3,247 / 1.243 = PV$2,611
-2024-11-17 16:45:05,861 - INFO - energy_CO2_cost_PV(year=11, factor=2.216)
-2024-11-17 16:45:05,862 - DEBUG - Energy CO2 Emissions: 2,268[Elec.] + 15,151[Gas] = 17,420
-2024-11-17 16:45:05,862 - DEBUG - Energy CO2 Actual Cost: 17,420 * $0.25/unit = $4,355
-2024-11-17 16:45:05,862 - DEBUG - Energy CO2 PV Cost [11]: $4,355 / 2.216 = PV$1,966
-2024-11-17 16:45:05,862 - INFO - measure_purchase_cost_PV(year=11, factor=1.243)
-2024-11-17 16:45:05,862 - DEBUG - Measure Actual Costs: ['$3,459'] = 3,459
-2024-11-17 16:45:05,862 - DEBUG - Measure PV Cost: $3,459 / 1.243 = PV$2,782
-2024-11-17 16:45:05,862 - INFO - measure_CO2_cost_PV(year=11, factor=1.000)
-2024-11-17 16:45:05,862 - DEBUG - Measure CO2 Actual Cost: ['$101'] = 101
-2024-11-17 16:45:05,862 - DEBUG - Measure CO2 PV Cost: $101 / 1.000 = PV$76
-2024-11-17 16:45:05,862 - INFO - grid_transition_PV_cost(year=11, factor=1.243)
-2024-11-17 16:45:05,862 - DEBUG - Transition Cost [11]:  0.09375 * 3,048 W = $286
-2024-11-17 16:45:05,862 - DEBUG - Transition PV Cost [11]: $286 / 1.243 = PV$230
-2024-11-17 16:45:05,862 - INFO - Calculating year 11 costs:
-2024-11-17 16:45:05,862 - INFO - energy_purchase_cost_PV(year=12, factor=1.268)
-2024-11-17 16:45:05,862 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
-2024-11-17 16:45:05,862 - DEBUG - Energy PV Cost: $3,247 / 1.268 = PV$2,560
-2024-11-17 16:45:05,862 - INFO - energy_CO2_cost_PV(year=12, factor=2.382)
-2024-11-17 16:45:05,862 - DEBUG - Energy CO2 Emissions: 2,268[Elec.] + 15,151[Gas] = 17,420
-2024-11-17 16:45:05,862 - DEBUG - Energy CO2 Actual Cost: 17,420 * $0.25/unit = $4,355
-2024-11-17 16:45:05,862 - DEBUG - Energy CO2 PV Cost [12]: $4,355 / 2.382 = PV$1,828
-2024-11-17 16:45:05,862 - INFO - measure_purchase_cost_PV(year=12, factor=1.268)
-2024-11-17 16:45:05,862 - DEBUG - Measure Actual Costs: ['$959'] = 959
-2024-11-17 16:45:05,862 - DEBUG - Measure PV Cost: $959 / 1.268 = PV$756
-2024-11-17 16:45:05,862 - INFO - measure_CO2_cost_PV(year=12, factor=1.000)
-2024-11-17 16:45:05,862 - DEBUG - Measure CO2 Actual Cost: ['$50'] = 50
-2024-11-17 16:45:05,862 - DEBUG - Measure CO2 PV Cost: $50 / 1.000 = PV$38
-2024-11-17 16:45:05,862 - INFO - grid_transition_PV_cost(year=12, factor=1.268)
-2024-11-17 16:45:05,862 - DEBUG - Transition Cost [12]:  0.09375 * 3,048 W = $286
-2024-11-17 16:45:05,862 - DEBUG - Transition PV Cost [12]: $286 / 1.268 = PV$225
-2024-11-17 16:45:05,862 - INFO - Calculating year 12 costs:
-2024-11-17 16:45:05,862 - INFO - energy_purchase_cost_PV(year=13, factor=1.294)
-2024-11-17 16:45:05,862 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
-2024-11-17 16:45:05,862 - DEBUG - Energy PV Cost: $3,247 / 1.294 = PV$2,510
-2024-11-17 16:45:05,862 - INFO - energy_CO2_cost_PV(year=13, factor=2.560)
-2024-11-17 16:45:05,862 - DEBUG - Energy CO2 Emissions: 2,268[Elec.] + 15,151[Gas] = 17,420
-2024-11-17 16:45:05,862 - DEBUG - Energy CO2 Actual Cost: 17,420 * $0.25/unit = $4,355
-2024-11-17 16:45:05,862 - DEBUG - Energy CO2 PV Cost [13]: $4,355 / 2.560 = PV$1,701
-2024-11-17 16:45:05,862 - INFO - measure_purchase_cost_PV(year=13, factor=1.294)
-2024-11-17 16:45:05,862 - INFO - measure_CO2_cost_PV(year=13, factor=1.000)
-2024-11-17 16:45:05,862 - INFO - grid_transition_PV_cost(year=13, factor=1.294)
-2024-11-17 16:45:05,863 - DEBUG - Transition Cost [13]:  0.09375 * 3,048 W = $286
-2024-11-17 16:45:05,863 - DEBUG - Transition PV Cost [13]: $286 / 1.294 = PV$221
-2024-11-17 16:45:05,863 - INFO - Calculating year 13 costs:
-2024-11-17 16:45:05,863 - INFO - energy_purchase_cost_PV(year=14, factor=1.319)
-2024-11-17 16:45:05,863 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
-2024-11-17 16:45:05,863 - DEBUG - Energy PV Cost: $3,247 / 1.319 = PV$2,460
-2024-11-17 16:45:05,863 - INFO - energy_CO2_cost_PV(year=14, factor=2.752)
-2024-11-17 16:45:05,863 - DEBUG - Energy CO2 Emissions: 2,455[Elec.] + 15,151[Gas] = 17,606
-2024-11-17 16:45:05,863 - DEBUG - Energy CO2 Actual Cost: 17,606 * $0.25/unit = $4,401
-2024-11-17 16:45:05,863 - DEBUG - Energy CO2 PV Cost [14]: $4,401 / 2.752 = PV$1,599
-2024-11-17 16:45:05,863 - INFO - measure_purchase_cost_PV(year=14, factor=1.319)
-2024-11-17 16:45:05,863 - DEBUG - Measure Actual Costs: ['$1,000', '$1,000', '$992'] = 2,992
-2024-11-17 16:45:05,863 - DEBUG - Measure PV Cost: $2,992 / 1.319 = PV$2,268
-2024-11-17 16:45:05,863 - INFO - measure_CO2_cost_PV(year=14, factor=1.000)
-2024-11-17 16:45:05,863 - DEBUG - Measure CO2 Actual Cost: ['$12', '$53', '$52'] = 117
-2024-11-17 16:45:05,863 - DEBUG - Measure CO2 PV Cost: $117 / 1.000 = PV$87
-2024-11-17 16:45:05,863 - INFO - grid_transition_PV_cost(year=14, factor=1.319)
-2024-11-17 16:45:05,863 - DEBUG - Transition Cost [14]:  0.09375 * 3,048 W = $286
-2024-11-17 16:45:05,863 - DEBUG - Transition PV Cost [14]: $286 / 1.319 = PV$217
-2024-11-17 16:45:05,863 - INFO - Calculating year 14 costs:
-2024-11-17 16:45:05,863 - INFO - energy_purchase_cost_PV(year=15, factor=1.346)
-2024-11-17 16:45:05,863 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
-2024-11-17 16:45:05,863 - DEBUG - Energy PV Cost: $3,247 / 1.346 = PV$2,412
-2024-11-17 16:45:05,863 - INFO - energy_CO2_cost_PV(year=15, factor=2.959)
-2024-11-17 16:45:05,863 - DEBUG - Energy CO2 Emissions: 2,455[Elec.] + 15,151[Gas] = 17,606
-2024-11-17 16:45:05,863 - DEBUG - Energy CO2 Actual Cost: 17,606 * $0.25/unit = $4,401
-2024-11-17 16:45:05,863 - DEBUG - Energy CO2 PV Cost [15]: $4,401 / 2.959 = PV$1,488
-2024-11-17 16:45:05,863 - INFO - measure_purchase_cost_PV(year=15, factor=1.346)
-2024-11-17 16:45:05,863 - DEBUG - Measure Actual Costs: ['$662'] = 662
-2024-11-17 16:45:05,863 - DEBUG - Measure PV Cost: $662 / 1.346 = PV$492
-2024-11-17 16:45:05,863 - INFO - measure_CO2_cost_PV(year=15, factor=1.000)
-2024-11-17 16:45:05,863 - DEBUG - Measure CO2 Actual Cost: ['$35'] = 35
-2024-11-17 16:45:05,863 - DEBUG - Measure CO2 PV Cost: $35 / 1.000 = PV$26
-2024-11-17 16:45:05,863 - INFO - grid_transition_PV_cost(year=15, factor=1.346)
-2024-11-17 16:45:05,863 - DEBUG - Transition Cost [15]:  0.09375 * 3,048 W = $286
-2024-11-17 16:45:05,863 - DEBUG - Transition PV Cost [15]: $286 / 1.346 = PV$212
-2024-11-17 16:45:05,863 - INFO - Calculating year 15 costs:
-2024-11-17 16:45:05,864 - INFO - energy_purchase_cost_PV(year=16, factor=1.373)
-2024-11-17 16:45:05,864 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
-2024-11-17 16:45:05,864 - DEBUG - Energy PV Cost: $3,247 / 1.373 = PV$2,365
-2024-11-17 16:45:05,864 - INFO - energy_CO2_cost_PV(year=16, factor=3.181)
-2024-11-17 16:45:05,864 - DEBUG - Energy CO2 Emissions: 2,455[Elec.] + 15,151[Gas] = 17,606
-2024-11-17 16:45:05,864 - DEBUG - Energy CO2 Actual Cost: 17,606 * $0.25/unit = $4,401
-2024-11-17 16:45:05,864 - DEBUG - Energy CO2 PV Cost [16]: $4,401 / 3.181 = PV$1,384
-2024-11-17 16:45:05,864 - INFO - measure_purchase_cost_PV(year=16, factor=1.373)
-2024-11-17 16:45:05,864 - INFO - measure_CO2_cost_PV(year=16, factor=1.000)
-2024-11-17 16:45:05,864 - INFO - grid_transition_PV_cost(year=16, factor=1.373)
-2024-11-17 16:45:05,864 - DEBUG - Transition Cost [16]:  0.09375 * 3,048 W = $286
-2024-11-17 16:45:05,864 - DEBUG - Transition PV Cost [16]: $286 / 1.373 = PV$208
-2024-11-17 16:45:05,864 - INFO - Calculating year 16 costs:
-2024-11-17 16:45:05,864 - INFO - energy_purchase_cost_PV(year=17, factor=1.400)
-2024-11-17 16:45:05,864 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
-2024-11-17 16:45:05,864 - DEBUG - Energy PV Cost: $3,247 / 1.400 = PV$2,319
-2024-11-17 16:45:05,864 - INFO - energy_CO2_cost_PV(year=17, factor=3.419)
-2024-11-17 16:45:05,864 - DEBUG - Energy CO2 Emissions: 2,455[Elec.] + 15,151[Gas] = 17,606
-2024-11-17 16:45:05,864 - DEBUG - Energy CO2 Actual Cost: 17,606 * $0.25/unit = $4,401
-2024-11-17 16:45:05,864 - DEBUG - Energy CO2 PV Cost [17]: $4,401 / 3.419 = PV$1,287
-2024-11-17 16:45:05,864 - INFO - measure_purchase_cost_PV(year=17, factor=1.400)
-2024-11-17 16:45:05,864 - DEBUG - Measure Actual Costs: ['$796'] = 796
-2024-11-17 16:45:05,864 - DEBUG - Measure PV Cost: $796 / 1.400 = PV$568
-2024-11-17 16:45:05,864 - INFO - measure_CO2_cost_PV(year=17, factor=1.000)
-2024-11-17 16:45:05,864 - DEBUG - Measure CO2 Actual Cost: ['$33'] = 33
-2024-11-17 16:45:05,864 - DEBUG - Measure CO2 PV Cost: $33 / 1.000 = PV$24
-2024-11-17 16:45:05,864 - INFO - grid_transition_PV_cost(year=17, factor=1.400)
-2024-11-17 16:45:05,864 - DEBUG - Transition Cost [17]:  0.09375 * 3,048 W = $286
-2024-11-17 16:45:05,864 - DEBUG - Transition PV Cost [17]: $286 / 1.400 = PV$204
-2024-11-17 16:45:05,864 - INFO - Calculating year 17 costs:
-2024-11-17 16:45:05,864 - INFO - energy_purchase_cost_PV(year=18, factor=1.428)
-2024-11-17 16:45:05,864 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
-2024-11-17 16:45:05,864 - DEBUG - Energy PV Cost: $3,247 / 1.428 = PV$2,273
-2024-11-17 16:45:05,864 - INFO - energy_CO2_cost_PV(year=18, factor=3.676)
-2024-11-17 16:45:05,864 - DEBUG - Energy CO2 Emissions: 2,455[Elec.] + 15,151[Gas] = 17,606
-2024-11-17 16:45:05,864 - DEBUG - Energy CO2 Actual Cost: 17,606 * $0.25/unit = $4,401
-2024-11-17 16:45:05,864 - DEBUG - Energy CO2 PV Cost [18]: $4,401 / 3.676 = PV$1,197
-2024-11-17 16:45:05,864 - INFO - measure_purchase_cost_PV(year=18, factor=1.428)
-2024-11-17 16:45:05,864 - DEBUG - Measure Actual Costs: ['$611'] = 611
-2024-11-17 16:45:05,864 - DEBUG - Measure PV Cost: $611 / 1.428 = PV$428
-2024-11-17 16:45:05,864 - INFO - measure_CO2_cost_PV(year=18, factor=1.000)
-2024-11-17 16:45:05,865 - DEBUG - Measure CO2 Actual Cost: ['$30'] = 30
-2024-11-17 16:45:05,865 - DEBUG - Measure CO2 PV Cost: $30 / 1.000 = PV$23
-2024-11-17 16:45:05,865 - INFO - grid_transition_PV_cost(year=18, factor=1.428)
-2024-11-17 16:45:05,865 - DEBUG - Transition Cost [18]:  0.09375 * 3,048 W = $286
-2024-11-17 16:45:05,865 - DEBUG - Transition PV Cost [18]: $286 / 1.428 = PV$200
-2024-11-17 16:45:05,865 - INFO - Calculating year 18 costs:
-2024-11-17 16:45:05,865 - INFO - energy_purchase_cost_PV(year=19, factor=1.457)
-2024-11-17 16:45:05,865 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
-2024-11-17 16:45:05,865 - DEBUG - Energy PV Cost: $3,247 / 1.457 = PV$2,229
-2024-11-17 16:45:05,865 - INFO - energy_CO2_cost_PV(year=19, factor=3.951)
-2024-11-17 16:45:05,865 - DEBUG - Energy CO2 Emissions: 2,476[Elec.] + 15,151[Gas] = 17,628
-2024-11-17 16:45:05,865 - DEBUG - Energy CO2 Actual Cost: 17,628 * $0.25/unit = $4,407
-2024-11-17 16:45:05,865 - DEBUG - Energy CO2 PV Cost [19]: $4,407 / 3.951 = PV$1,115
-2024-11-17 16:45:05,865 - INFO - measure_purchase_cost_PV(year=19, factor=1.457)
-2024-11-17 16:45:05,865 - INFO - measure_CO2_cost_PV(year=19, factor=1.000)
-2024-11-17 16:45:05,865 - INFO - grid_transition_PV_cost(year=19, factor=1.457)
-2024-11-17 16:45:05,865 - DEBUG - Transition Cost [19]:  0.09375 * 3,048 W = $286
-2024-11-17 16:45:05,865 - DEBUG - Transition PV Cost [19]: $286 / 1.457 = PV$196
-2024-11-17 16:45:05,865 - INFO - Calculating year 19 costs:
-2024-11-17 16:45:05,865 - INFO - energy_purchase_cost_PV(year=20, factor=1.486)
-2024-11-17 16:45:05,865 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
-2024-11-17 16:45:05,865 - DEBUG - Energy PV Cost: $3,247 / 1.486 = PV$2,185
-2024-11-17 16:45:05,865 - INFO - energy_CO2_cost_PV(year=20, factor=4.248)
-2024-11-17 16:45:05,865 - DEBUG - Energy CO2 Emissions: 2,476[Elec.] + 15,151[Gas] = 17,628
-2024-11-17 16:45:05,865 - DEBUG - Energy CO2 Actual Cost: 17,628 * $0.25/unit = $4,407
-2024-11-17 16:45:05,865 - DEBUG - Energy CO2 PV Cost [20]: $4,407 / 4.248 = PV$1,037
-2024-11-17 16:45:05,865 - INFO - measure_purchase_cost_PV(year=20, factor=1.486)
-2024-11-17 16:45:05,865 - INFO - measure_CO2_cost_PV(year=20, factor=1.000)
-2024-11-17 16:45:05,865 - INFO - grid_transition_PV_cost(year=20, factor=1.486)
-2024-11-17 16:45:05,865 - DEBUG - Transition Cost [20]:  0.09375 * 3,048 W = $286
-2024-11-17 16:45:05,865 - DEBUG - Transition PV Cost [20]: $286 / 1.486 = PV$192
-2024-11-17 16:45:05,865 - INFO - Calculating year 20 costs:
-2024-11-17 16:45:05,865 - INFO - energy_purchase_cost_PV(year=21, factor=1.516)
-2024-11-17 16:45:05,865 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
-2024-11-17 16:45:05,865 - DEBUG - Energy PV Cost: $3,247 / 1.516 = PV$2,142
-2024-11-17 16:45:05,865 - INFO - energy_CO2_cost_PV(year=21, factor=4.566)
-2024-11-17 16:45:05,865 - DEBUG - Energy CO2 Emissions: 2,476[Elec.] + 15,151[Gas] = 17,628
-2024-11-17 16:45:05,866 - DEBUG - Energy CO2 Actual Cost: 17,628 * $0.25/unit = $4,407
-2024-11-17 16:45:05,866 - DEBUG - Energy CO2 PV Cost [21]: $4,407 / 4.566 = PV$965
-2024-11-17 16:45:05,866 - INFO - measure_purchase_cost_PV(year=21, factor=1.516)
-2024-11-17 16:45:05,866 - DEBUG - Measure Actual Costs: ['$3,459', '$7,500'] = 10,959
-2024-11-17 16:45:05,866 - DEBUG - Measure PV Cost: $10,959 / 1.516 = PV$7,230
-2024-11-17 16:45:05,866 - INFO - measure_CO2_cost_PV(year=21, factor=1.000)
-2024-11-17 16:45:05,866 - DEBUG - Measure CO2 Actual Cost: ['$101', '$263'] = 364
-2024-11-17 16:45:05,866 - DEBUG - Measure CO2 PV Cost: $364 / 1.000 = PV$273
-2024-11-17 16:45:05,866 - INFO - grid_transition_PV_cost(year=21, factor=1.516)
-2024-11-17 16:45:05,866 - DEBUG - Transition Cost [21]:  0.09375 * 3,048 W = $286
-2024-11-17 16:45:05,866 - DEBUG - Transition PV Cost [21]: $286 / 1.516 = PV$189
-2024-11-17 16:45:05,866 - INFO - Calculating year 21 costs:
-2024-11-17 16:45:05,866 - INFO - energy_purchase_cost_PV(year=22, factor=1.546)
-2024-11-17 16:45:05,866 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
-2024-11-17 16:45:05,866 - DEBUG - Energy PV Cost: $3,247 / 1.546 = PV$2,100
-2024-11-17 16:45:05,866 - INFO - energy_CO2_cost_PV(year=22, factor=4.909)
-2024-11-17 16:45:05,866 - DEBUG - Energy CO2 Emissions: 2,476[Elec.] + 15,151[Gas] = 17,628
-2024-11-17 16:45:05,866 - DEBUG - Energy CO2 Actual Cost: 17,628 * $0.25/unit = $4,407
-2024-11-17 16:45:05,866 - DEBUG - Energy CO2 PV Cost [22]: $4,407 / 4.909 = PV$898
-2024-11-17 16:45:05,866 - INFO - measure_purchase_cost_PV(year=22, factor=1.546)
-2024-11-17 16:45:05,866 - INFO - measure_CO2_cost_PV(year=22, factor=1.000)
-2024-11-17 16:45:05,866 - INFO - grid_transition_PV_cost(year=22, factor=1.546)
-2024-11-17 16:45:05,866 - DEBUG - Transition Cost [22]:  0.09375 * 3,048 W = $286
-2024-11-17 16:45:05,866 - DEBUG - Transition PV Cost [22]: $286 / 1.546 = PV$185
-2024-11-17 16:45:05,866 - INFO - Calculating year 22 costs:
-2024-11-17 16:45:05,866 - INFO - energy_purchase_cost_PV(year=23, factor=1.577)
-2024-11-17 16:45:05,866 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
-2024-11-17 16:45:05,866 - DEBUG - Energy PV Cost: $3,247 / 1.577 = PV$2,059
-2024-11-17 16:45:05,866 - INFO - energy_CO2_cost_PV(year=23, factor=5.277)
-2024-11-17 16:45:05,866 - DEBUG - Energy CO2 Emissions: 2,476[Elec.] + 15,151[Gas] = 17,628
-2024-11-17 16:45:05,866 - DEBUG - Energy CO2 Actual Cost: 17,628 * $0.25/unit = $4,407
-2024-11-17 16:45:05,866 - DEBUG - Energy CO2 PV Cost [23]: $4,407 / 5.277 = PV$835
-2024-11-17 16:45:05,866 - INFO - measure_purchase_cost_PV(year=23, factor=1.577)
-2024-11-17 16:45:05,866 - DEBUG - Measure Actual Costs: ['$959'] = 959
-2024-11-17 16:45:05,866 - DEBUG - Measure PV Cost: $959 / 1.577 = PV$608
-2024-11-17 16:45:05,866 - INFO - measure_CO2_cost_PV(year=23, factor=1.000)
-2024-11-17 16:45:05,866 - DEBUG - Measure CO2 Actual Cost: ['$50'] = 50
-2024-11-17 16:45:05,866 - DEBUG - Measure CO2 PV Cost: $50 / 1.000 = PV$38
-2024-11-17 16:45:05,866 - INFO - grid_transition_PV_cost(year=23, factor=1.577)
-2024-11-17 16:45:05,866 - DEBUG - Transition Cost [23]:  0.09375 * 3,048 W = $286
-2024-11-17 16:45:05,867 - DEBUG - Transition PV Cost [23]: $286 / 1.577 = PV$181
-2024-11-17 16:45:05,867 - INFO - Calculating year 23 costs:
-2024-11-17 16:45:05,867 - INFO - energy_purchase_cost_PV(year=24, factor=1.608)
-2024-11-17 16:45:05,867 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
-2024-11-17 16:45:05,867 - DEBUG - Energy PV Cost: $3,247 / 1.608 = PV$2,018
-2024-11-17 16:45:05,867 - INFO - energy_CO2_cost_PV(year=24, factor=5.673)
-2024-11-17 16:45:05,867 - DEBUG - Energy CO2 Emissions: 2,445[Elec.] + 15,151[Gas] = 17,596
-2024-11-17 16:45:05,867 - DEBUG - Energy CO2 Actual Cost: 17,596 * $0.25/unit = $4,399
-2024-11-17 16:45:05,867 - DEBUG - Energy CO2 PV Cost [24]: $4,399 / 5.673 = PV$775
-2024-11-17 16:45:05,867 - INFO - measure_purchase_cost_PV(year=24, factor=1.608)
-2024-11-17 16:45:05,867 - INFO - measure_CO2_cost_PV(year=24, factor=1.000)
-2024-11-17 16:45:05,867 - INFO - grid_transition_PV_cost(year=24, factor=1.608)
-2024-11-17 16:45:05,867 - DEBUG - Transition Cost [24]:  0.09375 * 3,048 W = $286
-2024-11-17 16:45:05,867 - DEBUG - Transition PV Cost [24]: $286 / 1.608 = PV$178
-2024-11-17 16:45:05,867 - INFO - Calculating year 24 costs:
-2024-11-17 16:45:05,867 - INFO - energy_purchase_cost_PV(year=25, factor=1.641)
-2024-11-17 16:45:05,867 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
-2024-11-17 16:45:05,867 - DEBUG - Energy PV Cost: $3,247 / 1.641 = PV$1,979
-2024-11-17 16:45:05,867 - INFO - energy_CO2_cost_PV(year=25, factor=6.098)
-2024-11-17 16:45:05,867 - DEBUG - Energy CO2 Emissions: 2,445[Elec.] + 15,151[Gas] = 17,596
-2024-11-17 16:45:05,867 - DEBUG - Energy CO2 Actual Cost: 17,596 * $0.25/unit = $4,399
-2024-11-17 16:45:05,867 - DEBUG - Energy CO2 PV Cost [25]: $4,399 / 6.098 = PV$721
-2024-11-17 16:45:05,867 - INFO - measure_purchase_cost_PV(year=25, factor=1.641)
-2024-11-17 16:45:05,867 - DEBUG - Measure Actual Costs: ['$861'] = 861
-2024-11-17 16:45:05,867 - DEBUG - Measure PV Cost: $861 / 1.641 = PV$525
-2024-11-17 16:45:05,867 - INFO - measure_CO2_cost_PV(year=25, factor=1.000)
-2024-11-17 16:45:05,867 - DEBUG - Measure CO2 Actual Cost: ['$35'] = 35
-2024-11-17 16:45:05,867 - DEBUG - Measure CO2 PV Cost: $35 / 1.000 = PV$26
-2024-11-17 16:45:05,867 - INFO - grid_transition_PV_cost(year=25, factor=1.641)
-2024-11-17 16:45:05,867 - DEBUG - Transition Cost [25]:  0.09375 * 3,048 W = $286
-2024-11-17 16:45:05,867 - DEBUG - Transition PV Cost [25]: $286 / 1.641 = PV$174
-2024-11-17 16:45:05,867 - INFO - Calculating year 25 costs:
-2024-11-17 16:45:05,867 - INFO - energy_purchase_cost_PV(year=26, factor=1.673)
-2024-11-17 16:45:05,867 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
-2024-11-17 16:45:05,867 - DEBUG - Energy PV Cost: $3,247 / 1.673 = PV$1,940
-2024-11-17 16:45:05,867 - INFO - energy_CO2_cost_PV(year=26, factor=6.556)
-2024-11-17 16:45:05,867 - DEBUG - Energy CO2 Emissions: 2,445[Elec.] + 15,151[Gas] = 17,596
-2024-11-17 16:45:05,867 - DEBUG - Energy CO2 Actual Cost: 17,596 * $0.25/unit = $4,399
-2024-11-17 16:45:05,868 - DEBUG - Energy CO2 PV Cost [26]: $4,399 / 6.556 = PV$671
-2024-11-17 16:45:05,868 - INFO - measure_purchase_cost_PV(year=26, factor=1.673)
-2024-11-17 16:45:05,868 - DEBUG - Measure Actual Costs: ['$0'] = 0
-2024-11-17 16:45:05,868 - DEBUG - Measure PV Cost: $0 / 1.673 = PV$0
-2024-11-17 16:45:05,868 - INFO - measure_CO2_cost_PV(year=26, factor=1.000)
-2024-11-17 16:45:05,868 - DEBUG - Measure CO2 Actual Cost: ['$0'] = 0
-2024-11-17 16:45:05,868 - DEBUG - Measure CO2 PV Cost: $0 / 1.000 = PV$0
-2024-11-17 16:45:05,868 - INFO - grid_transition_PV_cost(year=26, factor=1.673)
-2024-11-17 16:45:05,868 - DEBUG - Transition Cost [26]:  0.09375 * 3,048 W = $286
-2024-11-17 16:45:05,868 - DEBUG - Transition PV Cost [26]: $286 / 1.673 = PV$171
-2024-11-17 16:45:05,868 - INFO - Calculating year 26 costs:
-2024-11-17 16:45:05,868 - INFO - energy_purchase_cost_PV(year=27, factor=1.707)
-2024-11-17 16:45:05,868 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
-2024-11-17 16:45:05,868 - DEBUG - Energy PV Cost: $3,247 / 1.707 = PV$1,902
-2024-11-17 16:45:05,868 - INFO - energy_CO2_cost_PV(year=27, factor=7.047)
-2024-11-17 16:45:05,868 - DEBUG - Energy CO2 Emissions: 2,445[Elec.] + 15,151[Gas] = 17,596
-2024-11-17 16:45:05,868 - DEBUG - Energy CO2 Actual Cost: 17,596 * $0.25/unit = $4,399
-2024-11-17 16:45:05,868 - DEBUG - Energy CO2 PV Cost [27]: $4,399 / 7.047 = PV$624
-2024-11-17 16:45:05,868 - INFO - measure_purchase_cost_PV(year=27, factor=1.707)
-2024-11-17 16:45:05,868 - DEBUG - Measure Actual Costs: ['$1,000', '$1,000', '$992'] = 2,992
-2024-11-17 16:45:05,868 - DEBUG - Measure PV Cost: $2,992 / 1.707 = PV$1,753
-2024-11-17 16:45:05,868 - INFO - measure_CO2_cost_PV(year=27, factor=1.000)
-2024-11-17 16:45:05,868 - DEBUG - Measure CO2 Actual Cost: ['$12', '$53', '$52'] = 117
-2024-11-17 16:45:05,868 - DEBUG - Measure CO2 PV Cost: $117 / 1.000 = PV$87
-2024-11-17 16:45:05,868 - INFO - grid_transition_PV_cost(year=27, factor=1.707)
-2024-11-17 16:45:05,868 - DEBUG - Transition Cost [27]:  0.09375 * 3,048 W = $286
-2024-11-17 16:45:05,868 - DEBUG - Transition PV Cost [27]: $286 / 1.707 = PV$167
-2024-11-17 16:45:05,868 - INFO - Calculating year 27 costs:
-2024-11-17 16:45:05,868 - INFO - energy_purchase_cost_PV(year=28, factor=1.741)
-2024-11-17 16:45:05,868 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
-2024-11-17 16:45:05,868 - DEBUG - Energy PV Cost: $3,247 / 1.741 = PV$1,865
-2024-11-17 16:45:05,868 - INFO - energy_CO2_cost_PV(year=28, factor=7.576)
-2024-11-17 16:45:05,868 - DEBUG - Energy CO2 Emissions: 2,445[Elec.] + 15,151[Gas] = 17,596
-2024-11-17 16:45:05,868 - DEBUG - Energy CO2 Actual Cost: 17,596 * $0.25/unit = $4,399
-2024-11-17 16:45:05,868 - DEBUG - Energy CO2 PV Cost [28]: $4,399 / 7.576 = PV$581
-2024-11-17 16:45:05,868 - INFO - measure_purchase_cost_PV(year=28, factor=1.741)
-2024-11-17 16:45:05,868 - INFO - measure_CO2_cost_PV(year=28, factor=1.000)
-2024-11-17 16:45:05,868 - INFO - grid_transition_PV_cost(year=28, factor=1.741)
-2024-11-17 16:45:05,868 - DEBUG - Transition Cost [28]:  0.09375 * 3,048 W = $286
-2024-11-17 16:45:05,868 - DEBUG - Transition PV Cost [28]: $286 / 1.741 = PV$164
-2024-11-17 16:45:05,869 - INFO - Calculating year 28 costs:
-2024-11-17 16:45:05,869 - INFO - energy_purchase_cost_PV(year=29, factor=1.776)
-2024-11-17 16:45:05,869 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
-2024-11-17 16:45:05,869 - DEBUG - Energy PV Cost: $3,247 / 1.776 = PV$1,828
-2024-11-17 16:45:05,869 - INFO - energy_CO2_cost_PV(year=29, factor=8.144)
-2024-11-17 16:45:05,869 - DEBUG - Energy CO2 Emissions: 2,445[Elec.] + 15,151[Gas] = 17,596
-2024-11-17 16:45:05,869 - DEBUG - Energy CO2 Actual Cost: 17,596 * $0.25/unit = $4,399
-2024-11-17 16:45:05,869 - DEBUG - Energy CO2 PV Cost [29]: $4,399 / 8.144 = PV$540
-2024-11-17 16:45:05,869 - INFO - measure_purchase_cost_PV(year=29, factor=1.776)
-2024-11-17 16:45:05,869 - DEBUG - Measure Actual Costs: ['$662'] = 662
-2024-11-17 16:45:05,869 - DEBUG - Measure PV Cost: $662 / 1.776 = PV$373
-2024-11-17 16:45:05,869 - INFO - measure_CO2_cost_PV(year=29, factor=1.000)
-2024-11-17 16:45:05,869 - DEBUG - Measure CO2 Actual Cost: ['$35'] = 35
-2024-11-17 16:45:05,869 - DEBUG - Measure CO2 PV Cost: $35 / 1.000 = PV$26
-2024-11-17 16:45:05,869 - INFO - grid_transition_PV_cost(year=29, factor=1.776)
-2024-11-17 16:45:05,869 - DEBUG - Transition Cost [29]:  0.09375 * 3,048 W = $286
-2024-11-17 16:45:05,869 - DEBUG - Transition PV Cost [29]: $286 / 1.776 = PV$161
-2024-11-17 16:45:05,869 - INFO - Calculating year 29 costs:
-2024-11-17 16:45:05,869 - INFO - energy_purchase_cost_PV(year=30, factor=1.811)
-2024-11-17 16:45:05,869 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
-2024-11-17 16:45:05,869 - DEBUG - Energy PV Cost: $3,247 / 1.811 = PV$1,792
-2024-11-17 16:45:05,869 - INFO - energy_CO2_cost_PV(year=30, factor=8.755)
-2024-11-17 16:45:05,869 - DEBUG - Energy CO2 Emissions: 2,445[Elec.] + 15,151[Gas] = 17,596
-2024-11-17 16:45:05,869 - DEBUG - Energy CO2 Actual Cost: 17,596 * $0.25/unit = $4,399
-2024-11-17 16:45:05,869 - DEBUG - Energy CO2 PV Cost [30]: $4,399 / 8.755 = PV$502
-2024-11-17 16:45:05,869 - INFO - measure_purchase_cost_PV(year=30, factor=1.811)
-2024-11-17 16:45:05,869 - INFO - measure_CO2_cost_PV(year=30, factor=1.000)
-2024-11-17 16:45:05,869 - INFO - grid_transition_PV_cost(year=30, factor=1.811)
-2024-11-17 16:45:05,869 - DEBUG - Transition Cost [30]:  0.09375 * 3,048 W = $286
-2024-11-17 16:45:05,869 - DEBUG - Transition PV Cost [30]: $286 / 1.811 = PV$158
-2024-11-17 16:45:05,869 - INFO - Calculating year 30 costs:
-2024-11-17 16:45:05,869 - INFO - energy_purchase_cost_PV(year=31, factor=1.848)
-2024-11-17 16:45:05,869 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
-2024-11-17 16:45:05,869 - DEBUG - Energy PV Cost: $3,247 / 1.848 = PV$1,757
-2024-11-17 16:45:05,869 - INFO - energy_CO2_cost_PV(year=31, factor=9.412)
-2024-11-17 16:45:05,869 - DEBUG - Energy CO2 Emissions: 2,445[Elec.] + 15,151[Gas] = 17,596
-2024-11-17 16:45:05,869 - DEBUG - Energy CO2 Actual Cost: 17,596 * $0.25/unit = $4,399
-2024-11-17 16:45:05,869 - DEBUG - Energy CO2 PV Cost [31]: $4,399 / 9.412 = PV$467
-2024-11-17 16:45:05,870 - INFO - measure_purchase_cost_PV(year=31, factor=1.848)
-2024-11-17 16:45:05,870 - DEBUG - Measure Actual Costs: ['$3,459'] = 3,459
-2024-11-17 16:45:05,870 - DEBUG - Measure PV Cost: $3,459 / 1.848 = PV$1,872
-2024-11-17 16:45:05,870 - INFO - measure_CO2_cost_PV(year=31, factor=1.000)
-2024-11-17 16:45:05,870 - DEBUG - Measure CO2 Actual Cost: ['$101'] = 101
-2024-11-17 16:45:05,870 - DEBUG - Measure CO2 PV Cost: $101 / 1.000 = PV$76
-2024-11-17 16:45:05,870 - INFO - grid_transition_PV_cost(year=31, factor=1.848)
-2024-11-17 16:45:05,870 - DEBUG - Transition Cost [31]:  0.00000 * 3,048 W = $0
-2024-11-17 16:45:05,870 - DEBUG - Transition PV Cost [31]: $0 / 1.848 = PV$0
-2024-11-17 16:45:05,870 - INFO - Calculating year 31 costs:
-2024-11-17 16:45:05,870 - INFO - energy_purchase_cost_PV(year=32, factor=1.885)
-2024-11-17 16:45:05,870 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
-2024-11-17 16:45:05,870 - DEBUG - Energy PV Cost: $3,247 / 1.885 = PV$1,723
-2024-11-17 16:45:05,870 - INFO - energy_CO2_cost_PV(year=32, factor=10.117)
-2024-11-17 16:45:05,870 - DEBUG - Energy CO2 Emissions: 2,445[Elec.] + 15,151[Gas] = 17,596
-2024-11-17 16:45:05,870 - DEBUG - Energy CO2 Actual Cost: 17,596 * $0.25/unit = $4,399
-2024-11-17 16:45:05,870 - DEBUG - Energy CO2 PV Cost [32]: $4,399 / 10.117 = PV$435
-2024-11-17 16:45:05,870 - INFO - measure_purchase_cost_PV(year=32, factor=1.885)
-2024-11-17 16:45:05,870 - INFO - measure_CO2_cost_PV(year=32, factor=1.000)
-2024-11-17 16:45:05,870 - INFO - grid_transition_PV_cost(year=32, factor=1.885)
-2024-11-17 16:45:05,870 - DEBUG - Transition Cost [32]:  0.00000 * 3,048 W = $0
-2024-11-17 16:45:05,870 - DEBUG - Transition PV Cost [32]: $0 / 1.885 = PV$0
-2024-11-17 16:45:05,870 - INFO - Calculating year 32 costs:
-2024-11-17 16:45:05,870 - INFO - energy_purchase_cost_PV(year=33, factor=1.922)
-2024-11-17 16:45:05,870 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
-2024-11-17 16:45:05,870 - DEBUG - Energy PV Cost: $3,247 / 1.922 = PV$1,689
-2024-11-17 16:45:05,870 - INFO - energy_CO2_cost_PV(year=33, factor=10.876)
-2024-11-17 16:45:05,870 - DEBUG - Energy CO2 Emissions: 2,445[Elec.] + 15,151[Gas] = 17,596
-2024-11-17 16:45:05,870 - DEBUG - Energy CO2 Actual Cost: 17,596 * $0.25/unit = $4,399
-2024-11-17 16:45:05,870 - DEBUG - Energy CO2 PV Cost [33]: $4,399 / 10.876 = PV$404
-2024-11-17 16:45:05,870 - INFO - measure_purchase_cost_PV(year=33, factor=1.922)
-2024-11-17 16:45:05,870 - DEBUG - Measure Actual Costs: ['$796'] = 796
-2024-11-17 16:45:05,870 - DEBUG - Measure PV Cost: $796 / 1.922 = PV$414
-2024-11-17 16:45:05,870 - INFO - measure_CO2_cost_PV(year=33, factor=1.000)
-2024-11-17 16:45:05,870 - DEBUG - Measure CO2 Actual Cost: ['$33'] = 33
-2024-11-17 16:45:05,870 - DEBUG - Measure CO2 PV Cost: $33 / 1.000 = PV$24
-2024-11-17 16:45:05,870 - INFO - grid_transition_PV_cost(year=33, factor=1.922)
-2024-11-17 16:45:05,870 - DEBUG - Transition Cost [33]:  0.00000 * 3,048 W = $0
-2024-11-17 16:45:05,870 - DEBUG - Transition PV Cost [33]: $0 / 1.922 = PV$0
-2024-11-17 16:45:05,871 - INFO - Calculating year 33 costs:
-2024-11-17 16:45:05,871 - INFO - energy_purchase_cost_PV(year=34, factor=1.961)
-2024-11-17 16:45:05,871 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
-2024-11-17 16:45:05,871 - DEBUG - Energy PV Cost: $3,247 / 1.961 = PV$1,656
-2024-11-17 16:45:05,871 - INFO - energy_CO2_cost_PV(year=34, factor=11.692)
-2024-11-17 16:45:05,871 - DEBUG - Energy CO2 Emissions: 2,445[Elec.] + 15,151[Gas] = 17,596
-2024-11-17 16:45:05,871 - DEBUG - Energy CO2 Actual Cost: 17,596 * $0.25/unit = $4,399
-2024-11-17 16:45:05,871 - DEBUG - Energy CO2 PV Cost [34]: $4,399 / 11.692 = PV$376
-2024-11-17 16:45:05,871 - INFO - measure_purchase_cost_PV(year=34, factor=1.961)
-2024-11-17 16:45:05,871 - DEBUG - Measure Actual Costs: ['$959'] = 959
-2024-11-17 16:45:05,871 - DEBUG - Measure PV Cost: $959 / 1.961 = PV$489
-2024-11-17 16:45:05,871 - INFO - measure_CO2_cost_PV(year=34, factor=1.000)
-2024-11-17 16:45:05,871 - DEBUG - Measure CO2 Actual Cost: ['$50'] = 50
-2024-11-17 16:45:05,871 - DEBUG - Measure CO2 PV Cost: $50 / 1.000 = PV$38
-2024-11-17 16:45:05,871 - INFO - grid_transition_PV_cost(year=34, factor=1.961)
-2024-11-17 16:45:05,871 - DEBUG - Transition Cost [34]:  0.00000 * 3,048 W = $0
-2024-11-17 16:45:05,871 - DEBUG - Transition PV Cost [34]: $0 / 1.961 = PV$0
-2024-11-17 16:45:05,871 - INFO - Calculating year 34 costs:
-2024-11-17 16:45:05,871 - INFO - energy_purchase_cost_PV(year=35, factor=2.000)
-2024-11-17 16:45:05,871 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
-2024-11-17 16:45:05,871 - DEBUG - Energy PV Cost: $3,247 / 2.000 = PV$1,623
-2024-11-17 16:45:05,871 - INFO - energy_CO2_cost_PV(year=35, factor=12.569)
-2024-11-17 16:45:05,871 - DEBUG - Energy CO2 Emissions: 2,445[Elec.] + 15,151[Gas] = 17,596
-2024-11-17 16:45:05,871 - DEBUG - Energy CO2 Actual Cost: 17,596 * $0.25/unit = $4,399
-2024-11-17 16:45:05,871 - DEBUG - Energy CO2 PV Cost [35]: $4,399 / 12.569 = PV$350
-2024-11-17 16:45:05,871 - INFO - measure_purchase_cost_PV(year=35, factor=2.000)
-2024-11-17 16:45:05,871 - DEBUG - Measure Actual Costs: ['$611'] = 611
-2024-11-17 16:45:05,871 - DEBUG - Measure PV Cost: $611 / 2.000 = PV$306
-2024-11-17 16:45:05,871 - INFO - measure_CO2_cost_PV(year=35, factor=1.000)
-2024-11-17 16:45:05,871 - DEBUG - Measure CO2 Actual Cost: ['$30'] = 30
-2024-11-17 16:45:05,871 - DEBUG - Measure CO2 PV Cost: $30 / 1.000 = PV$23
-2024-11-17 16:45:05,871 - INFO - grid_transition_PV_cost(year=35, factor=2.000)
-2024-11-17 16:45:05,871 - DEBUG - Transition Cost [35]:  0.00000 * 3,048 W = $0
-2024-11-17 16:45:05,871 - DEBUG - Transition PV Cost [35]: $0 / 2.000 = PV$0
-2024-11-17 16:45:05,871 - INFO - Calculating year 35 costs:
-2024-11-17 16:45:05,871 - INFO - energy_purchase_cost_PV(year=36, factor=2.040)
-2024-11-17 16:45:05,871 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
-2024-11-17 16:45:05,871 - DEBUG - Energy PV Cost: $3,247 / 2.040 = PV$1,592
-2024-11-17 16:45:05,871 - INFO - energy_CO2_cost_PV(year=36, factor=13.512)
-2024-11-17 16:45:05,872 - DEBUG - Energy CO2 Emissions: 2,445[Elec.] + 15,151[Gas] = 17,596
-2024-11-17 16:45:05,872 - DEBUG - Energy CO2 Actual Cost: 17,596 * $0.25/unit = $4,399
-2024-11-17 16:45:05,872 - DEBUG - Energy CO2 PV Cost [36]: $4,399 / 13.512 = PV$326
-2024-11-17 16:45:05,872 - INFO - measure_purchase_cost_PV(year=36, factor=2.040)
-2024-11-17 16:45:05,872 - INFO - measure_CO2_cost_PV(year=36, factor=1.000)
-2024-11-17 16:45:05,872 - INFO - grid_transition_PV_cost(year=36, factor=2.040)
-2024-11-17 16:45:05,872 - DEBUG - Transition Cost [36]:  0.00000 * 3,048 W = $0
-2024-11-17 16:45:05,872 - DEBUG - Transition PV Cost [36]: $0 / 2.040 = PV$0
-2024-11-17 16:45:05,872 - INFO - Calculating year 36 costs:
-2024-11-17 16:45:05,872 - INFO - energy_purchase_cost_PV(year=37, factor=2.081)
-2024-11-17 16:45:05,872 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
-2024-11-17 16:45:05,872 - DEBUG - Energy PV Cost: $3,247 / 2.081 = PV$1,560
-2024-11-17 16:45:05,872 - INFO - energy_CO2_cost_PV(year=37, factor=14.525)
-2024-11-17 16:45:05,872 - DEBUG - Energy CO2 Emissions: 2,445[Elec.] + 15,151[Gas] = 17,596
-2024-11-17 16:45:05,872 - DEBUG - Energy CO2 Actual Cost: 17,596 * $0.25/unit = $4,399
-2024-11-17 16:45:05,872 - DEBUG - Energy CO2 PV Cost [37]: $4,399 / 14.525 = PV$303
-2024-11-17 16:45:05,872 - INFO - measure_purchase_cost_PV(year=37, factor=2.081)
-2024-11-17 16:45:05,872 - INFO - measure_CO2_cost_PV(year=37, factor=1.000)
-2024-11-17 16:45:05,872 - INFO - grid_transition_PV_cost(year=37, factor=2.081)
-2024-11-17 16:45:05,872 - DEBUG - Transition Cost [37]:  0.00000 * 3,048 W = $0
-2024-11-17 16:45:05,872 - DEBUG - Transition PV Cost [37]: $0 / 2.081 = PV$0
-2024-11-17 16:45:05,872 - INFO - Calculating year 37 costs:
-2024-11-17 16:45:05,872 - INFO - energy_purchase_cost_PV(year=38, factor=2.122)
-2024-11-17 16:45:05,872 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
-2024-11-17 16:45:05,872 - DEBUG - Energy PV Cost: $3,247 / 2.122 = PV$1,530
-2024-11-17 16:45:05,872 - INFO - energy_CO2_cost_PV(year=38, factor=15.614)
-2024-11-17 16:45:05,872 - DEBUG - Energy CO2 Emissions: 2,445[Elec.] + 15,151[Gas] = 17,596
-2024-11-17 16:45:05,872 - DEBUG - Energy CO2 Actual Cost: 17,596 * $0.25/unit = $4,399
-2024-11-17 16:45:05,872 - DEBUG - Energy CO2 PV Cost [38]: $4,399 / 15.614 = PV$282
-2024-11-17 16:45:05,872 - INFO - measure_purchase_cost_PV(year=38, factor=2.122)
-2024-11-17 16:45:05,872 - INFO - measure_CO2_cost_PV(year=38, factor=1.000)
-2024-11-17 16:45:05,872 - INFO - grid_transition_PV_cost(year=38, factor=2.122)
-2024-11-17 16:45:05,872 - DEBUG - Transition Cost [38]:  0.00000 * 3,048 W = $0
-2024-11-17 16:45:05,872 - DEBUG - Transition PV Cost [38]: $0 / 2.122 = PV$0
-2024-11-17 16:45:05,872 - INFO - Calculating year 38 costs:
-2024-11-17 16:45:05,872 - INFO - energy_purchase_cost_PV(year=39, factor=2.165)
-2024-11-17 16:45:05,872 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
-2024-11-17 16:45:05,872 - DEBUG - Energy PV Cost: $3,247 / 2.165 = PV$1,500
-2024-11-17 16:45:05,873 - INFO - energy_CO2_cost_PV(year=39, factor=16.785)
-2024-11-17 16:45:05,873 - DEBUG - Energy CO2 Emissions: 2,445[Elec.] + 15,151[Gas] = 17,596
-2024-11-17 16:45:05,873 - DEBUG - Energy CO2 Actual Cost: 17,596 * $0.25/unit = $4,399
-2024-11-17 16:45:05,873 - DEBUG - Energy CO2 PV Cost [39]: $4,399 / 16.785 = PV$262
-2024-11-17 16:45:05,873 - INFO - measure_purchase_cost_PV(year=39, factor=2.165)
-2024-11-17 16:45:05,873 - DEBUG - Measure Actual Costs: ['$1,949'] = 1,949
-2024-11-17 16:45:05,873 - DEBUG - Measure PV Cost: $1,949 / 2.165 = PV$901
-2024-11-17 16:45:05,873 - INFO - measure_CO2_cost_PV(year=39, factor=1.000)
-2024-11-17 16:45:05,873 - DEBUG - Measure CO2 Actual Cost: ['$28'] = 28
-2024-11-17 16:45:05,873 - DEBUG - Measure CO2 PV Cost: $28 / 1.000 = PV$21
-2024-11-17 16:45:05,873 - INFO - grid_transition_PV_cost(year=39, factor=2.165)
-2024-11-17 16:45:05,873 - DEBUG - Transition Cost [39]:  0.00000 * 3,048 W = $0
-2024-11-17 16:45:05,873 - DEBUG - Transition PV Cost [39]: $0 / 2.165 = PV$0
-2024-11-17 16:45:05,873 - INFO - Calculating year 39 costs:
-2024-11-17 16:45:05,873 - INFO - energy_purchase_cost_PV(year=40, factor=2.208)
-2024-11-17 16:45:05,873 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
-2024-11-17 16:45:05,873 - DEBUG - Energy PV Cost: $3,247 / 2.208 = PV$1,470
-2024-11-17 16:45:05,873 - INFO - energy_CO2_cost_PV(year=40, factor=18.044)
-2024-11-17 16:45:05,873 - DEBUG - Energy CO2 Emissions: 2,445[Elec.] + 15,151[Gas] = 17,596
-2024-11-17 16:45:05,873 - DEBUG - Energy CO2 Actual Cost: 17,596 * $0.25/unit = $4,399
-2024-11-17 16:45:05,873 - DEBUG - Energy CO2 PV Cost [40]: $4,399 / 18.044 = PV$244
-2024-11-17 16:45:05,873 - INFO - measure_purchase_cost_PV(year=40, factor=2.208)
-2024-11-17 16:45:05,873 - DEBUG - Measure Actual Costs: ['$1,000', '$1,000', '$992'] = 2,992
-2024-11-17 16:45:05,873 - DEBUG - Measure PV Cost: $2,992 / 2.208 = PV$1,355
-2024-11-17 16:45:05,873 - INFO - measure_CO2_cost_PV(year=40, factor=1.000)
-2024-11-17 16:45:05,873 - DEBUG - Measure CO2 Actual Cost: ['$12', '$53', '$52'] = 117
-2024-11-17 16:45:05,873 - DEBUG - Measure CO2 PV Cost: $117 / 1.000 = PV$87
-2024-11-17 16:45:05,873 - INFO - grid_transition_PV_cost(year=40, factor=2.208)
-2024-11-17 16:45:05,873 - DEBUG - Transition Cost [40]:  0.00000 * 3,048 W = $0
-2024-11-17 16:45:05,873 - DEBUG - Transition PV Cost [40]: $0 / 2.208 = PV$0
-2024-11-17 16:45:05,873 - INFO - Calculating year 40 costs:
-2024-11-17 16:45:05,873 - INFO - energy_purchase_cost_PV(year=41, factor=2.252)
-2024-11-17 16:45:05,873 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
-2024-11-17 16:45:05,873 - DEBUG - Energy PV Cost: $3,247 / 2.252 = PV$1,442
-2024-11-17 16:45:05,873 - INFO - energy_CO2_cost_PV(year=41, factor=19.398)
-2024-11-17 16:45:05,873 - DEBUG - Energy CO2 Emissions: 2,445[Elec.] + 15,151[Gas] = 17,596
-2024-11-17 16:45:05,873 - DEBUG - Energy CO2 Actual Cost: 17,596 * $0.25/unit = $4,399
-2024-11-17 16:45:05,873 - DEBUG - Energy CO2 PV Cost [41]: $4,399 / 19.398 = PV$227
-2024-11-17 16:45:05,873 - INFO - measure_purchase_cost_PV(year=41, factor=2.252)
-2024-11-17 16:45:05,873 - DEBUG - Measure Actual Costs: ['$3,459', '$7,500'] = 10,959
-2024-11-17 16:45:05,873 - DEBUG - Measure PV Cost: $10,959 / 2.252 = PV$4,866
-2024-11-17 16:45:05,874 - INFO - measure_CO2_cost_PV(year=41, factor=1.000)
-2024-11-17 16:45:05,874 - DEBUG - Measure CO2 Actual Cost: ['$101', '$263'] = 364
-2024-11-17 16:45:05,874 - DEBUG - Measure CO2 PV Cost: $364 / 1.000 = PV$273
-2024-11-17 16:45:05,874 - INFO - grid_transition_PV_cost(year=41, factor=2.252)
-2024-11-17 16:45:05,874 - DEBUG - Transition Cost [41]:  0.00000 * 3,048 W = $0
-2024-11-17 16:45:05,874 - DEBUG - Transition PV Cost [41]: $0 / 2.252 = PV$0
-2024-11-17 16:45:05,874 - INFO - Calculating year 41 costs:
-2024-11-17 16:45:05,874 - INFO - energy_purchase_cost_PV(year=42, factor=2.297)
-2024-11-17 16:45:05,874 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
-2024-11-17 16:45:05,874 - DEBUG - Energy PV Cost: $3,247 / 2.297 = PV$1,413
-2024-11-17 16:45:05,874 - INFO - energy_CO2_cost_PV(year=42, factor=20.852)
-2024-11-17 16:45:05,874 - DEBUG - Energy CO2 Emissions: 2,445[Elec.] + 15,151[Gas] = 17,596
-2024-11-17 16:45:05,874 - DEBUG - Energy CO2 Actual Cost: 17,596 * $0.25/unit = $4,399
-2024-11-17 16:45:05,874 - DEBUG - Energy CO2 PV Cost [42]: $4,399 / 20.852 = PV$211
-2024-11-17 16:45:05,874 - INFO - measure_purchase_cost_PV(year=42, factor=2.297)
-2024-11-17 16:45:05,874 - INFO - measure_CO2_cost_PV(year=42, factor=1.000)
-2024-11-17 16:45:05,874 - INFO - grid_transition_PV_cost(year=42, factor=2.297)
-2024-11-17 16:45:05,874 - DEBUG - Transition Cost [42]:  0.00000 * 3,048 W = $0
-2024-11-17 16:45:05,874 - DEBUG - Transition PV Cost [42]: $0 / 2.297 = PV$0
-2024-11-17 16:45:05,874 - INFO - Calculating year 42 costs:
-2024-11-17 16:45:05,874 - INFO - energy_purchase_cost_PV(year=43, factor=2.343)
-2024-11-17 16:45:05,874 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
-2024-11-17 16:45:05,874 - DEBUG - Energy PV Cost: $3,247 / 2.343 = PV$1,386
-2024-11-17 16:45:05,874 - INFO - energy_CO2_cost_PV(year=43, factor=22.416)
-2024-11-17 16:45:05,874 - DEBUG - Energy CO2 Emissions: 2,445[Elec.] + 15,151[Gas] = 17,596
-2024-11-17 16:45:05,874 - DEBUG - Energy CO2 Actual Cost: 17,596 * $0.25/unit = $4,399
-2024-11-17 16:45:05,874 - DEBUG - Energy CO2 PV Cost [43]: $4,399 / 22.416 = PV$196
-2024-11-17 16:45:05,874 - INFO - measure_purchase_cost_PV(year=43, factor=2.343)
-2024-11-17 16:45:05,874 - DEBUG - Measure Actual Costs: ['$662'] = 662
-2024-11-17 16:45:05,874 - DEBUG - Measure PV Cost: $662 / 2.343 = PV$283
-2024-11-17 16:45:05,874 - INFO - measure_CO2_cost_PV(year=43, factor=1.000)
-2024-11-17 16:45:05,874 - DEBUG - Measure CO2 Actual Cost: ['$35'] = 35
-2024-11-17 16:45:05,874 - DEBUG - Measure CO2 PV Cost: $35 / 1.000 = PV$26
-2024-11-17 16:45:05,874 - INFO - grid_transition_PV_cost(year=43, factor=2.343)
-2024-11-17 16:45:05,874 - DEBUG - Transition Cost [43]:  0.00000 * 3,048 W = $0
-2024-11-17 16:45:05,874 - DEBUG - Transition PV Cost [43]: $0 / 2.343 = PV$0
-2024-11-17 16:45:05,874 - INFO - Calculating year 43 costs:
-2024-11-17 16:45:05,874 - INFO - energy_purchase_cost_PV(year=44, factor=2.390)
-2024-11-17 16:45:05,874 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
-2024-11-17 16:45:05,875 - DEBUG - Energy PV Cost: $3,247 / 2.390 = PV$1,358
-2024-11-17 16:45:05,875 - INFO - energy_CO2_cost_PV(year=44, factor=24.098)
-2024-11-17 16:45:05,875 - DEBUG - Energy CO2 Emissions: 2,445[Elec.] + 15,151[Gas] = 17,596
-2024-11-17 16:45:05,875 - DEBUG - Energy CO2 Actual Cost: 17,596 * $0.25/unit = $4,399
-2024-11-17 16:45:05,875 - DEBUG - Energy CO2 PV Cost [44]: $4,399 / 24.098 = PV$183
-2024-11-17 16:45:05,875 - INFO - measure_purchase_cost_PV(year=44, factor=2.390)
-2024-11-17 16:45:05,875 - INFO - measure_CO2_cost_PV(year=44, factor=1.000)
-2024-11-17 16:45:05,875 - INFO - grid_transition_PV_cost(year=44, factor=2.390)
-2024-11-17 16:45:05,875 - DEBUG - Transition Cost [44]:  0.00000 * 3,048 W = $0
-2024-11-17 16:45:05,875 - DEBUG - Transition PV Cost [44]: $0 / 2.390 = PV$0
-2024-11-17 16:45:05,875 - INFO - Calculating year 44 costs:
-2024-11-17 16:45:05,875 - INFO - energy_purchase_cost_PV(year=45, factor=2.438)
-2024-11-17 16:45:05,875 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
-2024-11-17 16:45:05,875 - DEBUG - Energy PV Cost: $3,247 / 2.438 = PV$1,332
-2024-11-17 16:45:05,875 - INFO - energy_CO2_cost_PV(year=45, factor=25.905)
-2024-11-17 16:45:05,875 - DEBUG - Energy CO2 Emissions: 2,445[Elec.] + 15,151[Gas] = 17,596
-2024-11-17 16:45:05,875 - DEBUG - Energy CO2 Actual Cost: 17,596 * $0.25/unit = $4,399
-2024-11-17 16:45:05,875 - DEBUG - Energy CO2 PV Cost [45]: $4,399 / 25.905 = PV$170
-2024-11-17 16:45:05,875 - INFO - measure_purchase_cost_PV(year=45, factor=2.438)
-2024-11-17 16:45:05,875 - DEBUG - Measure Actual Costs: ['$959'] = 959
-2024-11-17 16:45:05,875 - DEBUG - Measure PV Cost: $959 / 2.438 = PV$393
-2024-11-17 16:45:05,875 - INFO - measure_CO2_cost_PV(year=45, factor=1.000)
-2024-11-17 16:45:05,875 - DEBUG - Measure CO2 Actual Cost: ['$50'] = 50
-2024-11-17 16:45:05,875 - DEBUG - Measure CO2 PV Cost: $50 / 1.000 = PV$38
-2024-11-17 16:45:05,875 - INFO - grid_transition_PV_cost(year=45, factor=2.438)
-2024-11-17 16:45:05,875 - DEBUG - Transition Cost [45]:  0.00000 * 3,048 W = $0
-2024-11-17 16:45:05,875 - DEBUG - Transition PV Cost [45]: $0 / 2.438 = PV$0
-2024-11-17 16:45:05,875 - INFO - Calculating year 45 costs:
-2024-11-17 16:45:05,875 - INFO - energy_purchase_cost_PV(year=46, factor=2.487)
-2024-11-17 16:45:05,875 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
-2024-11-17 16:45:05,875 - DEBUG - Energy PV Cost: $3,247 / 2.487 = PV$1,306
-2024-11-17 16:45:05,875 - INFO - energy_CO2_cost_PV(year=46, factor=27.848)
-2024-11-17 16:45:05,875 - DEBUG - Energy CO2 Emissions: 2,445[Elec.] + 15,151[Gas] = 17,596
-2024-11-17 16:45:05,875 - DEBUG - Energy CO2 Actual Cost: 17,596 * $0.25/unit = $4,399
-2024-11-17 16:45:05,875 - DEBUG - Energy CO2 PV Cost [46]: $4,399 / 27.848 = PV$158
-2024-11-17 16:45:05,875 - INFO - measure_purchase_cost_PV(year=46, factor=2.487)
-2024-11-17 16:45:05,875 - INFO - measure_CO2_cost_PV(year=46, factor=1.000)
-2024-11-17 16:45:05,875 - INFO - grid_transition_PV_cost(year=46, factor=2.487)
-2024-11-17 16:45:05,875 - DEBUG - Transition Cost [46]:  0.00000 * 3,048 W = $0
-2024-11-17 16:45:05,875 - DEBUG - Transition PV Cost [46]: $0 / 2.487 = PV$0
-2024-11-17 16:45:05,876 - INFO - Calculating year 46 costs:
-2024-11-17 16:45:05,876 - INFO - energy_purchase_cost_PV(year=47, factor=2.536)
-2024-11-17 16:45:05,876 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
-2024-11-17 16:45:05,876 - DEBUG - Energy PV Cost: $3,247 / 2.536 = PV$1,280
-2024-11-17 16:45:05,876 - INFO - energy_CO2_cost_PV(year=47, factor=29.936)
-2024-11-17 16:45:05,876 - DEBUG - Energy CO2 Emissions: 2,445[Elec.] + 15,151[Gas] = 17,596
-2024-11-17 16:45:05,876 - DEBUG - Energy CO2 Actual Cost: 17,596 * $0.25/unit = $4,399
-2024-11-17 16:45:05,876 - DEBUG - Energy CO2 PV Cost [47]: $4,399 / 29.936 = PV$147
-2024-11-17 16:45:05,876 - INFO - measure_purchase_cost_PV(year=47, factor=2.536)
-2024-11-17 16:45:05,876 - INFO - measure_CO2_cost_PV(year=47, factor=1.000)
-2024-11-17 16:45:05,876 - INFO - grid_transition_PV_cost(year=47, factor=2.536)
-2024-11-17 16:45:05,876 - DEBUG - Transition Cost [47]:  0.00000 * 3,048 W = $0
-2024-11-17 16:45:05,876 - DEBUG - Transition PV Cost [47]: $0 / 2.536 = PV$0
-2024-11-17 16:45:05,876 - INFO - Calculating year 47 costs:
-2024-11-17 16:45:05,876 - INFO - energy_purchase_cost_PV(year=48, factor=2.587)
-2024-11-17 16:45:05,876 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
-2024-11-17 16:45:05,876 - DEBUG - Energy PV Cost: $3,247 / 2.587 = PV$1,255
-2024-11-17 16:45:05,876 - INFO - energy_CO2_cost_PV(year=48, factor=32.182)
-2024-11-17 16:45:05,876 - DEBUG - Energy CO2 Emissions: 2,445[Elec.] + 15,151[Gas] = 17,596
-2024-11-17 16:45:05,876 - DEBUG - Energy CO2 Actual Cost: 17,596 * $0.25/unit = $4,399
-2024-11-17 16:45:05,876 - DEBUG - Energy CO2 PV Cost [48]: $4,399 / 32.182 = PV$137
-2024-11-17 16:45:05,876 - INFO - measure_purchase_cost_PV(year=48, factor=2.587)
-2024-11-17 16:45:05,876 - INFO - measure_CO2_cost_PV(year=48, factor=1.000)
-2024-11-17 16:45:05,876 - INFO - grid_transition_PV_cost(year=48, factor=2.587)
-2024-11-17 16:45:05,876 - DEBUG - Transition Cost [48]:  0.00000 * 3,048 W = $0
-2024-11-17 16:45:05,876 - DEBUG - Transition PV Cost [48]: $0 / 2.587 = PV$0
-2024-11-17 16:45:05,876 - INFO - Calculating year 48 costs:
-2024-11-17 16:45:05,876 - INFO - energy_purchase_cost_PV(year=49, factor=2.639)
-2024-11-17 16:45:05,876 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
-2024-11-17 16:45:05,876 - DEBUG - Energy PV Cost: $3,247 / 2.639 = PV$1,230
-2024-11-17 16:45:05,876 - INFO - energy_CO2_cost_PV(year=49, factor=34.595)
-2024-11-17 16:45:05,876 - DEBUG - Energy CO2 Emissions: 2,445[Elec.] + 15,151[Gas] = 17,596
-2024-11-17 16:45:05,876 - DEBUG - Energy CO2 Actual Cost: 17,596 * $0.25/unit = $4,399
-2024-11-17 16:45:05,876 - DEBUG - Energy CO2 PV Cost [49]: $4,399 / 34.595 = PV$127
-2024-11-17 16:45:05,876 - INFO - measure_purchase_cost_PV(year=49, factor=2.639)
-2024-11-17 16:45:05,876 - DEBUG - Measure Actual Costs: ['$861', '$796'] = 1,657
-2024-11-17 16:45:05,876 - DEBUG - Measure PV Cost: $1,657 / 2.639 = PV$628
-2024-11-17 16:45:05,876 - INFO - measure_CO2_cost_PV(year=49, factor=1.000)
-2024-11-17 16:45:05,876 - DEBUG - Measure CO2 Actual Cost: ['$35', '$33'] = 68
-2024-11-17 16:45:05,877 - DEBUG - Measure CO2 PV Cost: $68 / 1.000 = PV$51
-2024-11-17 16:45:05,877 - INFO - grid_transition_PV_cost(year=49, factor=2.639)
-2024-11-17 16:45:05,877 - DEBUG - Transition Cost [49]:  0.00000 * 3,048 W = $0
-2024-11-17 16:45:05,877 - DEBUG - Transition PV Cost [49]: $0 / 2.639 = PV$0
-2024-11-17 16:45:05,877 - INFO - Calculating year 49 costs:
-2024-11-17 16:45:05,877 - INFO - energy_purchase_cost_PV(year=50, factor=2.692)
-2024-11-17 16:45:05,877 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
-2024-11-17 16:45:05,877 - DEBUG - Energy PV Cost: $3,247 / 2.692 = PV$1,206
-2024-11-17 16:45:05,877 - INFO - energy_CO2_cost_PV(year=50, factor=37.190)
-2024-11-17 16:45:05,877 - DEBUG - Energy CO2 Emissions: 2,445[Elec.] + 15,151[Gas] = 17,596
-2024-11-17 16:45:05,877 - DEBUG - Energy CO2 Actual Cost: 17,596 * $0.25/unit = $4,399
-2024-11-17 16:45:05,877 - DEBUG - Energy CO2 PV Cost [50]: $4,399 / 37.190 = PV$118
-2024-11-17 16:45:05,877 - INFO - measure_purchase_cost_PV(year=50, factor=2.692)
-2024-11-17 16:45:05,877 - INFO - measure_CO2_cost_PV(year=50, factor=1.000)
-2024-11-17 16:45:05,877 - INFO - grid_transition_PV_cost(year=50, factor=2.692)
-2024-11-17 16:45:05,877 - DEBUG - Transition Cost [50]:  0.00000 * 3,048 W = $0
-2024-11-17 16:45:05,877 - DEBUG - Transition PV Cost [50]: $0 / 2.692 = PV$0
-2024-11-17 16:45:05,879 - INFO - calc_variant_cumulative_ADORB_costs()
-2024-11-17 16:45:05,881 - INFO - Script finished
+2024-11-22 16:44:09,822 - INFO - Script started
+2024-11-22 16:44:09,837 - INFO - Converting HB-Model from Meters to Meters.
+2024-11-22 16:44:11,220 - INFO - calc_variant_yearly_ADORB_costs()
+2024-11-22 16:44:11,220 - INFO - calc_annual_total_electric_cost()
+2024-11-22 16:44:11,221 - DEBUG - Electric Purchased: 6,671kWh * $0.18/kWh = $1,200
+2024-11-22 16:44:11,221 - DEBUG - Electric Sold: 0kWh * $0.13/kWh = $0
+2024-11-22 16:44:11,221 - DEBUG - Electric Net Cost: $1,200 - $0 + $200 = $1,400
+2024-11-22 16:44:11,266 - INFO - calc_annual_total_gas_cost()
+2024-11-22 16:44:11,266 - DEBUG - Gas Cost: 34,964kWh * $0.05/kWh + $200 = $1,847
+2024-11-22 16:44:11,266 - INFO - calc_annual_total_gas_CO2()
+2024-11-22 16:44:11,266 - DEBUG - Gas CO2: 34,964 kWH -> 1,193 Therms * 12.7 = 15,151 tons CO2
+2024-11-22 16:44:11,266 - INFO - calc_CO2_reduction_measures_yearly_embodied_kgCO2(0 measures)
+2024-11-22 16:44:11,266 - INFO - calc_CO2_reduction_measures_yearly_embodied_CO2_cost()
+2024-11-22 16:44:11,266 - INFO - calc_CO2_reduction_measures_yearly_install_costs()
+2024-11-22 16:44:11,266 - INFO - calc_constructions_yearly_embodied_kgCO2()
+2024-11-22 16:44:11,266 - DEBUG - Construction Exterior Roof: $603 * 0.23 kgCO2/USD = 141 kgCO2
+2024-11-22 16:44:11,266 - DEBUG - Adding Construction Exterior Roof Embodied CO2 [lifetime=24yrs] 141 kgCO2 for year-0
+2024-11-22 16:44:11,267 - DEBUG - Adding Construction Exterior Roof Embodied CO2 [lifetime=24yrs] 141 kgCO2 for year-24
+2024-11-22 16:44:11,267 - DEBUG - Adding Construction Exterior Roof Embodied CO2 [lifetime=24yrs] 141 kgCO2 for year-48
+2024-11-22 16:44:11,267 - DEBUG - Construction Exterior Slab UnIns: $449 * 0.23 kgCO2/USD = 105 kgCO2
+2024-11-22 16:44:11,267 - DEBUG - Adding Construction Exterior Slab UnIns Embodied CO2 [lifetime=0yrs] 105 kgCO2 for year-0
+2024-11-22 16:44:11,267 - DEBUG - Construction Exterior Wall: $1,307 * 0.23 kgCO2/USD = 306 kgCO2
+2024-11-22 16:44:11,267 - DEBUG - Adding Construction Exterior Wall Embodied CO2 [lifetime=0yrs] 306 kgCO2 for year-0
+2024-11-22 16:44:11,267 - DEBUG - Construction Interior Floor: $0 * 0.23 kgCO2/USD = 0 kgCO2
+2024-11-22 16:44:11,267 - DEBUG - Adding Construction Interior Floor Embodied CO2 [lifetime=0yrs] 0 kgCO2 for year-0
+2024-11-22 16:44:11,267 - DEBUG - Construction Interior Wall: $0 * 0.23 kgCO2/USD = 0 kgCO2
+2024-11-22 16:44:11,267 - DEBUG - Adding Construction Interior Wall Embodied CO2 [lifetime=0yrs] 0 kgCO2 for year-0
+2024-11-22 16:44:11,267 - DEBUG - Construction P+B R-13: $557 * 0.23 kgCO2/USD = 130 kgCO2
+2024-11-22 16:44:11,267 - DEBUG - Adding Construction P+B R-13 Embodied CO2 [lifetime=16yrs] 130 kgCO2 for year-0
+2024-11-22 16:44:11,267 - DEBUG - Adding Construction P+B R-13 Embodied CO2 [lifetime=16yrs] 130 kgCO2 for year-16
+2024-11-22 16:44:11,267 - DEBUG - Adding Construction P+B R-13 Embodied CO2 [lifetime=16yrs] 130 kgCO2 for year-32
+2024-11-22 16:44:11,267 - DEBUG - Adding Construction P+B R-13 Embodied CO2 [lifetime=16yrs] 130 kgCO2 for year-48
+2024-11-22 16:44:11,267 - DEBUG - Construction ShadedWindowConstruction_aa4143fb: $482 * 0.23 kgCO2/USD = 113 kgCO2
+2024-11-22 16:44:11,267 - DEBUG - Adding Construction ShadedWindowConstruction_aa4143fb Embodied CO2 [lifetime=38yrs] 113 kgCO2 for year-0
+2024-11-22 16:44:11,267 - DEBUG - Adding Construction ShadedWindowConstruction_aa4143fb Embodied CO2 [lifetime=38yrs] 113 kgCO2 for year-38
+2024-11-22 16:44:11,267 - DEBUG - Construction Thermal_Mass: $0 * 0.23 kgCO2/USD = 0 kgCO2
+2024-11-22 16:44:11,267 - DEBUG - Adding Construction Thermal_Mass Embodied CO2 [lifetime=0yrs] 0 kgCO2 for year-0
+2024-11-22 16:44:11,267 - DEBUG - Construction Uninsulated Stem Wall: $89 * 0.23 kgCO2/USD = 21 kgCO2
+2024-11-22 16:44:11,267 - DEBUG - Adding Construction Uninsulated Stem Wall Embodied CO2 [lifetime=0yrs] 21 kgCO2 for year-0
+2024-11-22 16:44:11,267 - INFO - calc_constructions_yearly_embodied_CO2_cost()
+2024-11-22 16:44:11,267 - DEBUG - Construction Exterior Roof Embodied CO2-Cost [YR-0]: 141 kgCO2 * $0.25/kgCO2 = $35
+2024-11-22 16:44:11,267 - DEBUG - Construction Exterior Roof Embodied CO2-Cost [YR-24]: 141 kgCO2 * $0.25/kgCO2 = $35
+2024-11-22 16:44:11,267 - DEBUG - Construction Exterior Roof Embodied CO2-Cost [YR-48]: 141 kgCO2 * $0.25/kgCO2 = $35
+2024-11-22 16:44:11,267 - DEBUG - Construction Exterior Slab UnIns Embodied CO2-Cost [YR-0]: 105 kgCO2 * $0.25/kgCO2 = $26
+2024-11-22 16:44:11,267 - DEBUG - Construction Exterior Wall Embodied CO2-Cost [YR-0]: 306 kgCO2 * $0.25/kgCO2 = $76
+2024-11-22 16:44:11,267 - DEBUG - Construction Interior Floor Embodied CO2-Cost [YR-0]: 0 kgCO2 * $0.25/kgCO2 = $0
+2024-11-22 16:44:11,267 - DEBUG - Construction Interior Wall Embodied CO2-Cost [YR-0]: 0 kgCO2 * $0.25/kgCO2 = $0
+2024-11-22 16:44:11,267 - DEBUG - Construction P+B R-13 Embodied CO2-Cost [YR-0]: 130 kgCO2 * $0.25/kgCO2 = $33
+2024-11-22 16:44:11,267 - DEBUG - Construction P+B R-13 Embodied CO2-Cost [YR-16]: 130 kgCO2 * $0.25/kgCO2 = $33
+2024-11-22 16:44:11,267 - DEBUG - Construction P+B R-13 Embodied CO2-Cost [YR-32]: 130 kgCO2 * $0.25/kgCO2 = $33
+2024-11-22 16:44:11,267 - DEBUG - Construction P+B R-13 Embodied CO2-Cost [YR-48]: 130 kgCO2 * $0.25/kgCO2 = $33
+2024-11-22 16:44:11,267 - DEBUG - Construction ShadedWindowConstruction_aa4143fb Embodied CO2-Cost [YR-0]: 113 kgCO2 * $0.25/kgCO2 = $28
+2024-11-22 16:44:11,267 - DEBUG - Construction ShadedWindowConstruction_aa4143fb Embodied CO2-Cost [YR-38]: 113 kgCO2 * $0.25/kgCO2 = $28
+2024-11-22 16:44:11,267 - DEBUG - Construction Thermal_Mass Embodied CO2-Cost [YR-0]: 0 kgCO2 * $0.25/kgCO2 = $0
+2024-11-22 16:44:11,267 - DEBUG - Construction Uninsulated Stem Wall Embodied CO2-Cost [YR-0]: 21 kgCO2 * $0.25/kgCO2 = $5
+2024-11-22 16:44:11,267 - INFO - calc_constructions_yearly_install_costs()
+2024-11-22 16:44:11,267 - DEBUG - Adding Construction Exterior Roof Install Cost: [lifetime=24yrs] $861 for year-0
+2024-11-22 16:44:11,267 - DEBUG - Adding Construction Exterior Roof Install Cost: [lifetime=24yrs] $861 for year-24
+2024-11-22 16:44:11,267 - DEBUG - Adding Construction Exterior Roof Install Cost: [lifetime=24yrs] $861 for year-48
+2024-11-22 16:44:11,267 - DEBUG - Adding Construction Exterior Slab UnIns Install Cost: [lifetime=0yrs] $642 for year-0
+2024-11-22 16:44:11,267 - DEBUG - Adding Construction Exterior Wall Install Cost: [lifetime=0yrs] $1,867 for year-0
+2024-11-22 16:44:11,267 - DEBUG - Adding Construction Interior Floor Install Cost: [lifetime=0yrs] $0 for year-0
+2024-11-22 16:44:11,267 - DEBUG - Adding Construction Interior Wall Install Cost: [lifetime=0yrs] $0 for year-0
+2024-11-22 16:44:11,268 - DEBUG - Adding Construction P+B R-13 Install Cost: [lifetime=16yrs] $796 for year-0
+2024-11-22 16:44:11,268 - DEBUG - Adding Construction P+B R-13 Install Cost: [lifetime=16yrs] $796 for year-16
+2024-11-22 16:44:11,268 - DEBUG - Adding Construction P+B R-13 Install Cost: [lifetime=16yrs] $796 for year-32
+2024-11-22 16:44:11,268 - DEBUG - Adding Construction P+B R-13 Install Cost: [lifetime=16yrs] $796 for year-48
+2024-11-22 16:44:11,268 - DEBUG - Adding Construction ShadedWindowConstruction_aa4143fb Install Cost: [lifetime=38yrs] $1,949 for year-0
+2024-11-22 16:44:11,268 - DEBUG - Adding Construction ShadedWindowConstruction_aa4143fb Install Cost: [lifetime=38yrs] $1,949 for year-38
+2024-11-22 16:44:11,268 - DEBUG - Adding Construction Thermal_Mass Install Cost: [lifetime=0yrs] $0 for year-0
+2024-11-22 16:44:11,268 - DEBUG - Adding Construction Uninsulated Stem Wall Install Cost: [lifetime=0yrs] $89 for year-0
+2024-11-22 16:44:11,268 - INFO - calc_equipment_yearly_embodied_kgCO2_()
+2024-11-22 16:44:11,268 - DEBUG - Equipment Battery: $1,730 * 0.23 kgCO2/USD = 405 kgCO2
+2024-11-22 16:44:11,268 - DEBUG - Adding Equipment Battery Embodied CO2 [lifetime=10yrs] 405 kgCO2 for year-0
+2024-11-22 16:44:11,268 - DEBUG - Adding Equipment Battery Embodied CO2 [lifetime=10yrs] 405 kgCO2 for year-10
+2024-11-22 16:44:11,268 - DEBUG - Adding Equipment Battery Embodied CO2 [lifetime=10yrs] 405 kgCO2 for year-20
+2024-11-22 16:44:11,268 - DEBUG - Adding Equipment Battery Embodied CO2 [lifetime=10yrs] 405 kgCO2 for year-30
+2024-11-22 16:44:11,268 - DEBUG - Adding Equipment Battery Embodied CO2 [lifetime=10yrs] 405 kgCO2 for year-40
+2024-11-22 16:44:11,268 - DEBUG - Adding Equipment Battery Embodied CO2 [lifetime=10yrs] 405 kgCO2 for year-50
+2024-11-22 16:44:11,268 - DEBUG - Equipment DHW_NaturalGas: $200 * 0.23 kgCO2/USD = 47 kgCO2
+2024-11-22 16:44:11,268 - DEBUG - Adding Equipment DHW_NaturalGas Embodied CO2 [lifetime=13yrs] 47 kgCO2 for year-0
+2024-11-22 16:44:11,268 - DEBUG - Adding Equipment DHW_NaturalGas Embodied CO2 [lifetime=13yrs] 47 kgCO2 for year-13
+2024-11-22 16:44:11,268 - DEBUG - Adding Equipment DHW_NaturalGas Embodied CO2 [lifetime=13yrs] 47 kgCO2 for year-26
+2024-11-22 16:44:11,268 - DEBUG - Adding Equipment DHW_NaturalGas Embodied CO2 [lifetime=13yrs] 47 kgCO2 for year-39
+2024-11-22 16:44:11,268 - DEBUG - Equipment GasFurnaceDXAC: $4,500 * 0.23 kgCO2/USD = 1,053 kgCO2
+2024-11-22 16:44:11,268 - DEBUG - Adding Equipment GasFurnaceDXAC Embodied CO2 [lifetime=20yrs] 1,053 kgCO2 for year-0
+2024-11-22 16:44:11,268 - DEBUG - Adding Equipment GasFurnaceDXAC Embodied CO2 [lifetime=20yrs] 1,053 kgCO2 for year-20
+2024-11-22 16:44:11,268 - DEBUG - Adding Equipment GasFurnaceDXAC Embodied CO2 [lifetime=20yrs] 1,053 kgCO2 for year-40
+2024-11-22 16:44:11,268 - DEBUG - Equipment WholeHouse ClothesDryer-Wholehouse: $900 * 0.23 kgCO2/USD = 211 kgCO2
+2024-11-22 16:44:11,268 - DEBUG - Adding Equipment WholeHouse ClothesDryer-Wholehouse Embodied CO2 [lifetime=13yrs] 211 kgCO2 for year-0
+2024-11-22 16:44:11,268 - DEBUG - Adding Equipment WholeHouse ClothesDryer-Wholehouse Embodied CO2 [lifetime=13yrs] 211 kgCO2 for year-13
+2024-11-22 16:44:11,268 - DEBUG - Adding Equipment WholeHouse ClothesDryer-Wholehouse Embodied CO2 [lifetime=13yrs] 211 kgCO2 for year-26
+2024-11-22 16:44:11,268 - DEBUG - Adding Equipment WholeHouse ClothesDryer-Wholehouse Embodied CO2 [lifetime=13yrs] 211 kgCO2 for year-39
+2024-11-22 16:44:11,268 - DEBUG - Equipment WholeHouse ClothesWasher-Wholehouse: $596 * 0.23 kgCO2/USD = 139 kgCO2
+2024-11-22 16:44:11,268 - DEBUG - Adding Equipment WholeHouse ClothesWasher-Wholehouse Embodied CO2 [lifetime=14yrs] 139 kgCO2 for year-0
+2024-11-22 16:44:11,268 - DEBUG - Adding Equipment WholeHouse ClothesWasher-Wholehouse Embodied CO2 [lifetime=14yrs] 139 kgCO2 for year-14
+2024-11-22 16:44:11,268 - DEBUG - Adding Equipment WholeHouse ClothesWasher-Wholehouse Embodied CO2 [lifetime=14yrs] 139 kgCO2 for year-28
+2024-11-22 16:44:11,268 - DEBUG - Adding Equipment WholeHouse ClothesWasher-Wholehouse Embodied CO2 [lifetime=14yrs] 139 kgCO2 for year-42
+2024-11-22 16:44:11,268 - DEBUG - Equipment WholeHouse Dishwasher-Wholehouse: $863 * 0.23 kgCO2/USD = 202 kgCO2
+2024-11-22 16:44:11,268 - DEBUG - Adding Equipment WholeHouse Dishwasher-Wholehouse Embodied CO2 [lifetime=11yrs] 202 kgCO2 for year-0
+2024-11-22 16:44:11,268 - DEBUG - Adding Equipment WholeHouse Dishwasher-Wholehouse Embodied CO2 [lifetime=11yrs] 202 kgCO2 for year-11
+2024-11-22 16:44:11,268 - DEBUG - Adding Equipment WholeHouse Dishwasher-Wholehouse Embodied CO2 [lifetime=11yrs] 202 kgCO2 for year-22
+2024-11-22 16:44:11,268 - DEBUG - Adding Equipment WholeHouse Dishwasher-Wholehouse Embodied CO2 [lifetime=11yrs] 202 kgCO2 for year-33
+2024-11-22 16:44:11,268 - DEBUG - Adding Equipment WholeHouse Dishwasher-Wholehouse Embodied CO2 [lifetime=11yrs] 202 kgCO2 for year-44
+2024-11-22 16:44:11,268 - DEBUG - Equipment WholeHouse Fridge-Wholehouse: $519 * 0.23 kgCO2/USD = 122 kgCO2
+2024-11-22 16:44:11,268 - DEBUG - Adding Equipment WholeHouse Fridge-Wholehouse Embodied CO2 [lifetime=17yrs] 122 kgCO2 for year-0
+2024-11-22 16:44:11,268 - DEBUG - Adding Equipment WholeHouse Fridge-Wholehouse Embodied CO2 [lifetime=17yrs] 122 kgCO2 for year-17
+2024-11-22 16:44:11,268 - DEBUG - Adding Equipment WholeHouse Fridge-Wholehouse Embodied CO2 [lifetime=17yrs] 122 kgCO2 for year-34
+2024-11-22 16:44:11,268 - DEBUG - Equipment WholeHouse PhiusMELs-Wholehouse: $0 * 0.23 kgCO2/USD = 0 kgCO2
+2024-11-22 16:44:11,268 - DEBUG - Adding Equipment WholeHouse PhiusMELs-Wholehouse Embodied CO2 [lifetime=0yrs] 0 kgCO2 for year-0
+2024-11-22 16:44:11,268 - DEBUG - Equipment WholeHouse Range-Wholehouse: $893 * 0.23 kgCO2/USD = 209 kgCO2
+2024-11-22 16:44:11,268 - DEBUG - Adding Equipment WholeHouse Range-Wholehouse Embodied CO2 [lifetime=13yrs] 209 kgCO2 for year-0
+2024-11-22 16:44:11,269 - DEBUG - Adding Equipment WholeHouse Range-Wholehouse Embodied CO2 [lifetime=13yrs] 209 kgCO2 for year-13
+2024-11-22 16:44:11,269 - DEBUG - Adding Equipment WholeHouse Range-Wholehouse Embodied CO2 [lifetime=13yrs] 209 kgCO2 for year-26
+2024-11-22 16:44:11,269 - DEBUG - Adding Equipment WholeHouse Range-Wholehouse Embodied CO2 [lifetime=13yrs] 209 kgCO2 for year-39
+2024-11-22 16:44:11,269 - DEBUG - Equipment rv2024_Residence_Lighting: $0 * 0.23 kgCO2/USD = 0 kgCO2
+2024-11-22 16:44:11,269 - DEBUG - Adding Equipment rv2024_Residence_Lighting Embodied CO2 [lifetime=25yrs] 0 kgCO2 for year-0
+2024-11-22 16:44:11,269 - DEBUG - Adding Equipment rv2024_Residence_Lighting Embodied CO2 [lifetime=25yrs] 0 kgCO2 for year-25
+2024-11-22 16:44:11,269 - DEBUG - Adding Equipment rv2024_Residence_Lighting Embodied CO2 [lifetime=25yrs] 0 kgCO2 for year-50
+2024-11-22 16:44:11,269 - INFO - calc_equipment_yearly_embodied_CO2_cost()
+2024-11-22 16:44:11,269 - DEBUG - Equipment Battery Embodied CO2-Cost [YR-0]: 405 kgCO2 * $0.25/kgCO2 = $101
+2024-11-22 16:44:11,269 - DEBUG - Equipment Battery Embodied CO2-Cost [YR-10]: 405 kgCO2 * $0.25/kgCO2 = $101
+2024-11-22 16:44:11,269 - DEBUG - Equipment Battery Embodied CO2-Cost [YR-20]: 405 kgCO2 * $0.25/kgCO2 = $101
+2024-11-22 16:44:11,269 - DEBUG - Equipment Battery Embodied CO2-Cost [YR-30]: 405 kgCO2 * $0.25/kgCO2 = $101
+2024-11-22 16:44:11,269 - DEBUG - Equipment Battery Embodied CO2-Cost [YR-40]: 405 kgCO2 * $0.25/kgCO2 = $101
+2024-11-22 16:44:11,269 - DEBUG - Equipment Battery Embodied CO2-Cost [YR-50]: 405 kgCO2 * $0.25/kgCO2 = $101
+2024-11-22 16:44:11,269 - DEBUG - Equipment DHW_NaturalGas Embodied CO2-Cost [YR-0]: 47 kgCO2 * $0.25/kgCO2 = $12
+2024-11-22 16:44:11,269 - DEBUG - Equipment DHW_NaturalGas Embodied CO2-Cost [YR-13]: 47 kgCO2 * $0.25/kgCO2 = $12
+2024-11-22 16:44:11,269 - DEBUG - Equipment DHW_NaturalGas Embodied CO2-Cost [YR-26]: 47 kgCO2 * $0.25/kgCO2 = $12
+2024-11-22 16:44:11,269 - DEBUG - Equipment DHW_NaturalGas Embodied CO2-Cost [YR-39]: 47 kgCO2 * $0.25/kgCO2 = $12
+2024-11-22 16:44:11,269 - DEBUG - Equipment GasFurnaceDXAC Embodied CO2-Cost [YR-0]: 1,053 kgCO2 * $0.25/kgCO2 = $263
+2024-11-22 16:44:11,269 - DEBUG - Equipment GasFurnaceDXAC Embodied CO2-Cost [YR-20]: 1,053 kgCO2 * $0.25/kgCO2 = $263
+2024-11-22 16:44:11,269 - DEBUG - Equipment GasFurnaceDXAC Embodied CO2-Cost [YR-40]: 1,053 kgCO2 * $0.25/kgCO2 = $263
+2024-11-22 16:44:11,269 - DEBUG - Equipment WholeHouse ClothesDryer-Wholehouse Embodied CO2-Cost [YR-0]: 211 kgCO2 * $0.25/kgCO2 = $53
+2024-11-22 16:44:11,269 - DEBUG - Equipment WholeHouse ClothesDryer-Wholehouse Embodied CO2-Cost [YR-13]: 211 kgCO2 * $0.25/kgCO2 = $53
+2024-11-22 16:44:11,269 - DEBUG - Equipment WholeHouse ClothesDryer-Wholehouse Embodied CO2-Cost [YR-26]: 211 kgCO2 * $0.25/kgCO2 = $53
+2024-11-22 16:44:11,269 - DEBUG - Equipment WholeHouse ClothesDryer-Wholehouse Embodied CO2-Cost [YR-39]: 211 kgCO2 * $0.25/kgCO2 = $53
+2024-11-22 16:44:11,269 - DEBUG - Equipment WholeHouse ClothesWasher-Wholehouse Embodied CO2-Cost [YR-0]: 139 kgCO2 * $0.25/kgCO2 = $35
+2024-11-22 16:44:11,269 - DEBUG - Equipment WholeHouse ClothesWasher-Wholehouse Embodied CO2-Cost [YR-14]: 139 kgCO2 * $0.25/kgCO2 = $35
+2024-11-22 16:44:11,269 - DEBUG - Equipment WholeHouse ClothesWasher-Wholehouse Embodied CO2-Cost [YR-28]: 139 kgCO2 * $0.25/kgCO2 = $35
+2024-11-22 16:44:11,269 - DEBUG - Equipment WholeHouse ClothesWasher-Wholehouse Embodied CO2-Cost [YR-42]: 139 kgCO2 * $0.25/kgCO2 = $35
+2024-11-22 16:44:11,269 - DEBUG - Equipment WholeHouse Dishwasher-Wholehouse Embodied CO2-Cost [YR-0]: 202 kgCO2 * $0.25/kgCO2 = $50
+2024-11-22 16:44:11,269 - DEBUG - Equipment WholeHouse Dishwasher-Wholehouse Embodied CO2-Cost [YR-11]: 202 kgCO2 * $0.25/kgCO2 = $50
+2024-11-22 16:44:11,269 - DEBUG - Equipment WholeHouse Dishwasher-Wholehouse Embodied CO2-Cost [YR-22]: 202 kgCO2 * $0.25/kgCO2 = $50
+2024-11-22 16:44:11,269 - DEBUG - Equipment WholeHouse Dishwasher-Wholehouse Embodied CO2-Cost [YR-33]: 202 kgCO2 * $0.25/kgCO2 = $50
+2024-11-22 16:44:11,269 - DEBUG - Equipment WholeHouse Dishwasher-Wholehouse Embodied CO2-Cost [YR-44]: 202 kgCO2 * $0.25/kgCO2 = $50
+2024-11-22 16:44:11,269 - DEBUG - Equipment WholeHouse Fridge-Wholehouse Embodied CO2-Cost [YR-0]: 122 kgCO2 * $0.25/kgCO2 = $30
+2024-11-22 16:44:11,269 - DEBUG - Equipment WholeHouse Fridge-Wholehouse Embodied CO2-Cost [YR-17]: 122 kgCO2 * $0.25/kgCO2 = $30
+2024-11-22 16:44:11,269 - DEBUG - Equipment WholeHouse Fridge-Wholehouse Embodied CO2-Cost [YR-34]: 122 kgCO2 * $0.25/kgCO2 = $30
+2024-11-22 16:44:11,269 - DEBUG - Equipment WholeHouse PhiusMELs-Wholehouse Embodied CO2-Cost [YR-0]: 0 kgCO2 * $0.25/kgCO2 = $0
+2024-11-22 16:44:11,269 - DEBUG - Equipment WholeHouse Range-Wholehouse Embodied CO2-Cost [YR-0]: 209 kgCO2 * $0.25/kgCO2 = $52
+2024-11-22 16:44:11,269 - DEBUG - Equipment WholeHouse Range-Wholehouse Embodied CO2-Cost [YR-13]: 209 kgCO2 * $0.25/kgCO2 = $52
+2024-11-22 16:44:11,269 - DEBUG - Equipment WholeHouse Range-Wholehouse Embodied CO2-Cost [YR-26]: 209 kgCO2 * $0.25/kgCO2 = $52
+2024-11-22 16:44:11,269 - DEBUG - Equipment WholeHouse Range-Wholehouse Embodied CO2-Cost [YR-39]: 209 kgCO2 * $0.25/kgCO2 = $52
+2024-11-22 16:44:11,269 - DEBUG - Equipment rv2024_Residence_Lighting Embodied CO2-Cost [YR-0]: 0 kgCO2 * $0.25/kgCO2 = $0
+2024-11-22 16:44:11,269 - DEBUG - Equipment rv2024_Residence_Lighting Embodied CO2-Cost [YR-25]: 0 kgCO2 * $0.25/kgCO2 = $0
+2024-11-22 16:44:11,269 - DEBUG - Equipment rv2024_Residence_Lighting Embodied CO2-Cost [YR-50]: 0 kgCO2 * $0.25/kgCO2 = $0
+2024-11-22 16:44:11,269 - INFO - calc_equipment_yearly_install_costs()
+2024-11-22 16:44:11,269 - DEBUG - Adding Equipment Battery Install Cost: [lifetime=10yrs] $3,459 for year-0
+2024-11-22 16:44:11,269 - DEBUG - Adding Equipment Battery Install Cost: [lifetime=10yrs] $3,459 for year-10
+2024-11-22 16:44:11,269 - DEBUG - Adding Equipment Battery Install Cost: [lifetime=10yrs] $3,459 for year-20
+2024-11-22 16:44:11,270 - DEBUG - Adding Equipment Battery Install Cost: [lifetime=10yrs] $3,459 for year-30
+2024-11-22 16:44:11,270 - DEBUG - Adding Equipment Battery Install Cost: [lifetime=10yrs] $3,459 for year-40
+2024-11-22 16:44:11,270 - DEBUG - Adding Equipment Battery Install Cost: [lifetime=10yrs] $3,459 for year-50
+2024-11-22 16:44:11,270 - DEBUG - Adding Equipment DHW_NaturalGas Install Cost: [lifetime=13yrs] $1,000 for year-0
+2024-11-22 16:44:11,270 - DEBUG - Adding Equipment DHW_NaturalGas Install Cost: [lifetime=13yrs] $1,000 for year-13
+2024-11-22 16:44:11,270 - DEBUG - Adding Equipment DHW_NaturalGas Install Cost: [lifetime=13yrs] $1,000 for year-26
+2024-11-22 16:44:11,270 - DEBUG - Adding Equipment DHW_NaturalGas Install Cost: [lifetime=13yrs] $1,000 for year-39
+2024-11-22 16:44:11,270 - DEBUG - Adding Equipment GasFurnaceDXAC Install Cost: [lifetime=20yrs] $7,500 for year-0
+2024-11-22 16:44:11,270 - DEBUG - Adding Equipment GasFurnaceDXAC Install Cost: [lifetime=20yrs] $7,500 for year-20
+2024-11-22 16:44:11,270 - DEBUG - Adding Equipment GasFurnaceDXAC Install Cost: [lifetime=20yrs] $7,500 for year-40
+2024-11-22 16:44:11,270 - DEBUG - Adding Equipment WholeHouse ClothesDryer-Wholehouse Install Cost: [lifetime=13yrs] $1,000 for year-0
+2024-11-22 16:44:11,270 - DEBUG - Adding Equipment WholeHouse ClothesDryer-Wholehouse Install Cost: [lifetime=13yrs] $1,000 for year-13
+2024-11-22 16:44:11,270 - DEBUG - Adding Equipment WholeHouse ClothesDryer-Wholehouse Install Cost: [lifetime=13yrs] $1,000 for year-26
+2024-11-22 16:44:11,270 - DEBUG - Adding Equipment WholeHouse ClothesDryer-Wholehouse Install Cost: [lifetime=13yrs] $1,000 for year-39
+2024-11-22 16:44:11,270 - DEBUG - Adding Equipment WholeHouse ClothesWasher-Wholehouse Install Cost: [lifetime=14yrs] $662 for year-0
+2024-11-22 16:44:11,270 - DEBUG - Adding Equipment WholeHouse ClothesWasher-Wholehouse Install Cost: [lifetime=14yrs] $662 for year-14
+2024-11-22 16:44:11,270 - DEBUG - Adding Equipment WholeHouse ClothesWasher-Wholehouse Install Cost: [lifetime=14yrs] $662 for year-28
+2024-11-22 16:44:11,270 - DEBUG - Adding Equipment WholeHouse ClothesWasher-Wholehouse Install Cost: [lifetime=14yrs] $662 for year-42
+2024-11-22 16:44:11,270 - DEBUG - Adding Equipment WholeHouse Dishwasher-Wholehouse Install Cost: [lifetime=11yrs] $959 for year-0
+2024-11-22 16:44:11,270 - DEBUG - Adding Equipment WholeHouse Dishwasher-Wholehouse Install Cost: [lifetime=11yrs] $959 for year-11
+2024-11-22 16:44:11,270 - DEBUG - Adding Equipment WholeHouse Dishwasher-Wholehouse Install Cost: [lifetime=11yrs] $959 for year-22
+2024-11-22 16:44:11,270 - DEBUG - Adding Equipment WholeHouse Dishwasher-Wholehouse Install Cost: [lifetime=11yrs] $959 for year-33
+2024-11-22 16:44:11,270 - DEBUG - Adding Equipment WholeHouse Dishwasher-Wholehouse Install Cost: [lifetime=11yrs] $959 for year-44
+2024-11-22 16:44:11,270 - DEBUG - Adding Equipment WholeHouse Fridge-Wholehouse Install Cost: [lifetime=17yrs] $611 for year-0
+2024-11-22 16:44:11,270 - DEBUG - Adding Equipment WholeHouse Fridge-Wholehouse Install Cost: [lifetime=17yrs] $611 for year-17
+2024-11-22 16:44:11,270 - DEBUG - Adding Equipment WholeHouse Fridge-Wholehouse Install Cost: [lifetime=17yrs] $611 for year-34
+2024-11-22 16:44:11,270 - DEBUG - Adding Equipment WholeHouse PhiusMELs-Wholehouse Install Cost: [lifetime=0yrs] $0 for year-0
+2024-11-22 16:44:11,270 - DEBUG - Adding Equipment WholeHouse Range-Wholehouse Install Cost: [lifetime=13yrs] $992 for year-0
+2024-11-22 16:44:11,270 - DEBUG - Adding Equipment WholeHouse Range-Wholehouse Install Cost: [lifetime=13yrs] $992 for year-13
+2024-11-22 16:44:11,270 - DEBUG - Adding Equipment WholeHouse Range-Wholehouse Install Cost: [lifetime=13yrs] $992 for year-26
+2024-11-22 16:44:11,270 - DEBUG - Adding Equipment WholeHouse Range-Wholehouse Install Cost: [lifetime=13yrs] $992 for year-39
+2024-11-22 16:44:11,270 - DEBUG - Adding Equipment rv2024_Residence_Lighting Install Cost: [lifetime=25yrs] $0 for year-0
+2024-11-22 16:44:11,270 - DEBUG - Adding Equipment rv2024_Residence_Lighting Install Cost: [lifetime=25yrs] $0 for year-25
+2024-11-22 16:44:11,270 - DEBUG - Adding Equipment rv2024_Residence_Lighting Install Cost: [lifetime=25yrs] $0 for year-50
+2024-11-22 16:44:11,270 - INFO - Saving ADORB Tables to: /Users/em/Dropbox/bldgtyp-00/00_PH_Tools/honeybee_REVIVE_grasshopper/tests/adorb/hbrv/hb_revive_ADORB_results/hb_revive_ADORB_model_tables
+2024-11-22 16:44:12,494 - INFO - Calculating year 0 costs:
+2024-11-22 16:44:12,494 - INFO - energy_purchase_cost_PV(year=1, factor=1.020)
+2024-11-22 16:44:12,494 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
+2024-11-22 16:44:12,494 - DEBUG - Energy PV Cost: $3,247 / 1.020 = PV$3,183
+2024-11-22 16:44:12,494 - INFO - energy_CO2_cost_PV(year=1, factor=1.075)
+2024-11-22 16:44:12,494 - DEBUG - Energy CO2 Emissions: 2,792[Elec.] + 15,151[Gas] = 17,944
+2024-11-22 16:44:12,494 - DEBUG - Energy CO2 Actual Cost: 17,944 * $0.25/unit = $4,486
+2024-11-22 16:44:12,495 - DEBUG - Energy CO2 PV Cost [1]: $4,486 / 1.075 = PV$4,173
+2024-11-22 16:44:12,495 - INFO - measure_purchase_cost_PV(year=1, factor=1.020)
+2024-11-22 16:44:12,495 - DEBUG - Measure Actual Costs: ['$861', '$642', '$1,867', '$0', '$0', '$796', '$1,949', '$0', '$89', '$3,459', '$1,000', '$7,500', '$1,000', '$662', '$959', '$611', '$0', '$992', '$0'] = 22,387
+2024-11-22 16:44:12,495 - DEBUG - Measure PV Cost: $22,387 / 1.020 = PV$21,948
+2024-11-22 16:44:12,495 - INFO - measure_CO2_cost_PV(year=1, factor=1.000)
+2024-11-22 16:44:12,495 - DEBUG - Measure CO2 Actual Cost: ['$35', '$26', '$76', '$0', '$0', '$33', '$28', '$0', '$5', '$101', '$12', '$263', '$53', '$35', '$50', '$30', '$0', '$52', '$0'] = 801
+2024-11-22 16:44:12,495 - DEBUG - Measure CO2 PV Cost: $801 / 1.000 = PV$601
+2024-11-22 16:44:12,495 - INFO - grid_transition_PV_cost(year=1, factor=1.020)
+2024-11-22 16:44:12,495 - DEBUG - Transition Cost [1]:  0.09375 * 3,048 W = $286
+2024-11-22 16:44:12,495 - DEBUG - Transition PV Cost [1]: $286 / 1.020 = PV$280
+2024-11-22 16:44:12,495 - INFO - Calculating year 1 costs:
+2024-11-22 16:44:12,495 - INFO - energy_purchase_cost_PV(year=2, factor=1.040)
+2024-11-22 16:44:12,495 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
+2024-11-22 16:44:12,495 - DEBUG - Energy PV Cost: $3,247 / 1.040 = PV$3,120
+2024-11-22 16:44:12,495 - INFO - energy_CO2_cost_PV(year=2, factor=1.156)
+2024-11-22 16:44:12,495 - DEBUG - Energy CO2 Emissions: 2,792[Elec.] + 15,151[Gas] = 17,944
+2024-11-22 16:44:12,495 - DEBUG - Energy CO2 Actual Cost: 17,944 * $0.25/unit = $4,486
+2024-11-22 16:44:12,495 - DEBUG - Energy CO2 PV Cost [2]: $4,486 / 1.156 = PV$3,882
+2024-11-22 16:44:12,495 - INFO - measure_purchase_cost_PV(year=2, factor=1.040)
+2024-11-22 16:44:12,495 - INFO - measure_CO2_cost_PV(year=2, factor=1.000)
+2024-11-22 16:44:12,495 - INFO - grid_transition_PV_cost(year=2, factor=1.040)
+2024-11-22 16:44:12,495 - DEBUG - Transition Cost [2]:  0.09375 * 3,048 W = $286
+2024-11-22 16:44:12,495 - DEBUG - Transition PV Cost [2]: $286 / 1.040 = PV$275
+2024-11-22 16:44:12,495 - INFO - Calculating year 2 costs:
+2024-11-22 16:44:12,495 - INFO - energy_purchase_cost_PV(year=3, factor=1.061)
+2024-11-22 16:44:12,495 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
+2024-11-22 16:44:12,495 - DEBUG - Energy PV Cost: $3,247 / 1.061 = PV$3,059
+2024-11-22 16:44:12,495 - INFO - energy_CO2_cost_PV(year=3, factor=1.242)
+2024-11-22 16:44:12,495 - DEBUG - Energy CO2 Emissions: 2,463[Elec.] + 15,151[Gas] = 17,615
+2024-11-22 16:44:12,496 - DEBUG - Energy CO2 Actual Cost: 17,615 * $0.25/unit = $4,404
+2024-11-22 16:44:12,496 - DEBUG - Energy CO2 PV Cost [3]: $4,404 / 1.242 = PV$3,545
+2024-11-22 16:44:12,496 - INFO - measure_purchase_cost_PV(year=3, factor=1.061)
+2024-11-22 16:44:12,496 - INFO - measure_CO2_cost_PV(year=3, factor=1.000)
+2024-11-22 16:44:12,496 - INFO - grid_transition_PV_cost(year=3, factor=1.061)
+2024-11-22 16:44:12,496 - DEBUG - Transition Cost [3]:  0.09375 * 3,048 W = $286
+2024-11-22 16:44:12,496 - DEBUG - Transition PV Cost [3]: $286 / 1.061 = PV$269
+2024-11-22 16:44:12,496 - INFO - Calculating year 3 costs:
+2024-11-22 16:44:12,496 - INFO - energy_purchase_cost_PV(year=4, factor=1.082)
+2024-11-22 16:44:12,496 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
+2024-11-22 16:44:12,496 - DEBUG - Energy PV Cost: $3,247 / 1.082 = PV$2,999
+2024-11-22 16:44:12,496 - INFO - energy_CO2_cost_PV(year=4, factor=1.335)
+2024-11-22 16:44:12,496 - DEBUG - Energy CO2 Emissions: 2,463[Elec.] + 15,151[Gas] = 17,615
+2024-11-22 16:44:12,496 - DEBUG - Energy CO2 Actual Cost: 17,615 * $0.25/unit = $4,404
+2024-11-22 16:44:12,496 - DEBUG - Energy CO2 PV Cost [4]: $4,404 / 1.335 = PV$3,297
+2024-11-22 16:44:12,496 - INFO - measure_purchase_cost_PV(year=4, factor=1.082)
+2024-11-22 16:44:12,496 - INFO - measure_CO2_cost_PV(year=4, factor=1.000)
+2024-11-22 16:44:12,496 - INFO - grid_transition_PV_cost(year=4, factor=1.082)
+2024-11-22 16:44:12,496 - DEBUG - Transition Cost [4]:  0.09375 * 3,048 W = $286
+2024-11-22 16:44:12,496 - DEBUG - Transition PV Cost [4]: $286 / 1.082 = PV$264
+2024-11-22 16:44:12,496 - INFO - Calculating year 4 costs:
+2024-11-22 16:44:12,496 - INFO - energy_purchase_cost_PV(year=5, factor=1.104)
+2024-11-22 16:44:12,496 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
+2024-11-22 16:44:12,496 - DEBUG - Energy PV Cost: $3,247 / 1.104 = PV$2,940
+2024-11-22 16:44:12,496 - INFO - energy_CO2_cost_PV(year=5, factor=1.436)
+2024-11-22 16:44:12,496 - DEBUG - Energy CO2 Emissions: 2,040[Elec.] + 15,151[Gas] = 17,191
+2024-11-22 16:44:12,496 - DEBUG - Energy CO2 Actual Cost: 17,191 * $0.25/unit = $4,298
+2024-11-22 16:44:12,496 - DEBUG - Energy CO2 PV Cost [5]: $4,298 / 1.436 = PV$2,994
+2024-11-22 16:44:12,496 - INFO - measure_purchase_cost_PV(year=5, factor=1.104)
+2024-11-22 16:44:12,496 - INFO - measure_CO2_cost_PV(year=5, factor=1.000)
+2024-11-22 16:44:12,496 - INFO - grid_transition_PV_cost(year=5, factor=1.104)
+2024-11-22 16:44:12,496 - DEBUG - Transition Cost [5]:  0.09375 * 3,048 W = $286
+2024-11-22 16:44:12,496 - DEBUG - Transition PV Cost [5]: $286 / 1.104 = PV$259
+2024-11-22 16:44:12,496 - INFO - Calculating year 5 costs:
+2024-11-22 16:44:12,497 - INFO - energy_purchase_cost_PV(year=6, factor=1.126)
+2024-11-22 16:44:12,497 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
+2024-11-22 16:44:12,497 - DEBUG - Energy PV Cost: $3,247 / 1.126 = PV$2,883
+2024-11-22 16:44:12,497 - INFO - energy_CO2_cost_PV(year=6, factor=1.543)
+2024-11-22 16:44:12,497 - DEBUG - Energy CO2 Emissions: 2,040[Elec.] + 15,151[Gas] = 17,191
+2024-11-22 16:44:12,497 - DEBUG - Energy CO2 Actual Cost: 17,191 * $0.25/unit = $4,298
+2024-11-22 16:44:12,497 - DEBUG - Energy CO2 PV Cost [6]: $4,298 / 1.543 = PV$2,785
+2024-11-22 16:44:12,497 - INFO - measure_purchase_cost_PV(year=6, factor=1.126)
+2024-11-22 16:44:12,497 - INFO - measure_CO2_cost_PV(year=6, factor=1.000)
+2024-11-22 16:44:12,497 - INFO - grid_transition_PV_cost(year=6, factor=1.126)
+2024-11-22 16:44:12,497 - DEBUG - Transition Cost [6]:  0.09375 * 3,048 W = $286
+2024-11-22 16:44:12,497 - DEBUG - Transition PV Cost [6]: $286 / 1.126 = PV$254
+2024-11-22 16:44:12,497 - INFO - Calculating year 6 costs:
+2024-11-22 16:44:12,497 - INFO - energy_purchase_cost_PV(year=7, factor=1.149)
+2024-11-22 16:44:12,497 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
+2024-11-22 16:44:12,497 - DEBUG - Energy PV Cost: $3,247 / 1.149 = PV$2,826
+2024-11-22 16:44:12,497 - INFO - energy_CO2_cost_PV(year=7, factor=1.659)
+2024-11-22 16:44:12,497 - DEBUG - Energy CO2 Emissions: 2,106[Elec.] + 15,151[Gas] = 17,257
+2024-11-22 16:44:12,497 - DEBUG - Energy CO2 Actual Cost: 17,257 * $0.25/unit = $4,314
+2024-11-22 16:44:12,497 - DEBUG - Energy CO2 PV Cost [7]: $4,314 / 1.659 = PV$2,601
+2024-11-22 16:44:12,497 - INFO - measure_purchase_cost_PV(year=7, factor=1.149)
+2024-11-22 16:44:12,497 - INFO - measure_CO2_cost_PV(year=7, factor=1.000)
+2024-11-22 16:44:12,497 - INFO - grid_transition_PV_cost(year=7, factor=1.149)
+2024-11-22 16:44:12,497 - DEBUG - Transition Cost [7]:  0.09375 * 3,048 W = $286
+2024-11-22 16:44:12,497 - DEBUG - Transition PV Cost [7]: $286 / 1.149 = PV$249
+2024-11-22 16:44:12,497 - INFO - Calculating year 7 costs:
+2024-11-22 16:44:12,497 - INFO - energy_purchase_cost_PV(year=8, factor=1.172)
+2024-11-22 16:44:12,497 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
+2024-11-22 16:44:12,497 - DEBUG - Energy PV Cost: $3,247 / 1.172 = PV$2,771
+2024-11-22 16:44:12,497 - INFO - energy_CO2_cost_PV(year=8, factor=1.783)
+2024-11-22 16:44:12,497 - DEBUG - Energy CO2 Emissions: 2,106[Elec.] + 15,151[Gas] = 17,257
+2024-11-22 16:44:12,497 - DEBUG - Energy CO2 Actual Cost: 17,257 * $0.25/unit = $4,314
+2024-11-22 16:44:12,497 - DEBUG - Energy CO2 PV Cost [8]: $4,314 / 1.783 = PV$2,419
+2024-11-22 16:44:12,497 - INFO - measure_purchase_cost_PV(year=8, factor=1.172)
+2024-11-22 16:44:12,497 - INFO - measure_CO2_cost_PV(year=8, factor=1.000)
+2024-11-22 16:44:12,497 - INFO - grid_transition_PV_cost(year=8, factor=1.172)
+2024-11-22 16:44:12,497 - DEBUG - Transition Cost [8]:  0.09375 * 3,048 W = $286
+2024-11-22 16:44:12,497 - DEBUG - Transition PV Cost [8]: $286 / 1.172 = PV$244
+2024-11-22 16:44:12,498 - INFO - Calculating year 8 costs:
+2024-11-22 16:44:12,498 - INFO - energy_purchase_cost_PV(year=9, factor=1.195)
+2024-11-22 16:44:12,498 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
+2024-11-22 16:44:12,498 - DEBUG - Energy PV Cost: $3,247 / 1.195 = PV$2,717
+2024-11-22 16:44:12,498 - INFO - energy_CO2_cost_PV(year=9, factor=1.917)
+2024-11-22 16:44:12,498 - DEBUG - Energy CO2 Emissions: 2,268[Elec.] + 15,151[Gas] = 17,420
+2024-11-22 16:44:12,498 - DEBUG - Energy CO2 Actual Cost: 17,420 * $0.25/unit = $4,355
+2024-11-22 16:44:12,498 - DEBUG - Energy CO2 PV Cost [9]: $4,355 / 1.917 = PV$2,271
+2024-11-22 16:44:12,498 - INFO - measure_purchase_cost_PV(year=9, factor=1.195)
+2024-11-22 16:44:12,498 - INFO - measure_CO2_cost_PV(year=9, factor=1.000)
+2024-11-22 16:44:12,498 - INFO - grid_transition_PV_cost(year=9, factor=1.195)
+2024-11-22 16:44:12,498 - DEBUG - Transition Cost [9]:  0.09375 * 3,048 W = $286
+2024-11-22 16:44:12,498 - DEBUG - Transition PV Cost [9]: $286 / 1.195 = PV$239
+2024-11-22 16:44:12,498 - INFO - Calculating year 9 costs:
+2024-11-22 16:44:12,498 - INFO - energy_purchase_cost_PV(year=10, factor=1.219)
+2024-11-22 16:44:12,498 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
+2024-11-22 16:44:12,498 - DEBUG - Energy PV Cost: $3,247 / 1.219 = PV$2,663
+2024-11-22 16:44:12,498 - INFO - energy_CO2_cost_PV(year=10, factor=2.061)
+2024-11-22 16:44:12,498 - DEBUG - Energy CO2 Emissions: 2,268[Elec.] + 15,151[Gas] = 17,420
+2024-11-22 16:44:12,498 - DEBUG - Energy CO2 Actual Cost: 17,420 * $0.25/unit = $4,355
+2024-11-22 16:44:12,498 - DEBUG - Energy CO2 PV Cost [10]: $4,355 / 2.061 = PV$2,113
+2024-11-22 16:44:12,498 - INFO - measure_purchase_cost_PV(year=10, factor=1.219)
+2024-11-22 16:44:12,498 - INFO - measure_CO2_cost_PV(year=10, factor=1.000)
+2024-11-22 16:44:12,498 - INFO - grid_transition_PV_cost(year=10, factor=1.219)
+2024-11-22 16:44:12,498 - DEBUG - Transition Cost [10]:  0.09375 * 3,048 W = $286
+2024-11-22 16:44:12,498 - DEBUG - Transition PV Cost [10]: $286 / 1.219 = PV$234
+2024-11-22 16:44:12,498 - INFO - Calculating year 10 costs:
+2024-11-22 16:44:12,498 - INFO - energy_purchase_cost_PV(year=11, factor=1.243)
+2024-11-22 16:44:12,498 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
+2024-11-22 16:44:12,498 - DEBUG - Energy PV Cost: $3,247 / 1.243 = PV$2,611
+2024-11-22 16:44:12,498 - INFO - energy_CO2_cost_PV(year=11, factor=2.216)
+2024-11-22 16:44:12,498 - DEBUG - Energy CO2 Emissions: 2,268[Elec.] + 15,151[Gas] = 17,420
+2024-11-22 16:44:12,498 - DEBUG - Energy CO2 Actual Cost: 17,420 * $0.25/unit = $4,355
+2024-11-22 16:44:12,498 - DEBUG - Energy CO2 PV Cost [11]: $4,355 / 2.216 = PV$1,966
+2024-11-22 16:44:12,498 - INFO - measure_purchase_cost_PV(year=11, factor=1.243)
+2024-11-22 16:44:12,498 - DEBUG - Measure Actual Costs: ['$3,459'] = 3,459
+2024-11-22 16:44:12,498 - DEBUG - Measure PV Cost: $3,459 / 1.243 = PV$2,782
+2024-11-22 16:44:12,498 - INFO - measure_CO2_cost_PV(year=11, factor=1.000)
+2024-11-22 16:44:12,498 - DEBUG - Measure CO2 Actual Cost: ['$101'] = 101
+2024-11-22 16:44:12,498 - DEBUG - Measure CO2 PV Cost: $101 / 1.000 = PV$76
+2024-11-22 16:44:12,498 - INFO - grid_transition_PV_cost(year=11, factor=1.243)
+2024-11-22 16:44:12,499 - DEBUG - Transition Cost [11]:  0.09375 * 3,048 W = $286
+2024-11-22 16:44:12,499 - DEBUG - Transition PV Cost [11]: $286 / 1.243 = PV$230
+2024-11-22 16:44:12,499 - INFO - Calculating year 11 costs:
+2024-11-22 16:44:12,499 - INFO - energy_purchase_cost_PV(year=12, factor=1.268)
+2024-11-22 16:44:12,499 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
+2024-11-22 16:44:12,499 - DEBUG - Energy PV Cost: $3,247 / 1.268 = PV$2,560
+2024-11-22 16:44:12,499 - INFO - energy_CO2_cost_PV(year=12, factor=2.382)
+2024-11-22 16:44:12,499 - DEBUG - Energy CO2 Emissions: 2,268[Elec.] + 15,151[Gas] = 17,420
+2024-11-22 16:44:12,499 - DEBUG - Energy CO2 Actual Cost: 17,420 * $0.25/unit = $4,355
+2024-11-22 16:44:12,499 - DEBUG - Energy CO2 PV Cost [12]: $4,355 / 2.382 = PV$1,828
+2024-11-22 16:44:12,499 - INFO - measure_purchase_cost_PV(year=12, factor=1.268)
+2024-11-22 16:44:12,499 - DEBUG - Measure Actual Costs: ['$959'] = 959
+2024-11-22 16:44:12,499 - DEBUG - Measure PV Cost: $959 / 1.268 = PV$756
+2024-11-22 16:44:12,499 - INFO - measure_CO2_cost_PV(year=12, factor=1.000)
+2024-11-22 16:44:12,499 - DEBUG - Measure CO2 Actual Cost: ['$50'] = 50
+2024-11-22 16:44:12,499 - DEBUG - Measure CO2 PV Cost: $50 / 1.000 = PV$38
+2024-11-22 16:44:12,499 - INFO - grid_transition_PV_cost(year=12, factor=1.268)
+2024-11-22 16:44:12,499 - DEBUG - Transition Cost [12]:  0.09375 * 3,048 W = $286
+2024-11-22 16:44:12,499 - DEBUG - Transition PV Cost [12]: $286 / 1.268 = PV$225
+2024-11-22 16:44:12,499 - INFO - Calculating year 12 costs:
+2024-11-22 16:44:12,499 - INFO - energy_purchase_cost_PV(year=13, factor=1.294)
+2024-11-22 16:44:12,499 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
+2024-11-22 16:44:12,499 - DEBUG - Energy PV Cost: $3,247 / 1.294 = PV$2,510
+2024-11-22 16:44:12,499 - INFO - energy_CO2_cost_PV(year=13, factor=2.560)
+2024-11-22 16:44:12,499 - DEBUG - Energy CO2 Emissions: 2,268[Elec.] + 15,151[Gas] = 17,420
+2024-11-22 16:44:12,499 - DEBUG - Energy CO2 Actual Cost: 17,420 * $0.25/unit = $4,355
+2024-11-22 16:44:12,499 - DEBUG - Energy CO2 PV Cost [13]: $4,355 / 2.560 = PV$1,701
+2024-11-22 16:44:12,499 - INFO - measure_purchase_cost_PV(year=13, factor=1.294)
+2024-11-22 16:44:12,499 - INFO - measure_CO2_cost_PV(year=13, factor=1.000)
+2024-11-22 16:44:12,499 - INFO - grid_transition_PV_cost(year=13, factor=1.294)
+2024-11-22 16:44:12,499 - DEBUG - Transition Cost [13]:  0.09375 * 3,048 W = $286
+2024-11-22 16:44:12,499 - DEBUG - Transition PV Cost [13]: $286 / 1.294 = PV$221
+2024-11-22 16:44:12,499 - INFO - Calculating year 13 costs:
+2024-11-22 16:44:12,499 - INFO - energy_purchase_cost_PV(year=14, factor=1.319)
+2024-11-22 16:44:12,499 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
+2024-11-22 16:44:12,499 - DEBUG - Energy PV Cost: $3,247 / 1.319 = PV$2,460
+2024-11-22 16:44:12,499 - INFO - energy_CO2_cost_PV(year=14, factor=2.752)
+2024-11-22 16:44:12,499 - DEBUG - Energy CO2 Emissions: 2,455[Elec.] + 15,151[Gas] = 17,606
+2024-11-22 16:44:12,499 - DEBUG - Energy CO2 Actual Cost: 17,606 * $0.25/unit = $4,401
+2024-11-22 16:44:12,500 - DEBUG - Energy CO2 PV Cost [14]: $4,401 / 2.752 = PV$1,599
+2024-11-22 16:44:12,500 - INFO - measure_purchase_cost_PV(year=14, factor=1.319)
+2024-11-22 16:44:12,500 - DEBUG - Measure Actual Costs: ['$1,000', '$1,000', '$992'] = 2,992
+2024-11-22 16:44:12,500 - DEBUG - Measure PV Cost: $2,992 / 1.319 = PV$2,268
+2024-11-22 16:44:12,500 - INFO - measure_CO2_cost_PV(year=14, factor=1.000)
+2024-11-22 16:44:12,500 - DEBUG - Measure CO2 Actual Cost: ['$12', '$53', '$52'] = 117
+2024-11-22 16:44:12,500 - DEBUG - Measure CO2 PV Cost: $117 / 1.000 = PV$87
+2024-11-22 16:44:12,500 - INFO - grid_transition_PV_cost(year=14, factor=1.319)
+2024-11-22 16:44:12,500 - DEBUG - Transition Cost [14]:  0.09375 * 3,048 W = $286
+2024-11-22 16:44:12,500 - DEBUG - Transition PV Cost [14]: $286 / 1.319 = PV$217
+2024-11-22 16:44:12,500 - INFO - Calculating year 14 costs:
+2024-11-22 16:44:12,500 - INFO - energy_purchase_cost_PV(year=15, factor=1.346)
+2024-11-22 16:44:12,500 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
+2024-11-22 16:44:12,500 - DEBUG - Energy PV Cost: $3,247 / 1.346 = PV$2,412
+2024-11-22 16:44:12,500 - INFO - energy_CO2_cost_PV(year=15, factor=2.959)
+2024-11-22 16:44:12,500 - DEBUG - Energy CO2 Emissions: 2,455[Elec.] + 15,151[Gas] = 17,606
+2024-11-22 16:44:12,500 - DEBUG - Energy CO2 Actual Cost: 17,606 * $0.25/unit = $4,401
+2024-11-22 16:44:12,500 - DEBUG - Energy CO2 PV Cost [15]: $4,401 / 2.959 = PV$1,488
+2024-11-22 16:44:12,500 - INFO - measure_purchase_cost_PV(year=15, factor=1.346)
+2024-11-22 16:44:12,500 - DEBUG - Measure Actual Costs: ['$662'] = 662
+2024-11-22 16:44:12,500 - DEBUG - Measure PV Cost: $662 / 1.346 = PV$492
+2024-11-22 16:44:12,500 - INFO - measure_CO2_cost_PV(year=15, factor=1.000)
+2024-11-22 16:44:12,500 - DEBUG - Measure CO2 Actual Cost: ['$35'] = 35
+2024-11-22 16:44:12,500 - DEBUG - Measure CO2 PV Cost: $35 / 1.000 = PV$26
+2024-11-22 16:44:12,500 - INFO - grid_transition_PV_cost(year=15, factor=1.346)
+2024-11-22 16:44:12,500 - DEBUG - Transition Cost [15]:  0.09375 * 3,048 W = $286
+2024-11-22 16:44:12,500 - DEBUG - Transition PV Cost [15]: $286 / 1.346 = PV$212
+2024-11-22 16:44:12,500 - INFO - Calculating year 15 costs:
+2024-11-22 16:44:12,500 - INFO - energy_purchase_cost_PV(year=16, factor=1.373)
+2024-11-22 16:44:12,500 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
+2024-11-22 16:44:12,500 - DEBUG - Energy PV Cost: $3,247 / 1.373 = PV$2,365
+2024-11-22 16:44:12,500 - INFO - energy_CO2_cost_PV(year=16, factor=3.181)
+2024-11-22 16:44:12,500 - DEBUG - Energy CO2 Emissions: 2,455[Elec.] + 15,151[Gas] = 17,606
+2024-11-22 16:44:12,500 - DEBUG - Energy CO2 Actual Cost: 17,606 * $0.25/unit = $4,401
+2024-11-22 16:44:12,500 - DEBUG - Energy CO2 PV Cost [16]: $4,401 / 3.181 = PV$1,384
+2024-11-22 16:44:12,500 - INFO - measure_purchase_cost_PV(year=16, factor=1.373)
+2024-11-22 16:44:12,500 - INFO - measure_CO2_cost_PV(year=16, factor=1.000)
+2024-11-22 16:44:12,500 - INFO - grid_transition_PV_cost(year=16, factor=1.373)
+2024-11-22 16:44:12,500 - DEBUG - Transition Cost [16]:  0.09375 * 3,048 W = $286
+2024-11-22 16:44:12,500 - DEBUG - Transition PV Cost [16]: $286 / 1.373 = PV$208
+2024-11-22 16:44:12,501 - INFO - Calculating year 16 costs:
+2024-11-22 16:44:12,501 - INFO - energy_purchase_cost_PV(year=17, factor=1.400)
+2024-11-22 16:44:12,501 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
+2024-11-22 16:44:12,501 - DEBUG - Energy PV Cost: $3,247 / 1.400 = PV$2,319
+2024-11-22 16:44:12,501 - INFO - energy_CO2_cost_PV(year=17, factor=3.419)
+2024-11-22 16:44:12,501 - DEBUG - Energy CO2 Emissions: 2,455[Elec.] + 15,151[Gas] = 17,606
+2024-11-22 16:44:12,501 - DEBUG - Energy CO2 Actual Cost: 17,606 * $0.25/unit = $4,401
+2024-11-22 16:44:12,501 - DEBUG - Energy CO2 PV Cost [17]: $4,401 / 3.419 = PV$1,287
+2024-11-22 16:44:12,501 - INFO - measure_purchase_cost_PV(year=17, factor=1.400)
+2024-11-22 16:44:12,501 - DEBUG - Measure Actual Costs: ['$796'] = 796
+2024-11-22 16:44:12,501 - DEBUG - Measure PV Cost: $796 / 1.400 = PV$568
+2024-11-22 16:44:12,501 - INFO - measure_CO2_cost_PV(year=17, factor=1.000)
+2024-11-22 16:44:12,501 - DEBUG - Measure CO2 Actual Cost: ['$33'] = 33
+2024-11-22 16:44:12,501 - DEBUG - Measure CO2 PV Cost: $33 / 1.000 = PV$24
+2024-11-22 16:44:12,501 - INFO - grid_transition_PV_cost(year=17, factor=1.400)
+2024-11-22 16:44:12,501 - DEBUG - Transition Cost [17]:  0.09375 * 3,048 W = $286
+2024-11-22 16:44:12,501 - DEBUG - Transition PV Cost [17]: $286 / 1.400 = PV$204
+2024-11-22 16:44:12,501 - INFO - Calculating year 17 costs:
+2024-11-22 16:44:12,501 - INFO - energy_purchase_cost_PV(year=18, factor=1.428)
+2024-11-22 16:44:12,501 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
+2024-11-22 16:44:12,501 - DEBUG - Energy PV Cost: $3,247 / 1.428 = PV$2,273
+2024-11-22 16:44:12,501 - INFO - energy_CO2_cost_PV(year=18, factor=3.676)
+2024-11-22 16:44:12,501 - DEBUG - Energy CO2 Emissions: 2,455[Elec.] + 15,151[Gas] = 17,606
+2024-11-22 16:44:12,501 - DEBUG - Energy CO2 Actual Cost: 17,606 * $0.25/unit = $4,401
+2024-11-22 16:44:12,501 - DEBUG - Energy CO2 PV Cost [18]: $4,401 / 3.676 = PV$1,197
+2024-11-22 16:44:12,501 - INFO - measure_purchase_cost_PV(year=18, factor=1.428)
+2024-11-22 16:44:12,501 - DEBUG - Measure Actual Costs: ['$611'] = 611
+2024-11-22 16:44:12,501 - DEBUG - Measure PV Cost: $611 / 1.428 = PV$428
+2024-11-22 16:44:12,501 - INFO - measure_CO2_cost_PV(year=18, factor=1.000)
+2024-11-22 16:44:12,501 - DEBUG - Measure CO2 Actual Cost: ['$30'] = 30
+2024-11-22 16:44:12,501 - DEBUG - Measure CO2 PV Cost: $30 / 1.000 = PV$23
+2024-11-22 16:44:12,501 - INFO - grid_transition_PV_cost(year=18, factor=1.428)
+2024-11-22 16:44:12,501 - DEBUG - Transition Cost [18]:  0.09375 * 3,048 W = $286
+2024-11-22 16:44:12,501 - DEBUG - Transition PV Cost [18]: $286 / 1.428 = PV$200
+2024-11-22 16:44:12,501 - INFO - Calculating year 18 costs:
+2024-11-22 16:44:12,501 - INFO - energy_purchase_cost_PV(year=19, factor=1.457)
+2024-11-22 16:44:12,501 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
+2024-11-22 16:44:12,501 - DEBUG - Energy PV Cost: $3,247 / 1.457 = PV$2,229
+2024-11-22 16:44:12,501 - INFO - energy_CO2_cost_PV(year=19, factor=3.951)
+2024-11-22 16:44:12,502 - DEBUG - Energy CO2 Emissions: 2,476[Elec.] + 15,151[Gas] = 17,628
+2024-11-22 16:44:12,502 - DEBUG - Energy CO2 Actual Cost: 17,628 * $0.25/unit = $4,407
+2024-11-22 16:44:12,502 - DEBUG - Energy CO2 PV Cost [19]: $4,407 / 3.951 = PV$1,115
+2024-11-22 16:44:12,502 - INFO - measure_purchase_cost_PV(year=19, factor=1.457)
+2024-11-22 16:44:12,502 - INFO - measure_CO2_cost_PV(year=19, factor=1.000)
+2024-11-22 16:44:12,502 - INFO - grid_transition_PV_cost(year=19, factor=1.457)
+2024-11-22 16:44:12,502 - DEBUG - Transition Cost [19]:  0.09375 * 3,048 W = $286
+2024-11-22 16:44:12,502 - DEBUG - Transition PV Cost [19]: $286 / 1.457 = PV$196
+2024-11-22 16:44:12,502 - INFO - Calculating year 19 costs:
+2024-11-22 16:44:12,502 - INFO - energy_purchase_cost_PV(year=20, factor=1.486)
+2024-11-22 16:44:12,502 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
+2024-11-22 16:44:12,502 - DEBUG - Energy PV Cost: $3,247 / 1.486 = PV$2,185
+2024-11-22 16:44:12,502 - INFO - energy_CO2_cost_PV(year=20, factor=4.248)
+2024-11-22 16:44:12,502 - DEBUG - Energy CO2 Emissions: 2,476[Elec.] + 15,151[Gas] = 17,628
+2024-11-22 16:44:12,502 - DEBUG - Energy CO2 Actual Cost: 17,628 * $0.25/unit = $4,407
+2024-11-22 16:44:12,502 - DEBUG - Energy CO2 PV Cost [20]: $4,407 / 4.248 = PV$1,037
+2024-11-22 16:44:12,502 - INFO - measure_purchase_cost_PV(year=20, factor=1.486)
+2024-11-22 16:44:12,502 - INFO - measure_CO2_cost_PV(year=20, factor=1.000)
+2024-11-22 16:44:12,502 - INFO - grid_transition_PV_cost(year=20, factor=1.486)
+2024-11-22 16:44:12,502 - DEBUG - Transition Cost [20]:  0.09375 * 3,048 W = $286
+2024-11-22 16:44:12,502 - DEBUG - Transition PV Cost [20]: $286 / 1.486 = PV$192
+2024-11-22 16:44:12,502 - INFO - Calculating year 20 costs:
+2024-11-22 16:44:12,502 - INFO - energy_purchase_cost_PV(year=21, factor=1.516)
+2024-11-22 16:44:12,502 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
+2024-11-22 16:44:12,502 - DEBUG - Energy PV Cost: $3,247 / 1.516 = PV$2,142
+2024-11-22 16:44:12,502 - INFO - energy_CO2_cost_PV(year=21, factor=4.566)
+2024-11-22 16:44:12,502 - DEBUG - Energy CO2 Emissions: 2,476[Elec.] + 15,151[Gas] = 17,628
+2024-11-22 16:44:12,502 - DEBUG - Energy CO2 Actual Cost: 17,628 * $0.25/unit = $4,407
+2024-11-22 16:44:12,502 - DEBUG - Energy CO2 PV Cost [21]: $4,407 / 4.566 = PV$965
+2024-11-22 16:44:12,502 - INFO - measure_purchase_cost_PV(year=21, factor=1.516)
+2024-11-22 16:44:12,502 - DEBUG - Measure Actual Costs: ['$3,459', '$7,500'] = 10,959
+2024-11-22 16:44:12,502 - DEBUG - Measure PV Cost: $10,959 / 1.516 = PV$7,230
+2024-11-22 16:44:12,502 - INFO - measure_CO2_cost_PV(year=21, factor=1.000)
+2024-11-22 16:44:12,502 - DEBUG - Measure CO2 Actual Cost: ['$101', '$263'] = 364
+2024-11-22 16:44:12,502 - DEBUG - Measure CO2 PV Cost: $364 / 1.000 = PV$273
+2024-11-22 16:44:12,502 - INFO - grid_transition_PV_cost(year=21, factor=1.516)
+2024-11-22 16:44:12,502 - DEBUG - Transition Cost [21]:  0.09375 * 3,048 W = $286
+2024-11-22 16:44:12,502 - DEBUG - Transition PV Cost [21]: $286 / 1.516 = PV$189
+2024-11-22 16:44:12,502 - INFO - Calculating year 21 costs:
+2024-11-22 16:44:12,503 - INFO - energy_purchase_cost_PV(year=22, factor=1.546)
+2024-11-22 16:44:12,503 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
+2024-11-22 16:44:12,503 - DEBUG - Energy PV Cost: $3,247 / 1.546 = PV$2,100
+2024-11-22 16:44:12,503 - INFO - energy_CO2_cost_PV(year=22, factor=4.909)
+2024-11-22 16:44:12,503 - DEBUG - Energy CO2 Emissions: 2,476[Elec.] + 15,151[Gas] = 17,628
+2024-11-22 16:44:12,503 - DEBUG - Energy CO2 Actual Cost: 17,628 * $0.25/unit = $4,407
+2024-11-22 16:44:12,503 - DEBUG - Energy CO2 PV Cost [22]: $4,407 / 4.909 = PV$898
+2024-11-22 16:44:12,503 - INFO - measure_purchase_cost_PV(year=22, factor=1.546)
+2024-11-22 16:44:12,503 - INFO - measure_CO2_cost_PV(year=22, factor=1.000)
+2024-11-22 16:44:12,503 - INFO - grid_transition_PV_cost(year=22, factor=1.546)
+2024-11-22 16:44:12,503 - DEBUG - Transition Cost [22]:  0.09375 * 3,048 W = $286
+2024-11-22 16:44:12,503 - DEBUG - Transition PV Cost [22]: $286 / 1.546 = PV$185
+2024-11-22 16:44:12,503 - INFO - Calculating year 22 costs:
+2024-11-22 16:44:12,503 - INFO - energy_purchase_cost_PV(year=23, factor=1.577)
+2024-11-22 16:44:12,503 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
+2024-11-22 16:44:12,503 - DEBUG - Energy PV Cost: $3,247 / 1.577 = PV$2,059
+2024-11-22 16:44:12,503 - INFO - energy_CO2_cost_PV(year=23, factor=5.277)
+2024-11-22 16:44:12,503 - DEBUG - Energy CO2 Emissions: 2,476[Elec.] + 15,151[Gas] = 17,628
+2024-11-22 16:44:12,503 - DEBUG - Energy CO2 Actual Cost: 17,628 * $0.25/unit = $4,407
+2024-11-22 16:44:12,503 - DEBUG - Energy CO2 PV Cost [23]: $4,407 / 5.277 = PV$835
+2024-11-22 16:44:12,503 - INFO - measure_purchase_cost_PV(year=23, factor=1.577)
+2024-11-22 16:44:12,503 - DEBUG - Measure Actual Costs: ['$959'] = 959
+2024-11-22 16:44:12,503 - DEBUG - Measure PV Cost: $959 / 1.577 = PV$608
+2024-11-22 16:44:12,503 - INFO - measure_CO2_cost_PV(year=23, factor=1.000)
+2024-11-22 16:44:12,503 - DEBUG - Measure CO2 Actual Cost: ['$50'] = 50
+2024-11-22 16:44:12,503 - DEBUG - Measure CO2 PV Cost: $50 / 1.000 = PV$38
+2024-11-22 16:44:12,503 - INFO - grid_transition_PV_cost(year=23, factor=1.577)
+2024-11-22 16:44:12,503 - DEBUG - Transition Cost [23]:  0.09375 * 3,048 W = $286
+2024-11-22 16:44:12,503 - DEBUG - Transition PV Cost [23]: $286 / 1.577 = PV$181
+2024-11-22 16:44:12,503 - INFO - Calculating year 23 costs:
+2024-11-22 16:44:12,503 - INFO - energy_purchase_cost_PV(year=24, factor=1.608)
+2024-11-22 16:44:12,503 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
+2024-11-22 16:44:12,503 - DEBUG - Energy PV Cost: $3,247 / 1.608 = PV$2,018
+2024-11-22 16:44:12,503 - INFO - energy_CO2_cost_PV(year=24, factor=5.673)
+2024-11-22 16:44:12,503 - DEBUG - Energy CO2 Emissions: 2,445[Elec.] + 15,151[Gas] = 17,596
+2024-11-22 16:44:12,503 - DEBUG - Energy CO2 Actual Cost: 17,596 * $0.25/unit = $4,399
+2024-11-22 16:44:12,503 - DEBUG - Energy CO2 PV Cost [24]: $4,399 / 5.673 = PV$775
+2024-11-22 16:44:12,503 - INFO - measure_purchase_cost_PV(year=24, factor=1.608)
+2024-11-22 16:44:12,503 - INFO - measure_CO2_cost_PV(year=24, factor=1.000)
+2024-11-22 16:44:12,503 - INFO - grid_transition_PV_cost(year=24, factor=1.608)
+2024-11-22 16:44:12,503 - DEBUG - Transition Cost [24]:  0.09375 * 3,048 W = $286
+2024-11-22 16:44:12,504 - DEBUG - Transition PV Cost [24]: $286 / 1.608 = PV$178
+2024-11-22 16:44:12,504 - INFO - Calculating year 24 costs:
+2024-11-22 16:44:12,504 - INFO - energy_purchase_cost_PV(year=25, factor=1.641)
+2024-11-22 16:44:12,504 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
+2024-11-22 16:44:12,504 - DEBUG - Energy PV Cost: $3,247 / 1.641 = PV$1,979
+2024-11-22 16:44:12,504 - INFO - energy_CO2_cost_PV(year=25, factor=6.098)
+2024-11-22 16:44:12,504 - DEBUG - Energy CO2 Emissions: 2,445[Elec.] + 15,151[Gas] = 17,596
+2024-11-22 16:44:12,504 - DEBUG - Energy CO2 Actual Cost: 17,596 * $0.25/unit = $4,399
+2024-11-22 16:44:12,504 - DEBUG - Energy CO2 PV Cost [25]: $4,399 / 6.098 = PV$721
+2024-11-22 16:44:12,504 - INFO - measure_purchase_cost_PV(year=25, factor=1.641)
+2024-11-22 16:44:12,504 - DEBUG - Measure Actual Costs: ['$861'] = 861
+2024-11-22 16:44:12,504 - DEBUG - Measure PV Cost: $861 / 1.641 = PV$525
+2024-11-22 16:44:12,504 - INFO - measure_CO2_cost_PV(year=25, factor=1.000)
+2024-11-22 16:44:12,504 - DEBUG - Measure CO2 Actual Cost: ['$35'] = 35
+2024-11-22 16:44:12,504 - DEBUG - Measure CO2 PV Cost: $35 / 1.000 = PV$26
+2024-11-22 16:44:12,504 - INFO - grid_transition_PV_cost(year=25, factor=1.641)
+2024-11-22 16:44:12,504 - DEBUG - Transition Cost [25]:  0.09375 * 3,048 W = $286
+2024-11-22 16:44:12,504 - DEBUG - Transition PV Cost [25]: $286 / 1.641 = PV$174
+2024-11-22 16:44:12,504 - INFO - Calculating year 25 costs:
+2024-11-22 16:44:12,504 - INFO - energy_purchase_cost_PV(year=26, factor=1.673)
+2024-11-22 16:44:12,504 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
+2024-11-22 16:44:12,504 - DEBUG - Energy PV Cost: $3,247 / 1.673 = PV$1,940
+2024-11-22 16:44:12,504 - INFO - energy_CO2_cost_PV(year=26, factor=6.556)
+2024-11-22 16:44:12,504 - DEBUG - Energy CO2 Emissions: 2,445[Elec.] + 15,151[Gas] = 17,596
+2024-11-22 16:44:12,504 - DEBUG - Energy CO2 Actual Cost: 17,596 * $0.25/unit = $4,399
+2024-11-22 16:44:12,504 - DEBUG - Energy CO2 PV Cost [26]: $4,399 / 6.556 = PV$671
+2024-11-22 16:44:12,504 - INFO - measure_purchase_cost_PV(year=26, factor=1.673)
+2024-11-22 16:44:12,504 - DEBUG - Measure Actual Costs: ['$0'] = 0
+2024-11-22 16:44:12,504 - DEBUG - Measure PV Cost: $0 / 1.673 = PV$0
+2024-11-22 16:44:12,504 - INFO - measure_CO2_cost_PV(year=26, factor=1.000)
+2024-11-22 16:44:12,504 - DEBUG - Measure CO2 Actual Cost: ['$0'] = 0
+2024-11-22 16:44:12,504 - DEBUG - Measure CO2 PV Cost: $0 / 1.000 = PV$0
+2024-11-22 16:44:12,504 - INFO - grid_transition_PV_cost(year=26, factor=1.673)
+2024-11-22 16:44:12,504 - DEBUG - Transition Cost [26]:  0.09375 * 3,048 W = $286
+2024-11-22 16:44:12,504 - DEBUG - Transition PV Cost [26]: $286 / 1.673 = PV$171
+2024-11-22 16:44:12,504 - INFO - Calculating year 26 costs:
+2024-11-22 16:44:12,504 - INFO - energy_purchase_cost_PV(year=27, factor=1.707)
+2024-11-22 16:44:12,504 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
+2024-11-22 16:44:12,504 - DEBUG - Energy PV Cost: $3,247 / 1.707 = PV$1,902
+2024-11-22 16:44:12,505 - INFO - energy_CO2_cost_PV(year=27, factor=7.047)
+2024-11-22 16:44:12,505 - DEBUG - Energy CO2 Emissions: 2,445[Elec.] + 15,151[Gas] = 17,596
+2024-11-22 16:44:12,505 - DEBUG - Energy CO2 Actual Cost: 17,596 * $0.25/unit = $4,399
+2024-11-22 16:44:12,505 - DEBUG - Energy CO2 PV Cost [27]: $4,399 / 7.047 = PV$624
+2024-11-22 16:44:12,505 - INFO - measure_purchase_cost_PV(year=27, factor=1.707)
+2024-11-22 16:44:12,505 - DEBUG - Measure Actual Costs: ['$1,000', '$1,000', '$992'] = 2,992
+2024-11-22 16:44:12,505 - DEBUG - Measure PV Cost: $2,992 / 1.707 = PV$1,753
+2024-11-22 16:44:12,505 - INFO - measure_CO2_cost_PV(year=27, factor=1.000)
+2024-11-22 16:44:12,505 - DEBUG - Measure CO2 Actual Cost: ['$12', '$53', '$52'] = 117
+2024-11-22 16:44:12,505 - DEBUG - Measure CO2 PV Cost: $117 / 1.000 = PV$87
+2024-11-22 16:44:12,505 - INFO - grid_transition_PV_cost(year=27, factor=1.707)
+2024-11-22 16:44:12,505 - DEBUG - Transition Cost [27]:  0.09375 * 3,048 W = $286
+2024-11-22 16:44:12,505 - DEBUG - Transition PV Cost [27]: $286 / 1.707 = PV$167
+2024-11-22 16:44:12,505 - INFO - Calculating year 27 costs:
+2024-11-22 16:44:12,505 - INFO - energy_purchase_cost_PV(year=28, factor=1.741)
+2024-11-22 16:44:12,505 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
+2024-11-22 16:44:12,505 - DEBUG - Energy PV Cost: $3,247 / 1.741 = PV$1,865
+2024-11-22 16:44:12,505 - INFO - energy_CO2_cost_PV(year=28, factor=7.576)
+2024-11-22 16:44:12,505 - DEBUG - Energy CO2 Emissions: 2,445[Elec.] + 15,151[Gas] = 17,596
+2024-11-22 16:44:12,505 - DEBUG - Energy CO2 Actual Cost: 17,596 * $0.25/unit = $4,399
+2024-11-22 16:44:12,505 - DEBUG - Energy CO2 PV Cost [28]: $4,399 / 7.576 = PV$581
+2024-11-22 16:44:12,505 - INFO - measure_purchase_cost_PV(year=28, factor=1.741)
+2024-11-22 16:44:12,505 - INFO - measure_CO2_cost_PV(year=28, factor=1.000)
+2024-11-22 16:44:12,505 - INFO - grid_transition_PV_cost(year=28, factor=1.741)
+2024-11-22 16:44:12,505 - DEBUG - Transition Cost [28]:  0.09375 * 3,048 W = $286
+2024-11-22 16:44:12,505 - DEBUG - Transition PV Cost [28]: $286 / 1.741 = PV$164
+2024-11-22 16:44:12,505 - INFO - Calculating year 28 costs:
+2024-11-22 16:44:12,505 - INFO - energy_purchase_cost_PV(year=29, factor=1.776)
+2024-11-22 16:44:12,505 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
+2024-11-22 16:44:12,505 - DEBUG - Energy PV Cost: $3,247 / 1.776 = PV$1,828
+2024-11-22 16:44:12,505 - INFO - energy_CO2_cost_PV(year=29, factor=8.144)
+2024-11-22 16:44:12,505 - DEBUG - Energy CO2 Emissions: 2,445[Elec.] + 15,151[Gas] = 17,596
+2024-11-22 16:44:12,505 - DEBUG - Energy CO2 Actual Cost: 17,596 * $0.25/unit = $4,399
+2024-11-22 16:44:12,505 - DEBUG - Energy CO2 PV Cost [29]: $4,399 / 8.144 = PV$540
+2024-11-22 16:44:12,505 - INFO - measure_purchase_cost_PV(year=29, factor=1.776)
+2024-11-22 16:44:12,505 - DEBUG - Measure Actual Costs: ['$662'] = 662
+2024-11-22 16:44:12,505 - DEBUG - Measure PV Cost: $662 / 1.776 = PV$373
+2024-11-22 16:44:12,505 - INFO - measure_CO2_cost_PV(year=29, factor=1.000)
+2024-11-22 16:44:12,505 - DEBUG - Measure CO2 Actual Cost: ['$35'] = 35
+2024-11-22 16:44:12,505 - DEBUG - Measure CO2 PV Cost: $35 / 1.000 = PV$26
+2024-11-22 16:44:12,505 - INFO - grid_transition_PV_cost(year=29, factor=1.776)
+2024-11-22 16:44:12,506 - DEBUG - Transition Cost [29]:  0.09375 * 3,048 W = $286
+2024-11-22 16:44:12,506 - DEBUG - Transition PV Cost [29]: $286 / 1.776 = PV$161
+2024-11-22 16:44:12,506 - INFO - Calculating year 29 costs:
+2024-11-22 16:44:12,506 - INFO - energy_purchase_cost_PV(year=30, factor=1.811)
+2024-11-22 16:44:12,506 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
+2024-11-22 16:44:12,506 - DEBUG - Energy PV Cost: $3,247 / 1.811 = PV$1,792
+2024-11-22 16:44:12,506 - INFO - energy_CO2_cost_PV(year=30, factor=8.755)
+2024-11-22 16:44:12,506 - DEBUG - Energy CO2 Emissions: 2,445[Elec.] + 15,151[Gas] = 17,596
+2024-11-22 16:44:12,506 - DEBUG - Energy CO2 Actual Cost: 17,596 * $0.25/unit = $4,399
+2024-11-22 16:44:12,506 - DEBUG - Energy CO2 PV Cost [30]: $4,399 / 8.755 = PV$502
+2024-11-22 16:44:12,506 - INFO - measure_purchase_cost_PV(year=30, factor=1.811)
+2024-11-22 16:44:12,506 - INFO - measure_CO2_cost_PV(year=30, factor=1.000)
+2024-11-22 16:44:12,506 - INFO - grid_transition_PV_cost(year=30, factor=1.811)
+2024-11-22 16:44:12,506 - DEBUG - Transition Cost [30]:  0.09375 * 3,048 W = $286
+2024-11-22 16:44:12,506 - DEBUG - Transition PV Cost [30]: $286 / 1.811 = PV$158
+2024-11-22 16:44:12,506 - INFO - Calculating year 30 costs:
+2024-11-22 16:44:12,506 - INFO - energy_purchase_cost_PV(year=31, factor=1.848)
+2024-11-22 16:44:12,506 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
+2024-11-22 16:44:12,506 - DEBUG - Energy PV Cost: $3,247 / 1.848 = PV$1,757
+2024-11-22 16:44:12,506 - INFO - energy_CO2_cost_PV(year=31, factor=9.412)
+2024-11-22 16:44:12,506 - DEBUG - Energy CO2 Emissions: 2,445[Elec.] + 15,151[Gas] = 17,596
+2024-11-22 16:44:12,506 - DEBUG - Energy CO2 Actual Cost: 17,596 * $0.25/unit = $4,399
+2024-11-22 16:44:12,506 - DEBUG - Energy CO2 PV Cost [31]: $4,399 / 9.412 = PV$467
+2024-11-22 16:44:12,506 - INFO - measure_purchase_cost_PV(year=31, factor=1.848)
+2024-11-22 16:44:12,506 - DEBUG - Measure Actual Costs: ['$3,459'] = 3,459
+2024-11-22 16:44:12,506 - DEBUG - Measure PV Cost: $3,459 / 1.848 = PV$1,872
+2024-11-22 16:44:12,506 - INFO - measure_CO2_cost_PV(year=31, factor=1.000)
+2024-11-22 16:44:12,506 - DEBUG - Measure CO2 Actual Cost: ['$101'] = 101
+2024-11-22 16:44:12,506 - DEBUG - Measure CO2 PV Cost: $101 / 1.000 = PV$76
+2024-11-22 16:44:12,506 - INFO - grid_transition_PV_cost(year=31, factor=1.848)
+2024-11-22 16:44:12,506 - DEBUG - Transition Cost [31]:  0.00000 * 3,048 W = $0
+2024-11-22 16:44:12,506 - DEBUG - Transition PV Cost [31]: $0 / 1.848 = PV$0
+2024-11-22 16:44:12,506 - INFO - Calculating year 31 costs:
+2024-11-22 16:44:12,506 - INFO - energy_purchase_cost_PV(year=32, factor=1.885)
+2024-11-22 16:44:12,506 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
+2024-11-22 16:44:12,506 - DEBUG - Energy PV Cost: $3,247 / 1.885 = PV$1,723
+2024-11-22 16:44:12,506 - INFO - energy_CO2_cost_PV(year=32, factor=10.117)
+2024-11-22 16:44:12,506 - DEBUG - Energy CO2 Emissions: 2,445[Elec.] + 15,151[Gas] = 17,596
+2024-11-22 16:44:12,507 - DEBUG - Energy CO2 Actual Cost: 17,596 * $0.25/unit = $4,399
+2024-11-22 16:44:12,507 - DEBUG - Energy CO2 PV Cost [32]: $4,399 / 10.117 = PV$435
+2024-11-22 16:44:12,507 - INFO - measure_purchase_cost_PV(year=32, factor=1.885)
+2024-11-22 16:44:12,507 - INFO - measure_CO2_cost_PV(year=32, factor=1.000)
+2024-11-22 16:44:12,507 - INFO - grid_transition_PV_cost(year=32, factor=1.885)
+2024-11-22 16:44:12,507 - DEBUG - Transition Cost [32]:  0.00000 * 3,048 W = $0
+2024-11-22 16:44:12,507 - DEBUG - Transition PV Cost [32]: $0 / 1.885 = PV$0
+2024-11-22 16:44:12,507 - INFO - Calculating year 32 costs:
+2024-11-22 16:44:12,507 - INFO - energy_purchase_cost_PV(year=33, factor=1.922)
+2024-11-22 16:44:12,507 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
+2024-11-22 16:44:12,507 - DEBUG - Energy PV Cost: $3,247 / 1.922 = PV$1,689
+2024-11-22 16:44:12,507 - INFO - energy_CO2_cost_PV(year=33, factor=10.876)
+2024-11-22 16:44:12,507 - DEBUG - Energy CO2 Emissions: 2,445[Elec.] + 15,151[Gas] = 17,596
+2024-11-22 16:44:12,507 - DEBUG - Energy CO2 Actual Cost: 17,596 * $0.25/unit = $4,399
+2024-11-22 16:44:12,507 - DEBUG - Energy CO2 PV Cost [33]: $4,399 / 10.876 = PV$404
+2024-11-22 16:44:12,507 - INFO - measure_purchase_cost_PV(year=33, factor=1.922)
+2024-11-22 16:44:12,507 - DEBUG - Measure Actual Costs: ['$796'] = 796
+2024-11-22 16:44:12,507 - DEBUG - Measure PV Cost: $796 / 1.922 = PV$414
+2024-11-22 16:44:12,507 - INFO - measure_CO2_cost_PV(year=33, factor=1.000)
+2024-11-22 16:44:12,507 - DEBUG - Measure CO2 Actual Cost: ['$33'] = 33
+2024-11-22 16:44:12,507 - DEBUG - Measure CO2 PV Cost: $33 / 1.000 = PV$24
+2024-11-22 16:44:12,507 - INFO - grid_transition_PV_cost(year=33, factor=1.922)
+2024-11-22 16:44:12,507 - DEBUG - Transition Cost [33]:  0.00000 * 3,048 W = $0
+2024-11-22 16:44:12,507 - DEBUG - Transition PV Cost [33]: $0 / 1.922 = PV$0
+2024-11-22 16:44:12,507 - INFO - Calculating year 33 costs:
+2024-11-22 16:44:12,507 - INFO - energy_purchase_cost_PV(year=34, factor=1.961)
+2024-11-22 16:44:12,507 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
+2024-11-22 16:44:12,507 - DEBUG - Energy PV Cost: $3,247 / 1.961 = PV$1,656
+2024-11-22 16:44:12,507 - INFO - energy_CO2_cost_PV(year=34, factor=11.692)
+2024-11-22 16:44:12,507 - DEBUG - Energy CO2 Emissions: 2,445[Elec.] + 15,151[Gas] = 17,596
+2024-11-22 16:44:12,507 - DEBUG - Energy CO2 Actual Cost: 17,596 * $0.25/unit = $4,399
+2024-11-22 16:44:12,507 - DEBUG - Energy CO2 PV Cost [34]: $4,399 / 11.692 = PV$376
+2024-11-22 16:44:12,507 - INFO - measure_purchase_cost_PV(year=34, factor=1.961)
+2024-11-22 16:44:12,507 - DEBUG - Measure Actual Costs: ['$959'] = 959
+2024-11-22 16:44:12,507 - DEBUG - Measure PV Cost: $959 / 1.961 = PV$489
+2024-11-22 16:44:12,507 - INFO - measure_CO2_cost_PV(year=34, factor=1.000)
+2024-11-22 16:44:12,507 - DEBUG - Measure CO2 Actual Cost: ['$50'] = 50
+2024-11-22 16:44:12,507 - DEBUG - Measure CO2 PV Cost: $50 / 1.000 = PV$38
+2024-11-22 16:44:12,507 - INFO - grid_transition_PV_cost(year=34, factor=1.961)
+2024-11-22 16:44:12,507 - DEBUG - Transition Cost [34]:  0.00000 * 3,048 W = $0
+2024-11-22 16:44:12,507 - DEBUG - Transition PV Cost [34]: $0 / 1.961 = PV$0
+2024-11-22 16:44:12,508 - INFO - Calculating year 34 costs:
+2024-11-22 16:44:12,508 - INFO - energy_purchase_cost_PV(year=35, factor=2.000)
+2024-11-22 16:44:12,508 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
+2024-11-22 16:44:12,508 - DEBUG - Energy PV Cost: $3,247 / 2.000 = PV$1,623
+2024-11-22 16:44:12,508 - INFO - energy_CO2_cost_PV(year=35, factor=12.569)
+2024-11-22 16:44:12,508 - DEBUG - Energy CO2 Emissions: 2,445[Elec.] + 15,151[Gas] = 17,596
+2024-11-22 16:44:12,508 - DEBUG - Energy CO2 Actual Cost: 17,596 * $0.25/unit = $4,399
+2024-11-22 16:44:12,508 - DEBUG - Energy CO2 PV Cost [35]: $4,399 / 12.569 = PV$350
+2024-11-22 16:44:12,508 - INFO - measure_purchase_cost_PV(year=35, factor=2.000)
+2024-11-22 16:44:12,508 - DEBUG - Measure Actual Costs: ['$611'] = 611
+2024-11-22 16:44:12,508 - DEBUG - Measure PV Cost: $611 / 2.000 = PV$306
+2024-11-22 16:44:12,508 - INFO - measure_CO2_cost_PV(year=35, factor=1.000)
+2024-11-22 16:44:12,508 - DEBUG - Measure CO2 Actual Cost: ['$30'] = 30
+2024-11-22 16:44:12,508 - DEBUG - Measure CO2 PV Cost: $30 / 1.000 = PV$23
+2024-11-22 16:44:12,508 - INFO - grid_transition_PV_cost(year=35, factor=2.000)
+2024-11-22 16:44:12,508 - DEBUG - Transition Cost [35]:  0.00000 * 3,048 W = $0
+2024-11-22 16:44:12,508 - DEBUG - Transition PV Cost [35]: $0 / 2.000 = PV$0
+2024-11-22 16:44:12,508 - INFO - Calculating year 35 costs:
+2024-11-22 16:44:12,508 - INFO - energy_purchase_cost_PV(year=36, factor=2.040)
+2024-11-22 16:44:12,508 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
+2024-11-22 16:44:12,508 - DEBUG - Energy PV Cost: $3,247 / 2.040 = PV$1,592
+2024-11-22 16:44:12,508 - INFO - energy_CO2_cost_PV(year=36, factor=13.512)
+2024-11-22 16:44:12,508 - DEBUG - Energy CO2 Emissions: 2,445[Elec.] + 15,151[Gas] = 17,596
+2024-11-22 16:44:12,508 - DEBUG - Energy CO2 Actual Cost: 17,596 * $0.25/unit = $4,399
+2024-11-22 16:44:12,508 - DEBUG - Energy CO2 PV Cost [36]: $4,399 / 13.512 = PV$326
+2024-11-22 16:44:12,508 - INFO - measure_purchase_cost_PV(year=36, factor=2.040)
+2024-11-22 16:44:12,508 - INFO - measure_CO2_cost_PV(year=36, factor=1.000)
+2024-11-22 16:44:12,508 - INFO - grid_transition_PV_cost(year=36, factor=2.040)
+2024-11-22 16:44:12,508 - DEBUG - Transition Cost [36]:  0.00000 * 3,048 W = $0
+2024-11-22 16:44:12,508 - DEBUG - Transition PV Cost [36]: $0 / 2.040 = PV$0
+2024-11-22 16:44:12,508 - INFO - Calculating year 36 costs:
+2024-11-22 16:44:12,508 - INFO - energy_purchase_cost_PV(year=37, factor=2.081)
+2024-11-22 16:44:12,508 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
+2024-11-22 16:44:12,508 - DEBUG - Energy PV Cost: $3,247 / 2.081 = PV$1,560
+2024-11-22 16:44:12,508 - INFO - energy_CO2_cost_PV(year=37, factor=14.525)
+2024-11-22 16:44:12,508 - DEBUG - Energy CO2 Emissions: 2,445[Elec.] + 15,151[Gas] = 17,596
+2024-11-22 16:44:12,508 - DEBUG - Energy CO2 Actual Cost: 17,596 * $0.25/unit = $4,399
+2024-11-22 16:44:12,509 - DEBUG - Energy CO2 PV Cost [37]: $4,399 / 14.525 = PV$303
+2024-11-22 16:44:12,509 - INFO - measure_purchase_cost_PV(year=37, factor=2.081)
+2024-11-22 16:44:12,509 - INFO - measure_CO2_cost_PV(year=37, factor=1.000)
+2024-11-22 16:44:12,509 - INFO - grid_transition_PV_cost(year=37, factor=2.081)
+2024-11-22 16:44:12,509 - DEBUG - Transition Cost [37]:  0.00000 * 3,048 W = $0
+2024-11-22 16:44:12,509 - DEBUG - Transition PV Cost [37]: $0 / 2.081 = PV$0
+2024-11-22 16:44:12,509 - INFO - Calculating year 37 costs:
+2024-11-22 16:44:12,509 - INFO - energy_purchase_cost_PV(year=38, factor=2.122)
+2024-11-22 16:44:12,509 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
+2024-11-22 16:44:12,509 - DEBUG - Energy PV Cost: $3,247 / 2.122 = PV$1,530
+2024-11-22 16:44:12,509 - INFO - energy_CO2_cost_PV(year=38, factor=15.614)
+2024-11-22 16:44:12,509 - DEBUG - Energy CO2 Emissions: 2,445[Elec.] + 15,151[Gas] = 17,596
+2024-11-22 16:44:12,509 - DEBUG - Energy CO2 Actual Cost: 17,596 * $0.25/unit = $4,399
+2024-11-22 16:44:12,509 - DEBUG - Energy CO2 PV Cost [38]: $4,399 / 15.614 = PV$282
+2024-11-22 16:44:12,509 - INFO - measure_purchase_cost_PV(year=38, factor=2.122)
+2024-11-22 16:44:12,509 - INFO - measure_CO2_cost_PV(year=38, factor=1.000)
+2024-11-22 16:44:12,509 - INFO - grid_transition_PV_cost(year=38, factor=2.122)
+2024-11-22 16:44:12,509 - DEBUG - Transition Cost [38]:  0.00000 * 3,048 W = $0
+2024-11-22 16:44:12,509 - DEBUG - Transition PV Cost [38]: $0 / 2.122 = PV$0
+2024-11-22 16:44:12,509 - INFO - Calculating year 38 costs:
+2024-11-22 16:44:12,509 - INFO - energy_purchase_cost_PV(year=39, factor=2.165)
+2024-11-22 16:44:12,509 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
+2024-11-22 16:44:12,509 - DEBUG - Energy PV Cost: $3,247 / 2.165 = PV$1,500
+2024-11-22 16:44:12,509 - INFO - energy_CO2_cost_PV(year=39, factor=16.785)
+2024-11-22 16:44:12,509 - DEBUG - Energy CO2 Emissions: 2,445[Elec.] + 15,151[Gas] = 17,596
+2024-11-22 16:44:12,509 - DEBUG - Energy CO2 Actual Cost: 17,596 * $0.25/unit = $4,399
+2024-11-22 16:44:12,509 - DEBUG - Energy CO2 PV Cost [39]: $4,399 / 16.785 = PV$262
+2024-11-22 16:44:12,509 - INFO - measure_purchase_cost_PV(year=39, factor=2.165)
+2024-11-22 16:44:12,509 - DEBUG - Measure Actual Costs: ['$1,949'] = 1,949
+2024-11-22 16:44:12,509 - DEBUG - Measure PV Cost: $1,949 / 2.165 = PV$901
+2024-11-22 16:44:12,509 - INFO - measure_CO2_cost_PV(year=39, factor=1.000)
+2024-11-22 16:44:12,509 - DEBUG - Measure CO2 Actual Cost: ['$28'] = 28
+2024-11-22 16:44:12,509 - DEBUG - Measure CO2 PV Cost: $28 / 1.000 = PV$21
+2024-11-22 16:44:12,509 - INFO - grid_transition_PV_cost(year=39, factor=2.165)
+2024-11-22 16:44:12,509 - DEBUG - Transition Cost [39]:  0.00000 * 3,048 W = $0
+2024-11-22 16:44:12,509 - DEBUG - Transition PV Cost [39]: $0 / 2.165 = PV$0
+2024-11-22 16:44:12,509 - INFO - Calculating year 39 costs:
+2024-11-22 16:44:12,509 - INFO - energy_purchase_cost_PV(year=40, factor=2.208)
+2024-11-22 16:44:12,509 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
+2024-11-22 16:44:12,510 - DEBUG - Energy PV Cost: $3,247 / 2.208 = PV$1,470
+2024-11-22 16:44:12,510 - INFO - energy_CO2_cost_PV(year=40, factor=18.044)
+2024-11-22 16:44:12,510 - DEBUG - Energy CO2 Emissions: 2,445[Elec.] + 15,151[Gas] = 17,596
+2024-11-22 16:44:12,510 - DEBUG - Energy CO2 Actual Cost: 17,596 * $0.25/unit = $4,399
+2024-11-22 16:44:12,510 - DEBUG - Energy CO2 PV Cost [40]: $4,399 / 18.044 = PV$244
+2024-11-22 16:44:12,510 - INFO - measure_purchase_cost_PV(year=40, factor=2.208)
+2024-11-22 16:44:12,510 - DEBUG - Measure Actual Costs: ['$1,000', '$1,000', '$992'] = 2,992
+2024-11-22 16:44:12,510 - DEBUG - Measure PV Cost: $2,992 / 2.208 = PV$1,355
+2024-11-22 16:44:12,510 - INFO - measure_CO2_cost_PV(year=40, factor=1.000)
+2024-11-22 16:44:12,510 - DEBUG - Measure CO2 Actual Cost: ['$12', '$53', '$52'] = 117
+2024-11-22 16:44:12,510 - DEBUG - Measure CO2 PV Cost: $117 / 1.000 = PV$87
+2024-11-22 16:44:12,510 - INFO - grid_transition_PV_cost(year=40, factor=2.208)
+2024-11-22 16:44:12,510 - DEBUG - Transition Cost [40]:  0.00000 * 3,048 W = $0
+2024-11-22 16:44:12,510 - DEBUG - Transition PV Cost [40]: $0 / 2.208 = PV$0
+2024-11-22 16:44:12,510 - INFO - Calculating year 40 costs:
+2024-11-22 16:44:12,510 - INFO - energy_purchase_cost_PV(year=41, factor=2.252)
+2024-11-22 16:44:12,510 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
+2024-11-22 16:44:12,510 - DEBUG - Energy PV Cost: $3,247 / 2.252 = PV$1,441
+2024-11-22 16:44:12,510 - INFO - energy_CO2_cost_PV(year=41, factor=19.398)
+2024-11-22 16:44:12,510 - DEBUG - Energy CO2 Emissions: 2,445[Elec.] + 15,151[Gas] = 17,596
+2024-11-22 16:44:12,510 - DEBUG - Energy CO2 Actual Cost: 17,596 * $0.25/unit = $4,399
+2024-11-22 16:44:12,510 - DEBUG - Energy CO2 PV Cost [41]: $4,399 / 19.398 = PV$227
+2024-11-22 16:44:12,510 - INFO - measure_purchase_cost_PV(year=41, factor=2.252)
+2024-11-22 16:44:12,510 - DEBUG - Measure Actual Costs: ['$3,459', '$7,500'] = 10,959
+2024-11-22 16:44:12,510 - DEBUG - Measure PV Cost: $10,959 / 2.252 = PV$4,866
+2024-11-22 16:44:12,510 - INFO - measure_CO2_cost_PV(year=41, factor=1.000)
+2024-11-22 16:44:12,510 - DEBUG - Measure CO2 Actual Cost: ['$101', '$263'] = 364
+2024-11-22 16:44:12,510 - DEBUG - Measure CO2 PV Cost: $364 / 1.000 = PV$273
+2024-11-22 16:44:12,510 - INFO - grid_transition_PV_cost(year=41, factor=2.252)
+2024-11-22 16:44:12,510 - DEBUG - Transition Cost [41]:  0.00000 * 3,048 W = $0
+2024-11-22 16:44:12,510 - DEBUG - Transition PV Cost [41]: $0 / 2.252 = PV$0
+2024-11-22 16:44:12,510 - INFO - Calculating year 41 costs:
+2024-11-22 16:44:12,510 - INFO - energy_purchase_cost_PV(year=42, factor=2.297)
+2024-11-22 16:44:12,510 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
+2024-11-22 16:44:12,510 - DEBUG - Energy PV Cost: $3,247 / 2.297 = PV$1,413
+2024-11-22 16:44:12,510 - INFO - energy_CO2_cost_PV(year=42, factor=20.852)
+2024-11-22 16:44:12,510 - DEBUG - Energy CO2 Emissions: 2,445[Elec.] + 15,151[Gas] = 17,596
+2024-11-22 16:44:12,510 - DEBUG - Energy CO2 Actual Cost: 17,596 * $0.25/unit = $4,399
+2024-11-22 16:44:12,510 - DEBUG - Energy CO2 PV Cost [42]: $4,399 / 20.852 = PV$211
+2024-11-22 16:44:12,510 - INFO - measure_purchase_cost_PV(year=42, factor=2.297)
+2024-11-22 16:44:12,510 - INFO - measure_CO2_cost_PV(year=42, factor=1.000)
+2024-11-22 16:44:12,511 - INFO - grid_transition_PV_cost(year=42, factor=2.297)
+2024-11-22 16:44:12,511 - DEBUG - Transition Cost [42]:  0.00000 * 3,048 W = $0
+2024-11-22 16:44:12,511 - DEBUG - Transition PV Cost [42]: $0 / 2.297 = PV$0
+2024-11-22 16:44:12,511 - INFO - Calculating year 42 costs:
+2024-11-22 16:44:12,511 - INFO - energy_purchase_cost_PV(year=43, factor=2.343)
+2024-11-22 16:44:12,511 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
+2024-11-22 16:44:12,511 - DEBUG - Energy PV Cost: $3,247 / 2.343 = PV$1,386
+2024-11-22 16:44:12,511 - INFO - energy_CO2_cost_PV(year=43, factor=22.416)
+2024-11-22 16:44:12,511 - DEBUG - Energy CO2 Emissions: 2,445[Elec.] + 15,151[Gas] = 17,596
+2024-11-22 16:44:12,511 - DEBUG - Energy CO2 Actual Cost: 17,596 * $0.25/unit = $4,399
+2024-11-22 16:44:12,511 - DEBUG - Energy CO2 PV Cost [43]: $4,399 / 22.416 = PV$196
+2024-11-22 16:44:12,511 - INFO - measure_purchase_cost_PV(year=43, factor=2.343)
+2024-11-22 16:44:12,511 - DEBUG - Measure Actual Costs: ['$662'] = 662
+2024-11-22 16:44:12,511 - DEBUG - Measure PV Cost: $662 / 2.343 = PV$283
+2024-11-22 16:44:12,511 - INFO - measure_CO2_cost_PV(year=43, factor=1.000)
+2024-11-22 16:44:12,511 - DEBUG - Measure CO2 Actual Cost: ['$35'] = 35
+2024-11-22 16:44:12,511 - DEBUG - Measure CO2 PV Cost: $35 / 1.000 = PV$26
+2024-11-22 16:44:12,511 - INFO - grid_transition_PV_cost(year=43, factor=2.343)
+2024-11-22 16:44:12,511 - DEBUG - Transition Cost [43]:  0.00000 * 3,048 W = $0
+2024-11-22 16:44:12,511 - DEBUG - Transition PV Cost [43]: $0 / 2.343 = PV$0
+2024-11-22 16:44:12,511 - INFO - Calculating year 43 costs:
+2024-11-22 16:44:12,511 - INFO - energy_purchase_cost_PV(year=44, factor=2.390)
+2024-11-22 16:44:12,511 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
+2024-11-22 16:44:12,511 - DEBUG - Energy PV Cost: $3,247 / 2.390 = PV$1,358
+2024-11-22 16:44:12,511 - INFO - energy_CO2_cost_PV(year=44, factor=24.098)
+2024-11-22 16:44:12,511 - DEBUG - Energy CO2 Emissions: 2,445[Elec.] + 15,151[Gas] = 17,596
+2024-11-22 16:44:12,511 - DEBUG - Energy CO2 Actual Cost: 17,596 * $0.25/unit = $4,399
+2024-11-22 16:44:12,511 - DEBUG - Energy CO2 PV Cost [44]: $4,399 / 24.098 = PV$183
+2024-11-22 16:44:12,511 - INFO - measure_purchase_cost_PV(year=44, factor=2.390)
+2024-11-22 16:44:12,511 - INFO - measure_CO2_cost_PV(year=44, factor=1.000)
+2024-11-22 16:44:12,511 - INFO - grid_transition_PV_cost(year=44, factor=2.390)
+2024-11-22 16:44:12,511 - DEBUG - Transition Cost [44]:  0.00000 * 3,048 W = $0
+2024-11-22 16:44:12,511 - DEBUG - Transition PV Cost [44]: $0 / 2.390 = PV$0
+2024-11-22 16:44:12,511 - INFO - Calculating year 44 costs:
+2024-11-22 16:44:12,511 - INFO - energy_purchase_cost_PV(year=45, factor=2.438)
+2024-11-22 16:44:12,511 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
+2024-11-22 16:44:12,511 - DEBUG - Energy PV Cost: $3,247 / 2.438 = PV$1,332
+2024-11-22 16:44:12,511 - INFO - energy_CO2_cost_PV(year=45, factor=25.905)
+2024-11-22 16:44:12,511 - DEBUG - Energy CO2 Emissions: 2,445[Elec.] + 15,151[Gas] = 17,596
+2024-11-22 16:44:12,511 - DEBUG - Energy CO2 Actual Cost: 17,596 * $0.25/unit = $4,399
+2024-11-22 16:44:12,512 - DEBUG - Energy CO2 PV Cost [45]: $4,399 / 25.905 = PV$170
+2024-11-22 16:44:12,512 - INFO - measure_purchase_cost_PV(year=45, factor=2.438)
+2024-11-22 16:44:12,512 - DEBUG - Measure Actual Costs: ['$959'] = 959
+2024-11-22 16:44:12,512 - DEBUG - Measure PV Cost: $959 / 2.438 = PV$393
+2024-11-22 16:44:12,512 - INFO - measure_CO2_cost_PV(year=45, factor=1.000)
+2024-11-22 16:44:12,512 - DEBUG - Measure CO2 Actual Cost: ['$50'] = 50
+2024-11-22 16:44:12,512 - DEBUG - Measure CO2 PV Cost: $50 / 1.000 = PV$38
+2024-11-22 16:44:12,512 - INFO - grid_transition_PV_cost(year=45, factor=2.438)
+2024-11-22 16:44:12,512 - DEBUG - Transition Cost [45]:  0.00000 * 3,048 W = $0
+2024-11-22 16:44:12,512 - DEBUG - Transition PV Cost [45]: $0 / 2.438 = PV$0
+2024-11-22 16:44:12,512 - INFO - Calculating year 45 costs:
+2024-11-22 16:44:12,512 - INFO - energy_purchase_cost_PV(year=46, factor=2.487)
+2024-11-22 16:44:12,512 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
+2024-11-22 16:44:12,512 - DEBUG - Energy PV Cost: $3,247 / 2.487 = PV$1,306
+2024-11-22 16:44:12,512 - INFO - energy_CO2_cost_PV(year=46, factor=27.848)
+2024-11-22 16:44:12,512 - DEBUG - Energy CO2 Emissions: 2,445[Elec.] + 15,151[Gas] = 17,596
+2024-11-22 16:44:12,512 - DEBUG - Energy CO2 Actual Cost: 17,596 * $0.25/unit = $4,399
+2024-11-22 16:44:12,512 - DEBUG - Energy CO2 PV Cost [46]: $4,399 / 27.848 = PV$158
+2024-11-22 16:44:12,512 - INFO - measure_purchase_cost_PV(year=46, factor=2.487)
+2024-11-22 16:44:12,512 - INFO - measure_CO2_cost_PV(year=46, factor=1.000)
+2024-11-22 16:44:12,512 - INFO - grid_transition_PV_cost(year=46, factor=2.487)
+2024-11-22 16:44:12,512 - DEBUG - Transition Cost [46]:  0.00000 * 3,048 W = $0
+2024-11-22 16:44:12,512 - DEBUG - Transition PV Cost [46]: $0 / 2.487 = PV$0
+2024-11-22 16:44:12,512 - INFO - Calculating year 46 costs:
+2024-11-22 16:44:12,512 - INFO - energy_purchase_cost_PV(year=47, factor=2.536)
+2024-11-22 16:44:12,512 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
+2024-11-22 16:44:12,512 - DEBUG - Energy PV Cost: $3,247 / 2.536 = PV$1,280
+2024-11-22 16:44:12,512 - INFO - energy_CO2_cost_PV(year=47, factor=29.936)
+2024-11-22 16:44:12,512 - DEBUG - Energy CO2 Emissions: 2,445[Elec.] + 15,151[Gas] = 17,596
+2024-11-22 16:44:12,512 - DEBUG - Energy CO2 Actual Cost: 17,596 * $0.25/unit = $4,399
+2024-11-22 16:44:12,512 - DEBUG - Energy CO2 PV Cost [47]: $4,399 / 29.936 = PV$147
+2024-11-22 16:44:12,512 - INFO - measure_purchase_cost_PV(year=47, factor=2.536)
+2024-11-22 16:44:12,512 - INFO - measure_CO2_cost_PV(year=47, factor=1.000)
+2024-11-22 16:44:12,512 - INFO - grid_transition_PV_cost(year=47, factor=2.536)
+2024-11-22 16:44:12,512 - DEBUG - Transition Cost [47]:  0.00000 * 3,048 W = $0
+2024-11-22 16:44:12,512 - DEBUG - Transition PV Cost [47]: $0 / 2.536 = PV$0
+2024-11-22 16:44:12,512 - INFO - Calculating year 47 costs:
+2024-11-22 16:44:12,512 - INFO - energy_purchase_cost_PV(year=48, factor=2.587)
+2024-11-22 16:44:12,512 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
+2024-11-22 16:44:12,513 - DEBUG - Energy PV Cost: $3,247 / 2.587 = PV$1,255
+2024-11-22 16:44:12,513 - INFO - energy_CO2_cost_PV(year=48, factor=32.182)
+2024-11-22 16:44:12,513 - DEBUG - Energy CO2 Emissions: 2,445[Elec.] + 15,151[Gas] = 17,596
+2024-11-22 16:44:12,513 - DEBUG - Energy CO2 Actual Cost: 17,596 * $0.25/unit = $4,399
+2024-11-22 16:44:12,513 - DEBUG - Energy CO2 PV Cost [48]: $4,399 / 32.182 = PV$137
+2024-11-22 16:44:12,513 - INFO - measure_purchase_cost_PV(year=48, factor=2.587)
+2024-11-22 16:44:12,513 - INFO - measure_CO2_cost_PV(year=48, factor=1.000)
+2024-11-22 16:44:12,513 - INFO - grid_transition_PV_cost(year=48, factor=2.587)
+2024-11-22 16:44:12,513 - DEBUG - Transition Cost [48]:  0.00000 * 3,048 W = $0
+2024-11-22 16:44:12,513 - DEBUG - Transition PV Cost [48]: $0 / 2.587 = PV$0
+2024-11-22 16:44:12,513 - INFO - Calculating year 48 costs:
+2024-11-22 16:44:12,513 - INFO - energy_purchase_cost_PV(year=49, factor=2.639)
+2024-11-22 16:44:12,513 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
+2024-11-22 16:44:12,513 - DEBUG - Energy PV Cost: $3,247 / 2.639 = PV$1,230
+2024-11-22 16:44:12,513 - INFO - energy_CO2_cost_PV(year=49, factor=34.595)
+2024-11-22 16:44:12,513 - DEBUG - Energy CO2 Emissions: 2,445[Elec.] + 15,151[Gas] = 17,596
+2024-11-22 16:44:12,513 - DEBUG - Energy CO2 Actual Cost: 17,596 * $0.25/unit = $4,399
+2024-11-22 16:44:12,513 - DEBUG - Energy CO2 PV Cost [49]: $4,399 / 34.595 = PV$127
+2024-11-22 16:44:12,513 - INFO - measure_purchase_cost_PV(year=49, factor=2.639)
+2024-11-22 16:44:12,513 - DEBUG - Measure Actual Costs: ['$861', '$796'] = 1,657
+2024-11-22 16:44:12,513 - DEBUG - Measure PV Cost: $1,657 / 2.639 = PV$628
+2024-11-22 16:44:12,513 - INFO - measure_CO2_cost_PV(year=49, factor=1.000)
+2024-11-22 16:44:12,513 - DEBUG - Measure CO2 Actual Cost: ['$35', '$33'] = 68
+2024-11-22 16:44:12,513 - DEBUG - Measure CO2 PV Cost: $68 / 1.000 = PV$51
+2024-11-22 16:44:12,513 - INFO - grid_transition_PV_cost(year=49, factor=2.639)
+2024-11-22 16:44:12,513 - DEBUG - Transition Cost [49]:  0.00000 * 3,048 W = $0
+2024-11-22 16:44:12,513 - DEBUG - Transition PV Cost [49]: $0 / 2.639 = PV$0
+2024-11-22 16:44:12,513 - INFO - Calculating year 49 costs:
+2024-11-22 16:44:12,513 - INFO - energy_purchase_cost_PV(year=50, factor=2.692)
+2024-11-22 16:44:12,513 - DEBUG - Energy Actual Cost: $1,400[Elec.] + $1,847[Gas] = $3,247
+2024-11-22 16:44:12,513 - DEBUG - Energy PV Cost: $3,247 / 2.692 = PV$1,206
+2024-11-22 16:44:12,513 - INFO - energy_CO2_cost_PV(year=50, factor=37.190)
+2024-11-22 16:44:12,513 - DEBUG - Energy CO2 Emissions: 2,445[Elec.] + 15,151[Gas] = 17,596
+2024-11-22 16:44:12,513 - DEBUG - Energy CO2 Actual Cost: 17,596 * $0.25/unit = $4,399
+2024-11-22 16:44:12,513 - DEBUG - Energy CO2 PV Cost [50]: $4,399 / 37.190 = PV$118
+2024-11-22 16:44:12,513 - INFO - measure_purchase_cost_PV(year=50, factor=2.692)
+2024-11-22 16:44:12,513 - INFO - measure_CO2_cost_PV(year=50, factor=1.000)
+2024-11-22 16:44:12,513 - INFO - grid_transition_PV_cost(year=50, factor=2.692)
+2024-11-22 16:44:12,513 - DEBUG - Transition Cost [50]:  0.00000 * 3,048 W = $0
+2024-11-22 16:44:12,513 - DEBUG - Transition PV Cost [50]: $0 / 2.692 = PV$0
+2024-11-22 16:44:12,516 - INFO - calc_variant_cumulative_ADORB_costs()
+2024-11-22 16:44:12,518 - INFO - Script finished

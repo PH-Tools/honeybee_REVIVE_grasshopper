@@ -22,7 +22,7 @@
 """
 Set the Phius-REVIVE ADORB calculation parameters for the Honeybee-Model.
 -
-EM October 1, 2024
+EM November 22, 2024
     Args:
         _country_name: (str) The name of the Country the model is located in.
 
@@ -48,7 +48,7 @@ import ghpythonlib.components as ghc
 import Grasshopper as gh
 
 try:
-    from ph_gh_component_io import gh_io
+    from ph_gh_component_io import gh_io, preview
 except ImportError as e:
     raise ImportError('\nFailed to import ph_gh_component_io:\n\t{}'.format(e))
 
@@ -78,7 +78,9 @@ gh_compo_interface = gh_compo_io.GHCompo_SetModelProperties(
         _cambium_grid_region,
         _analysis_duration,
         _envelope_labor_cost_fraction,
+        _fuels,
         _hb_model,
 )
 hb_model_ = gh_compo_interface.run()
-print hb_model_
+if hb_model_:
+    preview.object_preview(hb_model_.properties.revive)

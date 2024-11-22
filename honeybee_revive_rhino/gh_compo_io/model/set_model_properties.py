@@ -12,6 +12,7 @@ except ImportError as e:
 
 try:
     from honeybee_revive.grid_region import GridRegion
+    from honeybee_revive.fuels import Fuel
     from honeybee_revive.national_emissions import NationalEmissionsFactors
     from honeybee_revive.properties.model import ModelReviveProperties
     from honeybee_revive_standards import cambium_factors, national_emission_factors
@@ -37,17 +38,19 @@ class GHCompo_SetModelProperties(object):
         _cambium_grid_region,
         analysis_duration,
         envelope_labor_cost_fraction,
+        _fuels,
         _hb_model,
         *args,
         **kwargs
     ):
-        # type: (gh_io.IGH, str, str, int, float, Model, list, dict) -> None
+        # type: (gh_io.IGH, str, str, int, float, list[Fuel], Model, list, dict) -> None
         self.IGH = _IGH
         self.country_name = _country_name
         self.cambium_grid_region = _cambium_grid_region
         self.hb_model = _hb_model
         self.analysis_duration = analysis_duration or 50
         self.envelope_labor_cost_fraction = envelope_labor_cost_fraction or 0.4
+        self.fuels = _fuels
 
     def get_national_emissions_factor(self):
         # type: () -> NationalEmissionsFactors | None
@@ -112,5 +115,8 @@ class GHCompo_SetModelProperties(object):
         )
         new_model_prop.analysis_duration = self.analysis_duration
         new_model_prop.envelope_labor_cost_fraction = self.envelope_labor_cost_fraction
+
+        for fuel in self.fuels:
+            new_model_prop.fuels.add_fuel(fuel)
 
         return new_model
