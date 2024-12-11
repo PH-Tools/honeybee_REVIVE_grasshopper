@@ -92,15 +92,18 @@ class GHCompo_GenerateADORBGraphs(object):
     @property
     def ready(self):
         if not self.csv:
-            self.IGH.remark("Input an ADORB Cost CSV File to graph.")
+            self.IGH.warning("Input an ADORB Cost CSV File to graph.")
             return False
 
         if not os.path.isfile(self.csv):
-            print("No ADORB Cost CSV file found at: {}".format(self.csv))
+            msg = "No ADORB Cost CSV file found at: {}".format(self.csv)
+            self.IGH.error(msg)
             return False
 
         if not os.path.isdir(self.save_dir):
-            print("Creating folder: {}".format(self.save_dir))
+            msg = "Creating folder: {}".format(self.save_dir)
+            self.IGH.remark(msg)
+            print(msg)
             os.makedirs(self.save_dir)
 
         return True
@@ -111,10 +114,10 @@ class GHCompo_GenerateADORBGraphs(object):
         return os.path.join(self.save_dir, "{}.html".format(filename_without_ext))
 
     def run(self):
-        print("Running ADORB cost calculation...")
         if not self.ready:
             return None
 
+        print("Running ADORB cost calculation...")
         stdout, stderr, output_folder = run_ADORB_grapher(self.csv, self.save_file)
         self.give_user_warnings(stdout)
 

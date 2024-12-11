@@ -241,10 +241,13 @@ class GHCompo_CalculateADORBCost(object):
 
     def run(self):
         # type: () -> tuple[str | None, str | None, str | None]
-        print("Running ADORB cost calculation...")
         if not self.ready:
+            msg = "Please provide all the required inputs and set '_run' to 'True'."
+            self.IGH.warning(msg)
+            print(msg)
             return (None, None, None)
 
+        print("Running ADORB cost calculation...")
         if not os.path.isdir(self.save_dir):
             print("Creating folder: {}".format(self.save_dir))
             os.makedirs(self.save_dir)

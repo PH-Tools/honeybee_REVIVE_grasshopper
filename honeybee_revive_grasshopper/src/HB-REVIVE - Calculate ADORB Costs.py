@@ -22,7 +22,7 @@
 """
 Calculate the Phius-REVIVE ADORB costs for the Honeybee-Model.
 -
-EM October 1, 2024
+EM December 11, 2024
     Args:
 
         _name_: (str) An optional variant name to be used for all of the output 
@@ -41,9 +41,13 @@ EM October 1, 2024
         _run: (bool) Set to True to run the calculation.
             
     Returns:
-        ADORB_Costs_: .....
+        ADORB_costs_: <Not Implemented Yet>
 
-        csv_results_file_: That path to the output CSV file with the full ADORB cost breakdown.
+        yearly_csv_results_file_: That path to the output CSV file with the
+            ADORB cost calculated for each year.
+
+        cumulative_csv_results_file_: That path to the output CSV file with the
+            ADORB cost calculated cumulatively for each year.
 
         tables_: The path to the output folder with the detailed table-views from the 
             ADORB calculation.
@@ -90,4 +94,4 @@ gh_compo_interface = gh_compo_io.GHCompo_CalculateADORBCost(
         _hb_model,
         _run,
 )
-csv_results_file_, tables_ = gh_compo_interface.run()
+yearly_csv_results_file_, cumulative_csv_results_file_, tables_ = gh_compo_interface.run()
