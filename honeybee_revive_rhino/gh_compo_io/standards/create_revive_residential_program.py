@@ -26,61 +26,86 @@ except ImportError:
     raise ImportError("\nFailed to import ph_gh_component_io")
 
 
-def calc_mel(_number_dwellings, _floor_area_ft2, _number_bedrooms, _phius_resnet_fraction=0.8):
+def calc_mel_kWh_yr(_number_dwellings, _floor_area_ft2, _number_bedrooms, _phius_resnet_fraction=0.8):
     # type: (int, float, int, float) -> float
-    """Calculate the Phius MF Misc. Electrical Loads (MEL) [Watts].
+    """Calculate the Phius Misc. Electrical Loads (MEL) [kWh/year].
 
-    Resnet 2014
-    https://codes.iccsafe.org/content/RESNET3012014P1/4-home-energy-rating-calculation-procedures-
+    ### Resnet 2014
+    - https://codes.iccsafe.org/content/RESNET3012014P1/4-home-energy-rating-calculation-procedures-
+    - Section 4.2.2.5(1): Energy Rating Reference Home
+    - kWh = 413 + 0.91 * CFA + 69 * Nbr
+    
+    ### Phius Certification Guidebook v24.1.1 | Appendix N | N-7
+    - https://www.phius.org/phius-certification-guidebook
+    - "The basic protocol for lighting and miscellaneous electric loads is that they are calculated at 
+    80% of RESNET (2013) levels for the 'Rated Home'."
+    - kWh = num_units * (413 + 69 * Nbr + 0.91 * CFA) * 0.8
     """
-    DWELLING_TV_W = 413
-    MELS_W_FT2 = 0.91
-    BEDROOM_TV_W = 69
+    DWELLING_TV_KWH_YR = 413
+    BEDROOM_TV_KWH_YR = 69
+    MELS_KWH_YR_FT2 = 0.91
 
-    a = DWELLING_TV_W * _number_dwellings
-    b = MELS_W_FT2 * _floor_area_ft2
-    c = BEDROOM_TV_W * _number_bedrooms
+    a = DWELLING_TV_KWH_YR
+    b = BEDROOM_TV_KWH_YR * _number_bedrooms
+    c = MELS_KWH_YR_FT2 * _floor_area_ft2
 
-    return (a + b + c) * _phius_resnet_fraction
+    return _number_dwellings * (a + b + c) * _phius_resnet_fraction
 
 
-def calc_lighting_int(_number_dwellings, _floor_area_ft2, _lighting_int_HE_frac=1.0, _phius_resnet_fraction=0.8):
+def calc_lighting_int_kWh_yr(_number_dwellings, _floor_area_ft2, _lighting_int_HE_frac=1.0, _phius_resnet_fraction=0.8):
     # type: (int, float, float, float) -> float
-    """Calculate the Phius MF Interior Lighting [Watts].
+    """Calculate the Phius MF Interior Lighting [kWh/year].
 
-    Resnet 2014
-    https://codes.iccsafe.org/content/RESNET3012014P1/4-home-energy-rating-calculation-procedures-
+    ### Resnet 2014
+    - https://codes.iccsafe.org/content/RESNET3012014P1/4-home-energy-rating-calculation-procedures-
+    - Section 4.2.2.5.2.2: Interior Lighting
+    - kWh/yr = 0.8 * [(4 - 3 * q_FFIL) / 3.7] * (455 + 0.8 * CFA) + 0.2 * (455 + 0.8 * CFA)
+    
+    ### Phius Certification Guidebook v24.1.1 | Appendix N | N-7
+    - https://www.phius.org/phius-certification-guidebook
+    - "The basic protocol for lighting and miscellaneous electric loads is that they are calculated at 
+    80% of RESNET (2013) levels for the 'Rated Home'. ... The RESNET lighting formulas have been expressed more 
+    compactly here but are algebraically equivalent to the published versions."
+    - kWh/yr = n_unit * (0.2 + 0.8 * (4 - 3 * q_FFIL) / 3.7) * (455 + 0.8 * iCFA) * 0.8
     """
     INT_LIGHTING_W_PER_DWELLING = 455
     INT_LIGHTING_W_FT2 = 0.8
 
     a = 0.2 + 0.8 * (4 - 3 * _lighting_int_HE_frac) / 3.7
-    b = INT_LIGHTING_W_PER_DWELLING * _number_dwellings
-    c = INT_LIGHTING_W_FT2 * _floor_area_ft2
+    b = INT_LIGHTING_W_PER_DWELLING + (INT_LIGHTING_W_FT2 * _floor_area_ft2)
 
-    return a * (b + c) * _phius_resnet_fraction
+    return _number_dwellings * a * b * _phius_resnet_fraction
 
 
-def calc_lighting_ext(_number_dwellings, _floor_area_ft2, _lighting_ext_HE_frac=1.0, _phius_resnet_fraction=0.8):
+def calc_lighting_ext_kWh_yr(_number_dwellings, _floor_area_ft2, _lighting_ext_HE_frac=1.0, _phius_resnet_fraction=0.8):
     # type: (int, float, float, float) -> float
-    """Calculate the Phius MF Exterior Lighting [Watts].
+    """Calculate the Phius MF Exterior Lighting [kWh/year].
 
-    Resnet 2014
-    https://codes.iccsafe.org/content/RESNET3012014P1/4-home-energy-rating-calculation-procedures-
+    ### Resnet 2014
+    - https://codes.iccsafe.org/content/RESNET3012014P1/4-home-energy-rating-calculation-procedures-
+    - Section 4.2.2.5.2.3: Exterior Lighting
+    - kWh = (100+0.05*FCA)*(1-FF_El)+0.25*(100+0.05*CFA)*FF_EL
+
+    ### Phius Certification Guidebook v24.1.1 | Appendix N | N-7
+    - https://www.phius.org/phius-certification-guidebook
+    - "The basic protocol for lighting and miscellaneous electric loads is that they are calculated at 
+    80% of RESNET (2013) levels for the 'Rated Home'. ... The RESNET lighting formulas have been expressed more 
+    compactly here but are algebraically equivalent to the published versions."
+    - kWh/yr = (1 - 0.75 * q_FFIL) * (100 + 0.05 * iCFA) * 0.8
     """
-    EXT_LIGHTING_W_PER_DWELLING = 100
-    EXT_LIGHTING_W_FT2 = 0.05
+    EXT_LIGHTING_KWH_YR_PER_DWELLING = 100
+    EXT_LIGHTING_KWH_YR_FT2 = 0.05
 
-    a = EXT_LIGHTING_W_PER_DWELLING * _number_dwellings
-    b = EXT_LIGHTING_W_FT2 * _floor_area_ft2
+    a = EXT_LIGHTING_KWH_YR_PER_DWELLING * _number_dwellings
+    b = EXT_LIGHTING_KWH_YR_FT2 * _floor_area_ft2
     e = 1 - 0.75 * _lighting_ext_HE_frac
 
     return e * (a + b) * _phius_resnet_fraction
 
 
-def calc_lighting_garage(_number_dwellings, _lighting_garage_HE_frac=1.0, _phius_resnet_fraction=0.8):
+def calc_lighting_garage_kWh_yr(_number_dwellings, _lighting_garage_HE_frac=1.0, _phius_resnet_fraction=0.8):
     # type: (int, float, float) -> float
-    """Calculate the Phius MF Garage Lighting [Watts]."""
+    """Calculate the Phius MF Garage Lighting [kWh/year]."""
     GARAGE_LIGHTING_W = 100
     watts_per_dwelling = GARAGE_LIGHTING_W * (1 - _lighting_garage_HE_frac) + 25 * _lighting_garage_HE_frac
 
@@ -169,10 +194,11 @@ class GHCompo_CreateReviveResidentialProgram(object):
         )
 
         # -- Set the program loads based on the building attributes
-        mel_load = calc_mel(self.number_dwellings, self.icfa_ft2, self.number_bedrooms)
+        # TODO: THIS IS WRONG.... GETTING KWH/YR, but WANT WATTS.... ? MAYBE?....
+        mel_load = calc_mel_kWh_yr(self.number_dwellings, self.icfa_ft2, self.number_bedrooms)
         new_program.electric_equipment.watts_per_area = mel_load / self.icfa_m2
 
-        lighting_load = calc_lighting_int(self.number_dwellings, self.icfa_ft2)
+        lighting_load = calc_lighting_int_kWh_yr(self.number_dwellings, self.icfa_ft2)
         new_program.lighting.watts_per_area = lighting_load / self.icfa_m2
 
         total_occupancy = calc_occupancy(self.number_dwellings, self.number_bedrooms)

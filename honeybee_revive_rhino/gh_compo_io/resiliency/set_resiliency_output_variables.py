@@ -16,15 +16,17 @@ except ImportError as e:
 
 class GHCompo_SetResiliencySimulationOutputVariables(object):
     resiliency_simulation_outputs = [
-        "Zone Thermal Comfort Pierce Model Standard Effective Temperature",
-        "Zone Air Relative Humidity",
-        "Zone Mean Air Temperature",
-        "Zone Mean Radiant Temperature",
         "Site Outdoor Air Drybulb Temperature",
         "Site Outdoor Air Dewpoint Temperature",
         "Site Outdoor Air Wetbulb Temperature",
         "Site Outdoor Air Humidity Ratio",
         "Site Outdoor Air Relative Humidity",
+        "Site Wind Speed",
+        "Site Outdoor Air Barometric Pressure",
+        "Zone Thermal Comfort Pierce Model Standard Effective Temperature",
+        "Zone Air Relative Humidity",
+        "Zone Mean Air Temperature",
+        "Zone Mean Radiant Temperature",
         "Zone Heat Index",
         "Zone Humidity Index",
         "Zone Infiltration Standard Density Volume Flow Rate",
@@ -33,8 +35,6 @@ class GHCompo_SetResiliencySimulationOutputVariables(object):
         "Zone Mechanical Ventilation Air Changes per Hour",
         "Zone Ventilation Standard Density Volume Flow Rate",
         "Zone Ventilation Air Change Rate",
-        "Site Wind Speed",
-        "Site Outdoor Air Barometric Pressure",
         "Zone People Total Heating Energy",
         "Zone Lights Total Heating Energy",
         "Zone Electric Equipment Total Heating Energy",
@@ -47,6 +47,13 @@ class GHCompo_SetResiliencySimulationOutputVariables(object):
         "Zone Windows Total Transmitted Solar Radiation Energy",
         "Zone Exterior Windows Total Transmitted Beam Solar Radiation Energy",
         "Zone Exterior Windows Total Transmitted Diffuse Solar Radiation Energy",
+        "Surface Average Face Conduction Heat Transfer Energy",
+        "Surface Heat Storage Energy",
+        "Surface Shading Device Is On Time Fraction",
+        "Surface Inside Face Temperature",
+        "Surface Window Net Heat Transfer Energy",
+        "Surface Window Heat Loss Energy",
+        "Surface Window Heat Gain Energy",
     ]
 
     def __init__(self, _IGH, _sim_output):
