@@ -13,7 +13,6 @@ try:
 except ImportError as e:
     raise ImportError("\nFailed to import ph_gh_component_io:\n\t{}".format(e))
 
-
 class GHCompo_SetResiliencySimulationOutputVariables(object):
     resiliency_simulation_outputs = [
         "Site Outdoor Air Drybulb Temperature",
@@ -30,11 +29,11 @@ class GHCompo_SetResiliencySimulationOutputVariables(object):
         "Zone Heat Index",
         "Zone Humidity Index",
         "Zone Infiltration Standard Density Volume Flow Rate",
-        "Zone Infiltration Air Change Rate",
+        "Zone Infiltration Standard Density Air Change Rate",
         "Zone Mechanical Ventilation Standard Density Volume Flow Rate",
         "Zone Mechanical Ventilation Air Changes per Hour",
         "Zone Ventilation Standard Density Volume Flow Rate",
-        "Zone Ventilation Air Change Rate",
+        "Zone Ventilation Standard Density Air Change Rate",
         "Zone People Total Heating Energy",
         "Zone Lights Total Heating Energy",
         "Zone Electric Equipment Total Heating Energy",
@@ -44,9 +43,9 @@ class GHCompo_SetResiliencySimulationOutputVariables(object):
         "Zone Infiltration Total Heat Loss Energy",
         "Zone Ventilation Total Heat Loss Energy",
         "Zone Ventilation Total Heat Gain Energy",
-        "Zone Windows Total Transmitted Solar Radiation Energy",
-        "Zone Exterior Windows Total Transmitted Beam Solar Radiation Energy",
-        "Zone Exterior Windows Total Transmitted Diffuse Solar Radiation Energy",
+        "Enclosure Windows Total Transmitted Solar Radiation Energy",
+        "Enclosure Exterior Windows Total Transmitted Beam Solar Radiation Energy",
+        "Enclosure Exterior Windows Total Transmitted Diffuse Solar Radiation Energy",
         "Surface Average Face Conduction Heat Transfer Energy",
         "Surface Heat Storage Energy",
         "Surface Shading Device Is On Time Fraction",
