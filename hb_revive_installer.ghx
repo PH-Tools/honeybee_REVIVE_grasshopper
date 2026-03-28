@@ -253,7 +253,7 @@
                     <item name="Name" type_name="gh_string" type_code="10">Scribble</item>
                     <item name="NickName" type_name="gh_string" type_code="10">Scribble</item>
                     <item name="Size" type_name="gh_single" type_code="5">50</item>
-                    <item name="Text" type_name="gh_string" type_code="10">MAR 28, 2026 [v0.1.02]</item>
+                    <item name="Text" type_name="gh_string" type_code="10">MAR 28, 2026 [v0.2.0]</item>
                   </items>
                   <chunks count="1">
                     <chunk name="Attributes">
@@ -348,7 +348,7 @@ NOTE: The Honeybee-REVIVE Plugin is currently compatible with Ladybug Tools vers
                     <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                     <item name="ScrollRatio" type_name="gh_double" type_code="6">0</item>
                     <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
-                    <item name="UserText" type_name="gh_string" type_code="10">0.0.9</item>
+                    <item name="UserText" type_name="gh_string" type_code="10">0.0.10</item>
                   </items>
                   <chunks count="2">
                     <chunk name="Attributes">
@@ -425,7 +425,7 @@ NOTE: The Honeybee-REVIVE Plugin is currently compatible with Ladybug Tools vers
                     <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                     <item name="ScrollRatio" type_name="gh_double" type_code="6">0</item>
                     <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
-                    <item name="UserText" type_name="gh_string" type_code="10">0.1.2</item>
+                    <item name="UserText" type_name="gh_string" type_code="10">0.1.3</item>
                   </items>
                   <chunks count="2">
                     <chunk name="Attributes">
