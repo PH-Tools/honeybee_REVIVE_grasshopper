@@ -29,6 +29,14 @@ For information on test-cases and comparison to Phius reference models, see:
 </details>
 
 <details>
+<summary><strong>Development</strong></summary>
+
+This repo is the Grasshopper **UI layer** only — the model and the ADORB math live upstream in `honeybee-revive` and `ph-adorb` (both required). Component code targets **IronPython 2.7**; heavy compute (ADORB, pandas resilience) is shelled out to CPython via `honeybee_revive_rhino/gh_compo_io/run_subprocess.py`.
+
+For contributor/agent orientation see [`CLAUDE.md`](CLAUDE.md) and the [`context/`](context/) folder. Correctness is validated against the Phius reference models under `tests/`.
+</details>
+
+<details>
 <summary><strong>More Information</strong></summary>
 
 For more information on the use of these tools, check out the the Passive House Tools website:
