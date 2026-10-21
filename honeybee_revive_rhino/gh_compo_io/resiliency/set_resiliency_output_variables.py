@@ -50,6 +50,7 @@ class GHCompo_SetResiliencySimulationOutputVariables(object):
         "Surface Window Heat Loss Energy",
         "Surface Window Heat Gain Energy",
         "Surface Average Face Conduction Heat Transfer Energy",
+        "Surface Inside Face Conduction Heat Transfer Energy",  # -- Kiva floors report only this
         "Surface Heat Storage Energy",
         "Surface Shading Device Is On Time Fraction",
         "Surface Inside Face Temperature",
