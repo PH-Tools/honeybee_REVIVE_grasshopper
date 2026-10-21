@@ -161,14 +161,12 @@ class GHCompo_ResiliencyWinterOutput(object):
         self.give_user_warnings(stdout, stderr)
 
         # --------------------------------------------------------------------------------------------------------------
-        # --- Get the SQL data and write it out to a JSON file
-        py3_script = os.path.join(
-            hb_folders.python_package_path, "honeybee_revive", "output", "resilience_hourly_data.py"
-        )
-        stdout, stderr = _sql_data_to_json.run(
+        # --- Compute the SET for the central 168 outage-hours and write it out to a JSON file
+        # -- (the same calculation as the HTML graphs; not the EnergyPlus Pierce SET output)
+        py3_script = os.path.join(hb_folders.python_package_path, "honeybee_revive", "output", "resilience_set_data.py")
+        stdout, stderr = _sql_data_to_json.run_winter_set(
             _py3_filepath=py3_script,
             _sql_path=self.sql_path,
-            _output_variable_name="Zone Thermal Comfort Pierce Model Standard Effective Temperature",
             _json_filepath=self.json_filepath,
         )
         self.give_user_warnings(stdout, stderr)
