@@ -54,3 +54,41 @@ def run(_py3_filepath, _sql_path, _output_variable_name, _json_filepath):
 
     # -------------------------------------------------------------------------
     return stdout, stderr
+
+
+def run_winter_set(_py3_filepath, _sql_path, _json_filepath):
+    # type: (str, str, str) -> tuple[bytes, bytes]
+    """Using Ladybug's Python-3 interpreter: Compute the winter SET from the E+ SQL file and write to a JSON file.
+
+    The script ('resilience_set_data.py') writes the central 168 outage-hours of SET, computed
+    from zone air temperature, MRT and RH, in the same Date / Value / Zone JSON shape.
+
+    ### Arguments:
+        * _py3_filepath: The path to the Python-3 script to run.
+        * _sql_path: The path to the EnergyPlus SQL file to use for the calculation.
+        * _json_filepath: The path to save the JSON file to.
+
+    ### Returns:
+        * tuple
+            - [0] (bytes): The stdout from the subprocess.
+            - [1] (bytes): The stderr from the subprocess.
+    """
+
+    # -- check the file paths
+    assert os.path.isfile(_py3_filepath), "No Python file to run found at: {}".format(_py3_filepath)
+    assert os.path.isfile(_sql_path), "No SQL file found at: {}".format(_sql_path)
+
+    print("Using Python-3 interpreter: '{}'".format(hb_folders.python_exe_path))
+    print("Running Python-3 script: '{}'".format(_py3_filepath))
+    print("With the SQL file: '{}'".format(_sql_path))
+    print("Writing to: '{}'".format(_json_filepath))
+    commands = [
+        hb_folders.python_exe_path,  # -- The python3-interpreter to use
+        _py3_filepath,  # --------------- The python3-script to run
+        _sql_path,  # ------------------- The SQL file to use
+        _json_filepath,  # -------------- The JSON file to save the data to
+    ]
+    stdout, stderr = run_subprocess(commands)
+
+    # -------------------------------------------------------------------------
+    return stdout, stderr
