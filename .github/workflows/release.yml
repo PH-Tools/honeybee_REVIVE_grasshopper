@@ -26,6 +26,10 @@ jobs:
   release:
     name: Orchestrate release
     runs-on: ubuntu-latest
+    # -- One release at a time; a queued run bumps from the version the previous one pushed.
+    concurrency:
+      group: release
+      cancel-in-progress: false
     permissions:
       contents: write
     steps:
@@ -40,6 +44,13 @@ jobs:
 
       - name: Install tools
         run: pip install bump-my-version requests
+
+      # -- Bump from the current main, not the commit checked out at dispatch: a push
+      # -- that landed meanwhile would otherwise reject the version push.
+      - name: Sync to current main
+        run: |
+          git fetch --tags origin main
+          git checkout -B main origin/main
 
       # ---------------------------------------------------------------
       # Fetch the latest version of each package from PyPI
@@ -95,7 +106,7 @@ jobs:
           git add -A
           git commit -m "release: Honeybee-REVIVE v${{ steps.bump.outputs.new_version }} [skip ci]"
           git tag "v${{ steps.bump.outputs.new_version }}"
-          git push --follow-tags
+          git push --atomic origin main "v${{ steps.bump.outputs.new_version }}"
 
       # ---------------------------------------------------------------
       # Create a GitHub Release (users see this)
